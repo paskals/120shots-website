@@ -1,7 +1,4 @@
-<h1 align="center">Welcome to Revista</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-2.7.6-blue.svg?cacheSeconds=2592000" />
-</p>
+<h1 align="center">120 Shots</h1>
 
 > Photography Portfolio/Blog
 
@@ -11,8 +8,13 @@
 
 ## Create your own astro project using this repo as a template
 ```sh
-npm create astro@latest -- --template erfianugrah/revista-3 #TODO: update with 120shots repo
+npm create astro@latest -- --template paskals/120shots-website
 ``` 
+
+## Introduction
+- Text content is "hosted" in the repo in the form of markdown files.
+- Photos are hosted separately and are only referenced via URLs in the markdown blog posts.
+- #TODO: Expand
 
 ## Install (to use this repo directly)
 
@@ -28,8 +30,7 @@ npm run build && npm run preview
 ```
 
 ## External Usage
-
-Use Cloudflare Pages or Deno or build a Docker image (but change to server mode) refer to [this](https://docs.astro.build/en/guides/deploy/)
+Build and deploy as a static page on [cloudflare pages](https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/).
 
 ## How it all works
 
@@ -40,11 +41,10 @@ Use Cloudflare Pages or Deno or build a Docker image (but change to server mode)
 
 ## Author
 
-👤 **Erfi Anugrah**
+👤 **Paskal S**
 
-* Website: https://www.erfianugrah.com/
-* Github: [@erfianugrah](https://github.com/erfianugrah)
-* LinkedIn: [@erfianugrah](https://linkedin.com/in/erfianugrah)
+* Website: `#TODO: Add website`
+* Github: [@paskals](https://github.com/paskals)
 
 ## Show your support
 
