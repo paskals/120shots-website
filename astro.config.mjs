@@ -8,6 +8,7 @@ import { remarkReadingTime } from './src/scripts/remark-reading-time.mjs';
 
 // https://astro.build/config
 export default defineConfig({
+  output: "static",
   site: "https://www.120shots.com",
   image: {
     domains: ["120shots.com", "cdn.120shots.com"],
@@ -18,13 +19,17 @@ export default defineConfig({
       },
     },
   },
-  integrations: [sitemap(), mdx({
-    syntaxHighlight: 'shiki',
-    shikiConfig: {
-      theme: 'dracula'
-    },
-    gfm: false
-  }), tailwind(), markdoc()],
+  integrations: [
+    sitemap(),
+    mdx({
+      syntaxHighlight: 'shiki',
+      shikiConfig: {
+        theme: 'dracula'
+      },
+      gfm: false
+    }),
+    tailwind(),
+    markdoc()],
   markdown: {
     remarkPlugins: [remarkGfm, remarkReadingTime]
   },
@@ -33,7 +38,7 @@ export default defineConfig({
     defaultStrategy: 'viewport'
   },
   experimental: {
-    clientPrerender: true
+    clientPrerender: true,
     // directRenderScript: true
   },
 });

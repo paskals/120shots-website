@@ -1,25 +1,69 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const { title, images, alt, urls, width, height } = Astro.props;
+const { title, width, height } = Astro.props;
+import { getCollection } from "astro:content";
+import { getImage } from "astro:assets"; // Add all your collections here
+let allData: { imageSrc: string | null; alt: string; url: string }[] = [];
+
+const allContent = await getCollection("posts");
+const postsWithImages = allContent.filter(
+  (post) => post.data.image?.src && post.data.image?.alt
+);
+
+const imagePromises = postsWithImages.map(async (post) => {
+  const imageAsset = await getImage({
+    src: post.data.image.src,
+    alt: post.data.image.alt,
+    //  inferSize: true,
+    width: "1920",
+    height: "1080",
+    decoding: "async",
+    format: "avif",
+    quality: "65",
+  });
+
+  return {
+    imageSrc: imageAsset ? imageAsset.src : null,
+    alt: post.data.image.alt,
+    url: `/${"posts"}/${post.slug}`,
+  };
+});
+
+const results = await Promise.all(imagePromises);
+allData.push(
+  ...results.map((result) => {
+    return {
+      imageSrc: result.imageSrc,
+      alt: result.alt,
+      url: result.url,
+    };
+  })
+);
 ---
 
+<script></script>
+
 <BaseLayout title={title} is404Page={false}>
-  <div
-    id="homepage"
-    class="flex justify-center items-center"
-    data-images={images}
-    data-alt={alt}
-    data-urls={urls}
-    data-width={width}
-    data-height={height}
-  >
-    <a>
-      <img
-        id="randomHomePageImage"
-        class="hidden h-[440px] sm:h-[600px] lg:h-[700px] xl:h-[1000px] object-contain w-full object-center"
-      />
-    </a>
-    <slot />
-  </div>
+  {
+    allData.length > 0 ? (
+      <div
+        id="homepage"
+        class="flex justify-center items-center"
+        data-images={JSON.stringify(allData)}
+      >
+        <a>
+          <img
+            id="randomHomePageImage"
+            class="hidden h-[440px] sm:h-[600px] lg:h-[700px] xl:h-[1000px] object-contain w-full object-center"
+            width={width}
+            height={height}
+          />
+        </a>
+        <slot />
+      </div>
+    ) : (
+      <p>No images found</p>
+    )
+  }
 </BaseLayout>
-<script src="../scripts/homePage.js"></script>
+<script src="../scripts/homepage.js"></script>

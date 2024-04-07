@@ -4,13 +4,13 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import BlogPost from "../../../components/BlogPost.astro";
 import { sortByDate } from "../../../components/sortbydate";
 export async function getStaticPaths() {
-  const allAuthors = await getCollection("authors");
+  const allShortForm = await getCollection("posts");
   const uniqueTags = [
-    ...new Set(allAuthors.map((post) => post.data.tags).flat()),
+    ...new Set(allShortForm.map((post) => post.data.tags).flat()),
   ];
 
   return uniqueTags.map((tag) => {
-    const filteredPosts = allAuthors.filter((post) =>
+    const filteredPosts = allShortForm.filter((post) =>
       post.data.tags.includes(tag)
     );
     return {

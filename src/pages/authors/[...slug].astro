@@ -14,7 +14,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<AuthorLayout frontmatter={entry.data}>
+<AuthorLayout entry={entry}>
   <p
     class="prose prose-slate dark:prose-invert italic no-underline">
   </p>
