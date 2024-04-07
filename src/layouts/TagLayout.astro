@@ -22,7 +22,7 @@ for (const post of allContent) {
         height: "1080",
         decoding: "async",
         format: "avif",
-        quality: "65"
+        quality: "65",
       });
       imagesByTag[tag].push(imageAsset ? imageAsset.src : null);
     }
@@ -31,7 +31,7 @@ for (const post of allContent) {
 const { title } = Astro.props;
 ---
 
-<BaseLayout title={title} is404Page={false} >
+<BaseLayout title={title} is404Page={false}>
   <div>
     {
       tags.length === 1 ? (

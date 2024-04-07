@@ -8,16 +8,18 @@ const blog = defineCollection({
     tags: z.array(z.string()),
     author: reference("authors"),
     description: z.string(),
-    image: z.object({
-      src: z.string(),
-      alt: z.string(),
-      positionx: z.string().optional(),
-      positiony: z.string().optional()
-    }).optional(),
+    image: z
+      .object({
+        src: z.string(),
+        alt: z.string(),
+        positionx: z.string().optional(),
+        positiony: z.string().optional(),
+      })
+      .optional(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
   }),
-})
+});
 
 const authors = defineCollection({
   type: "content", // v2.5.0 and later
@@ -27,12 +29,14 @@ const authors = defineCollection({
     name: z.string(),
     email: z.string().optional(),
     description: z.string(),
-    image: z.object({
-      src: z.string(),
-      alt: z.string(),
-      positionx: z.string().optional(),
-      positiony: z.string().optional()
-    }).optional(),
+    image: z
+      .object({
+        src: z.string(),
+        alt: z.string(),
+        positionx: z.string().optional(),
+        positiony: z.string().optional(),
+      })
+      .optional(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
   }),
@@ -110,9 +114,6 @@ const authors = defineCollection({
 //     updatedDate: z.coerce.date().optional(),
 //   }),
 // });
-
-
-
 
 // 3. Export a single `collections` object to register your collection(s)
 export const collections = { posts: blog, authors };

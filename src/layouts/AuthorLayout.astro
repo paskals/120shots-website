@@ -9,7 +9,7 @@ type Props = {
   entry: CollectionEntry<"authors">;
 };
 
-const {entry} = Astro.props as Props;
+const { entry } = Astro.props as Props;
 
 const frontmatter = entry.data;
 const updatedDate = frontmatter?.updatedDate
@@ -76,13 +76,12 @@ const metaImage = image
             <h1 class="uppercase font-overpass-mono text-xl text-center w-full m-2">
               {title}
             </h1>
-            
           </div>
         </div>
       ) : (
         <Prose>
           <h1 class="normal-case font-overpass-mono text-xl m-2">{title}</h1>
-          
+
           <slot />
         </Prose>
       )

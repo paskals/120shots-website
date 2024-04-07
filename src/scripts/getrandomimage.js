@@ -1,6 +1,6 @@
 function handlePageLoad() {
-  let imageElements = Array.from(document.querySelectorAll('#randomimage'));
-  
+  let imageElements = Array.from(document.querySelectorAll("#randomimage"));
+
   if (imageElements.length === 0) {
     return; // Exit the function if no #randomimage elements are found
   }
@@ -16,7 +16,7 @@ function handlePageLoad() {
         image: image,
         alt: alt[index],
         width: width,
-        height: height
+        height: height,
       };
     });
 
@@ -26,7 +26,7 @@ function handlePageLoad() {
       [items[i], items[j]] = [items[j], items[i]];
     }
 
-    let imgElement = element.querySelector('img');
+    let imgElement = element.querySelector("img");
 
     // Use the first item
     let firstItem = items[0];
@@ -34,9 +34,9 @@ function handlePageLoad() {
     imgElement.alt = firstItem.alt;
     imgElement.width = firstItem.width; // Set the width
     imgElement.height = firstItem.height; // Set the height
-    imgElement.classList.remove('hidden'); // Remove the 'hidden' class 
+    imgElement.classList.remove("hidden"); // Remove the 'hidden' class
   });
 }
 
-document.addEventListener('astro:page-load', handlePageLoad);
+document.addEventListener("astro:page-load", handlePageLoad);
 // document.addEventListener('astro:after-swap', handlePageLoad);

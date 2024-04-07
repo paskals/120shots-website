@@ -1,10 +1,10 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
 import markdoc from "@astrojs/markdoc";
-import remarkGfm from 'remark-gfm';
-import { remarkReadingTime } from './src/scripts/remark-reading-time.mjs';
+import remarkGfm from "remark-gfm";
+import { remarkReadingTime } from "./src/scripts/remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,7 +13,7 @@ export default defineConfig({
   image: {
     domains: ["120shots.com", "cdn.120shots.com"],
     service: {
-      entrypoint: 'astro/assets/services/sharp',
+      entrypoint: "astro/assets/services/sharp",
       config: {
         limitInputPixels: false,
       },
@@ -22,20 +22,21 @@ export default defineConfig({
   integrations: [
     sitemap(),
     mdx({
-      syntaxHighlight: 'shiki',
+      syntaxHighlight: "shiki",
       shikiConfig: {
-        theme: 'dracula'
+        theme: "dracula",
       },
-      gfm: false
+      gfm: false,
     }),
     tailwind(),
-    markdoc()],
+    markdoc(),
+  ],
   markdown: {
-    remarkPlugins: [remarkGfm, remarkReadingTime]
+    remarkPlugins: [remarkGfm, remarkReadingTime],
   },
   prefetch: {
     prefetchAll: true,
-    defaultStrategy: 'viewport'
+    defaultStrategy: "viewport",
   },
   experimental: {
     clientPrerender: true,

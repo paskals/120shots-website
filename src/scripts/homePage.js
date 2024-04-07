@@ -9,7 +9,7 @@ function handlePageLoad() {
       return {
         image: image.imageSrc,
         alt: image.alt,
-        url: image.url
+        url: image.url,
       };
     });
 

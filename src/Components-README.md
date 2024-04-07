@@ -1,7 +1,9 @@
 # Astro Components
 
 ### Refer to [Astro docs on Components](https://docs.astro.build/en/basics/astro-components/)
+
 ---
+
 For pages such as [short form](https://www.erfianugrah.com/short_form/), [long form](https://www.erfianugrah.com/long_form/), any [tag](https://www.erfianugrah.com/long_form/tags/gleichgesinnte/) pages the file that's being used to structure the layout is [BlogPost.astro](layouts/BlogPost.astro)
 
 The [Footer.astro](components/Footer.astro) will reference [astro-icon](../package.json) for the social media icons
@@ -12,7 +14,7 @@ The [Footer.astro](components/Footer.astro) will reference [astro-icon](../packa
 
 [ThemeIcon.astro](components/ThemeIcon.astro) is referencing [themetoggle.js](scripts/themetoggle.js) for light/dark mode switch.
 
-[Hamburger.astro](components/Hamburger.astro), [ThemeIcon.astro](components/ThemeIcon.astro), [Navigation.astro](components/Navigation.astro) and  [Pagefind.astro](components/Pagefind.astro) are used in [Header.astro](components/Header.astro)
+[Hamburger.astro](components/Hamburger.astro), [ThemeIcon.astro](components/ThemeIcon.astro), [Navigation.astro](components/Navigation.astro) and [Pagefind.astro](components/Pagefind.astro) are used in [Header.astro](components/Header.astro)
 
 [Masonry.astro](components/Masonry.astro) is used in [MarkdownPostLayout.astro](layouts/MarkdownPostLayout.astro) for the rendering of the images that's referenced in the [Content Collections](content/) for specific posts. [Masonry.astro](components/Masonry.astro) is referencing [masonry.css](styles/MasonryLayout.css) and [glightbox.js](scripts/lightbox.js)
 

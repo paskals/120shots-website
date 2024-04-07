@@ -7,7 +7,7 @@ let allData: { imageSrc: string | null; alt: string; url: string }[] = [];
 
 const allContent = await getCollection("posts");
 const postsWithImages = allContent.filter(
-  (post) => post.data.image?.src && post.data.image?.alt
+  (post) => post.data.image?.src && post.data.image?.alt,
 );
 
 const imagePromises = postsWithImages.map(async (post) => {
@@ -37,7 +37,7 @@ allData.push(
       alt: result.alt,
       url: result.url,
     };
-  })
+  }),
 );
 ---
 

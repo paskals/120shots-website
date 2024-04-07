@@ -1,6 +1,7 @@
 # Astro Pages
 
 ### Refer to [Astro docs on Pages](https://docs.astro.build/en/basics/astro-pages/)
+
 ---
 
 These pages are what you'll see rendered/appended to the paths of the site, it's part of how Astro does its routing, and in this particular case we're doing static site rendering rather than server/hybrid.

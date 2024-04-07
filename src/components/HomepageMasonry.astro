@@ -3,7 +3,7 @@ const { images, alt, urls, tag } = Astro.props;
 import MasonryLayout from "./Masonry.astro";
 ---
 
-<div id="masonry" style={{width: '100%', columnCount: 4, columnGap: '1em'}}>
+<div id="masonry" style={{ width: "100%", columnCount: 4, columnGap: "1em" }}>
   <div
     id="homepage"
     class="object-cover object-center"
@@ -13,6 +13,6 @@ import MasonryLayout from "./Masonry.astro";
     data-urls={urls}
   >
   </div>
-   <slot />
+  <slot />
 </div>
 <script src="../scripts/homePage.js"></script>

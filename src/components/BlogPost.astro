@@ -5,9 +5,8 @@ type Props = {
   post: CollectionEntry<"posts">; //TODO: not specific to posts
 };
 
-const { post } =
-  Astro.props;
-const { title, description, pubDate} = post.data;
+const { post } = Astro.props;
+const { title, description, pubDate } = post.data;
 const image = post.data.image || null;
 import { Image } from "astro:assets";
 const publishedDate = pubDate.toDateString().split(" ").slice(1).join(" ");
@@ -22,7 +21,7 @@ const url = `/posts/${post.slug}`;
     image && (
       <div class="flex sm:w-1/3 md:h-[480px] h-[360px] fade-image">
         <a href={url}>
-           <Image
+          <Image
             src={image.src}
             alt={image.alt}
             inferSize
