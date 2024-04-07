@@ -11,29 +11,31 @@ const pageTitle = "Tag Index";
   <div class="tags">
     {
       tags.map((tag) => (
-        <p class="tag">
-          <a href={`/tags/${tag}`}>{tag}</a>
+        <p class="flex flex-row mx-1 bg-slate-600  bg-opacity-50 px-2 py-1 rounded">
+          <a class="text-[rgb(245,245,245)] no-underline" href={`/tags/${tag}`}>
+            {tag}
+          </a>
         </p>
       ))
     }
   </div>
 </BaseLayout>
 <style>
-  a {
+  /* a {
     color: #00539f;
-  }
+  } */
 
   .tags {
     display: flex;
     flex-wrap: wrap;
   }
 
-  .tag {
+  /* .tag {
     margin: 0.25em;
     border: dotted 1px #a1a1a1;
     border-radius: 0.5em;
     padding: 0.5em 1em;
     font-size: 1.15em;
     background-color: #f8fcfd;
-  }
+  } */
 </style>
