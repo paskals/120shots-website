@@ -17,16 +17,13 @@ const metaImage = await getImage({
   loading: "lazy",
 });
 
-const favicon_webp = await getImage({
-  src: "https://cdn.erfianugrah.com/ea_favicon.png",
+const favicon_webp = {
+  src: "/120Shots_icon_background.png",
   alt: "favicon",
   // inferSize: true,
-  width: "400",
-  height: "400",
-  decoding: "async",
-  format: "webp",
-  loading: "lazy",
-});
+  width: "512",
+  height: "512",
+};
 
 const pageTitle = "120 Shots";
 const metaDescription = "Film photography blog.";
