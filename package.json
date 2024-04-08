@@ -34,8 +34,11 @@
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.10",
+    "dotenv": "^16.4.5",
+    "node-cloudflare-r2": "^0.1.5",
     "pagefind": "^1.0.4",
     "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0"
+    "prettier-plugin-astro": "^0.13.0",
+    "tsx": "^4.7.2"
   }
 }
