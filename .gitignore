@@ -22,3 +22,4 @@ pnpm-debug.log*
 
 #temporary files
 test.ts
+tmp/
