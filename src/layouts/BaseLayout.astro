@@ -6,14 +6,14 @@ import "@fontsource-variable/overpass-mono";
 import "@fontsource-variable/inconsolata";
 import { getImage } from "astro:assets";
 let baseUrl = new URL(Astro.request.url).origin;
+// TODO: Replace with your own image
 const metaImage = await getImage({
   src: "https://cdn.erfianugrah.com/Tenhult_3.JPG",
   alt: "cover_image",
-  // inferSize: true,
-  width: "1280",
-  height: "720",
+  inferSize: true,
+  // width: "1280",
+  // height: "720",
   decoding: "async",
-  format: "webp",
   loading: "lazy",
 });
 

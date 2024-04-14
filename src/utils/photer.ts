@@ -89,7 +89,7 @@ if (argv._.includes("create-post")) {
     const fileName = file.name
       .split(".")[0]
       .concat("-", randomSuffix ? getRandomString() : "");
-    const filePath = path.join(tempDestination, `${fileName}.avif`);
+    const filePath = path.join(tempDestination, `${fileName}.webp`);
 
     promises.push(
       sharp(path.join(sourcePath, file.name))
@@ -99,10 +99,10 @@ if (argv._.includes("create-post")) {
           fit: "inside",
           withoutEnlargement: true,
         })
-        .avif({
+        .webp({
           quality: 80,
           effort: 0,
-          // smartSubsample: true,
+          smartSubsample: true,
         })
         .toFile(filePath),
     );

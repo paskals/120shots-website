@@ -42,9 +42,9 @@ const backgroundImage = image
   ? await getImage({
       src: image,
       alt: alt,
-      // inferSize: true,
-      width: "3840",
-      height: "2160",
+      inferSize: true,
+      // width: "3840",
+      // height: "2160",
     })
   : null;
 
@@ -62,11 +62,11 @@ const metaImage = image
   ? await getImage({
       src: image,
       alt: alt,
-      // inferSize: true,
-      width: "1280",
-      height: "720",
+      inferSize: true,
+      // width: "1280",
+      // height: "720",
       decoding: "async",
-      format: "webp",
+      // format: "webp",
       loading: "lazy",
     })
   : null;
