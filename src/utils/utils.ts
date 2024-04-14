@@ -34,21 +34,23 @@ author: paskal
 image:
   {
     src: ${imageURLs[Math.floor(Math.random() * imageURLs.length)]},
-    alt: "alt text",
+    alt: "${title}",
     positionx: 50%,
     positiony: 50%,
   }
 description: ""
-${frontMatterParameters ? Object.entries(frontMatterParameters).map(([key, value]) => `${key}: ${JSON.stringify(value)}\n`) : ""}
+${frontMatterParameters ? Object.entries(frontMatterParameters).map(
+    ([key, value]) => `${key}: ${JSON.stringify(value)}\n`
+  ) : ""}
 ---
-Post content goes here
+> Post content goes here
 
 import MasonryLayout from "../../components/Masonry.astro";
 
 <MasonryLayout
   images={
     [
-    ${imageURLs.map((url) => `{ src: "${url}", alt: "alt text" }\n`)}
+      ${imageURLs.map((url, index) => `{ src: "${url}", alt: "${title} ${index}" }`).join(`,\n      `)}
     ]
   }
 />`;

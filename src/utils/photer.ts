@@ -75,7 +75,7 @@ if (argv._.includes("create-post")) {
   }
 
   // Get all files from the specified sourcePath
-  const files = fs.readdirSync(sourcePath);
+  const files = fs.readdirSync(sourcePath, { withFileTypes: true });
 
   const promises: Promise<OutputInfo>[] = [];
   const paths: string[] = [];
@@ -83,23 +83,26 @@ if (argv._.includes("create-post")) {
   console.info("🔄 Processing files...");
   // Loop over each file
   for (const file of files) {
-    const fileName = file
+    if (file.isDirectory() || file.name.startsWith(".")) {
+      continue;
+    }
+    const fileName = file.name
       .split(".")[0]
       .concat("-", randomSuffix ? getRandomString() : "");
-    const filePath = path.join(tempDestination, `${fileName}.webp`);
+    const filePath = path.join(tempDestination, `${fileName}.avif`);
 
     promises.push(
-      sharp(path.join(sourcePath, file))
+      sharp(path.join(sourcePath, file.name))
         .resize({
           width: maxDimensionSize,
           height: maxDimensionSize,
           fit: "inside",
           withoutEnlargement: true,
         })
-        .webp({
+        .avif({
           quality: 80,
           effort: 0,
-          smartSubsample: true,
+          // smartSubsample: true,
         })
         .toFile(filePath),
     );

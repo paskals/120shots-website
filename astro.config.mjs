@@ -9,17 +9,7 @@ import { remarkReadingTime } from "./src/scripts/remark-reading-time.mjs";
 // https://astro.build/config
 export default defineConfig({
   output: "static",
-  site: "https://www.120shots.com",
-  image: {
-    domains: ["120shots.com", "cdn.120shots.com"],
-    service: passthroughImageService(),
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "**.120shots.com",
-      },
-    ],
-  },
+  site: "https://120shots.com",
   integrations: [
     sitemap(),
     mdx({
@@ -38,9 +28,5 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true,
     defaultStrategy: "viewport",
-  },
-  experimental: {
-    clientPrerender: true,
-    // directRenderScript: true
   },
 });
