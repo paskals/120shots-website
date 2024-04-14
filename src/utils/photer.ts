@@ -10,6 +10,7 @@ import path from "path";
 import sharp, { type OutputInfo } from "sharp";
 import { uploadFiles } from "./r2-wrangler";
 import { getRandomString, createNewPost } from "./utils";
+import sanitize from "sanitize-filename";
 
 const argv = yargs(hideBin(process.argv))
   .command(
@@ -38,9 +39,16 @@ const argv = yargs(hideBin(process.argv))
       },
       randomSuffix: {
         alias: "s",
-        describe: "Whether to randomize the suffixes of the photos",
+        describe: "Whether to add a random suffix to the file name",
         type: "boolean",
         default: false,
+      },
+      renameFiles: {
+        alias: "r",
+        describe:
+          "If not specified, the original file names will be kept. When specified, this will be used ast the file name prefix, after which a numeric sequence number will be added. If a random suffix is also specified, it will be added after the sequence number.",
+        type: "string",
+        demandOption: false,
       },
       postTitle: {
         alias: "t",
@@ -55,7 +63,8 @@ const argv = yargs(hideBin(process.argv))
 if (argv._.includes("create-post")) {
   // Do stuff
   let { destinationDir } = argv;
-  const { sourcePath, randomSuffix, postTitle, maxDimensionSize } = argv;
+  const { sourcePath, randomSuffix, postTitle, maxDimensionSize, renameFiles } =
+    argv;
 
   if (destinationDir.slice(-1) != "/") {
     destinationDir = destinationDir.concat("/");
@@ -82,13 +91,26 @@ if (argv._.includes("create-post")) {
 
   console.info("🔄 Processing files...");
   // Loop over each file
-  for (const file of files) {
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+
     if (file.isDirectory() || file.name.startsWith(".")) {
       continue;
     }
-    const fileName = file.name
-      .split(".")[0]
-      .concat("-", randomSuffix ? getRandomString() : "");
+
+    let fileName = "";
+
+    if (renameFiles !== undefined) {
+      fileName = sanitize(renameFiles)
+        .concat("-", i.toString().padStart(3, "0"))
+        .replace(/\s+/g, "_");
+    } else {
+      fileName = file.name.split(".")[0].replace(/\s+/g, "_");
+    }
+
+    if (randomSuffix) {
+      fileName = fileName.concat("-", getRandomString());
+    }
     const filePath = path.join(tempDestination, `${fileName}.webp`);
 
     promises.push(

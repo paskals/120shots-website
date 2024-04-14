@@ -21,7 +21,7 @@ export const createNewPost = (
   const now = new Date();
   const title = postTitle || "Draft post";
   const fileName =
-    sanitize(now.toISOString().split("T")[0] + "-" + title) + ".mdx";
+    slugify(now.toISOString().split("T")[0] + "-" + title) + ".mdx";
   const filePath = path.normalize("./src/content/posts/") + fileName;
 
   const textContent = `---
@@ -39,9 +39,13 @@ image:
     positiony: 50%,
   }
 description: ""
-${frontMatterParameters ? Object.entries(frontMatterParameters).map(
-    ([key, value]) => `${key}: ${JSON.stringify(value)}\n`
-  ) : ""}
+${
+  frontMatterParameters
+    ? Object.entries(frontMatterParameters).map(
+        ([key, value]) => `${key}: ${JSON.stringify(value)}\n`,
+      )
+    : ""
+}
 ---
 > Post content goes here
 
