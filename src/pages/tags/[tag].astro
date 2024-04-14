@@ -29,7 +29,8 @@ const { posts } = Astro.props;
   <p class="md:space-x-14 md:mb-20 mb-10">
     Posts tagged with <span
       class="bg-slate-600 text-[rgb(245,245,245)] px-2 py-1 rounded no-underline"
-      >{tag}</span>
+      >{tag}</span
+    >
   </p>
   <ul>
     {posts.map((post) => <BlogPost post={post} />)}

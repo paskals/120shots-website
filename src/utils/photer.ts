@@ -9,13 +9,7 @@ import fs from "fs";
 import path from "path";
 import sharp, { type OutputInfo } from "sharp";
 import { uploadFiles } from "./r2-wrangler";
-
-const getRandomString = (length?: number) => {
-  return Math.ceil(Math.random() * 10 ** 9)
-    .toString(16)
-    .slice(-(length || 6))
-    .toUpperCase();
-};
+import { getRandomString, createNewPost } from "./utils";
 
 const argv = yargs(hideBin(process.argv))
   .command(
@@ -68,7 +62,6 @@ if (argv._.includes("create-post")) {
   }
 
   let tmpFolder = "./tmp";
-  const now = new Date().toISOString();
 
   // Create TMP folder if it doesn't exist
   if (!fs.existsSync(tmpFolder)) {
@@ -87,7 +80,7 @@ if (argv._.includes("create-post")) {
   const promises: Promise<OutputInfo>[] = [];
   const paths: string[] = [];
 
-  console.info("Processing files...");
+  console.info("🔄 Processing files...");
   // Loop over each file
   for (const file of files) {
     const fileName = file
@@ -115,13 +108,15 @@ if (argv._.includes("create-post")) {
 
   Promise.all(promises)
     .then(() => {
-      console.info("Uploading files...");
+      console.info("⏫ Uploading files...");
       return uploadFiles(paths, destinationDir);
     })
     .then((result) => {
-      console.log(result);
-      // console.info('Creating post...') // TODO: create post
-      console.info("Done!");
+      return createNewPost(result as string[], postTitle, {
+        referencedImages: result,
+      }).then((result) => {
+        console.info(`✅ Post created at ${path.normalize(result)}`);
+      });
     });
 } else {
   console.error("Invalid command");

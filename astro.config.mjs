@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
@@ -12,12 +12,13 @@ export default defineConfig({
   site: "https://www.120shots.com",
   image: {
     domains: ["120shots.com", "cdn.120shots.com"],
-    service: {
-      entrypoint: "astro/assets/services/sharp",
-      config: {
-        limitInputPixels: false,
+    service: passthroughImageService(),
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**.120shots.com",
       },
-    },
+    ],
   },
   integrations: [
     sitemap(),

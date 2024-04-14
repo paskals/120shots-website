@@ -45,8 +45,6 @@ const backgroundImage = image
       // inferSize: true,
       width: "3840",
       height: "2160",
-      decoding: "async",
-      format: "avif",
     })
   : null;
 
@@ -57,9 +55,6 @@ const mobileBackgroundImage = image
       // inferSize: true,
       width: "1920",
       height: "1080",
-      decoding: "async",
-      format: "avif",
-      quality: "65",
     })
   : null;
 
@@ -75,6 +70,7 @@ const metaImage = image
       loading: "lazy",
     })
   : null;
+// TODO: get rid of rgb color styles and use the theme customizatin
 ---
 
 <BaseLayout
