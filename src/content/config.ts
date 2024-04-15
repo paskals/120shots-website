@@ -2,12 +2,13 @@
 import { z, defineCollection, reference } from "astro:content";
 
 const blog = defineCollection({
-  type: "content", // v2.5.0 and later
+  type: "content",
   schema: z.object({
     title: z.string(),
     tags: z.array(z.string()),
     author: reference("authors"),
     description: z.string(),
+    filmStocks: z.array(reference("films")).optional(),
     image: z
       .object({
         src: z.string(),
@@ -21,8 +22,24 @@ const blog = defineCollection({
   }),
 });
 
+const films = defineCollection({
+  type: "data",
+  schema: z.object({
+    name: z.string(),
+    brand: z.string(),
+    color: z.enum([
+      "color-negative",
+      "color-positive",
+      "black-and-white-negative",
+      "special-negative",
+    ]),
+    iso: z.string(),
+    description: z.string().optional(),
+  }),
+});
+
 const authors = defineCollection({
-  type: "content", // v2.5.0 and later
+  type: "content",
   schema: z.object({
     title: z.string(),
     tags: z.array(z.string()),
@@ -42,78 +59,4 @@ const authors = defineCollection({
   }),
 });
 
-// // 2. Define a `type` and `schema` for each collection
-// const muses = defineCollection({
-//   type: "content", // v2.5.0 and later
-//   schema: z.object({
-//     title: z.string(),
-//     tags: z.array(z.string()),
-//     author: z.string(),
-//     description: z.string(),
-//     image: z.object({
-//       src: z.string(),
-//       alt: z.string(),
-//       positionx: z.string().optional(),
-//       positiony: z.string().optional()
-//     }).optional(),
-//     pubDate: z.coerce.date(),
-//     updatedDate: z.coerce.date().optional(),
-//   }),
-// });
-
-// const short_form = defineCollection({
-//   type: "content", // v2.5.0 and later
-//   schema: z.object({
-//     title: z.string(),
-//     tags: z.array(z.string()),
-//     author: z.string(),
-//     description: z.string(),
-//     image: z.object({
-//       src: z.string(),
-//       alt: z.string(),
-//       positionx: z.string().optional(),
-//       positiony: z.string().optional()
-//     }).optional(),
-//     pubDate: z.coerce.date(),
-//     updatedDate: z.coerce.date().optional(),
-//   }),
-// });
-
-// const long_form = defineCollection({
-//   type: "content", // v2.5.0 and later
-//   schema: z.object({
-//     title: z.string(),
-//     tags: z.array(z.string()),
-//     author: z.string(),
-//     description: z.string(),
-//     image: z.object({
-//       src: z.string(),
-//       alt: z.string(),
-//       positionx: z.string().optional(),
-//       positiony: z.string().optional()
-//     }).optional(),
-//     pubDate: z.coerce.date(),
-//     updatedDate: z.coerce.date().optional(),
-//   }),
-// });
-
-// const zeitweilig = defineCollection({
-//   type: "content", // v2.5.0 and later
-//   schema: z.object({
-//     title: z.string(),
-//     tags: z.array(z.string()),
-//     author: z.string(),
-//     description: z.string(),
-//     image: z.object({
-//       src: z.string(),
-//       alt: z.string(),
-//       positionx: z.string().optional(),
-//       positiony: z.string().optional()
-//     }).optional(),
-//     pubDate: z.coerce.date(),
-//     updatedDate: z.coerce.date().optional(),
-//   }),
-// });
-
-// 3. Export a single `collections` object to register your collection(s)
-export const collections = { posts: blog, authors };
+export const collections = { posts: blog, authors, films };

@@ -1,0 +1,7 @@
+# Sample YAML Configuration File
+
+name: "Portra 400"
+brand: "Kodak"
+color: "color-negative"
+description: "A film stock known for its vibrant colors and fine grain."
+iso: "400"
