@@ -1,0 +1,25 @@
+div.film-strip {
+  width: 100%;
+  overflow: auto;
+  white-space: nowrap;
+  background-color: #333;
+  padding: 10px;
+}
+
+div.film-scroll-container {
+  height: 100%;
+  width: max-content;
+  display: flex;
+}
+
+.film-scroll-container .image-container {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+#gallery > a > img.film-image {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}

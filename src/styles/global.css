@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* TODO:ensure no other colors override these, or define better in tailwind config */
+
 html {
   background-color: #f2f2f2;
   font-family: sans-serif;

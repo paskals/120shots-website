@@ -1,0 +1,33 @@
+---
+import "../styles/FilmStrip.css";
+import { Image, getImage, imageConfig } from "astro:assets";
+const { images } = Astro.props;
+---
+
+<div class="film-strip h-60">
+  <div class="film-scroll-container">
+    {
+      images.map((image) =>
+        image ? (
+          <div class="image-container" id="gallery">
+            <a
+              href={image.src}
+              class="image-link glightbox"
+              data-astro-prefetch="false"
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                loading="lazy"
+                class="film-image"
+                inferSize
+                decoding={"async"}
+              />
+            </a>
+          </div>
+        ) : null,
+      )
+    }
+  </div>
+</div>
+<script src="../scripts/lightbox.js"></script>
