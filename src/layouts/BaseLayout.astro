@@ -5,10 +5,11 @@ import Footer from "../components/Footer.astro";
 import "@fontsource-variable/overpass-mono";
 import "@fontsource-variable/inconsolata";
 import { getImage } from "astro:assets";
+import "../styles/global.css";
 let baseUrl = new URL(Astro.request.url).origin;
 // TODO: Replace with your own image
 const metaImage = await getImage({
-  src: "https://cdn.erfianugrah.com/Tenhult_3.JPG",
+  src: "https://cdn.120shots.com/images/TN-01/TN-01_-_kodak_portra_400-007-513C54.webp",
   alt: "cover_image",
   inferSize: true,
   // width: "1280",

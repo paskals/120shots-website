@@ -1,0 +1,16 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogPost from "../../components/BlogPost.astro";
+import { sortByDate } from "../../components/sortbydate";
+const pageTitle = "Blog Posts";
+const allShortForm = await getCollection("posts");
+---
+
+<BaseLayout title={pageTitle} is404Page={false}>
+  {
+    allShortForm
+      .sort(sortByDate)
+      .map((post) => <BlogPost post={post} url={`/posts/${post.slug}`} />)
+  }
+</BaseLayout>

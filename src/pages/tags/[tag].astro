@@ -31,6 +31,6 @@ const { posts } = Astro.props;
     Posts tagged with <TagComponent tag={tag} classNames="text-base" />
   </p>
   <ul>
-    {posts.map((post) => <BlogPost post={post} />)}
+    {posts.map((post) => <BlogPost post={post} url={`/posts/${post.slug}`} />)}
   </ul>
 </BaseLayout>

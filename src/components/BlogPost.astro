@@ -3,14 +3,15 @@ import { type CollectionEntry } from "astro:content";
 
 type Props = {
   post: CollectionEntry<"posts">; //TODO: not specific to posts
+  url: string;
 };
 
-const { post } = Astro.props;
+const { post, url } = Astro.props;
 const { title, description, pubDate } = post.data;
 const image = post.data.image || null;
 import { Image } from "astro:assets";
 const publishedDate = pubDate.toDateString().split(" ").slice(1).join(" ");
-const url = `/posts/${post.slug}`;
+// const url = `/posts/${post.slug}`;
 //TODO: this component should be called "card" or something like that. It is not specific to posts.
 ---
 

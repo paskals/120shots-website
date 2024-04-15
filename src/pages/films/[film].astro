@@ -39,6 +39,6 @@ const { posts, film } = Astro.props;
     stock
   </p>
   <ul>
-    {posts.map((post) => <BlogPost post={post} />)}
+    {posts.map((post) => <BlogPost post={post} url={`/posts/${post.slug}`} />)}
   </ul>
 </BaseLayout>
