@@ -16,7 +16,7 @@ npm create astro@latest -- --template paskals/120shots-website
 
 - Text content is "hosted" in the repo in the form of markdown files.
 - Photos are hosted separately and are only referenced via URLs in the markdown blog posts.
-- #TODO: Expand
+- #TODO: Expand; explain build and postbuild scripts, create-post script, film stocks, posts; add screenshots
 
 ## Install (to use this repo directly)
 
