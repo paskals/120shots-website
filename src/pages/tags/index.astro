@@ -10,11 +10,7 @@ const pageTitle = "Tag Index";
 
 <BaseLayout pageTitle={pageTitle}>
   <div class="tags flex gap-2 mt-2 text-xl">
-    {
-      tags.map((tag) => (
-        <Tag tag={tag}, href={`../tags/${tag}`}/>
-      ))
-    }
+    {tags.map((tag) => <Tag tag={tag} href={`../tags/${tag}`} />)}
   </div>
 </BaseLayout>
 <style>

@@ -10,7 +10,7 @@
     "lint": "prettier --write .",
     "astro": "astro",
     "postbuild": "pagefind --site dist",
-    "post": "tsx ./src/utils/photer.ts create-post"
+    "create-post": "tsx ./src/utils/photer.ts create-post"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",

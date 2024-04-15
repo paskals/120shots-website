@@ -84,12 +84,12 @@ const metaImage = image
         </h1>
         <div class="flex gap-2 mt-2 text-xl">
           {frontmatter.tags.map((tag) => (
-            <Tag tag={tag}, href={`../tags/${tag}`} classNames="text-xl"/>
+            <Tag tag={tag} href={`../tags/${tag}`} classNames="text-xl" />
           ))}
         </div>
       </div>
     ) : (
-      <div data-pagefind-body>
+      <div data-pagefind-body class="">
         <Prose>
           <h1 class="normal-case font-overpass-mono text-4xl -mb-1 mt-4">
             {title}
@@ -110,7 +110,7 @@ const metaImage = image
       </div>
     )
   }
-  <div data-pagefind-body>
+  <div data-pagefind-body class="bg-inherit">
     <Prose>
       <slot />
       <div class="flex flex-col sm:flex-row align-center">
@@ -142,15 +142,22 @@ const metaImage = image
   #backgroundImageElement {
     position: relative;
   }
-  /* 
-  #backgroundImageElement {
-    background-image: var(--background-image);
-    background-position: var(--position-x, 45%) var(--position-y, 50%);
-  }
-  @media (min-width: 800px) {
-    #backgroundImageElement {
+
+  @supports (-webkit-touch-callout: none) {
+    /*
+    * This is a workaround for iOS devices, since the image does not display correctly.
+    */
+    #backgroundImageElement::before {
+      background-attachment: scroll;
     }
-  } */
+  }
+
+  @supports not (-webkit-touch-callout: none) {
+    /* Fpr non-iOS devices */
+    #backgroundImageElement::before {
+      background-attachment: fixed;
+    }
+  }
 
   #backgroundImageElement::before {
     content: "";
@@ -159,9 +166,13 @@ const metaImage = image
     right: 0;
     bottom: 0;
     left: 0;
-    /* background-image: inherit; */
+
     background-image: var(--background-image);
-    background-position: var(--position-x, 30%) var(--position-y, 50%);
+    background-position: center;
+    background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
     filter: brightness(0.8); /* Apply your filter here */
     z-index: -1;
   }
