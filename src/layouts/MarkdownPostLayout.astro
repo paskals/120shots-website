@@ -2,6 +2,8 @@
 import BaseLayout from "./BaseLayout.astro";
 import "../styles/glightbox.css";
 import Prose from "../components/Prose.astro";
+import Tag from "../components/Tag.astro";
+
 import { getImage } from "astro:assets";
 import { getEntry, type CollectionEntry } from "astro:content";
 
@@ -43,18 +45,7 @@ const backgroundImage = image
       src: image,
       alt: alt,
       inferSize: true,
-      // width: "3840",
-      // height: "2160",
-    })
-  : null;
-
-const mobileBackgroundImage = image
-  ? await getImage({
-      src: image,
-      alt: alt,
-      // inferSize: true,
-      width: "1920",
-      height: "1080",
+      loading: "eager",
     })
   : null;
 
@@ -63,10 +54,7 @@ const metaImage = image
       src: image,
       alt: alt,
       inferSize: true,
-      // width: "1280",
-      // height: "720",
       decoding: "async",
-      // format: "webp",
       loading: "lazy",
     })
   : null;
@@ -87,23 +75,16 @@ const metaImage = image
     image ? (
       <div
         id="backgroundImageElement"
-        class="bg-fixed bg-center-33 bg-cover bg-no-repeat flex flex-col justify-center items-center text-center h-screen mb-8 md:-mx-16 -mx-8"
-        style={`--mobile-background-image: url(${mobileBackgroundImage.src}); --background-image: url(${backgroundImage.src}); --position-x: ${positionx}; --position-y: ${positiony};`}
+        class=" before:bg-fixed before:bg-center-33 before:bg-cover before:bg-no-repeat flex flex-col justify-center items-center text-center h-screen mb-8 md:-mx-16 -mx-8"
+        style={`--background-image: url(${backgroundImage.src}); --position-x: ${positionx}; --position-y: ${positiony};`}
         data-pagefind-body
       >
         <h1 class="prose prose-slate uppercase font-overpass-mono text-[rgb(245,245,245)] text-4xl">
           {title}
         </h1>
-        <div class="flex gap-2 mt-2">
+        <div class="flex gap-2 mt-2 text-xl">
           {frontmatter.tags.map((tag) => (
-            <p class="font-overpass-mono text-xl">
-              <a
-                class="bg-slate-600 text-[rgb(245,245,245)] bg-opacity-50 px-2 py-1 rounded"
-                href={`../tags/${tag}`}
-              >
-                {tag}
-              </a>
-            </p>
+            <Tag tag={tag}, href={`../tags/${tag}`} classNames="text-xl"/>
           ))}
         </div>
       </div>
@@ -159,13 +140,29 @@ const metaImage = image
 </BaseLayout>
 <style>
   #backgroundImageElement {
-    background-image: var(--mobile-background-image);
+    position: relative;
+  }
+  /* 
+  #backgroundImageElement {
+    background-image: var(--background-image);
     background-position: var(--position-x, 45%) var(--position-y, 50%);
   }
   @media (min-width: 800px) {
     #backgroundImageElement {
-      background-image: var(--background-image);
-      background-position: var(--position-x, 30%) var(--position-y, 50%);
     }
+  } */
+
+  #backgroundImageElement::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* background-image: inherit; */
+    background-image: var(--background-image);
+    background-position: var(--position-x, 30%) var(--position-y, 50%);
+    filter: brightness(0.8); /* Apply your filter here */
+    z-index: -1;
   }
 </style>
