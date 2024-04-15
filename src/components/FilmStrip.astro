@@ -4,12 +4,12 @@ import { Image, getImage, imageConfig } from "astro:assets";
 const { images } = Astro.props;
 ---
 
-<div class="film-strip h-60">
+<div class="film-strip h-64">
   <div class="film-scroll-container">
     {
       images.map((image) =>
         image ? (
-          <div class="image-container" id="gallery">
+          <div class="image-container px-2 py-5" id="gallery">
             <a
               href={image.src}
               class="image-link glightbox"
