@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
-import Tag from "../../components/Tag.astro";
+import TagComponent from "../../components/Tag.astro";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("posts");
@@ -27,8 +27,8 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout pageTitle={tag}>
-  <p class="md:space-x-14 md:mb-20 mb-10">
-    Posts tagged with <Tag tag={tag} classNames="text-base" />
+  <p class="md:space-x-14 md:mb-20 mb-10 text-xl">
+    Posts tagged with <TagComponent tag={tag} classNames="text-base" />
   </p>
   <ul>
     {posts.map((post) => <BlogPost post={post} />)}

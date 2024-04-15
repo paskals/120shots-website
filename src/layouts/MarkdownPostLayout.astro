@@ -16,12 +16,14 @@ const { post } = Astro.props;
 const frontmatter = post.data;
 const filmStocks: CollectionEntry<"films">[] = [];
 
-for (const film of frontmatter.filmStocks) {
-  const filmObject = await getEntry({
-    collection: "films",
-    slug: film.id,
-  });
-  filmStocks.push(filmObject);
+if (frontmatter.filmStocks !== undefined) {
+  for (const film of frontmatter.filmStocks) {
+    const filmObject = await getEntry({
+      collection: "films",
+      slug: film.id,
+    });
+    filmStocks.push(filmObject);
+  }
 }
 
 const authorObject = await getEntry({
