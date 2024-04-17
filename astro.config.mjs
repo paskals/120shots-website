@@ -11,7 +11,7 @@ export default defineConfig({
   output: "static",
   site: "https://120shots.com",
   redirects: {
-    '/about': '/authors/paskal'
+    "/about": "/authors/paskal",
   },
   integrations: [
     sitemap(),

@@ -27,7 +27,7 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout pageTitle={tag}>
-  <p class="md:space-x-14 md:mb-20 mb-10 text-xl">
+  <p class="md:space-x-14 md:mb-20 mb-10 text-2xl font-medium capitalize">
     Posts tagged with <TagComponent tag={tag} classNames="text-base" />
   </p>
   <ul>
