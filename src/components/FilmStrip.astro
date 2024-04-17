@@ -1,33 +1,84 @@
 ---
-import "../styles/FilmStrip.css";
 import { Image, getImage, imageConfig } from "astro:assets";
 const { images } = Astro.props;
 ---
 
-<div class="film-strip h-64">
-  <div class="film-scroll-container">
+<div
+  class="film-strip md:h-64 sm:h-56 xs:h-52 overflow-x-auto overflow-y-hidden"
+>
+  <div
+    class="film-scroll-container h-full m-0 px-2 py-8 w-max flex justify-center"
+  >
     {
       images.map((image) =>
         image ? (
-          <div class="image-container px-2 py-5" id="gallery">
+          <div
+            class="image-container flex flex-row my-2 mx-1 max-w-fit"
+            id="gallery"
+          >
             <a
               href={image.src}
-              class="image-link glightbox"
+              class="image-link glightbox m-0 p-0 flex-auto h-fit"
               data-astro-prefetch="false"
             >
-              <Image
+              <img
                 src={image.src}
                 alt={image.alt}
                 loading="lazy"
-                class="film-image"
-                inferSize
+                class="film-image m-0 p-0 md:max-h-44 sm:max-h-36 xs:max-h-32"
                 decoding={"async"}
               />
             </a>
           </div>
-        ) : null,
+        ) : null
       )
     }
   </div>
 </div>
+<style>
+  .film-scroll-container {
+    --background: #2f2317;
+    --size: 1rem;
+    background-image: linear-gradient(
+        to right,
+        var(--background) calc(var(--size) * 1.4),
+        transparent var(--size)
+      ),
+      linear-gradient(
+        to bottom,
+        var(--background) calc(var(--size) * 1),
+        transparent var(--size)
+      ),
+      linear-gradient(
+        to right,
+        var(--background) calc(var(--size) * 1.4),
+        transparent var(--size)
+      ),
+      linear-gradient(
+        to bottom,
+        var(--background) calc(var(--size) * 1),
+        transparent var(--size)
+      ),
+      linear-gradient(
+        to bottom,
+        transparent calc(var(--size) * 1),
+        var(--background) var(--size)
+      );
+    background-size:
+      calc(var(--size) * 2) var(--size),
+      calc(var(--size) * 2) var(--size),
+      calc(var(--size) * 2) var(--size),
+      calc(var(--size) * 2) var(--size),
+      100% calc(100% - var(--size) * 3);
+    background-repeat: repeat-x;
+    background-position:
+      0 var(--size),
+      top left,
+      0 calc(100% - var(--size)),
+      bottom left,
+      0 var(--size);
+    box-sizing: border-box;
+  }
+</style>
+
 <script src="../scripts/lightbox.js"></script>
