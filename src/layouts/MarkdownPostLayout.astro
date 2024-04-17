@@ -96,7 +96,7 @@ const metaImage = image
         <h1 class="prose prose-slate uppercase font-overpass-mono text-[rgb(245,245,245)] text-4xl">
           {title}
         </h1>
-        <div class="flex gap-2 mt-2 text-xl">
+        <div class="flex flex-wrap justify-center gap-2 mt-2 text-xl">
           {frontmatter.tags.map((tag) => (
             <Tag tag={tag} href={`../tags/${tag}`} classNames="text-xl" />
           ))}
@@ -105,7 +105,7 @@ const metaImage = image
                 <Tag
                   tag={film.data.name}
                   href={`../films/${film.id}`}
-                  classNames="text-xl"
+                  classNames="text-xl bg-slate-400"
                 />
               ))
             : null}

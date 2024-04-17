@@ -2,9 +2,11 @@
 const { tag, href, classNames } = Astro.props;
 ---
 
-<span class=`font-overpass-mono ${classNames}`>
+<span
+  class=`font-overpass-mono rounded bg-slate-600 bg-opacity-50 inline-block  px-2 py-1${classNames}`
+>
   <a
-    class="bg-slate-600 text-[rgb(245,245,245)] bg-opacity-50 px-2 py-1 rounded lowercase no-underline inline-block"
+    class="text-[rgb(245,245,245)] lowercase no-underline"
     href={href ? href : ""}
   >
     {tag}

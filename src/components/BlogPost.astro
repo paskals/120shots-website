@@ -16,7 +16,7 @@ const publishedDate = pubDate.toDateString().split(" ").slice(1).join(" ");
 ---
 
 <div
-  class="flex flex-col sm:flex-row md:space-x-14 md:mb-20 sm:mb-14 gap-8 sm:justify-center md:mx-24"
+  class="flex flex-col sm:flex-row md:space-x-14 md:mb-20 sm:mb-14 gap-4 sm:justify-center md:mx-24 mb-4"
 >
   {
     image && (
@@ -39,7 +39,7 @@ const publishedDate = pubDate.toDateString().split(" ").slice(1).join(" ");
 
   <div
     id="description "
-    class="sm:w-2/3 flex flex-col justify-start space-y-4 mb-6 md:mt-10"
+    class="sm:w-2/3 flex flex-col justify-start sm:space-y-4 space-y-2 mb-6 md:mt-10"
   >
     <ul class="flex-row">
       <a href={url}>
@@ -51,19 +51,23 @@ const publishedDate = pubDate.toDateString().split(" ").slice(1).join(" ");
       </a>
       <p class="font-inconsolata text-sm">Published on {publishedDate}</p>
     </ul>
-    <a href={url}>
-      <p class="font-inconsolata normal-case line-clamp-3 sm:text-base text-sm">
-        {description}
-      </p>
-    </a>
+    {
+      description ? (
+        <a href={url}>
+          <p class="font-inconsolata normal-case line-clamp-3 sm:text-base text-sm">
+            {description}
+          </p>
+        </a>
+      ) : null
+    }
     <a
       href={url}
-      class="dark:prose-invert max-w-max max-h-max flex flex-row items-center flex-shrink-0 bounce"
+      class="dark:prose-invert max-w-max max-h-max flex flex-row items-center flex-shrink-0 bounce mt-1"
     >
-      <span class="mt-4 mb-4">Read on</span>
+      <span class="mt-2 mb-2">Read on</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6 mt-4 mb-4 pt-1"
+        class="h-6 w-6 mt-2 mb-2 pt-1"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
