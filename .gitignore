@@ -21,7 +21,9 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# IDE files
 .vscode/
+
 #temporary files
 test.ts
 tmp/

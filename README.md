@@ -28,7 +28,7 @@ npm install
 
 ```sh
 npm run dev
-npm run build && npm run preview
+npm run build && npm run postbuild && npm run preview
 ```
 
 ## External Usage
