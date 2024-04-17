@@ -1,7 +1,7 @@
 # Astro Components
 
 ### Refer to [Astro docs on Components](https://docs.astro.build/en/basics/astro-components/)
-
+//TODO: Update
 ---
 
 For pages such as [short form](https://www.erfianugrah.com/short_form/), [long form](https://www.erfianugrah.com/long_form/), any [tag](https://www.erfianugrah.com/long_form/tags/gleichgesinnte/) pages the file that's being used to structure the layout is [BlogPost.astro](layouts/BlogPost.astro)

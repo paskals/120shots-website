@@ -1,3 +1,5 @@
+//TODO: Review or delete this file
+
 document.addEventListener("astro:page-load", function () {
   let imageElements = Array.from(document.querySelectorAll("#homepage"));
 

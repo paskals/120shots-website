@@ -1,3 +1,5 @@
+
+//TODO: Review if needed or delete this file
 document.addEventListener("astro:page-load", () => {
   const imageContainers = document.querySelectorAll(
     ".masonry .image-container",

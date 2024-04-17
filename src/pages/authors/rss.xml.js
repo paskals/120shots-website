@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
 const parser = new MarkdownIt();
-
+//TODO: Review, add to films and tags
 export async function GET(context) {
   const authors = await getCollection("authors");
   return rss({
