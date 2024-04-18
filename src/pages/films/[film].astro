@@ -34,11 +34,10 @@ const filmId = Astro.params.film;
 const { posts, film } = Astro.props;
 ---
 
-<BaseLayout pageTitle={film}>
+<BaseLayout title={`${film.data.brand} ${film.data.name}`}>
   <ProseHeadings>
     <p class="md:space-x-14 md:mb-20 mb-10 text-2xl font-medium capitalize">
-      Posts with <TagComponent tag={film.data.name} classNames="text-base" /> film
-      stock
+      Posts with <TagComponent tag={film.data.name} classNames="text-base" />
     </p>
   </ProseHeadings>
   <ul>

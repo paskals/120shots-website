@@ -1,5 +1,4 @@
 function handlePageLoad() {
-  //TODO: review, add films and tags
   const collections = ["/posts/"];
   const currentPath = window.location.pathname;
   if (collections.includes(currentPath)) {

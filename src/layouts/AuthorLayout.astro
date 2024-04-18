@@ -30,8 +30,6 @@ const author = authorFullName.split(" ")[0].toLowerCase();
 const image = frontmatter.image?.src;
 const alt = frontmatter.image?.alt;
 
-let baseUrl = new URL(Astro.request.url).origin;
-
 const metaImage = image
   ? await getImage({
       src: image,
@@ -45,7 +43,7 @@ const metaImage = image
 
 <BaseLayout
   title={title}
-  image={image ? `${baseUrl}${metaImage?.src}` : ""}
+  image={image ? metaImage?.src : ""}
   alt={alt ? metaImage?.attributes.alt : ""}
   description={description}
   author={author}
@@ -57,7 +55,7 @@ const metaImage = image
     {
       image ? (
         <div>
-          <div class="md:h-[480px] h-[360px]" data-pagefind-body>
+          <div class="md:h-[480px] h-[360px]">
             <Image
               src={image}
               alt={alt}

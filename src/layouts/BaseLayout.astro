@@ -7,13 +7,10 @@ import "@fontsource-variable/inconsolata";
 import { getImage } from "astro:assets";
 import "../styles/global.css";
 let baseUrl = new URL(Astro.request.url).origin;
-// TODO: Replace with your own image
 const metaImage = await getImage({
   src: "https://cdn.120shots.com/images/TN-01/TN-01_-_kodak_portra_400-007-513C54.webp",
   alt: "cover_image",
   inferSize: true,
-  // width: "1280",
-  // height: "720",
   decoding: "async",
   loading: "lazy",
 });
@@ -21,13 +18,14 @@ const metaImage = await getImage({
 const favicon_webp = {
   src: "/120Shots_icon_background.png",
   alt: "favicon",
-  // inferSize: true,
   width: "512",
   height: "512",
 };
 
-const pageTitle = "120 Shots";
-const metaDescription = "Film photography blog.";
+const siteName = "120 Shots";
+
+const metaDescription =
+  "Blog focusing on film photography. Mainly shooting street, landscape, travel photography. Reviewing different film stocs, cameras, and gear.";
 const {
   image,
   description,
@@ -35,10 +33,12 @@ const {
   pubDate,
   updatedDate,
   title,
-  site_name,
-  alt,
+  keywords,
   is404Page = false,
 } = Astro.props;
+
+const pageTitle = title ? title.concat(" › ", siteName) : siteName;
+const metaImageSrc = image ? image : metaImage?.src;
 ---
 
 <html class="" lang="en">
@@ -48,30 +48,28 @@ const {
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="og:title" content={title || pageTitle} />
+    <meta name="og:title" content={pageTitle} />
     <meta name="og:description" content={description || metaDescription} />
     <meta name="description" content={description || metaDescription} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content={site_name || "stoicopa"} />
-    <meta name="og:image" content={image || `${baseUrl}${metaImage?.src}`} />
-    <meta name="article:author" content={author || "Erfi Anugrah"} />
+    <meta property="og:site_name" content={siteName} />
+    <meta name="og:image" content={metaImageSrc} />
+    <meta name="article:author" content={author || "Paskal Semerdzhiev"} />
     <meta name="article:published_time" content={pubDate} />
     <meta name="article:modified_time" content={updatedDate} />
     <meta name="og:url" content={Astro.url} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content={Astro.site} />
     <meta property="twitter:url" content={Astro.url} />
-    <meta
-      name="twitter:card"
-      content={image || `${baseUrl}${metaImage?.src}`}
-    />
+    <meta name="twitter:card" content={metaImageSrc} />
     <meta name="twitter:title" content={title || pageTitle} />
     <meta name="twitter:description" content={description || metaDescription} />
+    <meta name="twitter:image" content={metaImageSrc} />
     <meta
-      name="twitter:image"
-      content={image || `${baseUrl}${metaImage?.src}`}
+      name="keywords"
+      content=`film photography, street photography, landscape photography, travel photography, film stocks, film cameras, film gear${keywords ? ", " + keywords : ""}`
     />
-    <title>{title || pageTitle}</title>
+    <title>{pageTitle}</title>
     <ViewTransitions />
   </head>
   <body

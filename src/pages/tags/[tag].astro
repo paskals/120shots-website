@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 
   return uniqueTags.map((tag) => {
     const filteredPosts = allPosts.filter((post) =>
-      post.data.tags.includes(tag)
+      post.data.tags.includes(tag),
     );
     return {
       params: { tag },
@@ -27,7 +27,7 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<BaseLayout pageTitle={tag}>
+<BaseLayout title={`Tagged ${tag}`}>
   <ProseHeadings>
     <p class="md:space-x-14 md:mb-20 mb-10 text-2xl font-medium capitalize">
       Posts tagged with <TagComponent tag={tag} classNames="text-base" />
