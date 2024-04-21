@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
 import TagComponent from "../../components/Tag.astro";
-import ProseHeadings from "../../components/Prose_headings.astro";
+import ProseHeadings from "../../components/ProseHeadings.astro";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("posts");
@@ -40,7 +40,7 @@ const { posts } = Astro.props;
     w-full"
   >
     <ProseHeadings>
-      <p class="md:space-x-14 md:mb-20 mb-10 text-2xl font-medium capitalize">
+      <p class="md:space-x-14 md:mb-20 mb-10 text-4xl font-bold capitalize">
         Posts tagged with <TagComponent tag={tag} classNames="text-base" />
       </p>
     </ProseHeadings>
