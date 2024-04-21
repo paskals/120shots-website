@@ -82,13 +82,13 @@ const positiony = frontmatter.image?.positiony;
         </h1>
         <div class="flex flex-wrap justify-center gap-2 mt-2 text-xl">
           {frontmatter.tags.map((tag) => (
-            <Tag tag={tag} href={`../tags/${tag}`} classNames="text-xl" />
+            <Tag tag={tag} href={`/tags/${tag}`} classNames="text-xl" />
           ))}
           {filmStocks
             ? filmStocks.map((film) => (
                 <Tag
                   tag={film.data.name}
-                  href={`../films/${film.id}`}
+                  href={`/films/${film.id}`}
                   classNames="text-xl bg-slate-400"
                 />
               ))
@@ -106,7 +106,7 @@ const positiony = frontmatter.image?.positiony;
               <p class="font-overpass-mono text-xl">
                 <a
                   class="bg-slate-600 text-[rgb(245,245,245)] bg-opacity-50 px-2 py-1 rounded no-underline"
-                  href={`../tags/${tag}`}
+                  href={`/tags/${tag}`}
                 >
                   {tag}
                 </a>
