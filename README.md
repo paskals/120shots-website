@@ -39,6 +39,11 @@ npm install
 npm run dev
 ```
 
+## Lint
+```sh
+npm run lint
+```
+
 ## Build for deployment
 
 ```sh
@@ -62,7 +67,7 @@ You can specify the max dimension fo the photos. The photos are converted to `.w
 npm run create-post -- -p /dir/with/photos -d upload-sub-dir -t "Post Title" -m 2000 -r "File Name Prefix" --randomSuffix
 ```
 
-- `-p` - Photos Directory (not recursive).
+- `-p` - Photos source directory (not recursive).
 - `-d` - Name of sub-directory in the R2 bucket. This is where the files will be uploaded under the top-level directory of your R2 bucket.
 - `-t` - Post tile.
 - `-m` - Max dimension of photos. This will resize photos such that whatever the bigger dimmension is (width or height) it will not be bigger than this number (2000px is the default).
