@@ -4,7 +4,7 @@ import GetRandomImage from "../components/GetRandomImage.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { getImage } from "astro:assets";
 const allContent: CollectionEntry<"posts">[] = await getCollection(
-  Astro.props.directory
+  Astro.props.directory,
 );
 const tags: string[] = [];
 // const images = allContent.map((post) => post.data.image?.src);
