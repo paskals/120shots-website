@@ -1,48 +1,57 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import GetRandomImage from "../components/getRandomImage.astro";
-import { getCollection } from "astro:content";
+import GetRandomImage from "../components/GetRandomImage.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
 import { getImage } from "astro:assets";
-const allContent = await getCollection(Astro.props.directory);
-const tags = [...new Set(allContent.map((post) => post.data.tags).flat())];
-const images = allContent.map((post) => post.data.image?.src);
-const alt = allContent.map((post) => post.data.image?.alt);
+const allContent: CollectionEntry<"posts">[] = await getCollection(
+  Astro.props.directory,
+);
+const tags: string[] = [];
+// const images = allContent.map((post) => post.data.image?.src);
 const imagesByTag = {};
+const altsByTag = {};
+
 for (const post of allContent) {
   for (const tag of post.data.tags) {
     if (!imagesByTag[tag]) {
       imagesByTag[tag] = [];
+      altsByTag[tag] = [];
+      tags.push(tag);
     }
     if (post.data.image?.src) {
       const imageAsset = await getImage({
         src: post.data.image?.src,
         alt: post.data.image?.alt,
-        // inferSize: true,
-        width: "1920",
-        height: "1080",
-        decoding: "async",
-        format: "avif",
-        quality: "65"
+        inferSize: true,
       });
       imagesByTag[tag].push(imageAsset ? imageAsset.src : null);
+      altsByTag[tag].push(post.data.image?.alt);
     }
   }
 }
 const { title } = Astro.props;
 ---
 
-<BaseLayout title={title} is404Page={false} >
-  <div>
+<BaseLayout title={title} is404Page={false}>
+  <div
+    class="flex
+    flex-col
+    px-4
+    xs:px-4
+    sm:px-8
+    max-w-7xl
+    justify-start
+    mx-auto
+    w-full"
+  >
     {
       tags.length === 1 ? (
         <div class="object-contain w-full h-full relative flex items-center justify-center font-overpass-mono">
           <GetRandomImage
             images={JSON.stringify(imagesByTag[tags[0]])}
-            alt={JSON.stringify(alt)}
+            alt={JSON.stringify(altsByTag[tags[0]])}
             tag={tags[0]}
-            url={`/${Astro.props.directory}/tags/${tags[0]}`}
-            width="1920"
-            height="1080"
+            url={`/tags/${tags[0]}`}
           />
           <slot />
         </div>
@@ -52,11 +61,9 @@ const { title } = Astro.props;
             <div class="col-span-1">
               <GetRandomImage
                 images={JSON.stringify(imagesByTag[tag])}
-                alt={JSON.stringify(alt)}
+                alt={JSON.stringify(altsByTag[tag])}
                 tag={tag}
-                url={`/${Astro.props.directory}/tags/${tag}`}
-                width="1920"
-                height="1080"
+                url={`/tags/${tag}`}
               />
             </div>
           ))}

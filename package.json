@@ -1,14 +1,16 @@
 {
   "name": "120shots-website",
   "type": "module",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "lint": "prettier --write .",
     "astro": "astro",
-    "postbuild": "pagefind --site dist"
+    "postbuild": "pagefind --site dist",
+    "create-post": "tsx ./src/utils/photer.ts create-post"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
@@ -19,7 +21,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/inconsolata": "^5.0.16",
     "@fontsource-variable/overpass-mono": "^5.0.15",
-    "astro": "^4.5.12",
+    "astro": "^4.6.1",
     "astro-icon": "^0.8.2",
     "dayjs": "^1.11.10",
     "glightbox": "^3.2.0",
@@ -33,6 +35,15 @@
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.10",
-    "pagefind": "^1.0.4"
+    "@types/yargs": "^17.0.32",
+    "dotenv": "^16.4.5",
+    "node-cloudflare-r2": "^0.1.5",
+    "pagefind": "^1.0.4",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "sanitize-filename": "^1.6.3",
+    "sharp": "^0.33.3",
+    "tsx": "^4.7.2",
+    "yargs": "^17.7.2"
   }
 }

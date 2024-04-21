@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import GetRandomImage from "../components/GetRandomImage.astro";
+import { getCollection, getEntry, type CollectionEntry } from "astro:content";
+import { getImage } from "astro:assets";
+const allContent = await getCollection(Astro.props.directory);
+
+//TODO: Improve code - reduce duplicating from other components
+
+const imagesByFilm = {};
+const altsByFilm = {};
+
+const films: CollectionEntry<"films">[] = [];
+const allPosts = await getCollection("posts");
+const allFilms = await getCollection("films");
+
+for (const film of allFilms) {
+  // Filter all posts to only include those that contain the film stock
+  const filteredPosts = allPosts.filter((post) => {
+    if (post.data.filmStocks === undefined) {
+      return false;
+    } else {
+      return post.data.filmStocks
+        .map((filmStock) => filmStock.id)
+        .includes(film.id);
+    }
+  });
+
+  // If there are any posts that contain the film stock, iterate over them to get the images
+  if (filteredPosts.length > 0) {
+    if (!imagesByFilm[film.id]) {
+      imagesByFilm[film.id] = [];
+      altsByFilm[film.id] = [];
+      films.push(await getEntry("films", film.id));
+    }
+
+    for (const post of filteredPosts) {
+      if (post.data.image?.src) {
+        const imageAsset = await getImage({
+          src: post.data.image?.src,
+          alt: post.data.image?.alt,
+          inferSize: true,
+        });
+        imagesByFilm[film.id].push(imageAsset ? imageAsset.src : null);
+        altsByFilm[film.id].push(post.data.image?.alt);
+      }
+    }
+  }
+}
+
+const { title } = Astro.props;
+---
+
+<BaseLayout title={title} is404Page={false}>
+  <div
+    class="flex
+    flex-col
+    px-4
+    xs:px-4
+    sm:px-8
+    max-w-7xl
+    justify-start
+    mx-auto
+    w-full"
+  >
+    {
+      films.length === 1 ? (
+        <div class="object-contain w-full h-full relative flex items-center justify-center font-overpass-mono">
+          <GetRandomImage
+            images={JSON.stringify(imagesByFilm[films[0].id])}
+            alt={JSON.stringify(altsByFilm[films[0].id])}
+            tag={films[0].data.name}
+            url={`/films/${films[0].id}`}
+          />
+          <slot />
+        </div>
+      ) : (
+        <div class="sm:grid sm:grid-cols-4 gap-4 space-y-4 sm:space-y-0 justify-center items-center font-overpass-mono">
+          {films.map((film) => (
+            <div class="col-span-1">
+              <GetRandomImage
+                images={JSON.stringify(imagesByFilm[film.id])}
+                alt={JSON.stringify(altsByFilm[film.id])}
+                tag={film.data.name}
+                url={`/films/${film.id}`}
+              />
+            </div>
+          ))}
+          <slot />
+        </div>
+      )
+    }
+  </div>
+</BaseLayout>

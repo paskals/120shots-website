@@ -1,35 +1,37 @@
 ---
+import Image from "astro/components/Image.astro";
 import Hamburger from "./Hamburger.astro";
 import Navigation from "./Navigation.astro";
 import ThemeIcon from "./ThemeIcon.astro";
 import { getImage } from "astro:assets";
 const { is404Page = false } = Astro.props; // Get the prop from Astro.props
 
-const favicon_avif = await getImage({
-  src: "https://cdn.erfianugrah.com/ea_favicon.png",
+const favicon_avif = {
+  src: "/120Shots_icon_nobackground.png",
   alt: "favicon",
   // inferSize: true,
-  width: "400",
-  height: "400",
-  decoding: "async",
-  format: "avif"
-});
+  width: "512",
+  height: "512",
+};
 ---
 
-<header class="mb-[30px]">
+<header
+  class="mb-[30px] dark:bg-[rgb(34,33,37)] bg-[#f2f2f2] h-16 w-screen px-4 flex justify-center"
+>
   <nav
-    class="flex items-center justify-between w-full h-full relative align-center"
+    class="flex items-center justify-between w-full h-full relative align-center max-w-7xl"
   >
     {
       !is404Page && (
-        <div>
-          <a href="/">
-            <img
-              class="favicon absolute left-0 dark:invert -mt-[15px]"
+        <div class="w-auto h-auto">
+          <a href="/" class=" min-w-fit min-h-fit">
+            <Image
+              class="favicon absolute left-0 dark:invert -mt-[25px]"
               src={favicon_avif.src}
               alt="Home"
-              width="30px"
-              height="30px"
+              width={50}
+              height={50}
+              loading={"eager"}
             />
           </a>
         </div>

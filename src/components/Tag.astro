@@ -1,0 +1,14 @@
+---
+const { tag, href, classNames } = Astro.props;
+---
+
+<span
+  class=`font-overpass-mono rounded bg-slate-600 bg-opacity-50 inline-block  px-2 py-1${classNames}`
+>
+  <a
+    class="text-[rgb(245,245,245)] lowercase no-underline"
+    href={href ? href : ""}
+  >
+    {tag}
+  </a>
+</span>

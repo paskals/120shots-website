@@ -1,0 +1,62 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogPost from "../../components/BlogPost.astro";
+import TagComponent from "../../components/Tag.astro";
+import ProseHeadings from "../../components/ProseHeadings.astro";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts");
+  const allFilms = await getCollection("films");
+
+  const result: {}[] = [];
+
+  for (const film of allFilms) {
+    const filteredPosts = allPosts.filter((post) => {
+      if (post.data.filmStocks === undefined) {
+        return false;
+      } else {
+        return post.data.filmStocks
+          .map((filmStock) => filmStock.id)
+          .includes(film.id);
+      }
+    });
+    result.push({
+      params: { film: film.id },
+      props: { posts: filteredPosts, film },
+    });
+  }
+
+  return result;
+}
+
+const filmId = Astro.params.film;
+const { posts, film } = Astro.props;
+---
+
+<BaseLayout title={`${film.data.brand} ${film.data.name}`}>
+  <div
+    class="flex
+    flex-col
+    px-4
+    xs:px-4
+    sm:px-8
+    max-w-7xl
+    justify-start
+    mx-auto
+    w-full"
+  >
+    <ProseHeadings>
+      <p class="md:space-x-14 md:mb-20 mb-10 text-4xl font-bold capitalize">
+        Posts with <TagComponent tag={film.data.name} classNames="text-base" />
+      </p>
+    </ProseHeadings>
+    <ul>
+      {
+        posts.map((post) => (
+          <BlogPost post={post} url={`/posts/${post.slug}`} />
+        ))
+      }
+    </ul>
+  </div>
+</BaseLayout>

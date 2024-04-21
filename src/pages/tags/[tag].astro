@@ -1,0 +1,55 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogPost from "../../components/BlogPost.astro";
+import TagComponent from "../../components/Tag.astro";
+import ProseHeadings from "../../components/ProseHeadings.astro";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts");
+  // const allPosts = await Astro.glob("../../content/*/*.md");
+  const uniqueTags = [
+    ...new Set(allPosts.map((post) => post.data.tags).flat()),
+  ];
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags.includes(tag),
+    );
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout title={`Tagged ${tag}`}>
+  <div
+    class="flex
+    flex-col
+    px-4
+    xs:px-4
+    sm:px-8
+    max-w-7xl
+    justify-start
+    mx-auto
+    w-full"
+  >
+    <ProseHeadings>
+      <p class="md:space-x-14 md:mb-20 mb-10 text-4xl font-bold capitalize">
+        Posts tagged with <TagComponent tag={tag} classNames="text-base" />
+      </p>
+    </ProseHeadings>
+    <ul>
+      {
+        posts.map((post) => (
+          <BlogPost post={post} url={`/posts/${post.slug}`} />
+        ))
+      }
+    </ul>
+  </div>
+</BaseLayout>
