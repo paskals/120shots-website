@@ -47,7 +47,7 @@ npm run lint
 ## Build for deployment
 
 ```sh
-npm run build && npm run postbuild && npm run preview
+npm run build && npm run postbuild
 ```
 
 If you want to preview the built site, use `npm run preview` after building. The pagefind search functionality only works after building (not with the dev server).
