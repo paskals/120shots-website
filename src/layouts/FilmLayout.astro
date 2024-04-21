@@ -52,7 +52,17 @@ const { title } = Astro.props;
 ---
 
 <BaseLayout title={title} is404Page={false}>
-  <div>
+  <div
+    class="flex
+    flex-col
+    px-4
+    xs:px-4
+    sm:px-8
+    max-w-7xl
+    justify-start
+    mx-auto
+    w-full"
+  >
     {
       films.length === 1 ? (
         <div class="object-contain w-full h-full relative flex items-center justify-center font-overpass-mono">

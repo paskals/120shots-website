@@ -6,12 +6,17 @@ import { sortByDate } from "../../components/sortbydate";
 const pageTitle = "Blog Posts";
 const allShortForm = await getCollection("posts");
 //TODO: Implement pagination
+//TODO: isolate layout styling - padding and margins
 ---
 
 <BaseLayout title={pageTitle} is404Page={false}>
-  {
-    allShortForm
-      .sort(sortByDate)
-      .map((post) => <BlogPost post={post} url={`/posts/${post.slug}`} />)
-  }
+  <div
+    class="flex flex-col px-4 xs:px-4 sm:px-8 max-w-7xl justify-start mx-auto w-full"
+  >
+    {
+      allShortForm
+        .sort(sortByDate)
+        .map((post) => <BlogPost post={post} url={`/posts/${post.slug}`} />)
+    }
+  </div>
 </BaseLayout>

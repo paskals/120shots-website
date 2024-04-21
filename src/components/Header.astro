@@ -15,16 +15,18 @@ const favicon_avif = {
 };
 ---
 
-<header class="mb-[30px]">
+<header
+  class="mb-[30px] dark:bg-[rgb(34,33,37)] bg-[#f2f2f2] h-16 w-screen px-4 flex justify-center"
+>
   <nav
-    class="flex items-center justify-between w-full h-full relative align-center"
+    class="flex items-center justify-between w-full h-full relative align-center max-w-7xl"
   >
     {
       !is404Page && (
-        <div>
-          <a href="/">
+        <div class="w-auto h-auto">
+          <a href="/" class=" min-w-fit min-h-fit">
             <Image
-              class="favicon absolute left-0 dark:invert -mt-[22px]"
+              class="favicon absolute left-0 dark:invert -mt-[25px]"
               src={favicon_avif.src}
               alt="Home"
               width={50}

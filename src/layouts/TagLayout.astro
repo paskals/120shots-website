@@ -4,7 +4,7 @@ import GetRandomImage from "../components/GetRandomImage.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { getImage } from "astro:assets";
 const allContent: CollectionEntry<"posts">[] = await getCollection(
-  Astro.props.directory,
+  Astro.props.directory
 );
 const tags: string[] = [];
 // const images = allContent.map((post) => post.data.image?.src);
@@ -33,7 +33,17 @@ const { title } = Astro.props;
 ---
 
 <BaseLayout title={title} is404Page={false}>
-  <div>
+  <div
+    class="flex
+    flex-col
+    px-4
+    xs:px-4
+    sm:px-8
+    max-w-7xl
+    justify-start
+    mx-auto
+    w-full"
+  >
     {
       tags.length === 1 ? (
         <div class="object-contain w-full h-full relative flex items-center justify-center font-overpass-mono">

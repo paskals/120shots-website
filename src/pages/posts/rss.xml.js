@@ -3,12 +3,11 @@ import { getCollection } from "astro:content";
 import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
 const parser = new MarkdownIt();
-//TODO: Review
 export async function GET(context) {
   const posts = await getCollection("posts");
   return rss({
     stylesheet: "/rss/rss.xsl",
-    title: "Posts",
+    title: "Blog Posts - 120 Shots",
     description: "Photography Blog Posts - 120 Shots.",
     site: context.site,
     items: posts.map((post) => ({

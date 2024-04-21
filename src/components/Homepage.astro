@@ -7,7 +7,7 @@ let allData: { imageSrc: string | null; alt: string; url: string }[] = [];
 
 const allContent = await getCollection("posts");
 const postsWithImages = allContent.filter(
-  (post) => post.data.image?.src && post.data.image?.alt,
+  (post) => post.data.image?.src && post.data.image?.alt
 );
 
 const imagePromises = postsWithImages.map(async (post) => {
@@ -35,7 +35,7 @@ allData.push(
       alt: result.alt,
       url: result.url,
     };
-  }),
+  })
 );
 ---
 
@@ -52,7 +52,7 @@ allData.push(
         <a>
           <img
             id="randomHomePageImage"
-            class="hidden h-[440px] sm:h-[600px] lg:h-[700px] xl:h-[1000px] object-contain w-full object-center"
+            class="mb-auto px-4 hidden h-[440px] sm:h-[600px] lg:h-[700px] xl:h-[1000px] object-contain w-full object-center"
             width={width}
             height={height}
           />
@@ -63,5 +63,5 @@ allData.push(
       <p>No images found</p>
     )
   }
+  <script src="../scripts/homepage.js"></script>
 </BaseLayout>
-<script src="../scripts/homepage.js"></script>

@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 
   return uniqueTags.map((tag) => {
     const filteredPosts = allPosts.filter((post) =>
-      post.data.tags.includes(tag),
+      post.data.tags.includes(tag)
     );
     return {
       params: { tag },
@@ -28,12 +28,28 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout title={`Tagged ${tag}`}>
-  <ProseHeadings>
-    <p class="md:space-x-14 md:mb-20 mb-10 text-2xl font-medium capitalize">
-      Posts tagged with <TagComponent tag={tag} classNames="text-base" />
-    </p>
-  </ProseHeadings>
-  <ul>
-    {posts.map((post) => <BlogPost post={post} url={`/posts/${post.slug}`} />)}
-  </ul>
+  <div
+    class="flex
+    flex-col
+    px-4
+    xs:px-4
+    sm:px-8
+    max-w-7xl
+    justify-start
+    mx-auto
+    w-full"
+  >
+    <ProseHeadings>
+      <p class="md:space-x-14 md:mb-20 mb-10 text-2xl font-medium capitalize">
+        Posts tagged with <TagComponent tag={tag} classNames="text-base" />
+      </p>
+    </ProseHeadings>
+    <ul>
+      {
+        posts.map((post) => (
+          <BlogPost post={post} url={`/posts/${post.slug}`} />
+        ))
+      }
+    </ul>
+  </div>
 </BaseLayout>
