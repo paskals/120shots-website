@@ -4,15 +4,17 @@ import { Icon } from "astro-icon";
 ---
 
 <footer
-  class="mt-auto flex justify-center md:flex md:items-center md:align-center font-overpass-mono w-full md:h-full pt-12 md:pr-16 md:pb-8 md:pl-16 p-8 dark:bg-[rgb(34,33,37)] bg-[#f2f2f2]"
+  class="mt-auto flex sm:justify-center md:flex md:items-center md:align-center font-overpass-mono w-full md:h-full pt-12 md:pr-16 md:pb-8 md:pl-16 p-8 dark:bg-[rgb(34,33,37)] bg-[#f2f2f2]"
 >
-  <div class="flex justify-center max-w-7xl gap-4 w-full">
+  <div
+    class="flex justify-center max-w-7xl gap-4 w-full max-sm:flex-col flex-row"
+  >
     <div
-      class="text-[12px] text-justify items-center flex justify-center mr-auto"
+      class="text-[12px] text-justify items-center flex justify-center sm:mr-auto"
     >
       &copy; {today.getFullYear()} Paskal S. All rights reserved.
     </div>
-    <div class="flex justify-center gap-3 m-2 sm:m-0 ml-auto">
+    <div class="flex justify-center gap-3 m-2 sm:m-0 sm:ml-auto">
       <a href="https://github.com/paskals" target="_blank">
         <span class="sr-only">Go to Paskal's GitHub repo</span>
         <Icon name="mdi:github" class="h-[20px] w-[20px]" />

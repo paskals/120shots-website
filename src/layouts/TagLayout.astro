@@ -5,7 +5,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import GetRandomImage from "../components/GetRandomImage.astro";
 
 const allContent: CollectionEntry<"posts">[] = await getCollection(
-  Astro.props.directory
+  Astro.props.directory,
 );
 const tags: string[] = [];
 // const images = allContent.map((post) => post.data.image?.src);
