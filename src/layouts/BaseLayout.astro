@@ -71,7 +71,19 @@ const metaImageSrc = image ? image : metaImage?.src;
     />
     <title>{pageTitle}</title>
     <ViewTransitions />
-  </head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NFB47EN0Z"
+    ></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-8NFB47EN0Z");
+    </script></head
+  >
+  <!-- Google tag (gtag.js) -->
+
   <body class="flex flex-col flex-wrap max-w-full min-h-screen overscroll-none">
     <Header is404Page={is404Page} />
     <div class="h-full my-auto w-screen">
