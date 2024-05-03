@@ -1,7 +1,7 @@
 {
   "name": "120shots-website",
   "type": "module",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
