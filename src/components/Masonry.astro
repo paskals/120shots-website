@@ -1,8 +1,40 @@
 ---
 import "../styles/MasonryLayout.css";
 import { Image, getImage, imageConfig } from "astro:assets";
-const { images } = Astro.props;
+const { images, columns } = Astro.props;
+
+const masonryColumnCount = columns ? columns : 4;
 ---
+
+<style define:vars={{ masonryColumnCount }}>
+  .masonry {
+    column-count: 1;
+    column-gap: 1em;
+  }
+
+  @media (min-width: 600px) {
+    .masonry {
+      column-count: var(--masonryColumnCount);
+    }
+  }
+
+  .image-container {
+    break-inside: avoid;
+    margin-bottom: 0.5rem;
+  }
+
+  .image-link {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .image {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+</style>
 
 <div class="masonry not-prose">
   {
