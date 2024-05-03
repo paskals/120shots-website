@@ -90,6 +90,7 @@ if (argv._.includes("create-post")) {
   const paths: string[] = [];
 
   console.info("🔄 Processing files...");
+  const newFiles: string[] = [];
   // Loop over each file
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
@@ -112,7 +113,7 @@ if (argv._.includes("create-post")) {
       fileName = fileName.concat("-", getRandomString());
     }
     const filePath = path.join(tempDestination, `${fileName}.webp`);
-
+    newFiles.push(filePath);
     promises.push(
       sharp(path.join(sourcePath, file.name))
         .resize({
@@ -141,6 +142,10 @@ if (argv._.includes("create-post")) {
         referencedImages: result,
       }).then((result) => {
         console.info(`✅ Post created at ${path.normalize(result)}`);
+      });
+    }).finally(() => {
+      newFiles.forEach((file) => {
+        return fs.rmSync(file);
       });
     });
 } else {
