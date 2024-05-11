@@ -7,9 +7,8 @@ import { hideBin } from "yargs/helpers";
 import yargs from "yargs";
 import fs from "fs";
 import path from "path";
-import sharp, { type OutputInfo } from "sharp";
 import { uploadFiles } from "./r2-wrangler";
-import { getRandomString, createNewPost } from "./utils";
+import { getRandomString, createNewPost, getSourceFiles, createTempDir, processFiles, deleteTempFiles } from "./utils";
 import sanitize from "sanitize-filename";
 
 const argv = yargs(hideBin(process.argv))
@@ -61,93 +60,45 @@ const argv = yargs(hideBin(process.argv))
   .help().argv;
 
 if (argv._.includes("create-post")) {
-  // Do stuff
-  let { destinationDir } = argv;
+  // Prep Arguments
+
   const { sourcePath, randomSuffix, postTitle, maxDimensionSize, renameFiles } =
     argv;
 
+  let destinationDir = argv.destinationDir;
+  // Ensure that the destination dir always ends with '/'
   if (destinationDir.slice(-1) != "/") {
     destinationDir = destinationDir.concat("/");
   }
 
-  let tmpFolder = "./tmp";
+  //======= Get Source Files =====
+  const files = getSourceFiles(sourcePath);
+  const tempDestination = createTempDir(destinationDir);
 
-  // Create TMP folder if it doesn't exist
-  if (!fs.existsSync(tmpFolder)) {
-    fs.mkdirSync(tmpFolder);
-  }
-  tmpFolder = path.resolve(tmpFolder);
-  // create sub-folder if it doesn't exist
-  const tempDestination = path.join(tmpFolder, destinationDir);
-  if (!fs.existsSync(tempDestination)) {
-    fs.mkdirSync(tempDestination);
-  }
-
-  // Get all files from the specified sourcePath
-  const files = fs.readdirSync(sourcePath, { withFileTypes: true });
-
-  const promises: Promise<OutputInfo>[] = [];
-  const paths: string[] = [];
-
+  // ===== Process Files =====
   console.info("🔄 Processing files...");
-  const newFiles: string[] = [];
-  // Loop over each file
-  for (let i = 0; i < files.length; i++) {
-    const file = files[i];
+  const processedFilesInfo = await processFiles(files, { tempDestination, maxDimensionSize, renameFiles, randomSuffix })
+  const newFiles = processedFilesInfo.map(v => v.filePath)
 
-    if (file.isDirectory() || file.name.startsWith(".")) {
-      continue;
-    }
+  //==== create-post specific ====
+  console.info("⏫ Uploading files...");
 
-    let fileName = "";
-
-    if (renameFiles !== undefined) {
-      fileName = sanitize(renameFiles)
-        .concat("-", i.toString().padStart(3, "0"))
-        .replace(/\s+/g, "_");
-    } else {
-      fileName = file.name.split(".")[0].replace(/\s+/g, "_");
-    }
-
-    if (randomSuffix) {
-      fileName = fileName.concat("-", getRandomString());
-    }
-    const filePath = path.join(tempDestination, `${fileName}.webp`);
-    newFiles.push(filePath);
-    promises.push(
-      sharp(path.join(sourcePath, file.name))
-        .resize({
-          width: maxDimensionSize,
-          height: maxDimensionSize,
-          fit: "inside",
-          withoutEnlargement: true,
-        })
-        .webp({
-          quality: 80,
-          effort: 0,
-          smartSubsample: true,
-        })
-        .toFile(filePath),
-    );
-    paths.push(filePath);
-  }
-
-  Promise.all(promises)
-    .then(() => {
-      console.info("⏫ Uploading files...");
-      return uploadFiles(paths, destinationDir);
-    })
+  uploadFiles(newFiles, destinationDir)
     .then((result) => {
+      // TODO: use roll instead of list of files
       return createNewPost(result as string[], postTitle, {
         referencedImages: result,
       }).then((result) => {
         console.info(`✅ Post created at ${path.normalize(result)}`);
       });
     }).finally(() => {
-      newFiles.forEach((file) => {
-        return fs.rmSync(file);
-      });
+      // ====== Delete TMP files ====
+      deleteTempFiles(newFiles)
     });
-} else {
+}
+if (argv._.includes("create-roll")) {
+  console.error("not implemented")
+}
+else {
   console.error("Invalid command");
 }
