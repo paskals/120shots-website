@@ -49,15 +49,14 @@ const rolls = defineCollection({
     shots: z.array(
       z.object({
         sequence: z.coerce.string(),
-        date: z.coerce.date(),
+        date: z.coerce.date().optional(),
         hidden: z.coerce.boolean().optional(), // for shots that are not to be displayed
-        image: z
-          .object({
-            src: z.string(),
-            alt: z.string(),
-            positionx: z.string().optional(),
-            positiony: z.string().optional(),
-          }),
+        image: z.object({
+          src: z.string(),
+          alt: z.string(),
+          positionx: z.string().optional(),
+          positiony: z.string().optional(),
+        }),
       }),
     ),
   }),

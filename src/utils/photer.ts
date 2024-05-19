@@ -8,7 +8,15 @@ import yargs from "yargs";
 import fs from "fs";
 import path from "path";
 import { uploadFiles } from "./r2-wrangler";
-import { getRandomString, createNewPost, getSourceFiles, createTempDir, processFiles, deleteTempFiles } from "./utils";
+import {
+  getRandomString,
+  createNewPost,
+  getSourceFiles,
+  createTempDir,
+  processFiles,
+  deleteTempFiles,
+  createNewRoll,
+} from "./utils";
 import sanitize from "sanitize-filename";
 
 const argv = yargs(hideBin(process.argv))
@@ -57,19 +65,80 @@ const argv = yargs(hideBin(process.argv))
       },
     },
   )
+  .command(
+    "create-roll",
+    "Gets photos from a folder, converts and processes them, uploads them to an R2 bucket and creates a yaml item in the rolls content collection.",
+    {
+      sourcePath: {
+        alias: "p",
+        describe: "sourcePath to photos to upload (non-recursive)",
+        type: "string",
+        demandOption: true,
+      },
+      rollName: {
+        alias: "n",
+        describe:
+          "Name of the film roll. Will also be used as the sub-directory in the upload destination.",
+        type: "string",
+        demandOption: true,
+      },
+      film: {
+        alias: "f",
+        describe:
+          "What film type was used to shoot this roll. e.g. 'gold-200'. This must correspond to an entry from the films content library.",
+        type: "string",
+        default: "",
+        demandOption: true,
+      },
+      camera: {
+        alias: "c",
+        describe: "What camera was used to shoot this roll.",
+        type: "string",
+        default: "",
+        demandOption: false,
+      },
+      format: {
+        describe: "What format was shot on this roll (e.g. 35mm, 6x6, etc)",
+        type: "string",
+        default: "35mm",
+        demandOption: false,
+      },
+      maxDimensionSize: {
+        alias: "m",
+        describe:
+          "Maximum dimension size (of either height or width) of the converted photos in px.",
+        type: "number",
+        default: 2000,
+        demandOption: false,
+      },
+      randomSuffix: {
+        alias: "s",
+        describe: "Whether to add a random suffix to the file name",
+        type: "boolean",
+        default: false,
+      },
+      renameFiles: {
+        alias: "r",
+        describe:
+          "If not specified, the original file names will be kept. When specified, the roll name (n) will be used ast the file name prefix, after which a numeric sequence number will be added. If a random suffix is also specified, it will be added after the sequence number.",
+        type: "boolean",
+        demandOption: false,
+      },
+    },
+  )
   .help().argv;
 
 if (argv._.includes("create-post")) {
   // Prep Arguments
 
-  const { sourcePath, randomSuffix, postTitle, maxDimensionSize, renameFiles } =
-    argv;
-
-  let destinationDir = argv.destinationDir;
-  // Ensure that the destination dir always ends with '/'
-  if (destinationDir.slice(-1) != "/") {
-    destinationDir = destinationDir.concat("/");
-  }
+  const {
+    sourcePath,
+    destinationDir,
+    randomSuffix,
+    postTitle,
+    maxDimensionSize,
+    renameFiles,
+  } = argv;
 
   //======= Get Source Files =====
   const files = getSourceFiles(sourcePath);
@@ -77,8 +146,13 @@ if (argv._.includes("create-post")) {
 
   // ===== Process Files =====
   console.info("🔄 Processing files...");
-  const processedFilesInfo = await processFiles(files, { tempDestination, maxDimensionSize, renameFiles, randomSuffix })
-  const newFiles = processedFilesInfo.map(v => v.filePath)
+  const processedFilesInfo = await processFiles(files, {
+    tempDestination,
+    maxDimensionSize,
+    renameFiles,
+    randomSuffix,
+  });
+  const newFiles = processedFilesInfo.map((v) => v.filePath);
 
   //==== create-post specific ====
   console.info("⏫ Uploading files...");
@@ -91,14 +165,76 @@ if (argv._.includes("create-post")) {
       }).then((result) => {
         console.info(`✅ Post created at ${path.normalize(result)}`);
       });
-    }).finally(() => {
+    })
+    .finally(() => {
       // ====== Delete TMP files ====
-      deleteTempFiles(newFiles)
+      deleteTempFiles(newFiles);
     });
 }
 if (argv._.includes("create-roll")) {
-  console.error("not implemented")
-}
-else {
+  const {
+    sourcePath,
+    rollName,
+    film,
+    camera,
+    format,
+    randomSuffix,
+    maxDimensionSize,
+    renameFiles,
+  } = argv;
+
+  //TODO: implement
+  /**
+   * 1. Get source files
+   * 2. Process files
+   * 3. Upload files
+   * 4. Create roll
+   */
+
+  const destinationDir = sanitize(rollName);
+
+  //======= Get Source Files =====
+  const files = getSourceFiles(sourcePath);
+  const tempDestination = createTempDir(destinationDir);
+
+  // ===== Process Files =====
+  console.info("🔄 Processing files...");
+  const processedFilesInfo = await processFiles(files, {
+    tempDestination,
+    maxDimensionSize,
+    renameFiles: renameFiles ? rollName : undefined,
+    randomSuffix,
+  });
+  const newFiles = processedFilesInfo.map((v) => v.filePath);
+
+  //==== create-roll specific ====
+  console.info("⏫ Uploading files...");
+
+  uploadFiles(newFiles, destinationDir)
+    .then((result) => {
+      const urls = result as string[];
+      const shots = urls.map((url, i) => {
+        return {
+          url: url,
+          fileInfo: processedFilesInfo[i],
+        };
+      });
+      return createNewRoll({
+        shots,
+        rollName,
+        film,
+        camera,
+        format,
+        camera,
+        format,
+      }).then((result) => {
+        console.info(`✅ Post created at ${path.normalize(result)}`);
+      });
+    })
+    .finally(() => {
+      // ====== Delete TMP files ====
+      deleteTempFiles(newFiles);
+    });
+} else {
   console.error("Invalid command");
 }

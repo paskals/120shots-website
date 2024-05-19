@@ -3,6 +3,7 @@ import sanitize from "sanitize-filename";
 import path from "path";
 import sharp, { type OutputInfo } from "sharp";
 import exif from "exif-reader";
+import YAML from "json-to-pretty-yaml";
 
 export const TEMP_FOLDER = "./tmp";
 
@@ -17,16 +18,14 @@ export const slugify = (text: string) => {
   return sanitize(text).toLowerCase().trim().replace(/\s+/g, "-");
 };
 
-
 export const getSourceFiles = (sourcePath: string) => {
   // Get all files from the specified sourcePath
   const files = fs.readdirSync(sourcePath, { withFileTypes: true });
 
   return files;
-}
+};
 
 export const createTempDir = (destinationDir: string) => {
-
   let tmpFolder = TEMP_FOLDER;
 
   // Create TMP folder if it doesn't exist
@@ -41,27 +40,47 @@ export const createTempDir = (destinationDir: string) => {
   }
 
   return tempDestination;
-}
+};
+
+const saveFile = (filePath: string, textContent: string) => {
+  // Check if file already exists
+  if (fs.existsSync(filePath)) {
+    throw new Error("File already exists: " + filePath);
+  } else {
+    // If not, check if directory exists, if not create it
+    const directory = path.dirname(filePath);
+    if (!fs.existsSync(filePath)) {
+      fs.mkdirSync(directory);
+    }
+  }
+
+  return fs.promises.writeFile(filePath, textContent).then(() => filePath);
+};
 
 interface FileProcessOptions {
-  tempDestination: string,
-  maxDimensionSize: number,
-  renameFiles?: string,
-  randomSuffix?: string,
-  quality?: number
+  tempDestination: string;
+  maxDimensionSize: number;
+  renameFiles?: string;
+  randomSuffix?: string;
+  quality?: number;
 }
 
 interface FileProcessResult {
-  sharpInfo: sharp.OutputInfo,
-  filePath: string
+  sharpInfo: sharp.OutputInfo;
+  filePath: string;
+  sequence: string;
+  metadata: sharp.Metadata;
 }
 /**
- * 
- * @param files 
- * @param options 
- * @returns 
+ *
+ * @param files
+ * @param options
+ * @returns
  */
-export const processFiles = async (files: fs.Dirent[], options: FileProcessOptions) => {
+export const processFiles = async (
+  files: fs.Dirent[],
+  options: FileProcessOptions,
+) => {
   const promises: Promise<FileProcessResult>[] = [];
   // const paths: string[] = [];
 
@@ -76,9 +95,11 @@ export const processFiles = async (files: fs.Dirent[], options: FileProcessOptio
 
     let fileName = "";
 
+    const sequence = i.toString().padStart(3, "0");
+
     if (options.renameFiles !== undefined) {
       fileName = sanitize(options.renameFiles)
-        .concat("-", i.toString().padStart(3, "0"))
+        .concat("-", sequence)
         .replace(/\s+/g, "_");
     } else {
       fileName = file.name.split(".")[0].replace(/\s+/g, "_");
@@ -90,13 +111,8 @@ export const processFiles = async (files: fs.Dirent[], options: FileProcessOptio
     const filePath = path.join(options.tempDestination, `${fileName}.webp`);
     // newFiles.push(filePath);
 
-    // =========== TMP =========== //TODO: remove
     const metadata = await sharp(path.join(file.path, file.name)).metadata();
-    console.info(JSON.stringify(exif(metadata.exif || {
-      type: "Buffer",
-      data: []
-    })));
-    // =================
+
     const prom: Promise<FileProcessResult> = new Promise((resolve) => {
       return sharp(path.join(file.path, file.name))
         .resize({
@@ -112,22 +128,21 @@ export const processFiles = async (files: fs.Dirent[], options: FileProcessOptio
         })
         .toFile(filePath)
         .then((sharpInfo) => {
-          resolve({ sharpInfo, filePath })
-        })
-
-    })
+          resolve({ sharpInfo, filePath, sequence, metadata });
+        });
+    });
 
     promises.push(prom);
     // paths.push(filePath);
   }
   return Promise.all(promises);
-}
+};
 
 export const deleteTempFiles = (newFiles: string[]) => {
   newFiles.forEach((file) => {
     fs.rmSync(file);
   });
-}
+};
 
 export const createNewPost = (
   imageURLs: string[],
@@ -155,16 +170,19 @@ image:
     positiony: 50%,
   }
 description: ""
-${frontMatterParameters
-      ? Object.entries(frontMatterParameters).map(
+${
+  frontMatterParameters
+    ? Object.entries(frontMatterParameters).map(
         ([key, value]) => `${key}: ${JSON.stringify(value)}\n`,
       )
-      : ""
-    }
+    : ""
+}
 ---
 > Post content goes here
 
 import MasonryLayout from "../../components/Masonry.astro";
+import yaml from 'js-yaml';
+import { async } from './r2-wrangler';
 
 <MasonryLayout
   images={
@@ -174,5 +192,83 @@ import MasonryLayout from "../../components/Masonry.astro";
   }
 />`;
 
-  return fs.promises.writeFile(filePath, textContent).then(() => filePath);
+  if (fs.existsSync(filePath)) {
+    throw new Error("File already exists: " + filePath);
+  }
+
+  return saveFile(filePath, textContent);
+};
+
+interface FilmRollObject {
+  film: string;
+  camera: string;
+  format: string;
+  description?: string;
+  shots: {
+    sequence: string;
+    date: string | undefined;
+    hidden?: boolean;
+    image: {
+      src: string;
+      alt: string;
+      positionx?: string;
+      positiony?: string;
+    };
+  }[];
+}
+
+export const createNewRoll = async (options: {
+  shots: {
+    url: string;
+    fileInfo: FileProcessResult;
+  }[];
+  rollName: string;
+  film: string;
+  camera: string;
+  format: string;
+  description?: string;
+}) => {
+  const { shots, rollName, film, camera, format, description } = options;
+
+  let roll: FilmRollObject = {
+    film,
+    camera,
+    format,
+    description,
+    shots: [],
+  };
+
+  for (let index = 0; index < shots.length; index++) {
+    const fileInfo = shots[index].fileInfo;
+    const fileExif = fileInfo.metadata.exif
+      ? exif(fileInfo.metadata.exif)
+      : undefined;
+
+    roll.shots.push({
+      sequence: fileInfo.sequence,
+      date: fileExif?.Photo?.DateTimeOriginal?.toISOString(),
+      hidden: false,
+      image: {
+        src: shots[index].url,
+        alt: rollName + " " + fileInfo.sequence,
+        positionx: "50%",
+        positiony: "50%",
+      },
+    });
+  }
+
+  const firstDate = roll.shots[0].date
+    ? new Date(roll.shots[0].date)
+    : new Date();
+
+  const fileName = slugify(rollName) + ".yaml";
+  const filePath =
+    path.normalize(
+      "./src/content/rolls/" + firstDate.getFullYear().toString(),
+    ) +
+    "/" +
+    fileName;
+  const yamlContent = YAML.stringify(roll);
+
+  return saveFile(filePath, yamlContent);
 };
