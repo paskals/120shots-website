@@ -27,11 +27,16 @@ export async function uploadFiles(
   paths: string[],
   destinationDir: string,
 ): Promise<(string | null)[]> {
+  let destinationDir_ = destinationDir;
+  // Ensure that the destination dir always ends with '/'
+  if (destinationDir.slice(-1) != "/") {
+    destinationDir_ = destinationDir.concat("/");
+  }
   const promises = paths.map(async (path) => {
     const filename = path.split("/").pop() || "";
     const upload = await bucket.uploadFile(
       path,
-      topLevelDir + destinationDir + filename,
+      topLevelDir + destinationDir_ + filename,
     );
     return upload.publicUrl;
   });

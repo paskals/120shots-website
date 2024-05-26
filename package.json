@@ -1,7 +1,7 @@
 {
   "name": "120shots-website",
   "type": "module",
-  "version": "1.0.5",
+  "version": "1.2.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,7 +10,9 @@
     "lint": "prettier --write .",
     "astro": "astro",
     "postbuild": "pagefind --site dist",
-    "create-post": "tsx ./src/utils/photer.ts create-post"
+    "create-post": "tsx ./src/utils/photer.ts create-post",
+    "create-roll": "tsx ./src/utils/photer.ts create-roll",
+    "create-roll-post": "tsx ./src/utils/photer.ts create-roll-post"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
@@ -19,12 +21,14 @@
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.2",
     "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/ts-plugin": "^1.8.0",
     "@fontsource-variable/inconsolata": "^5.0.16",
     "@fontsource-variable/overpass-mono": "^5.0.15",
     "astro": "^4.6.1",
     "astro-icon": "^0.8.2",
     "dayjs": "^1.11.10",
     "glightbox": "^3.2.0",
+    "json-to-pretty-yaml": "^1.2.2",
     "markdown-it": "^13.0.2",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",
@@ -35,15 +39,18 @@
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.10",
+    "@types/json-to-pretty-yaml": "^1.2.1",
     "@types/yargs": "^17.0.32",
     "dotenv": "^16.4.5",
+    "exif-reader": "^2.0.1",
     "node-cloudflare-r2": "^0.1.5",
     "pagefind": "^1.0.4",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "sanitize-filename": "^1.6.3",
     "sharp": "^0.33.3",
-    "tsx": "^4.7.2",
+    "tsx": "^4.11.0",
+    "yaml": "^2.4.2",
     "yargs": "^17.7.2"
   }
 }
