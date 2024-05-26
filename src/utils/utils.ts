@@ -200,6 +200,7 @@ interface FilmRollObject {
   film: string;
   camera: string;
   format: string;
+  cover?: string;
   description?: string;
   shots: {
     sequence: string;

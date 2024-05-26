@@ -1,0 +1,320 @@
+slug: "2021/LUX-01"
+film: "portra-400"
+camera: "Nikon F3"
+format: "35mm"
+shots:
+  - sequence: "000"
+    date: "2021-12-31T13:10:34.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-000-1718FA.webp"
+      alt: "LUX-01 000"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "001"
+    date: "2021-12-31T14:10:34.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-001-40A7F3.webp"
+      alt: "LUX-01 001"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "002"
+    date: "2021-12-31T15:10:34.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-002-79E787.webp"
+      alt: "LUX-01 002"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "003"
+    date: "2021-12-31T16:10:34.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-003-72EA9A.webp"
+      alt: "LUX-01 003"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "004"
+    date: "2021-12-31T17:50:34.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-004-A104D2.webp"
+      alt: "LUX-01 004"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "005"
+    date: "2021-12-31T18:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-005-9FA677.webp"
+      alt: "LUX-01 005"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "006"
+    date: "2021-12-31T18:08:34.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-006-3A18AF.webp"
+      alt: "LUX-01 006"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "007"
+    date: "2021-12-31T18:10:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-007-C10FDB.webp"
+      alt: "LUX-01 007"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "008"
+    date: "2022-01-01T12:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-008-6DB677.webp"
+      alt: "LUX-01 008"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "009"
+    date: "2022-01-01T12:01:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-009-7EB047.webp"
+      alt: "LUX-01 009"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "010"
+    date: "2022-01-01T12:10:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-010-872D44.webp"
+      alt: "LUX-01 010"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "011"
+    date: "2022-01-01T12:20:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-011-819F6A.webp"
+      alt: "LUX-01 011"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "012"
+    date: "2022-01-01T12:30:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-012-1F5946.webp"
+      alt: "LUX-01 012"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "013"
+    date: "2022-01-01T12:35:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-013-FD0567.webp"
+      alt: "LUX-01 013"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "014"
+    date: "2022-01-01T12:40:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-014-B23F65.webp"
+      alt: "LUX-01 014"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "015"
+    date: "2022-02-07T18:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-015-270C90.webp"
+      alt: "LUX-01 015"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "016"
+    date: "2022-02-08T12:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-016-0031AA.webp"
+      alt: "LUX-01 016"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "017"
+    date: "2022-02-08T12:05:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-017-966466.webp"
+      alt: "LUX-01 017"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "018"
+    date: "2022-02-08T17:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-018-B8CB22.webp"
+      alt: "LUX-01 018"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "019"
+    date: "2022-02-08T17:10:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-019-6609AF.webp"
+      alt: "LUX-01 019"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "020"
+    date: "2022-02-12T18:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-020-9BFECB.webp"
+      alt: "LUX-01 020"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "021"
+    date: "2022-02-12T18:01:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-021-B73B68.webp"
+      alt: "LUX-01 021"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "022"
+    date: "2022-02-12T18:02:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-022-E6283B.webp"
+      alt: "LUX-01 022"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "023"
+    date: "2022-02-12T18:04:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-023-B70EC4.webp"
+      alt: "LUX-01 023"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "024"
+    date: "2022-02-12T20:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-024-BCE09E.webp"
+      alt: "LUX-01 024"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "025"
+    date: "2022-02-12T20:05:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-025-C95991.webp"
+      alt: "LUX-01 025"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "026"
+    date: "2022-02-12T20:10:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-026-8C87D3.webp"
+      alt: "LUX-01 026"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "027"
+    date: "2022-02-12T20:29:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-027-C4E8B4.webp"
+      alt: "LUX-01 027"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "028"
+    date: "2022-02-12T20:30:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-028-13113D.webp"
+      alt: "LUX-01 028"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "029"
+    date: "2022-02-21T17:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-029-27D4CB.webp"
+      alt: "LUX-01 029"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "030"
+    date: "2022-02-25T12:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-030-F17276.webp"
+      alt: "LUX-01 030"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "031"
+    date: "2022-02-25T12:01:34.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-031-5038DD.webp"
+      alt: "LUX-01 031"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "032"
+    date: "2022-02-26T12:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-032-0740C1.webp"
+      alt: "LUX-01 032"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "033"
+    date: "2022-02-26T13:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-033-D63FE2.webp"
+      alt: "LUX-01 033"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "034"
+    date: "2022-02-26T17:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-034-CD4064.webp"
+      alt: "LUX-01 034"
+      positionx: "50%"
+      positiony: "50%"
