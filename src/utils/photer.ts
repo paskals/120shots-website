@@ -5,17 +5,16 @@
  */
 import { hideBin } from "yargs/helpers";
 import yargs from "yargs";
-import fs from "fs";
 import path from "path";
 import { uploadFiles } from "./r2-wrangler";
 import {
-  getRandomString,
   createNewPost,
   getSourceFiles,
   createTempDir,
   processFiles,
   deleteTempFiles,
   createNewRoll,
+  createPostFromRolls,
 } from "./utils";
 import sanitize from "sanitize-filename";
 
@@ -125,6 +124,23 @@ const argv = yargs(hideBin(process.argv))
         demandOption: false,
       },
     },
+  ).command(
+    "create-roll-post",
+    "Creates a post from existing rolls.",
+    {
+      rolls: {
+        alias: "r",
+        describe: "Comma separated list of roll IDs to include in the post",
+        type: "string",
+        demandOption: true,
+      },
+      postTitle: {
+        alias: "t",
+        describe: "Title of the post",
+        type: "string",
+        demandOption: false,
+      },
+    },
   )
   .help().argv;
 
@@ -170,8 +186,7 @@ if (argv._.includes("create-post")) {
       // ====== Delete TMP files ====
       deleteTempFiles(newFiles);
     });
-}
-if (argv._.includes("create-roll")) {
+} else if (argv._.includes("create-roll")) {
   const {
     sourcePath,
     rollName,
@@ -182,14 +197,6 @@ if (argv._.includes("create-roll")) {
     maxDimensionSize,
     renameFiles,
   } = argv;
-
-  //TODO: implement
-  /**
-   * 1. Get source files
-   * 2. Process files
-   * 3. Upload files
-   * 4. Create roll
-   */
 
   const destinationDir = sanitize(rollName);
 
@@ -224,9 +231,7 @@ if (argv._.includes("create-roll")) {
         rollName,
         film,
         camera,
-        format,
-        camera,
-        format,
+        format
       }).then((result) => {
         console.info(`✅ Post created at ${path.normalize(result)}`);
       });
@@ -235,6 +240,15 @@ if (argv._.includes("create-roll")) {
       // ====== Delete TMP files ====
       deleteTempFiles(newFiles);
     });
+} else if (argv._.includes("create-roll-post")) {
+  const {
+    rolls,
+    postTitle,
+  } = argv;
+
+  const result = await createPostFromRolls(rolls.split(","), postTitle)
+  console.info(`✅ Post created at ${path.normalize(result)}`);
+
 } else {
   console.error("Invalid command");
 }

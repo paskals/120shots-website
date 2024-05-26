@@ -11,7 +11,8 @@
     "astro": "astro",
     "postbuild": "pagefind --site dist",
     "create-post": "tsx ./src/utils/photer.ts create-post",
-    "create-roll": "tsx ./src/utils/photer.ts create-roll"
+    "create-roll": "tsx --tsconfig ./tsconfig.json ./src/utils/photer.ts create-roll",
+    "create-roll-post": "tsx --tsconfig ./tsconfig.json ./src/utils/photer.ts create-roll-post"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
@@ -46,7 +47,7 @@
     "prettier-plugin-astro": "^0.13.0",
     "sanitize-filename": "^1.6.3",
     "sharp": "^0.33.3",
-    "tsx": "^4.7.2",
+    "tsx": "^4.11.0",
     "yargs": "^17.7.2"
   }
 }

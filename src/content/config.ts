@@ -50,6 +50,7 @@ const rolls = defineCollection({
       z.object({
         sequence: z.coerce.string(),
         date: z.coerce.date().optional(),
+        offsetTime: z.string().optional(),
         hidden: z.coerce.boolean().optional(), // for shots that are not to be displayed
         image: z.object({
           src: z.string(),
