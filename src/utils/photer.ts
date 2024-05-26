@@ -119,7 +119,7 @@ const argv = yargs(hideBin(process.argv))
       renameFiles: {
         alias: "r",
         describe:
-          "If not specified, the original file names will be kept. When specified, the roll name (n) will be used ast the file name prefix, after which a numeric sequence number will be added. If a random suffix is also specified, it will be added after the sequence number.",
+          "If not specified, the original file names will be kept. When specified, the roll name (n) will be used as the file name prefix, after which a numeric sequence number will be added. If a random suffix is also specified, it will be added after the sequence number.",
         type: "boolean",
         demandOption: false,
       },

@@ -75,6 +75,32 @@ npm run create-post -- -p /dir/with/photos -d upload-sub-dir -t "Post Title" -m 
 - `--renameFiles` or `-r` - Renames files with the specified prefix, and adds a sequential numbering as a suffix (starting at "000").
 - `--randomSuffix` or `-s` - Adds a random suffix to all uploaded filenames to prevent overwriting files with the same original file name.
 
+### Create a film roll from a folder with photos
+
+This script creates a new roll under `/src/content/rolls`. The rolls content library is made of YAML files with information about each roll, including URLs to all images. 
+
+```sh
+npm run create-roll -- -p /dir/with/photos -n ROLL-NAME -f film-stock -c "Camera Used" -rs
+```
+- `-p` - Photos source directory (not recursive).
+- `-n` - Name of the film roll. Will also be used as the sub-directory in the upload destination..
+- `-f` - Film stock used. Must match an entry from the films content library.
+- `-m` - Max dimension of photos. This will resize photos such that whatever the bigger dimmension is (width or height) it will not be bigger than this number (2000px is the default).
+- `--renameFiles` or `-r` - If not specified, the original file names will be kept. When specified, the roll name (n) will be used as the file name prefix, after which a numeric sequence number will be added. If a random suffix is also specified, it will be added after the sequence number.
+- `--randomSuffix` or `-s` - Adds a random suffix to all uploaded filenames to prevent overwriting files with the same original file name.
+
+This script assumes that photos have their exif date/time information updated. Dates will be taken from the exif and stored in the film roll YAML data file.
+
+### Create a draft post from existing film rolls
+
+This script takes film rolls from the rolls content library and creates a draft post containing all photos in one masonry component per roll.
+
+```sh
+npm run create-roll-post -- -r "ROLL-NAME1,ROLL-NAME2" -t "Post Title"
+```
+- `-r` - Comma separated list of roll IDs to include in the post.
+- `-t` - Title of the created post.
+
 ### R2 Bucket configuration
 
 - Create a .env file under the root directory and include the following content:
