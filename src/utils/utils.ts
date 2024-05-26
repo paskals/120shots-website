@@ -4,7 +4,7 @@ import path from "path";
 import sharp, { type OutputInfo } from "sharp";
 import exif from "exif-reader";
 import PrettyYAML from "json-to-pretty-yaml";
-import { parse } from 'yaml'
+import { parse } from "yaml";
 
 export const TEMP_FOLDER = "./tmp";
 
@@ -16,7 +16,10 @@ export const getRandomString = (length?: number) => {
 };
 
 export const slugify = (text: string) => {
-  return sanitize(text).toLowerCase().trim().replace(/[\s+,]/g, "-");
+  return sanitize(text)
+    .toLowerCase()
+    .trim()
+    .replace(/[\s+,]/g, "-");
 };
 
 export const getSourceFiles = (sourcePath: string) => {
@@ -171,12 +174,13 @@ image:
     positiony: 50%,
   }
 description: ""
-${frontMatterParameters
-      ? Object.entries(frontMatterParameters).map(
+${
+  frontMatterParameters
+    ? Object.entries(frontMatterParameters).map(
         ([key, value]) => `${key}: ${JSON.stringify(value)}\n`,
       )
-      : ""
-    }
+    : ""
+}
 ---
 import Masonry from "../../components/Masonry.astro";
 import FilmStrip from "../../components/FilmStrip.astro";
@@ -265,26 +269,34 @@ export const createNewRoll = async (options: {
 
   const fileName = slugify(rollName).toUpperCase() + ".yaml";
   roll.slug = `${firstYear}/${roll.slug}`;
-  const filePath = `${path.normalize('./src/content/rolls/' + firstYear)}/${fileName}`;
+  const filePath = `${path.normalize("./src/content/rolls/" + firstYear)}/${fileName}`;
   const yamlContent = PrettyYAML.stringify(roll);
 
   return saveFile(filePath, yamlContent);
-}
+};
 
 const getRollData = async (rollName: string) => {
   const basePath = path.normalize("./src/content/rolls/");
-  let files = fs.readdirSync(basePath, { withFileTypes: true, recursive: true });
+  let files = fs.readdirSync(basePath, {
+    withFileTypes: true,
+    recursive: true,
+  });
   files = files.filter((file) => file.name.endsWith(".yaml"));
-  const rollFile = files.find((file) => file.name.toLowerCase().includes(rollName.toLowerCase()));
-  return rollFile ? parse(fs.readFileSync(path.join(rollFile.path, rollFile.name), 'utf8')) as FilmRollObject : undefined;
-}
+  const rollFile = files.find((file) =>
+    file.name.toLowerCase().includes(rollName.toLowerCase()),
+  );
+  return rollFile
+    ? (parse(
+        fs.readFileSync(path.join(rollFile.path, rollFile.name), "utf8"),
+      ) as FilmRollObject)
+    : undefined;
+};
 
 export const createPostFromRolls = async (
   rolls: string[],
   postTitle?: string,
   frontMatterParameters?: {},
 ) => {
-
   // Get rolls data from content library
   const rollsData: FilmRollObject[] = [];
   for (const roll of rolls) {
@@ -300,16 +312,17 @@ export const createPostFromRolls = async (
   }
 
   const now = new Date();
-  const title = postTitle || `Draft post: ${rollsData.map((roll) => roll.slug).join(", ")}`;
+  const title =
+    postTitle || `Draft post: ${rollsData.map((roll) => roll.slug).join(", ")}`;
 
   const fileName =
     slugify(now.toISOString().split("T")[0] + "-" + title) + ".mdx";
   const filePath = path.normalize("./src/content/posts/") + fileName;
 
-  const randomShot = rollsData[0].shots[Math.floor(Math.random() * rollsData[0].shots.length)]
+  const randomShot =
+    rollsData[0].shots[Math.floor(Math.random() * rollsData[0].shots.length)];
 
-  const textContent =
-    `---
+  const textContent = `---
 title: "${title}"
 slug: ${slugify(title)}
 pubDate: ${now.toISOString()}
@@ -325,33 +338,37 @@ image:
     positiony: ${randomShot.image.positiony},
   }
 description: ""
-${frontMatterParameters
-      ? Object.entries(frontMatterParameters).map(
+${
+  frontMatterParameters
+    ? Object.entries(frontMatterParameters).map(
         ([key, value]) => `${key}: ${JSON.stringify(value)}\n`,
       )
-      : ""
-    }
+    : ""
+}
 ---
 import Masonry from "../../components/Masonry.astro";
 import FilmStrip from "../../components/FilmStrip.astro";
 
 > Post content goes here
 
-${rollsData.map((roll) => { // Make a new section per roll with a masonry element
-      return `## ${roll.slug.toUpperCase()}
+${rollsData
+  .map((roll) => {
+    // Make a new section per roll with a masonry element
+    return `## ${roll.slug.toUpperCase()}
 
   <Masonry
   columns='3'
   images = {
     [
       ${roll.shots
-          .filter(shot => !shot.hidden)
-          .map((shot) => `{ src: "${shot.image.src}", alt: "${shot.image.alt}" }`).join(`,\n      `)}
+        .filter((shot) => !shot.hidden)
+        .map((shot) => `{ src: "${shot.image.src}", alt: "${shot.image.alt}" }`)
+        .join(`,\n      `)}
     ]
   }
-/>`
-    }).join("\n\n")
-    }`
+/>`;
+  })
+  .join("\n\n")}`;
 
   return saveFile(filePath, textContent);
 };

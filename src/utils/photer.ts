@@ -124,24 +124,21 @@ const argv = yargs(hideBin(process.argv))
         demandOption: false,
       },
     },
-  ).command(
-    "create-roll-post",
-    "Creates a post from existing rolls.",
-    {
-      rolls: {
-        alias: "r",
-        describe: "Comma separated list of roll IDs to include in the post",
-        type: "string",
-        demandOption: true,
-      },
-      postTitle: {
-        alias: "t",
-        describe: "Title of the post",
-        type: "string",
-        demandOption: false,
-      },
-    },
   )
+  .command("create-roll-post", "Creates a post from existing rolls.", {
+    rolls: {
+      alias: "r",
+      describe: "Comma separated list of roll IDs to include in the post",
+      type: "string",
+      demandOption: true,
+    },
+    postTitle: {
+      alias: "t",
+      describe: "Title of the post",
+      type: "string",
+      demandOption: false,
+    },
+  })
   .help().argv;
 
 if (argv._.includes("create-post")) {
@@ -231,7 +228,7 @@ if (argv._.includes("create-post")) {
         rollName,
         film,
         camera,
-        format
+        format,
       }).then((result) => {
         console.info(`✅ Post created at ${path.normalize(result)}`);
       });
@@ -241,14 +238,10 @@ if (argv._.includes("create-post")) {
       deleteTempFiles(newFiles);
     });
 } else if (argv._.includes("create-roll-post")) {
-  const {
-    rolls,
-    postTitle,
-  } = argv;
+  const { rolls, postTitle } = argv;
 
-  const result = await createPostFromRolls(rolls.split(","), postTitle)
+  const result = await createPostFromRolls(rolls.split(","), postTitle);
   console.info(`✅ Post created at ${path.normalize(result)}`);
-
 } else {
   console.error("Invalid command");
 }

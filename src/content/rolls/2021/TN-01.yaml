@@ -241,8 +241,8 @@ shots:
     date: "2021-09-03T20:16:24.000Z"
     offsetTime: "+08:00"
     hidden: false
-    image: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-026-7E607D.webp"
-      src: 
+    image:
+      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-026-7E607D.webp"
       alt: "TN-01 026"
       positionx: "50%"
       positiony: "50%"
