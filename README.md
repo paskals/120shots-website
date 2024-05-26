@@ -18,9 +18,11 @@ After creating your site with this template:
 
 - Delete all blog posts from [/src/content/posts](/src/content/posts)
   - Create your own posts under this folder.
+- Delete all film rolls from [/src/content/posts](/src/content/rolls)
 - Create your own author profile under [/src/content/authors](/src/content/authors) and delete mine.
 - Adjust the site URL in [astro.config.mjs](/astro.config.mjs).
 - Adjust site metadata, favicon in [/src/layouts/BaseLayout.astro](/src/layouts/BaseLayout.astro).
+- Create your own R2 CloudFlare bucket and create an `.env.` file.
 
 ## Introduction
 
