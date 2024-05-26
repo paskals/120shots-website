@@ -3,8 +3,8 @@ import sanitize from "sanitize-filename";
 import path from "path";
 import sharp, { type OutputInfo } from "sharp";
 import exif from "exif-reader";
-import YAML from "json-to-pretty-yaml";
-import { getEntry, type CollectionEntry } from "astro:content";
+import PrettyYAML from "json-to-pretty-yaml";
+import { parse } from 'yaml'
 
 export const TEMP_FOLDER = "./tmp";
 
@@ -16,7 +16,7 @@ export const getRandomString = (length?: number) => {
 };
 
 export const slugify = (text: string) => {
-  return sanitize(text).toLowerCase().trim().replace(/\s+/g, "-");
+  return sanitize(text).toLowerCase().trim().replace(/[\s+,]/g, "-");
 };
 
 export const getSourceFiles = (sourcePath: string) => {
@@ -50,7 +50,7 @@ const saveFile = (filePath: string, textContent: string) => {
   } else {
     // If not, check if directory exists, if not create it
     const directory = path.dirname(filePath);
-    if (!fs.existsSync(filePath)) {
+    if (!fs.existsSync(directory)) {
       fs.mkdirSync(directory);
     }
   }
@@ -192,96 +192,11 @@ import FilmStrip from "../../components/FilmStrip.astro";
   }
 />`;
 
-  if (fs.existsSync(filePath)) {
-    throw new Error("File already exists: " + filePath);
-  }
-
-  return saveFile(filePath, textContent);
-};
-
-export const createPostFromRolls = async (
-  rolls: string[],
-  postTitle?: string,
-  frontMatterParameters?: {},
-) => {
-
-  // Get rolls data from content library
-  const rollsData: CollectionEntry<"rolls">[] = [];
-  for (const roll of rolls) {
-    const rollData = await getEntry("rolls", roll);
-    if (!rollData) {
-      throw new Error("Roll not found: " + roll);
-    }
-    rollsData.push(rollData);
-  }
-
-  if (rollsData.length === 0) {
-    throw new Error("No valid rolls found!");
-  }
-
-  const now = new Date();
-  const title = postTitle || `Draft post: ${rollsData.map((roll) => roll.id).join(", ")}`;
-
-  const fileName =
-    slugify(now.toISOString().split("T")[0] + "-" + title) + ".mdx";
-  const filePath = path.normalize("./src/content/posts/") + fileName;
-
-  const randomShot = rollsData[0].data.shots[Math.floor(Math.random() * rollsData[0].data.shots.length)]
-
-  const textContent =
-    `---
-title: ${title}
-slug: ${slugify(title)}
-pubDate: ${now.toISOString()}
-updatedDate: ${now.toISOString()}
-tags: []
-rolls: \n\s\s${rolls.map((roll) => `- ${roll}`).join("\n\s\s")}
-author: paskal
-image:
-  {
-    src: ${randomShot.image.src},  
-    alt: "${title}",
-    positionx: ${randomShot.image.positionx},
-    positiony: ${randomShot.image.positiony},
-  }
-description: ""
-${frontMatterParameters
-      ? Object.entries(frontMatterParameters).map(
-        ([key, value]) => `${key}: ${JSON.stringify(value)}\n`,
-      )
-      : ""
-    }
----
-import Masonry from "../../components/Masonry.astro";
-import FilmStrip from "../../components/FilmStrip.astro";
-
-> Post content goes here
-
-${rollsData.map((roll) => { // Make a new section per roll with a masonry element
-      return `## ${roll.id}
-
-  <Masonry
-  columns='3'
-  images = {
-    [
-    ${roll.data.shots
-          .filter(roll => !roll.hidden)
-          .map((shot) => `{ src: "${shot.image.src}", alt: "${shot.image.alt}" }`).join(`,\n      `)}
-    ]
-  }
-/>`
-    })
-    }`
-
-  if (fs.existsSync(filePath)) {
-    throw new Error("File already exists: " + filePath);
-  }
-
   return saveFile(filePath, textContent);
 };
 
 interface FilmRollObject {
-  slug?: string;
+  slug: string;
   film: string;
   camera: string;
   format: string;
@@ -314,7 +229,7 @@ export const createNewRoll = async (options: {
   const { shots, rollName, film, camera, format, description } = options;
 
   let roll: FilmRollObject = {
-    slug: slugify(rollName),
+    slug: slugify(rollName).toUpperCase(),
     film,
     camera,
     format,
@@ -345,15 +260,97 @@ export const createNewRoll = async (options: {
   const firstDate = roll.shots[0].date
     ? new Date(roll.shots[0].date)
     : new Date();
+  const firstYear = firstDate.getFullYear().toString();
 
-  const fileName = slugify(rollName) + ".yaml";
-  const filePath =
-    path.normalize(
-      "./src/content/rolls/" + firstDate.getFullYear().toString(),
-    ) +
-    "/" +
-    fileName;
-  const yamlContent = YAML.stringify(roll);
+  const fileName = slugify(rollName).toUpperCase() + ".yaml";
+  roll.slug = `${firstYear}/${roll.slug}`;
+  const filePath = `${path.normalize('./src/content/rolls/' + firstYear)}/${fileName}`;
+  const yamlContent = PrettyYAML.stringify(roll);
 
   return saveFile(filePath, yamlContent);
+}
+
+const getRollData = async (rollName: string) => {
+  const basePath = path.normalize("./src/content/rolls/");
+  let files = fs.readdirSync(basePath, { withFileTypes: true, recursive: true });
+  files = files.filter((file) => file.name.endsWith(".yaml"));
+  const rollFile = files.find((file) => file.name.toLowerCase().includes(rollName.toLowerCase()));
+  return rollFile ? parse(fs.readFileSync(path.join(rollFile.path, rollFile.name), 'utf8')) as FilmRollObject : undefined;
+}
+
+export const createPostFromRolls = async (
+  rolls: string[],
+  postTitle?: string,
+  frontMatterParameters?: {},
+) => {
+
+  // Get rolls data from content library
+  const rollsData: FilmRollObject[] = [];
+  for (const roll of rolls) {
+    const rollData = await getRollData(roll);
+    if (!rollData) {
+      throw new Error("Roll not found: " + roll);
+    }
+    rollsData.push(rollData);
+  }
+
+  if (rollsData.length === 0) {
+    throw new Error("No valid rolls found!");
+  }
+
+  const now = new Date();
+  const title = postTitle || `Draft post: ${rollsData.map((roll) => roll.slug).join(", ")}`;
+
+  const fileName =
+    slugify(now.toISOString().split("T")[0] + "-" + title) + ".mdx";
+  const filePath = path.normalize("./src/content/posts/") + fileName;
+
+  const randomShot = rollsData[0].shots[Math.floor(Math.random() * rollsData[0].shots.length)]
+
+  const textContent =
+    `---
+title: "${title}"
+slug: ${slugify(title)}
+pubDate: ${now.toISOString()}
+updatedDate: ${now.toISOString()}
+tags: []
+rolls: \n  ${rollsData.map((roll) => `- ${roll.slug}`).join("\n  ")}
+author: paskal
+image:
+  {
+    src: ${randomShot.image.src},  
+    alt: "${title}",
+    positionx: ${randomShot.image.positionx},
+    positiony: ${randomShot.image.positiony},
+  }
+description: ""
+${frontMatterParameters
+      ? Object.entries(frontMatterParameters).map(
+        ([key, value]) => `${key}: ${JSON.stringify(value)}\n`,
+      )
+      : ""
+    }
+---
+import Masonry from "../../components/Masonry.astro";
+import FilmStrip from "../../components/FilmStrip.astro";
+
+> Post content goes here
+
+${rollsData.map((roll) => { // Make a new section per roll with a masonry element
+      return `## ${roll.slug.toUpperCase()}
+
+  <Masonry
+  columns='3'
+  images = {
+    [
+      ${roll.shots
+          .filter(shot => !shot.hidden)
+          .map((shot) => `{ src: "${shot.image.src}", alt: "${shot.image.alt}" }`).join(`,\n      `)}
+    ]
+  }
+/>`
+    }).join("\n\n")
+    }`
+
+  return saveFile(filePath, textContent);
 };

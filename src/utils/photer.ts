@@ -15,7 +15,7 @@ import {
   deleteTempFiles,
   createNewRoll,
   createPostFromRolls,
-} from "./utils";
+} from "./utils.js";
 import sanitize from "sanitize-filename";
 
 const argv = yargs(hideBin(process.argv))
