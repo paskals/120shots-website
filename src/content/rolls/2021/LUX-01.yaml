@@ -2,6 +2,7 @@ slug: "2021/LUX-01"
 film: "portra-400"
 camera: "Nikon F3"
 format: "35mm"
+cover: "002"
 shots:
   - sequence: "000"
     date: "2021-12-31T13:10:34.000Z"

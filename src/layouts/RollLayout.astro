@@ -1,0 +1,151 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import "../styles/glightbox.css";
+import Prose from "../components/Prose.astro";
+import Tag from "../components/Tag.astro";
+
+import { getImage, Image } from "astro:assets";
+import { getEntry, type CollectionEntry } from "astro:content";
+import { getEntries } from "astro:content";
+import {
+  getDatesRange,
+  getDatesRangeFormatted,
+  getRollSlug,
+  getCoverImage,
+} from "../components/rolls.jsx";
+import Masonry from "../components/Masonry.astro";
+
+type Props = {
+  roll: CollectionEntry<"rolls">;
+};
+
+const { roll } = Astro.props;
+const data = roll.data;
+
+const authorObject = await getEntry({
+  collection: "authors",
+  slug: "paskal", // TODO: Fix this, Hard coded for now
+});
+
+const dates = getDatesRangeFormatted(roll);
+const title = getRollSlug(roll.id);
+const description = data.description;
+const authorFullName = authorObject?.data.name || "none";
+const author = authorFullName.split(" ")[0].toLowerCase();
+
+const keyWords = ""; //TODO: add relevant data as keywords
+const coverImage = getCoverImage(roll);
+---
+
+<BaseLayout
+  title={title}
+  image={coverImage.src}
+  alt={coverImage.alt}
+  description={description}
+  author={author}
+  pubDate={dates}
+  keywords={keyWords}
+  is404Page={false}
+>
+  {
+    (
+      <div
+        id="backgroundImageElement"
+        class=" before:bg-center-33 before:bg-cover before:bg-no-repeat before:fixed before:will-change-transform flex flex-col justify-center items-center text-center h-screen mb-8 sm:px-16 px-4"
+        style={`--background-image: url(${coverImage.src}); --position-x: ${coverImage.positionx}; --position-y: ${coverImage.positiony};`}
+        data-pagefind-body
+      >
+        <h1 class="prose prose-slate uppercase font-overpass-mono text-[rgb(245,245,245)] text-4xl">
+          {title}
+        </h1>
+      </div>
+    )
+  }
+  <div
+    data-pagefind-body
+    class="pt-4 w-full dark:bg-[rgb(34,33,37)] bg-[#f2f2f2]"
+  >
+    <Prose>
+      <span class="text-2xl">Roll details:</span>
+      <ul>
+        <li>Film stock: <a href=`/films/${data.film.id}`>{data.film.id}</a></li>
+        <li>Film format: {data.format}</li>
+        <li>Camera: {data.camera}</li>
+      </ul>
+
+      <span class="text-2xl">Shots:</span>
+      <div class="image-container caption-bottom max-w-xl mx-auto" id="gallery">
+        {
+          data.shots.map((shot) =>
+            shot.hidden ? null : (
+              <div>
+                <figcaption class=" font-bold text-lg mb-[-25px]">
+                  {shot.sequence}
+                </figcaption>
+                <a
+                  href={shot.image.src}
+                  class="image-link glightbox"
+                  data-astro-prefetch="false"
+                >
+                  <Image
+                    src={shot.image.src}
+                    alt={shot.image.alt}
+                    loading="lazy"
+                    class="image"
+                    inferSize
+                    decoding={"async"}
+                  />
+                </a>
+              </div>
+            ),
+          )
+        }
+      </div>
+
+      <slot />
+      <div class="flex flex-col sm:flex-row align-center">
+        <div class="w-full flex-col sm:w-1/2 text-center sm:text-left">
+          <p>
+            -- <a
+              href={`/authors/${author}`}
+              class="no-underline font-inconsolata"
+            >
+              {authorFullName}</a
+            >
+          </p>
+        </div>
+        <div
+          class="w-full flex-col sm:w-1/2 text-left sm:text-right mt-[10px] font-inconsolata"
+        >
+          <div>
+            Shot {dates}
+          </div>
+        </div>
+      </div>
+      <script src="../scripts/lightbox.js"></script>
+    </Prose>
+  </div>
+</BaseLayout>
+<style>
+  #backgroundImageElement::before {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: var(--background-image);
+    background-position: center;
+    background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    filter: brightness(0.8); /* Apply your filter here */
+    z-index: -1;
+
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+</style>

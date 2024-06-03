@@ -79,11 +79,12 @@ npm run create-post -- -p /dir/with/photos -d upload-sub-dir -t "Post Title" -m 
 
 ### Create a film roll from a folder with photos
 
-This script creates a new roll under `/src/content/rolls`. The rolls content library is made of YAML files with information about each roll, including URLs to all images. 
+This script creates a new roll under `/src/content/rolls`. The rolls content library is made of YAML files with information about each roll, including URLs to all images.
 
 ```sh
 npm run create-roll -- -p /dir/with/photos -n ROLL-NAME -f film-stock -c "Camera Used" -rs
 ```
+
 - `-p` - Photos source directory (not recursive).
 - `-n` - Name of the film roll. Will also be used as the sub-directory in the upload destination..
 - `-f` - Film stock used. Must match an entry from the films content library.
@@ -100,6 +101,7 @@ This script takes film rolls from the rolls content library and creates a draft 
 ```sh
 npm run create-roll-post -- -r "ROLL-NAME1,ROLL-NAME2" -t "Post Title"
 ```
+
 - `-r` - Comma separated list of roll IDs to include in the post.
 - `-t` - Title of the created post.
 

@@ -1,0 +1,127 @@
+---
+import { type CollectionEntry } from "astro:content";
+import {
+  getEarliestDate,
+  filterHiddenShots,
+  getDatesRangeFormatted,
+} from "./rolls.jsx";
+
+type Props = {
+  roll: CollectionEntry<"rolls">;
+  url: string;
+};
+
+const { roll, url } = Astro.props;
+const title = getRollSlug(roll.id);
+const shots = roll.data.shots.filter(filterHiddenShots);
+
+// const image = roll.data.image || null;
+import { Image } from "astro:assets";
+import { getRollSlug } from "./rolls";
+import FilmStrip from "./FilmStrip.astro";
+const formattedDates = getDatesRangeFormatted(roll);
+---
+
+<script>
+  // Find all buttons with the `alert` class on the page.
+  // const filmStripContainer = document.querySelector("#film-strip");
+  const filmStripLink = document.querySelector("#film-strip-link");
+
+  // Handle clicks on each button.
+
+  filmStripLink?.addEventListener("click", (e) => {
+    e.preventDefault();
+  });
+</script>
+<div
+  class="flex flex-col md:mb-20 sm:mb-14 gap-4 sm:justify-center md:mx-24 mb-4"
+>
+  <div id="title" class="flex w-full">
+    <a href={url}>
+      <h2
+        class="font-overpass-mono font-bold text-xl lg:text-2xl xl:text-4xl capitalize"
+      >
+        {title}
+      </h2>
+    </a>
+  </div>
+  <div id="film-strip" class="flex w-full">
+    <a
+      id="film-strip-link"
+      href={url}
+      class="pointer-events-none cursor-default"
+    >
+      <FilmStrip
+        images={shots.map((r) => {
+          return { src: r.image.src, alt: r.image.alt };
+        })}
+      />
+    </a>
+  </div>
+  <div id="description " class="flex flex-col justify-start mb-4">
+    <ul class="flex-row">
+      <p class="font-inconsolata text-sm">
+        Shot {formattedDates}
+      </p>
+    </ul>
+
+    <a
+      href={url}
+      class="dark:prose-invert max-w-max max-h-max flex flex-row items-center flex-shrink-0 bounce mt-0"
+    >
+      <span class="mt-2 mb-2">See Details</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 mt-2 mb-2 pt-1"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5l7 7-7 7"></path>
+      </svg>
+    </a>
+    <slot />
+  </div>
+</div>
+
+<style>
+  .post-image {
+    background-position: var(--position-x, 45%) var(--position-y, 50%);
+  }
+  @media (min-width: 800px) {
+    .post-image {
+      background-position: var(--position-x, 30%) var(--position-y, 50%);
+    }
+  }
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .bounce:hover {
+    animation: bounce 1s;
+  }
+  .fade-image {
+    transition: opacity 0.25s ease-in;
+    opacity: 1;
+  }
+
+  .fade-image:hover {
+    opacity: 0.7;
+  }
+</style>
