@@ -1,5 +1,7 @@
 ---
-import { type CollectionEntry } from "astro:content";
+import { type CollectionEntry, getEntry } from "astro:content";
+import TagComponent from "./Tag.astro";
+
 import {
   getEarliestDate,
   filterHiddenShots,
@@ -14,6 +16,8 @@ type Props = {
 const { roll, url } = Astro.props;
 const title = getRollSlug(roll.id);
 const shots = roll.data.shots.filter(filterHiddenShots);
+
+const filmStock = await getEntry("films", roll.data.film.id);
 
 // const image = roll.data.image || null;
 import { Image } from "astro:assets";
@@ -38,12 +42,13 @@ const formattedDates = getDatesRangeFormatted(roll);
 >
   <div id="title" class="flex w-full">
     <a href={url}>
-      <h2
-        class="font-overpass-mono font-bold text-xl lg:text-2xl xl:text-4xl capitalize"
+      <p
+        class="font-overpass-mono font-bold text-xl lg:text-2xl xl:text-4xl capitalize mr-2 mt-1"
       >
         {title}
-      </h2>
+      </p>
     </a>
+    <TagComponent tag={filmStock.data.name} classNames=" text-base" />
   </div>
   <div id="film-strip" class="flex w-full">
     <a

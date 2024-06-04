@@ -7,7 +7,7 @@ const { tag, href, classNames } = Astro.props;
 >
   <a
     class="text-[rgb(245,245,245)] lowercase no-underline"
-    href={href ? href : ""}
+    href={href ? href : undefined}
   >
     {tag}
   </a>
