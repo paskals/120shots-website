@@ -14,4 +14,4 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 ---
 
-<RollLayout roll={entry} />
+<RollLayout transition:name="none" roll={entry} />

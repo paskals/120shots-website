@@ -1,0 +1,14 @@
+---
+import { Icon } from "astro-icon";
+import { getRollSlug } from "./rolls";
+
+const { roll } = Astro.props;
+---
+
+<span class="font-overpass-mono rounded flex flex-row mr-2 py-1 w-auto">
+  <!-- <Icon name="mdi:github" class="h-[20px] w-[20px]" /> -->
+  <Icon name="mdi:film" class="h-[20px] w-[20px] mt-[0.125em]" />
+  <a class="ml-1 uppercase no-underline" href={`/rolls/${getRollSlug(roll)}`}>
+    {getRollSlug(roll)}
+  </a>
+</span>

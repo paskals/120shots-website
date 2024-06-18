@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import MarkdownPostLayout from "../../layouts/MarkdownPostLayout.astro";
+import { getRollSlug } from "../../components/rolls";
+import RollPill from "../../components/RollPill.astro";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("posts");
@@ -18,5 +20,8 @@ const { Content, remarkPluginFrontmatter } = await entry.render();
   <p class="prose prose-slate dark:prose-invert italic no-underline">
     {remarkPluginFrontmatter.minutesRead}
   </p>
+  <div class="flex flex-row items-start gap-2">
+    {entry.data.rolls?.map((roll) => <RollPill roll={roll.id} />)}
+  </div>
   <Content />
 </MarkdownPostLayout>

@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getEntry } from "astro:content";
-import TagComponent from "./Tag.astro";
+import TagComponent from "./TagPill.astro";
 
 import {
   getEarliestDate,
@@ -48,7 +48,7 @@ const formattedDates = getDatesRangeFormatted(roll);
         {title}
       </p>
     </a>
-    <TagComponent tag={filmStock.data.name} classNames=" text-base" />
+    <TagComponent tag={filmStock.data.name} class:list="text-base" />
   </div>
   <div id="film-strip" class="flex w-full">
     <a

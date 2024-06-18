@@ -200,7 +200,7 @@ import FilmStrip from "../../components/FilmStrip.astro";
 };
 
 interface FilmRollObject {
-  slug: string;
+  manualId: string; // This is needed to store the roll ID in the yaml file since Astro collection utils can't be used during the utility scripts.
   film: string;
   camera: string;
   format: string;
@@ -234,11 +234,12 @@ export const createNewRoll = async (options: {
   const { shots, rollName, film, camera, format, description } = options;
 
   let roll: FilmRollObject = {
-    slug: slugify(rollName).toUpperCase(),
+    manualId: slugify(rollName).toUpperCase(),
     film,
     camera,
     format,
     description,
+    cover: "001",
     shots: [],
   };
 
@@ -268,7 +269,7 @@ export const createNewRoll = async (options: {
   const firstYear = firstDate.getFullYear().toString();
 
   const fileName = slugify(rollName).toUpperCase() + ".yaml";
-  roll.slug = `${firstYear}/${roll.slug}`;
+  roll.manualId = `${firstYear}/${roll.manualId}`;
   const filePath = `${path.normalize("./src/content/rolls/" + firstYear)}/${fileName}`;
   const yamlContent = PrettyYAML.stringify(roll);
 
@@ -313,7 +314,8 @@ export const createPostFromRolls = async (
 
   const now = new Date();
   const title =
-    postTitle || `Draft post: ${rollsData.map((roll) => roll.slug).join(", ")}`;
+    postTitle ||
+    `Draft post: ${rollsData.map((roll) => roll.manualId).join(", ")}`;
 
   const fileName =
     slugify(now.toISOString().split("T")[0] + "-" + title) + ".mdx";
@@ -328,7 +330,7 @@ slug: ${slugify(title)}
 pubDate: ${now.toISOString()}
 updatedDate: ${now.toISOString()}
 tags: []
-rolls: \n  ${rollsData.map((roll) => `- ${roll.slug}`).join("\n  ")}
+rolls: \n  ${rollsData.map((roll) => `- ${roll.manualId}`).join("\n  ")}
 author: paskal
 image:
   {
@@ -354,7 +356,7 @@ import FilmStrip from "../../components/FilmStrip.astro";
 ${rollsData
   .map((roll) => {
     // Make a new section per roll with a masonry element
-    return `## ${roll.slug.toUpperCase()}
+    return `## ${roll.manualId.toUpperCase()}
 
   <Masonry
   columns='3'

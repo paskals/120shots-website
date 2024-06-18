@@ -1,12 +1,12 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import BlogPost from "../components/BlogPostCard.astro";
 import "../styles/glightbox.css";
 import Prose from "../components/Prose.astro";
-import Tag from "../components/Tag.astro";
+import Tag from "../components/TagPill.astro";
 
 import { getImage, Image } from "astro:assets";
-import { getEntry, type CollectionEntry } from "astro:content";
-import { getEntries } from "astro:content";
+import { getEntry, type CollectionEntry, getCollection } from "astro:content";
 import {
   getDatesRange,
   getDatesRangeFormatted,
@@ -22,6 +22,10 @@ type Props = {
 
 const { roll } = Astro.props;
 const data = roll.data;
+const posts = await getCollection(
+  "posts",
+  ({ data }) => data.rolls?.map((e) => e.id)?.includes(roll.id) || false,
+);
 
 const filmStock = await getEntry("films", roll.data.film.id);
 
@@ -41,7 +45,7 @@ const coverImage = getCoverImage(roll);
 ---
 
 <BaseLayout
-  title={title}
+  title={`${title} - Film Roll`}
   image={coverImage.src}
   alt={coverImage.alt}
   description={description}
@@ -49,6 +53,7 @@ const coverImage = getCoverImage(roll);
   pubDate={dates}
   keywords={keyWords}
   is404Page={false}
+  transitions={false}
 >
   <div
     data-pagefind-body
@@ -58,16 +63,30 @@ const coverImage = getCoverImage(roll);
       <ProseHeadings>
         <h1 class="capitalize">{title}</h1>
       </ProseHeadings>
-      <span class="text-2xl">Roll details:</span>
+      <p>{data.description || null}</p>
+      <h2 class="text-2xl">Roll Details</h2>
       <ul>
         <li>
           Film stock: <a href=`/films/${data.film.id}`>{filmStock.data.name}</a>
         </li>
         <li>Film format: {data.format}</li>
         <li>Camera: {data.camera}</li>
+        <li>Dates: {dates}</li>
       </ul>
 
-      <span class="text-2xl">Shots:</span>
+      <h2 class="text-2xl">Blog Posts</h2>
+      {
+        posts.length > 0
+          ? posts.map((post) => (
+              <BlogPost
+                class:list={["not-prose"]}
+                post={post}
+                url={`/posts/${post.slug}`}
+              />
+            ))
+          : "None"
+      }
+      <h2 class="text-2xl">Shots</h2>
       <div
         class="image-container caption-bottom w-full flex flex-row flex-wrap gap-2 mx-auto justify-evenly"
         id="gallery"

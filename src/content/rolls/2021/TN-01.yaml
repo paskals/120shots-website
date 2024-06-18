@@ -1,7 +1,8 @@
-slug: "2021/TN-01"
+manualId: "2021/TN-01"
 film: "ultramax-400"
 camera: "Nikon F3"
 format: "35mm"
+description: "First fim roll."
 shots:
   - sequence: "000"
     date: "2021-08-26T08:57:00.000Z"
