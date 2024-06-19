@@ -1,0 +1,17 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { url, icon } = Astro.props;
+---
+
+<a
+  class="flex flex-row mr-2 py-1 w-auto no-underline hover:opacity-85 transition-opacity"
+  href={url}
+>
+  <Icon name={icon} class="h-5 w-5 mt-[0.125rem] prose dark:prose-invert" />
+  <span
+    class="ml-1 uppercase no-underline my-0 prose dark:prose-invert font-overpass-mono"
+  >
+    <slot />
+  </span>
+</a>

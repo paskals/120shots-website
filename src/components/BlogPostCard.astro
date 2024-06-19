@@ -16,7 +16,7 @@ const publishedDate = pubDate.toDateString().split(" ").slice(1).join(" ");
 ---
 
 <div
-  class="flex flex-col sm:flex-row md:space-x-14 md:mb-20 sm:mb-14 gap-4 sm:justify-center md:mx-24 mb-4"
+  class="flex flex-col sm:flex-row md:space-x-14 md:mb-20 sm:mb-14 gap-4 sm:justify-center md:mx-24 mb-4 not-prose"
 >
   {
     image && (
@@ -29,7 +29,7 @@ const publishedDate = pubDate.toDateString().split(" ").slice(1).join(" ");
             width={1280}
             height={720}
             loading="lazy"
-            class="h-full object-cover object-center post-image"
+            class="h-full object-cover object-center post-image not-prose"
             style={`background-position: ${image.positionx} ${image.positiony};`}
           />
         </a>

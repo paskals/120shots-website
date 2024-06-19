@@ -2,7 +2,7 @@
 import BaseLayout from "./BaseLayout.astro";
 import "../styles/glightbox.css";
 import Prose from "../components/Prose.astro";
-import Tag from "../components/Tag.astro";
+import Tag from "../components/TagPill.astro";
 
 import { getImage } from "astro:assets";
 import { getEntry, type CollectionEntry } from "astro:content";
@@ -82,14 +82,14 @@ const positiony = frontmatter.image?.positiony;
         </h1>
         <div class="flex flex-wrap justify-center gap-2 mt-2 text-xl">
           {frontmatter.tags.map((tag) => (
-            <Tag tag={tag} href={`/tags/${tag}`} classNames="text-xl" />
+            <Tag tag={tag} href={`/tags/${tag}`} class:list="text-xl" />
           ))}
           {filmStocks
             ? filmStocks.map((film) => (
                 <Tag
                   tag={film.data.name}
                   href={`/films/${film.id}`}
-                  classNames="text-xl bg-slate-400"
+                  class:list="text-xl bg-slate-400"
                 />
               ))
             : null}
