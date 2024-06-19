@@ -35,6 +35,7 @@ const {
   title,
   keywords,
   is404Page = false,
+  transitions = true,
 } = Astro.props;
 
 const pageTitle = title ? title.concat(" › ", siteName) : siteName;
@@ -70,7 +71,7 @@ const metaImageSrc = image ? image : metaImage?.src;
       content=`film photography, street photography, landscape photography, travel photography, film stocks, film cameras, film gear${keywords ? ", " + keywords : ""}`
     />
     <title>{pageTitle}</title>
-    <ViewTransitions />
+    {transitions ? <ViewTransitions /> : null}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NFB47EN0Z"
     ></script><script>
       window.dataLayer = window.dataLayer || [];

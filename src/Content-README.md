@@ -9,3 +9,5 @@ The folders in this directory are where the posts/images, essentially the conten
 > Explain posts collection
 >
 > Explain films collection
+>
+> Explain rolls

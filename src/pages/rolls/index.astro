@@ -1,11 +1,12 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import BlogPost from "../../components/BlogPostCard.astro";
+import FilmRollCard from "../../components/FilmRollCard.astro";
 import ProseHeadings from "../../components/ProseHeadings.astro";
-import { sortByDate } from "../../components/sortbydate";
-const pageTitle = "Blog Posts";
-const allPosts = await getCollection("posts");
+import { sortRollsByDate, sortShotsByDate } from "../../components/rolls.jsx";
+import { getRollSlug } from "../../components/rolls";
+const pageTitle = "Film Rolls";
+const allRolls = await getCollection("rolls");
 //TODO: Implement pagination
 //TODO: isolate layout styling - padding and margins
 ---
@@ -20,9 +21,12 @@ const allPosts = await getCollection("posts");
       </p>
     </ProseHeadings>
     {
-      allPosts
-        .sort(sortByDate)
-        .map((post) => <BlogPost post={post} url={`/posts/${post.slug}`} />)
+      allRolls
+        .sort(sortRollsByDate)
+        .reverse()
+        .map((roll) => (
+          <FilmRollCard roll={roll} url={`/rolls/${getRollSlug(roll.id)}`} />
+        ))
     }
   </div>
 </BaseLayout>
