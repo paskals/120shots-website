@@ -1,4 +1,5 @@
 import { defineConfig, passthroughImageService } from "astro/config";
+import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
@@ -24,6 +25,12 @@ export default defineConfig({
     }),
     tailwind(),
     markdoc(),
+    icon({
+      include: {
+        mdi: ["*"],
+        bi: ["*"],
+      },
+    }),
   ],
   markdown: {
     remarkPlugins: [remarkGfm, remarkReadingTime],

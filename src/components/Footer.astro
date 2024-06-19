@@ -1,6 +1,6 @@
 ---
 const today = new Date();
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 ---
 
 <footer
@@ -15,13 +15,17 @@ import { Icon } from "astro-icon";
       &copy; {today.getFullYear()} Paskal S. All rights reserved.
     </div>
     <div class="flex justify-center gap-3 m-2 sm:m-0 sm:ml-auto">
-      <a href="https://github.com/paskals" target="_blank">
+      <a href="https://github.com/paskals/120shots-website" target="_blank">
         <span class="sr-only">Go to Paskal's GitHub repo</span>
         <Icon name="mdi:github" class="h-[20px] w-[20px]" />
       </a>
-      <a href="https://www.instagram.com/120shots/" target="_blank">
+      <a href="https://www.instagram.com/120shots" target="_blank">
         <span class="sr-only">Go to Paskal's Instragram Profile</span>
         <Icon name="mdi:instagram" class="h-[20px] w-[20px]" />
+      </a>
+      <a href="https://www.threads.net/@120shots" target="_blank">
+        <span class="sr-only">Go to Paskal's Threads Profile</span>
+        <Icon name="bi:threads" class="h-[20px] w-[20px]" />
       </a>
       <a
         id="rss-link"
