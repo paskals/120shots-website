@@ -36,7 +36,7 @@ export default {
       },
     },
     screens: {
-      xs: "400px",
+      xs: "420px",
 
       sm: "800px",
       // => @media (min-width: 800px) { ... }

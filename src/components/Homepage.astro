@@ -1,13 +1,15 @@
 ---
+import { Icon } from "astro-icon";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const { title, width, height } = Astro.props;
 import { getCollection } from "astro:content";
 import { getImage } from "astro:assets"; // Add all your collections here
+import IconPill from "./IconPill.astro";
 let allData: { imageSrc: string | null; alt: string; url: string }[] = [];
 
 const allContent = await getCollection("posts");
 const postsWithImages = allContent.filter(
-  (post) => post.data.image?.src && post.data.image?.alt,
+  (post) => post.data.image?.src && post.data.image?.alt
 );
 
 const imagePromises = postsWithImages.map(async (post) => {
@@ -35,7 +37,7 @@ allData.push(
       alt: result.alt,
       url: result.url,
     };
-  }),
+  })
 );
 ---
 
@@ -63,5 +65,46 @@ allData.push(
       <p>No images found</p>
     )
   }
+  <div
+    id="homepageButtons"
+    class="my-4 flex justify-center items-center flex-col sm:gap-4 gap-2 no-underline uppercase xs:flex-row"
+  >
+    <IconPill icon="mdi:text-box" url="/posts">Blog Posts</IconPill>
+    <IconPill icon="mdi:film" url="/rolls">Film Rolls</IconPill>
+    <IconPill icon="mdi:filmstrip-box-multiple" url="/films"
+      >Film Stocks</IconPill
+    >
+  </div>
   <script src="../scripts/homePage.js"></script>
 </BaseLayout>
+<style>
+  #randomHomePageImage {
+    opacity: 0;
+    animation: fade 1s ease-in-out 0s forwards;
+  }
+
+  #homepageButtons {
+    opacity: 0;
+    animation: fadeTranslate 1s ease-in-out 4s forwards;
+  }
+
+  @keyframes fadeTranslate {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>

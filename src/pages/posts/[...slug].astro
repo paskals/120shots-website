@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import MarkdownPostLayout from "../../layouts/MarkdownPostLayout.astro";
 import { getRollSlug } from "../../components/rolls";
-import RollPill from "../../components/RollPill.astro";
+import IconPill from "../../components/IconPill.astro";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("posts");
@@ -21,7 +21,13 @@ const { Content, remarkPluginFrontmatter } = await entry.render();
     {remarkPluginFrontmatter.minutesRead}
   </p>
   <div class="flex flex-row items-start gap-2">
-    {entry.data.rolls?.map((roll) => <RollPill roll={roll.id} />)}
+    {
+      entry.data.rolls?.map((roll) => (
+        <IconPill icon="mdi:film" url={`/rolls/${getRollSlug(roll.id)}`}>
+          {getRollSlug(roll.id)}
+        </IconPill>
+      ))
+    }
   </div>
   <Content />
 </MarkdownPostLayout>
