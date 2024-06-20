@@ -67,7 +67,7 @@ allData.push(
   }
   <div
     id="homepageButtons"
-    class="my-4 flex justify-center items-center flex-col sm:gap-4 gap-2 no-underline uppercase xs:flex-row"
+    class="my-4 mx-2 flex justify-center items-center flex-col sm:gap-4 gap-2 no-underline uppercase xs:flex-row"
   >
     <IconPill icon="mdi:text-box" url="/posts">Blog Posts</IconPill>
     <IconPill icon="mdi:film" url="/rolls">Film Rolls</IconPill>
@@ -80,12 +80,12 @@ allData.push(
 <style>
   #randomHomePageImage {
     opacity: 0;
-    animation: fade 1s ease-in-out 0s forwards;
+    animation: fade 1s ease-in-out 0.5s 1 forwards ;
   }
 
   #homepageButtons {
     opacity: 0;
-    animation: fadeTranslate 1s ease-in-out 4s forwards;
+    animation: fadeTranslate 1s ease-in-out 4s 1 forwards;
   }
 
   @keyframes fadeTranslate {
