@@ -179,6 +179,9 @@ if (argv._.includes("create-post")) {
         console.info(`✅ Post created at ${path.normalize(result)}`);
       });
     })
+    .catch((err) => {
+      console.error(err);
+    })
     .finally(() => {
       // ====== Delete TMP files ====
       deleteTempFiles(newFiles);

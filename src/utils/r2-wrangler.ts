@@ -32,14 +32,22 @@ export async function uploadFiles(
   if (destinationDir.slice(-1) != "/") {
     destinationDir_ = destinationDir.concat("/");
   }
-  const promises = paths.map(async (path) => {
+
+  const results: (string | null)[] = [];
+
+  for (const path of paths) {
+    console.log("\tUploading file: ", path);
+
     const filename = path.split("/").pop() || "";
     const upload = await bucket.uploadFile(
       path,
       topLevelDir + destinationDir_ + filename,
-    );
-    return upload.publicUrl;
-  });
+    ).catch((err) => {
+      console.info("Error uploading file: ", path);
+      console.error(err);
+    });
+    results.push(upload?.publicUrl || null);
+  }
 
-  return Promise.all(promises);
+  return results;
 }
