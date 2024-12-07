@@ -1,0 +1,339 @@
+manualId: "2022/TN-02"
+film: "lomo-800"
+camera: "Nikon F3"
+format: "35mm"
+cover: "015"
+shots:
+  - sequence: "000"
+    date: "2022-02-27T10:01:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-000-7A980D.webp"
+      alt: "TN-02 000"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "001"
+    date: "2022-02-27T12:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-001-5C4B9C.webp"
+      alt: "TN-02 001"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "002"
+    date: "2022-02-27T12:10:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-002-A565B7.webp"
+      alt: "TN-02 002"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "003"
+    date: "2022-02-27T12:20:00.000Z"
+    offsetTime: "+02:00"
+    hidden: true
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-003-34D7FB.webp"
+      alt: "TN-02 003"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "004"
+    date: "2022-02-27T12:30:00.000Z"
+    offsetTime: "+02:00"
+    hidden: true
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-004-930659.webp"
+      alt: "TN-02 004"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "005"
+    date: "2022-02-27T13:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-005-0267E0.webp"
+      alt: "TN-02 005"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "006"
+    date: "2022-02-27T13:10:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-006-6EF2E8.webp"
+      alt: "TN-02 006"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "007"
+    date: "2022-02-27T13:30:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-007-AE8956.webp"
+      alt: "TN-02 007"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "008"
+    date: "2022-02-27T13:40:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-008-9E0792.webp"
+      alt: "TN-02 008"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "009"
+    date: "2022-02-27T15:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-009-4137F8.webp"
+      alt: "TN-02 009"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "010"
+    date: "2022-02-27T20:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-010-46F597.webp"
+      alt: "TN-02 010"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "011"
+    date: "2022-02-27T20:10:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-011-131950.webp"
+      alt: "TN-02 011"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "012"
+    date: "2022-02-27T20:21:00.000Z"
+    offsetTime: "+02:00"
+    hidden: true
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-012-ADF90F.webp"
+      alt: "TN-02 012"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "013"
+    date: "2022-02-27T20:22:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-013-5F11FF.webp"
+      alt: "TN-02 013"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "014"
+    date: "2022-02-28T12:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-014-0CD3C2.webp"
+      alt: "TN-02 014"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "015"
+    date: "2022-02-28T12:02:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-015-8EB9EF.webp"
+      alt: "TN-02 015"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "016"
+    date: "2022-02-28T13:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-016-F47F10.webp"
+      alt: "TN-02 016"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "017"
+    date: "2022-02-28T13:10:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-017-899410.webp"
+      alt: "TN-02 017"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "018"
+    date: "2022-02-28T13:20:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-018-47BAEF.webp"
+      alt: "TN-02 018"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "019"
+    date: "2022-02-28T13:21:00.000Z"
+    offsetTime: "+02:00"
+    hidden: true
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-019-AF0446.webp"
+      alt: "TN-02 019"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "020"
+    date: "2022-02-28T13:22:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-020-B99474.webp"
+      alt: "TN-02 020"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "021"
+    date: "2022-02-28T13:30:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-021-335AC6.webp"
+      alt: "TN-02 021"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "022"
+    date: "2022-02-28T13:31:00.000Z"
+    offsetTime: "+02:00"
+    hidden: true
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-022-F0E21D.webp"
+      alt: "TN-02 022"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "023"
+    date: "2022-02-28T13:32:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-023-1C1DE1.webp"
+      alt: "TN-02 023"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "024"
+    date: "2022-02-28T14:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: true
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-024-46382C.webp"
+      alt: "TN-02 024"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "025"
+    date: "2022-02-28T14:01:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-025-CA7EA8.webp"
+      alt: "TN-02 025"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "026"
+    date: "2022-03-03T20:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: true
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-026-9348CB.webp"
+      alt: "TN-02 026"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "027"
+    date: "2022-03-03T20:01:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-027-150EBD.webp"
+      alt: "TN-02 027"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "028"
+    date: "2022-03-03T20:30:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-028-F804F4.webp"
+      alt: "TN-02 028"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "029"
+    date: "2022-03-03T20:32:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-029-E6F746.webp"
+      alt: "TN-02 029"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "030"
+    date: "2022-03-03T20:35:00.000Z"
+    offsetTime: "+02:00"
+    hidden: true
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-030-B44BB1.webp"
+      alt: "TN-02 030"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "031"
+    date: "2022-03-03T20:36:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-031-220E25.webp"
+      alt: "TN-02 031"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "032"
+    date: "2022-03-03T20:55:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-032-DEA512.webp"
+      alt: "TN-02 032"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "033"
+    date: "2022-03-05T12:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-033-489AFD.webp"
+      alt: "TN-02 033"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "034"
+    date: "2022-03-05T17:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-034-46771F.webp"
+      alt: "TN-02 034"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "035"
+    date: "2022-03-11T18:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-035-63384E.webp"
+      alt: "TN-02 035"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "036"
+    date: "2022-03-12T11:00:00.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TN-02/TN-02-036-BAE2C6.webp"
+      alt: "TN-02 036"
+      positionx: "50%"
+      positiony: "50%"
