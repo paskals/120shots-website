@@ -5,7 +5,11 @@
 import { hideBin } from "yargs/helpers";
 import yargs from "yargs";
 import dotenv from "dotenv";
-import { S3Client, ListObjectsV2Command, type _Object } from "@aws-sdk/client-s3";
+import {
+  S3Client,
+  ListObjectsV2Command,
+  type _Object,
+} from "@aws-sdk/client-s3";
 
 dotenv.config();
 
@@ -27,36 +31,32 @@ interface FileTypeStats {
 }
 
 const argv = yargs(hideBin(process.argv))
-  .command(
-    "$0",
-    "Get statistics for your CloudFlare R2 bucket",
-    {
-      prefix: {
-        alias: "p",
-        describe: "Filter objects by prefix (folder path)",
-        type: "string",
-        default: "",
-      },
-      detailed: {
-        alias: "d",
-        describe: "Show detailed breakdown by folders and file types",
-        type: "boolean",
-        default: false,
-      },
-      json: {
-        alias: "j",
-        describe: "Output as JSON",
-        type: "boolean",
-        default: false,
-      },
-      limit: {
-        alias: "l",
-        describe: "Maximum number of objects to process (0 = no limit)",
-        type: "number",
-        default: 0,
-      },
-    }
-  )
+  .command("$0", "Get statistics for your CloudFlare R2 bucket", {
+    prefix: {
+      alias: "p",
+      describe: "Filter objects by prefix (folder path)",
+      type: "string",
+      default: "",
+    },
+    detailed: {
+      alias: "d",
+      describe: "Show detailed breakdown by folders and file types",
+      type: "boolean",
+      default: false,
+    },
+    json: {
+      alias: "j",
+      describe: "Output as JSON",
+      type: "boolean",
+      default: false,
+    },
+    limit: {
+      alias: "l",
+      describe: "Maximum number of objects to process (0 = no limit)",
+      type: "number",
+      default: 0,
+    },
+  })
   .help().argv;
 
 // Initialize S3 client for R2
@@ -73,17 +73,19 @@ const bucketName = process.env.BUCKET_NAME || "";
 
 function formatBytes(bytes: number): string {
   if (bytes === 0) return "0 B";
-  
+
   const k = 1024;
   const sizes = ["B", "KB", "MB", "GB", "TB"];
   const i = Math.floor(Math.log(bytes) / Math.log(k));
-  
+
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
 }
 
 function getFileExtension(key: string): string {
   const parts = key.split(".");
-  return parts.length > 1 ? parts[parts.length - 1].toLowerCase() : "no extension";
+  return parts.length > 1
+    ? parts[parts.length - 1].toLowerCase()
+    : "no extension";
 }
 
 function getFolderPath(key: string): string {
@@ -94,7 +96,10 @@ function getFolderPath(key: string): string {
   return parts.slice(0, -1).join("/") + "/";
 }
 
-async function listAllObjects(prefix: string, limit: number): Promise<_Object[]> {
+async function listAllObjects(
+  prefix: string,
+  limit: number,
+): Promise<_Object[]> {
   const objects: _Object[] = [];
   let continuationToken: string | undefined;
   let totalFetched = 0;
@@ -109,7 +114,7 @@ async function listAllObjects(prefix: string, limit: number): Promise<_Object[]>
 
     try {
       const response = await s3Client.send(command);
-      
+
       if (response.Contents) {
         objects.push(...response.Contents);
         totalFetched += response.Contents.length;
@@ -206,7 +211,9 @@ function displayStats(stats: BucketStats, options: any) {
       .slice(0, 20); // Top 20 folders by size
 
     for (const [path, data] of sortedFolders) {
-      console.log(`${path.padEnd(30)} ${data.count.toString().padStart(6)} files  ${formatBytes(data.size).padStart(10)}`);
+      console.log(
+        `${path.padEnd(30)} ${data.count.toString().padStart(6)} files  ${formatBytes(data.size).padStart(10)}`,
+      );
     }
     console.log();
 
@@ -218,7 +225,9 @@ function displayStats(stats: BucketStats, options: any) {
       .slice(0, 15); // Top 15 file types by size
 
     for (const [ext, data] of sortedTypes) {
-      console.log(`${ext.padEnd(15)} ${data.count.toString().padStart(8)} files  ${formatBytes(data.size).padStart(10)}`);
+      console.log(
+        `${ext.padEnd(15)} ${data.count.toString().padStart(8)} files  ${formatBytes(data.size).padStart(10)}`,
+      );
     }
   } else {
     // Quick summary
@@ -241,7 +250,9 @@ function displayStats(stats: BucketStats, options: any) {
     }
   }
 
-  console.log("\n💡 Use --detailed for full breakdown or --json for JSON output");
+  console.log(
+    "\n💡 Use --detailed for full breakdown or --json for JSON output",
+  );
   if (options.limit > 0) {
     console.log(`⚠️  Limited to first ${options.limit} objects`);
   }
@@ -261,7 +272,7 @@ async function main() {
 
     console.log("🔍 Fetching bucket statistics...");
     const objects = await listAllObjects(argv.prefix, argv.limit);
-    
+
     if (objects.length === 0) {
       console.log("📭 No objects found in bucket");
       if (argv.prefix) {
@@ -272,9 +283,11 @@ async function main() {
 
     const stats = calculateStats(objects);
     displayStats(stats, argv);
-
   } catch (error) {
-    console.error("❌ Error:", error instanceof Error ? error.message : String(error));
+    console.error(
+      "❌ Error:",
+      error instanceof Error ? error.message : String(error),
+    );
     process.exit(1);
   }
 }

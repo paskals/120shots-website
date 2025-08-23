@@ -53,7 +53,9 @@ const rolls = defineCollection({
         date: z.coerce.date().optional(),
         offsetTime: z.string().optional(),
         hidden: z.coerce.boolean().optional(), // for shots that are not to be displayed
-        portfolio: z.enum(["landscape", "street", "panorama", "portrait"]).optional(),
+        portfolio: z
+          .enum(["landscape", "street", "panorama", "portrait"])
+          .optional(),
         image: z.object({
           src: z.string(),
           alt: z.string(),

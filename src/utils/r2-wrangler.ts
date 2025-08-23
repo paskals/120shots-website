@@ -39,13 +39,12 @@ export async function uploadFiles(
     console.log("\tUploading file: ", path);
 
     const filename = path.split("/").pop() || "";
-    const upload = await bucket.uploadFile(
-      path,
-      topLevelDir + destinationDir_ + filename,
-    ).catch((err) => {
-      console.info("Error uploading file: ", path);
-      console.error(err);
-    });
+    const upload = await bucket
+      .uploadFile(path, topLevelDir + destinationDir_ + filename)
+      .catch((err) => {
+        console.info("Error uploading file: ", path);
+        console.error(err);
+      });
     results.push(upload?.publicUrl || null);
   }
 

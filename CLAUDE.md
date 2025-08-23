@@ -29,7 +29,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 The site uses Astro's content collections system with strongly typed schemas:
 
 - **posts** (`src/content/posts/`) - Blog posts with MDX content, can reference films and rolls
-- **rolls** (`src/content/rolls/`) - Film roll data as YAML files with shot sequences and metadata  
+- **rolls** (`src/content/rolls/`) - Film roll data as YAML files with shot sequences and metadata
 - **films** (`src/content/films/`) - Film stock information (brand, ISO, color type)
 - **authors** (`src/content/authors/`) - Author profiles with MDX content
 
@@ -57,7 +57,7 @@ All collections are defined in `src/content/config.ts` with Zod schemas for type
 ### Styling & UI
 
 - TailwindCSS for styling
-- Custom CSS in `src/styles/global.css` and `src/styles/glightbox.css`  
+- Custom CSS in `src/styles/global.css` and `src/styles/glightbox.css`
 - GLightbox for image lightbox functionality
 - Dark/light theme toggle support
 

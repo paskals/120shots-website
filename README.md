@@ -105,6 +105,62 @@ npm run create-roll-post -- -r "ROLL-NAME1,ROLL-NAME2" -t "Post Title"
 - `-r` - Comma separated list of roll IDs to include in the post.
 - `-t` - Title of the created post.
 
+### Interactive Claude Command
+
+For a more user-friendly experience, you can use the `/photo` Claude slash command which provides an interactive interface for all the above workflows:
+
+```
+/photo
+```
+
+This command will:
+
+- Guide you through creating film rolls, blog posts, or posts from existing rolls
+- Validate film types against your content library
+- Show available rolls from your R2 bucket
+- Offer to create blog posts after roll creation
+- Use smart defaults (author, image dimensions, etc.)
+
+You can also skip directly to specific workflows:
+
+- `/photo roll` - Create a film roll
+- `/photo post` - Create a blog post from photos
+- `/photo rollpost` - Create a blog post from existing rolls
+
+### Get R2 bucket statistics
+
+This command provides comprehensive statistics about your CloudFlare R2 bucket, including folder breakdowns, file type analysis, and storage usage.
+
+```sh
+npm run r2-stats
+```
+
+Options:
+
+- `--detailed` or `-d` - Show detailed breakdown by folders and file types
+- `--prefix` or `-p` - Filter objects by prefix (folder path)
+- `--json` or `-j` - Output as JSON for programmatic use
+- `--limit` or `-l` - Maximum number of objects to process (0 = no limit)
+
+Examples:
+
+```sh
+# Basic bucket statistics
+npm run r2-stats
+
+# Detailed breakdown
+npm run r2-stats -- --detailed
+
+# Statistics for specific folder
+npm run r2-stats -- --prefix images/GEL-01/
+
+# JSON output for scripts
+npm run r2-stats -- --json
+
+# Limit processing to first 100 objects
+npm run r2-stats -- --limit 100
+```
+
 ### R2 Bucket configuration
 
 - Create a .env file under the root directory and include the following content:
