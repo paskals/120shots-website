@@ -12,7 +12,8 @@
     "postbuild": "pagefind --site dist",
     "create-post": "tsx ./src/utils/photer.ts create-post",
     "create-roll": "tsx ./src/utils/photer.ts create-roll",
-    "create-roll-post": "tsx ./src/utils/photer.ts create-roll-post"
+    "create-roll-post": "tsx ./src/utils/photer.ts create-roll-post",
+    "r2-stats": "tsx ./src/utils/r2-stats.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
@@ -22,6 +23,7 @@
     "@astrojs/sitemap": "^3.1.2",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/ts-plugin": "^1.8.0",
+    "@aws-sdk/client-s3": "^3.873.0",
     "@fontsource-variable/inconsolata": "^5.0.16",
     "@fontsource-variable/overpass-mono": "^5.0.15",
     "astro": "^4.6.1",
