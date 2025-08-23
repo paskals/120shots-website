@@ -70,7 +70,7 @@ shots:
   - sequence: "003"
     date: "2022-02-27T12:20:00.000Z"
     offsetTime: "+02:00"
-    hidden: false
+    hidden: true
     image:
       src: "https://cdn.120shots.com/images/TN-02/R1-01825-0004.webp"
       alt: "Film photo of summer, black, sea, leisure, coast, ocean."
@@ -91,7 +91,7 @@ shots:
   - sequence: "004"
     date: "2022-02-27T12:30:00.000Z"
     offsetTime: "+02:00"
-    hidden: false
+    hidden: true
     image:
       src: "https://cdn.120shots.com/images/TN-02/R1-01825-0005.webp"
       alt: "Film photo of fluid, sea, liquid, coastal and oceanic landforms, ocean, coast."
@@ -403,7 +403,7 @@ shots:
   - sequence: "019"
     date: "2022-02-28T13:21:00.000Z"
     offsetTime: "+02:00"
-    hidden: false
+    hidden: true
     image:
       src: "https://cdn.120shots.com/images/TN-02/R1-01825-0020.webp"
       alt: "Film photo of dress, day dress, one-piece garment, people in nature, leisure, vacation."
@@ -550,7 +550,7 @@ shots:
   - sequence: "026"
     date: "2022-03-03T20:00:00.000Z"
     offsetTime: "+02:00"
-    hidden: false
+    hidden: true
     image:
       src: "https://cdn.120shots.com/images/TN-02/R1-01825-0027.webp"
       alt: "Film photo of night, lighting, electricity, electronic signage, midnight, pedestrian."
