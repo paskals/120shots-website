@@ -123,6 +123,12 @@ const argv = yargs(hideBin(process.argv))
         type: "boolean",
         demandOption: false,
       },
+      skipVision: {
+        describe:
+          "Skip Google Vision API integration for generating image descriptions",
+        type: "boolean",
+        default: false,
+      },
     },
   )
   .command("create-roll-post", "Creates a post from existing rolls.", {
@@ -196,6 +202,7 @@ if (argv._.includes("create-post")) {
     randomSuffix,
     maxDimensionSize,
     renameFiles,
+    skipVision,
   } = argv;
 
   const destinationDir = sanitize(rollName);
@@ -232,8 +239,9 @@ if (argv._.includes("create-post")) {
         film,
         camera,
         format,
+        useVisionAPI: !skipVision, // Use Vision API unless explicitly skipped
       }).then((result) => {
-        console.info(`✅ Post created at ${path.normalize(result)}`);
+        console.info(`✅ Roll created at ${path.normalize(result)}`);
       });
     })
     .finally(() => {

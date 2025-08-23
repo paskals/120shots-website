@@ -61,6 +61,8 @@ const rolls = defineCollection({
           alt: z.string(),
           positionx: z.string().optional(),
           positiony: z.string().optional(),
+          labels: z.array(z.string()).optional(),
+          location: z.string().optional(),
         }),
       }),
     ),

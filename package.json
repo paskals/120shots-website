@@ -14,7 +14,8 @@
     "create-roll": "tsx ./src/utils/photer.ts create-roll",
     "create-roll-post": "tsx ./src/utils/photer.ts create-roll-post",
     "r2-stats": "tsx ./src/utils/r2-stats.ts",
-    "describe-images": "tsx ./src/utils/vision-describer.ts describe"
+    "describe-images": "tsx ./src/utils/vision-describer.ts describe",
+    "update-roll-descriptions": "tsx ./src/utils/update-roll-descriptions.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",

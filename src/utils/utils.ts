@@ -216,6 +216,8 @@ interface FilmRollObject {
       alt: string;
       positionx?: string;
       positiony?: string;
+      labels?: string[];
+      location?: string;
     };
   }[];
 }
@@ -230,8 +232,10 @@ export const createNewRoll = async (options: {
   camera: string;
   format: string;
   description?: string;
+  useVisionAPI?: boolean;
 }) => {
-  const { shots, rollName, film, camera, format, description } = options;
+  const { shots, rollName, film, camera, format, description, useVisionAPI } =
+    options;
 
   let roll: FilmRollObject = {
     manualId: slugify(rollName).toUpperCase(),
@@ -261,6 +265,21 @@ export const createNewRoll = async (options: {
         positiony: "50%",
       },
     });
+  }
+
+  // Enrich with Vision API if requested
+  if (useVisionAPI) {
+    try {
+      console.log("🔍 Enriching roll with Vision API descriptions...");
+      const { RollDescriptionUpdater } = await import(
+        "./update-roll-descriptions.js"
+      );
+      const updater = new RollDescriptionUpdater(false); // No backups needed for new rolls
+      roll = await updater.enrichRollWithVisionData(roll);
+    } catch (error: any) {
+      console.warn(`⚠️  Vision API enrichment failed: ${error.message}`);
+      console.log("📝 Continuing with basic alt text descriptions...");
+    }
   }
 
   const firstDate = roll.shots[0].date

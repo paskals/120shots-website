@@ -1,321 +1,667 @@
-manualId: "2021/LUX-01"
-film: "portra-400"
-camera: "Nikon F3"
-format: "35mm"
+manualId: 2021/LUX-01
+film: portra-400
+camera: Nikon F3
+format: 35mm
 cover: "002"
 shots:
   - sequence: "000"
-    date: "2021-12-31T13:10:34.000Z"
-    offsetTime: "+02:00"
+    date: 2021-12-31T13:10:34.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-000-1718FA.webp"
-      alt: "LUX-01 000"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-000-1718FA.webp
+      alt: Film photo of daytime, branch, leaf, vegetation, twig, morning.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Daytime
+        - Branch
+        - Leaf
+        - Vegetation
+        - Twig
+        - Morning
+        - Sunlight
   - sequence: "001"
-    date: "2021-12-31T14:10:34.000Z"
-    offsetTime: "+02:00"
+    date: 2021-12-31T14:10:34.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-001-40A7F3.webp"
-      alt: "LUX-01 001"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-001-40A7F3.webp
+      alt: "Film photo of town, alley, cobblestone. Location: Mesa Verde."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Town
+        - Alley
+        - Cobblestone
+      location: Mesa Verde
   - sequence: "002"
-    date: "2021-12-31T15:10:34.000Z"
-    offsetTime: "+02:00"
+    date: 2021-12-31T15:10:34.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-002-79E787.webp"
-      alt: "LUX-01 002"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-002-79E787.webp
+      alt: Film photo of wall, brick, alley, brickwork, winter, sidewalk.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Wall
+        - Brick
+        - Alley
+        - Brickwork
+        - Winter
+        - Sidewalk
+        - Walkway
+        - Cobblestone
+        - Fence
+        - Walking
   - sequence: "003"
-    date: "2021-12-31T16:10:34.000Z"
-    offsetTime: "+02:00"
+    date: 2021-12-31T16:10:34.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-003-72EA9A.webp"
-      alt: "LUX-01 003"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-003-72EA9A.webp
+      alt: Film photo of morning, evening, cobblestone, walkway, alley, bridge.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Morning
+        - Evening
+        - Cobblestone
+        - Walkway
+        - Alley
+        - Bridge
   - sequence: "004"
-    date: "2021-12-31T17:50:34.000Z"
-    offsetTime: "+02:00"
+    date: 2021-12-31T17:50:34.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-004-A104D2.webp"
-      alt: "LUX-01 004"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-004-A104D2.webp
+      alt: Film photo of spire, steeple, mist, haze, turret, fog.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Spire
+        - Steeple
+        - Mist
+        - Haze
+        - Turret
+        - Fog
   - sequence: "005"
-    date: "2021-12-31T18:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2021-12-31T18:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-005-9FA677.webp"
-      alt: "LUX-01 005"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-005-9FA677.webp
+      alt: Film photo of water, water resources, body of water, waterway, building, channel.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Water
+        - Water resources
+        - Body of water
+        - Waterway
+        - Building
+        - Channel
+        - Watercourse
+        - House
+        - Residential area
+        - Canal
   - sequence: "006"
-    date: "2021-12-31T18:08:34.000Z"
-    offsetTime: "+02:00"
+    date: 2021-12-31T18:08:34.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-006-3A18AF.webp"
-      alt: "LUX-01 006"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-006-3A18AF.webp
+      alt: Film photo of residential area, waterway, neighbourhood, channel, town, canal.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Residential area
+        - Waterway
+        - Neighbourhood
+        - Channel
+        - Town
+        - Canal
+        - Watercourse
+        - Bank
+        - Urban design
+        - Human settlement
   - sequence: "007"
-    date: "2021-12-31T18:10:00.000Z"
-    offsetTime: "+02:00"
+    date: 2021-12-31T18:10:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-007-C10FDB.webp"
-      alt: "LUX-01 007"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-007-C10FDB.webp
+      alt: "Film photo of road surface, city, road, street, town, urban area. Location: Spanish Turret."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Road surface
+        - City
+        - Road
+        - Street
+        - Town
+        - Urban area
+        - Neighbourhood
+        - Architecture
+        - Residential area
+        - Human settlement
+      location: Spanish Turret
   - sequence: "008"
-    date: "2022-01-01T12:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-01-01T12:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-008-6DB677.webp"
-      alt: "LUX-01 008"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-008-6DB677.webp
+      alt: Film photo of leaf, vegetation, branch, shrub, twig, rural area.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Leaf
+        - Vegetation
+        - Branch
+        - Shrub
+        - Twig
+        - Rural area
+        - Morning
+        - Autumn
+        - Bridge
+        - Backyard
   - sequence: "009"
-    date: "2022-01-01T12:01:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-01-01T12:01:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-009-7EB047.webp"
-      alt: "LUX-01 009"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-009-7EB047.webp
+      alt: "Film photo of roof. Location: Citadel Of The Holy Spirit."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Roof
+      location: Citadel Of The Holy Spirit
   - sequence: "010"
-    date: "2022-01-01T12:10:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-01-01T12:10:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-010-872D44.webp"
-      alt: "LUX-01 010"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-010-872D44.webp
+      alt: Film photo of leaf, walkway, groundcover, cobblestone, stone wall, trail.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Leaf
+        - Walkway
+        - Groundcover
+        - Cobblestone
+        - Stone wall
+        - Trail
+        - Moss
+        - Woodland
+        - Bryophyte
+        - Alley
   - sequence: "011"
-    date: "2022-01-01T12:20:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-01-01T12:20:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-011-819F6A.webp"
-      alt: "LUX-01 011"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-011-819F6A.webp
+      alt: Film photo of bridge, arch, arch bridge, viaduct, aqueduct, list of nonbuilding structure types.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Bridge
+        - Arch
+        - Arch bridge
+        - Viaduct
+        - Aqueduct
+        - List of nonbuilding structure types
+        - Brickwork
+        - Stone wall
+        - Concrete bridge
+        - Brick
   - sequence: "012"
-    date: "2022-01-01T12:30:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-01-01T12:30:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-012-1F5946.webp"
-      alt: "LUX-01 012"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-012-1F5946.webp
+      alt: Film photo of wall, town, roof, grey, steeple, spire.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Wall
+        - Town
+        - Roof
+        - Grey
+        - Steeple
+        - Spire
+        - Turret
+        - Chimney
+        - Alley
   - sequence: "013"
-    date: "2022-01-01T12:35:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-01-01T12:35:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-013-FD0567.webp"
-      alt: "LUX-01 013"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-013-FD0567.webp
+      alt: "Film photo of building, residential area, neighbourhood, architecture, house, home. Location: Chemin De La Corniche."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Building
+        - Residential area
+        - Neighbourhood
+        - Architecture
+        - House
+        - Home
+        - Roof
+        - Human settlement
+        - Suburb
+        - Winter
+      location: Chemin De La Corniche
   - sequence: "014"
-    date: "2022-01-01T12:40:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-01-01T12:40:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-014-B23F65.webp"
-      alt: "LUX-01 014"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-014-B23F65.webp
+      alt: Film photo of road surface, road, architecture, residential area, street, atmospheric phenomenon.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Road surface
+        - Road
+        - Architecture
+        - Residential area
+        - Street
+        - atmospheric phenomenon
+        - Morning
+        - Thoroughfare
+        - Slope
+        - Suburb
   - sequence: "015"
-    date: "2022-02-07T18:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-07T18:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-015-270C90.webp"
-      alt: "LUX-01 015"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-015-270C90.webp
+      alt: Film photo of building, night, city, urban area, metropolitan area, high-rise building.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Building
+        - Night
+        - City
+        - Urban area
+        - Metropolitan area
+        - High-rise building
+        - Architecture
+        - Metropolis
+        - Urban design
+        - Midnight
   - sequence: "016"
-    date: "2022-02-08T12:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-08T12:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-016-0031AA.webp"
-      alt: "LUX-01 016"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-016-0031AA.webp
+      alt: Film photo of building, daytime, urban area, city, metropolitan area, high-rise building.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Building
+        - Daytime
+        - Urban area
+        - City
+        - Metropolitan area
+        - High-rise building
+        - Neighbourhood
+        - Architecture
+        - Residential area
+        - Apartment
   - sequence: "017"
-    date: "2022-02-08T12:05:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-08T12:05:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-017-966466.webp"
-      alt: "LUX-01 017"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-017-966466.webp
+      alt: Film photo of city, urban area, architecture, metropolitan area, street, urban design.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - City
+        - Urban area
+        - Architecture
+        - Metropolitan area
+        - Street
+        - Urban design
+        - Apartment
+        - High-rise building
+        - Condominium
+        - Metropolis
   - sequence: "018"
-    date: "2022-02-08T17:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-08T17:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-018-B8CB22.webp"
-      alt: "LUX-01 018"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-018-B8CB22.webp
+      alt: Film photo of urban area, building, city, daytime, metropolitan area, skyscraper.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - Building
+        - City
+        - Daytime
+        - Metropolitan area
+        - Skyscraper
+        - High-rise building
+        - Residential area
+        - Apartment
+        - Metropolis
   - sequence: "019"
-    date: "2022-02-08T17:10:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-08T17:10:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-019-6609AF.webp"
-      alt: "LUX-01 019"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-019-6609AF.webp
+      alt: Film photo of urban area, building, city, daytime, metropolitan area, skyscraper.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - Building
+        - City
+        - Daytime
+        - Metropolitan area
+        - Skyscraper
+        - High-rise building
+        - Residential area
+        - Metropolis
+        - Apartment
   - sequence: "020"
-    date: "2022-02-12T18:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-12T18:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-020-9BFECB.webp"
-      alt: "LUX-01 020"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-020-9BFECB.webp
+      alt: Film photo of urban area, building, city, daytime, metropolitan area, high-rise building.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - Building
+        - City
+        - Daytime
+        - Metropolitan area
+        - High-rise building
+        - Skyscraper
+        - Residential area
+        - atmospheric phenomenon
+        - Metropolis
   - sequence: "021"
-    date: "2022-02-12T18:01:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-12T18:01:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-021-B73B68.webp"
-      alt: "LUX-01 021"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-021-B73B68.webp
+      alt: Film photo of urban area, building, city, daytime, metropolitan area, high-rise building.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - Building
+        - City
+        - Daytime
+        - Metropolitan area
+        - High-rise building
+        - atmospheric phenomenon
+        - Skyscraper
+        - Residential area
+        - Metropolis
   - sequence: "022"
-    date: "2022-02-12T18:02:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-12T18:02:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-022-E6283B.webp"
-      alt: "LUX-01 022"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-022-E6283B.webp
+      alt: Film photo of urban area, building, city, daytime, metropolitan area, high-rise building.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - Building
+        - City
+        - Daytime
+        - Metropolitan area
+        - High-rise building
+        - atmospheric phenomenon
+        - Metropolis
+        - Skyscraper
+        - Residential area
   - sequence: "023"
-    date: "2022-02-12T18:04:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-12T18:04:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-023-B70EC4.webp"
-      alt: "LUX-01 023"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-023-B70EC4.webp
+      alt: Film photo of daytime, building, city, urban area, metropolitan area, hill.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Daytime
+        - Building
+        - City
+        - Urban area
+        - Metropolitan area
+        - Hill
+        - Metropolis
+        - High-rise building
+        - Landmark
+        - atmospheric phenomenon
   - sequence: "024"
-    date: "2022-02-12T20:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-12T20:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-024-BCE09E.webp"
-      alt: "LUX-01 024"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-024-BCE09E.webp
+      alt: Film photo of urban area, city, metropolitan area, road, street, metropolis.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - City
+        - Metropolitan area
+        - Road
+        - Street
+        - Metropolis
+        - Night
+        - High-rise building
+        - Highway
+        - Commercial building
   - sequence: "025"
-    date: "2022-02-12T20:05:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-12T20:05:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-025-C95991.webp"
-      alt: "LUX-01 025"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-025-C95991.webp
+      alt: Film photo of urban area, city, metropolitan area, road, street, night.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - City
+        - Metropolitan area
+        - Road
+        - Street
+        - Night
+        - Metropolis
+        - High-rise building
+        - Commercial building
+        - Electricity
   - sequence: "026"
-    date: "2022-02-12T20:10:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-12T20:10:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-026-8C87D3.webp"
-      alt: "LUX-01 026"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-026-8C87D3.webp
+      alt: Film photo of urban area, city, metropolitan area, road, night, street.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - City
+        - Metropolitan area
+        - Road
+        - Night
+        - Street
+        - Metropolis
+        - High-rise building
+        - Electricity
+        - Commercial building
   - sequence: "027"
-    date: "2022-02-12T20:29:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-12T20:29:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-027-C4E8B4.webp"
-      alt: "LUX-01 027"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-027-C4E8B4.webp
+      alt: Film photo of urban area, city, building, metropolitan area, high-rise building, night.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - City
+        - Building
+        - Metropolitan area
+        - High-rise building
+        - Night
+        - Skyscraper
+        - Metropolis
+        - Cityscape
+        - Architecture
   - sequence: "028"
-    date: "2022-02-12T20:30:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-12T20:30:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-028-13113D.webp"
-      alt: "LUX-01 028"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-028-13113D.webp
+      alt: Film photo of urban area, city, metropolitan area, building, night, high-rise building.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - City
+        - Metropolitan area
+        - Building
+        - Night
+        - High-rise building
+        - Skyscraper
+        - Metropolis
+        - Cityscape
+        - Tower
   - sequence: "029"
-    date: "2022-02-21T17:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-21T17:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-029-27D4CB.webp"
-      alt: "LUX-01 029"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-029-27D4CB.webp
+      alt: Film photo of sidewalk, parking lot, parking, compact car, automotive tail & brake light, sedan.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sidewalk
+        - Parking lot
+        - Parking
+        - Compact car
+        - Automotive Tail & Brake Light
+        - Sedan
+        - Executive car
   - sequence: "030"
-    date: "2022-02-25T12:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-25T12:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-030-F17276.webp"
-      alt: "LUX-01 030"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-030-F17276.webp
+      alt: Film photo of train station, track, electricity, metal, iron, electrical network.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Train station
+        - Track
+        - Electricity
+        - Metal
+        - Iron
+        - Electrical network
+        - Overhead power line
+        - Electrical Supply
+        - Transport hub
+        - Steel
   - sequence: "031"
-    date: "2022-02-25T12:01:34.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-25T12:01:34.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-031-5038DD.webp"
-      alt: "LUX-01 031"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-031-5038DD.webp
+      alt: Film photo of train station, transport hub, metro station, steel, passenger, rail transport.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Train station
+        - Transport hub
+        - Metro station
+        - Steel
+        - Passenger
+        - Rail transport
   - sequence: "032"
-    date: "2022-02-26T12:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-26T12:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-032-0740C1.webp"
-      alt: "LUX-01 032"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-032-0740C1.webp
+      alt: Film photo of wood, brown, composite material, concrete, column, building material.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Wood
+        - Brown
+        - Composite material
+        - Concrete
+        - Column
+        - Building material
+        - Design
+        - Daylighting
+        - Brutalist architecture
+        - Symmetry
   - sequence: "033"
-    date: "2022-02-26T13:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-26T13:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-033-D63FE2.webp"
-      alt: "LUX-01 033"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-033-D63FE2.webp
+      alt: Film photo of graphics, graphic design.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Graphics
+        - Graphic design
   - sequence: "034"
-    date: "2022-02-26T17:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-26T17:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-034-CD4064.webp"
-      alt: "LUX-01 034"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-034-CD4064.webp
+      alt: Film photo of eyewear, glasses, lips, vision care, shoulder, happiness.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Eyewear
+        - Glasses
+        - Lips
+        - Vision Care
+        - Shoulder
+        - Happiness
+        - Beauty
+        - Fashion
+        - Smile
+        - Textile
