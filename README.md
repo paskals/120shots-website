@@ -127,6 +127,40 @@ You can also skip directly to specific workflows:
 - `/photo post` - Create a blog post from photos
 - `/photo rollpost` - Create a blog post from existing rolls
 
+### Generate image descriptions using Google Vision API
+
+This utility generates meaningful alt text descriptions for your photography using Google Vision API. It focuses on landmarks and visual elements, filtering out generic photography terms to create descriptions suitable for accessibility and SEO.
+
+```sh
+npm run describe-images "https://cdn.120shots.com/images/roll/photo.webp"
+```
+
+Options:
+
+- `--detailLevel` or `-d` - Description detail level: `basic`, `detailed`, `comprehensive` (default: detailed)
+- `--delay` - Delay between API calls in milliseconds (default: 100ms)
+
+Examples:
+
+```sh
+# Single image with default (detailed) level
+npm run describe-images "https://cdn.120shots.com/images/EHV-01/photo.webp"
+
+# Multiple images
+npm run describe-images "photo1.webp" "photo2.webp" "photo3.webp"
+
+# Basic descriptions (fewer terms)
+npm run describe-images -- --detailLevel basic "photo.webp"
+
+# Comprehensive descriptions (more terms + landmarks)
+npm run describe-images -- --detailLevel comprehensive "photo.webp"
+
+# Custom delay for rate limiting
+npm run describe-images -- --delay 200 "photo1.webp" "photo2.webp"
+```
+
+**Requirements:** Add `GOOGLE_API_KEY=your_google_cloud_api_key` to your `.env` file and enable the Cloud Vision API in your Google Cloud Console.
+
 ### Get R2 bucket statistics
 
 This command provides comprehensive statistics about your CloudFlare R2 bucket, including folder breakdowns, file type analysis, and storage usage.
@@ -172,6 +206,7 @@ R2_SECRET_ACCESS_KEY=your secret access key
 BUCKET_NAME=name of your bucket
 BUCKET_PUBLIC_URL=public URL of your bucket
 TOP_LEVEL_DIR=images/
+GOOGLE_API_KEY=your google cloud api key
 ```
 
 ## How it all works
