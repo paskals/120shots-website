@@ -14,6 +14,7 @@ import fs from "fs";
 import path from "path";
 import yaml from "yaml";
 import { GoogleVisionImageDescriber } from "./vision-describer.js";
+import { formatYamlWithSpacing } from "./utils.js";
 
 // Load environment variables
 config();
@@ -258,11 +259,7 @@ export class RollDescriptionUpdater {
     }
 
     // Save updated YAML
-    const updatedYaml = yaml.stringify(rollData, {
-      indent: 2,
-      lineWidth: 0,
-      minContentWidth: 0,
-    });
+    const updatedYaml = formatYamlWithSpacing(rollData, ['shots']);
 
     fs.writeFileSync(filePath, updatedYaml, "utf8");
     console.log(

@@ -3,8 +3,7 @@ import sanitize from "sanitize-filename";
 import path from "path";
 import sharp, { type OutputInfo } from "sharp";
 import exif from "exif-reader";
-import PrettyYAML from "json-to-pretty-yaml";
-import { parse } from "yaml";
+import { parse, stringify } from "yaml";
 
 export const TEMP_FOLDER = "./tmp";
 
@@ -148,6 +147,71 @@ export const deleteTempFiles = (newFiles: string[]) => {
   });
 };
 
+/**
+ * Adds blank lines between top-level items in specified YAML arrays
+ */
+function addBlankLinesBetweenArrayItems(
+  yamlString: string,
+  arrayNames: string[]
+): string {
+  const lines = yamlString.split('\n');
+  const result: string[] = [];
+  let currentArray: string | null = null;
+  let firstItemInArray = true;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+
+    // Check if entering a target array
+    for (const arrayName of arrayNames) {
+      if (line === `${arrayName}:`) {
+        currentArray = arrayName;
+        firstItemInArray = true;
+        break;
+      }
+    }
+
+    // Check if exited array (dedent to root)
+    if (currentArray && line.length > 0 && !line.startsWith(' ')) {
+      currentArray = null;
+    }
+
+    // Add blank line before array items (except first)
+    if (currentArray && line.match(/^  - /)) {
+      if (!firstItemInArray) {
+        result.push('');
+      }
+      firstItemInArray = false;
+    }
+
+    result.push(line);
+  }
+
+  return result.join('\n');
+}
+
+/**
+ * Converts object to YAML with custom formatting and spacing
+ */
+export function formatYamlWithSpacing(
+  obj: any,
+  arrayNamesToSpace: string[] = []
+): string {
+  let yamlString = stringify(obj, {
+    indent: 2,
+    lineWidth: 0,
+    minContentWidth: 0,
+    defaultStringType: 'PLAIN',
+    defaultKeyType: 'PLAIN',
+  });
+
+  if (arrayNamesToSpace.length > 0) {
+    yamlString = addBlankLinesBetweenArrayItems(yamlString, arrayNamesToSpace);
+  }
+
+  return yamlString;
+}
+
 export const createNewEssay = (
   imageURLs: string[],
   essayTitle?: string,
@@ -187,7 +251,7 @@ export const createNewEssay = (
     spreads,
   };
 
-  const yamlContent = PrettyYAML.stringify(essay);
+  const yamlContent = formatYamlWithSpacing(essay, ['spreads']);
   return saveFile(filePath, yamlContent);
 };
 
@@ -282,7 +346,7 @@ export const createNewRoll = async (options: {
   const fileName = slugify(rollName).toUpperCase() + ".yaml";
   roll.manualId = `${firstYear}/${roll.manualId}`;
   const filePath = `${path.normalize("./src/content/rolls/" + firstYear)}/${fileName}`;
-  const yamlContent = PrettyYAML.stringify(roll);
+  const yamlContent = formatYamlWithSpacing(roll, ['shots']);
 
   return saveFile(filePath, yamlContent);
 };
@@ -399,6 +463,6 @@ export const createEssayFromRolls = async (
     spreads,
   };
 
-  const yamlContent = PrettyYAML.stringify(essay);
+  const yamlContent = formatYamlWithSpacing(essay, ['spreads']);
   return saveFile(filePath, yamlContent);
 };
