@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+
+interface Photo {
+  src: string;
+  alt: string;
+  fit?: "cover" | "contain";
+}
+
+interface Props {
+  layout: "single" | "duo" | "trio";
+  photos: Photo[];
+  caption?: string;
+  index: number;
+}
+
+const { layout, photos, caption, index } = Astro.props;
+
+// Validate photo count for layout
+const expectedPhotos = { single: 1, duo: 2, trio: 3 };
+const photoCount = Math.min(photos.length, expectedPhotos[layout]);
+const displayPhotos = photos.slice(0, photoCount);
+---
+
+<section class="spread" data-layout={layout} data-index={index}>
+  <div class="spread-photos">
+    {
+      displayPhotos.map((photo, i) => (
+        <div class="photo-wrapper">
+          <Image
+            src={photo.src}
+            alt={photo.alt}
+            inferSize
+            loading={index === 0 ? "eager" : "lazy"}
+            decoding={index === 0 ? "sync" : "async"}
+          />
+        </div>
+      ))
+    }
+  </div>
+  {caption && <p class="spread-caption">{caption}</p>}
+</section>

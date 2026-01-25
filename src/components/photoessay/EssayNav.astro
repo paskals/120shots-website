@@ -1,0 +1,27 @@
+---
+interface Props {
+  spreadCount: number;
+}
+
+const { spreadCount } = Astro.props;
+---
+
+<!-- Navigation dots rendered in layout, this component for potential future enhancements -->
+<nav class="essay-dots" id="essay-dots" aria-label="Spread navigation">
+  {
+    Array.from({ length: spreadCount }, (_, i) => (
+      <button
+        class="essay-dot"
+        data-spread-index={i}
+        aria-label={`Go to spread ${i + 1}`}
+      >
+        <span class="dot-inner" />
+      </button>
+    ))
+  }
+</nav>
+
+<div class="essay-keyboard-hints" id="keyboard-hints">
+  <span class="key-hint">↑</span>
+  <span class="key-hint">↓</span>
+</div>

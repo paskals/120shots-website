@@ -1,0 +1,183 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import { Image } from "astro:assets";
+import ThemeIcon from "../components/ThemeIcon.astro";
+import "@fontsource-variable/overpass-mono";
+import "@fontsource-variable/inconsolata";
+import { getImage } from "astro:assets";
+import "../styles/global.css";
+import "../styles/photoessay.css";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  pubDate?: Date;
+  updatedDate?: Date;
+  spreadCount: number;
+}
+
+const { title, description, image, pubDate, updatedDate, spreadCount } =
+  Astro.props;
+
+const baseUrl = new URL(Astro.request.url).origin;
+const siteName = "120 Shots";
+const pageTitle = title.concat(" › ", siteName);
+
+const favicon = {
+  src: "/120Shots_icon_nobackground.png",
+  alt: "favicon",
+  width: "512",
+  height: "512",
+};
+---
+
+<html class="" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/webp" href="/120Shots_icon_background.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="og:title" content={pageTitle} />
+    <meta name="og:description" content={description} />
+    <meta name="description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content={siteName} />
+    {image && <meta name="og:image" content={image} />}
+    <meta name="article:published_time" content={pubDate?.toISOString()} />
+    {updatedDate && <meta name="article:modified_time" content={updatedDate.toISOString()} />}
+    <meta name="og:url" content={Astro.url} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{pageTitle}</title>
+    <ViewTransitions />
+  </head>
+  <body class="essay-body">
+    <!-- Minimal header -->
+    <header class="essay-header">
+      <nav class="essay-nav">
+        <div class="essay-nav-left">
+          <a href="/essays" class="essay-back" aria-label="Back to essays">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a href="/" class="essay-logo" aria-label="Home">
+            <Image
+              src="/120Shots_icon_nobackground.png"
+              alt="120 Shots"
+              width={32}
+              height={32}
+              class="dark:invert"
+            />
+          </a>
+        </div>
+        <span class="essay-title-header">{title}</span>
+        <div class="essay-header-actions">
+          <ThemeIcon />
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main essay container with scroll snap -->
+    <main class="essay-container" id="essay-container" data-spread-count={spreadCount}>
+      <slot />
+    </main>
+
+    <!-- Navigation dots -->
+    <nav class="essay-dots" id="essay-dots" aria-label="Spread navigation">
+      {
+        Array.from({ length: spreadCount }, (_, i) => (
+          <button
+            class="essay-dot"
+            data-spread-index={i}
+            aria-label={`Go to spread ${i + 1}`}
+          >
+            <span class="dot-inner" />
+          </button>
+        ))
+      }
+    </nav>
+
+    <!-- Keyboard hints (shown on hover near dots) -->
+    <div class="essay-keyboard-hints" id="keyboard-hints">
+      <span class="key-hint">↑</span>
+      <span class="key-hint">↓</span>
+    </div>
+
+    <script>
+      function initEssayNav() {
+        const container = document.getElementById("essay-container");
+        const dots = document.querySelectorAll(".essay-dot");
+        const spreads = document.querySelectorAll(".spread");
+        const keyboardHints = document.getElementById("keyboard-hints");
+        const dotsNav = document.getElementById("essay-dots");
+
+        if (!container || !dots.length || !spreads.length) return;
+
+        // Update active dot based on scroll position
+        const observerOptions = {
+          root: container,
+          threshold: 0.5,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const index = Array.from(spreads).indexOf(entry.target as Element);
+              dots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === index);
+              });
+            }
+          });
+        }, observerOptions);
+
+        spreads.forEach((spread) => observer.observe(spread));
+
+        // Click on dot to scroll to spread
+        dots.forEach((dot, i) => {
+          dot.addEventListener("click", () => {
+            spreads[i]?.scrollIntoView({ behavior: "smooth" });
+          });
+        });
+
+        // Keyboard navigation
+        document.addEventListener("keydown", (e) => {
+          const currentIndex = Array.from(dots).findIndex((dot) =>
+            dot.classList.contains("active")
+          );
+
+          if (e.key === "ArrowDown" || e.key === "j") {
+            e.preventDefault();
+            const nextIndex = Math.min(currentIndex + 1, spreads.length - 1);
+            spreads[nextIndex]?.scrollIntoView({ behavior: "smooth" });
+          } else if (e.key === "ArrowUp" || e.key === "k") {
+            e.preventDefault();
+            const prevIndex = Math.max(currentIndex - 1, 0);
+            spreads[prevIndex]?.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+
+        // Show keyboard hints on dots hover
+        if (dotsNav && keyboardHints) {
+          dotsNav.addEventListener("mouseenter", () => {
+            keyboardHints.classList.add("visible");
+          });
+          dotsNav.addEventListener("mouseleave", () => {
+            keyboardHints.classList.remove("visible");
+          });
+        }
+      }
+
+      // Initialize on page load and after view transitions
+      document.addEventListener("astro:page-load", initEssayNav);
+    </script>
+  </body>
+</html>

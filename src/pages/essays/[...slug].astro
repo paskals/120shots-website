@@ -1,0 +1,38 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import PhotoEssayLayout from "../../layouts/PhotoEssayLayout.astro";
+import PhotoSpread from "../../components/photoessay/PhotoSpread.astro";
+
+export async function getStaticPaths() {
+  const essays = await getCollection("photoessays");
+  return essays.map((essay) => ({
+    params: { slug: essay.id },
+    props: { essay },
+  }));
+}
+
+const { essay } = Astro.props;
+const { title, description, pubDate, updatedDate, cover, spreads } = essay.data;
+
+const coverImage = cover?.src || spreads[0]?.photos[0]?.src;
+---
+
+<PhotoEssayLayout
+  title={title}
+  description={description}
+  image={coverImage}
+  pubDate={pubDate}
+  updatedDate={updatedDate}
+  spreadCount={spreads.length}
+>
+  {
+    spreads.map((spread, index) => (
+      <PhotoSpread
+        layout={spread.layout}
+        photos={spread.photos}
+        caption={spread.caption}
+        index={index}
+      />
+    ))
+  }
+</PhotoEssayLayout>

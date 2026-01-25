@@ -90,4 +90,37 @@ const authors = defineCollection({
   }),
 });
 
-export const collections = { posts: blog, authors, rolls, films };
+const photoessays = defineCollection({
+  type: "data",
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    author: reference("authors"),
+    rolls: z.array(reference("rolls")).optional(),
+    filmStocks: z.array(reference("films")).optional(),
+    tags: z.array(z.string()).optional(),
+    cover: z
+      .object({
+        src: z.string(),
+        alt: z.string(),
+      })
+      .optional(),
+    spreads: z.array(
+      z.object({
+        layout: z.enum(["single", "duo", "trio"]),
+        photos: z.array(
+          z.object({
+            src: z.string(),
+            alt: z.string(),
+            fit: z.enum(["cover", "contain"]).optional().default("cover"),
+          }),
+        ),
+        caption: z.string().optional(),
+      }),
+    ),
+  }),
+});
+
+export const collections = { posts: blog, authors, rolls, films, photoessays };

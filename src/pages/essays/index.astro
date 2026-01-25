@@ -1,0 +1,91 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+
+const essays = await getCollection("photoessays");
+
+// Sort by publication date, newest first
+const sortedEssays = essays.sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+  });
+};
+---
+
+<BaseLayout
+  title="Photo Essays"
+  description="Visual stories told through photography"
+>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+    <header class="mb-12">
+      <h1
+        class="font-inconsolata text-3xl sm:text-4xl tracking-tight mb-4 dark:text-white"
+      >
+        Photo Essays
+      </h1>
+      <p class="text-gray-600 dark:text-gray-400 max-w-2xl">
+        Visual stories told through photography. Each essay is a curated
+        sequence of images designed to be experienced full-screen.
+      </p>
+    </header>
+
+    {
+      sortedEssays.length === 0 ? (
+        <p class="text-gray-500 dark:text-gray-400 italic">
+          No photo essays yet. Check back soon.
+        </p>
+      ) : (
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {sortedEssays.map((essay) => {
+            const coverImage =
+              essay.data.cover?.src || essay.data.spreads[0]?.photos[0]?.src;
+            const coverAlt =
+              essay.data.cover?.alt ||
+              essay.data.spreads[0]?.photos[0]?.alt ||
+              essay.data.title;
+
+            return (
+              <a
+                href={`/essays/${essay.id}`}
+                class="group block overflow-hidden"
+              >
+                <article class="space-y-3">
+                  {coverImage && (
+                    <div class="aspect-[4/3] overflow-hidden bg-gray-100 dark:bg-gray-800">
+                      <Image
+                        src={coverImage}
+                        alt={coverAlt}
+                        inferSize
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  )}
+                  <div class="space-y-1">
+                    <h2 class="font-inconsolata text-lg tracking-tight dark:text-white group-hover:underline underline-offset-2">
+                      {essay.data.title}
+                    </h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+                      {essay.data.description}
+                    </p>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 font-mono uppercase tracking-wider">
+                      {formatDate(essay.data.pubDate)} ·{" "}
+                      {essay.data.spreads.length} spreads
+                    </p>
+                  </div>
+                </article>
+              </a>
+            );
+          })}
+        </div>
+      )
+    }
+  </main>
+</BaseLayout>

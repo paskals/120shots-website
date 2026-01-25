@@ -1,0 +1,404 @@
+/* Photo Essay Styles - "Aperture" Design System */
+
+/* CSS Custom Properties for essay theming */
+:root {
+  --essay-bg: #fafafa;
+  --essay-text: #1a1a1a;
+  --essay-text-muted: rgba(26, 26, 26, 0.5);
+  --essay-caption: #1a1a1a;
+  --essay-header-bg: rgba(250, 250, 250, 0.9);
+  --essay-dot: rgba(26, 26, 26, 0.25);
+  --essay-dot-active: rgba(26, 26, 26, 0.9);
+}
+
+.dark {
+  --essay-bg: #0a0a0a;
+  --essay-text: #e5e5e5;
+  --essay-text-muted: rgba(229, 229, 229, 0.5);
+  --essay-caption: #e5e5e5;
+  --essay-header-bg: rgba(10, 10, 10, 0.9);
+  --essay-dot: rgba(229, 229, 229, 0.25);
+  --essay-dot-active: rgba(229, 229, 229, 0.9);
+}
+
+/* Body reset for essay mode */
+.essay-body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--essay-bg);
+  color: var(--essay-text);
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+}
+
+/* Minimal header */
+.essay-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--essay-header-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--essay-dot);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.essay-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  padding: 0.75rem 1.5rem;
+  gap: 1rem;
+}
+
+.essay-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.essay-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--essay-text);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.essay-back:hover {
+  opacity: 1;
+}
+
+.essay-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.essay-logo img {
+  width: 32px;
+  height: 32px;
+}
+
+.essay-title-header {
+  font-family: var(--font-inconsolata), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--essay-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  text-align: center;
+}
+
+.essay-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Main scroll container */
+.essay-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100vh;
+  height: 100dvh;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar but keep functionality */
+.essay-container::-webkit-scrollbar {
+  display: none;
+}
+
+.essay-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Individual spread */
+.spread {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1.5rem 2rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Photo container - adapts based on layout */
+.spread-photos {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  max-width: 1800px;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Single layout */
+.spread[data-layout="single"] .spread-photos {
+  max-width: 1400px;
+}
+
+.spread[data-layout="single"] .photo-wrapper {
+  width: 100%;
+  height: calc(100dvh - 10rem);
+  max-height: 85vh;
+}
+
+/* Duo layout */
+.spread[data-layout="duo"] .spread-photos {
+  gap: 1.5rem;
+}
+
+.spread[data-layout="duo"] .photo-wrapper {
+  flex: 1;
+  height: calc(100dvh - 10rem);
+  max-height: 80vh;
+}
+
+/* Trio layout */
+.spread[data-layout="trio"] .spread-photos {
+  gap: 1rem;
+}
+
+.spread[data-layout="trio"] .photo-wrapper {
+  flex: 1;
+  height: calc(100dvh - 10rem);
+  max-height: 75vh;
+}
+
+.spread[data-layout="trio"] .photo-wrapper:nth-child(2) {
+  flex: 1.5;
+}
+
+/* Photo wrapper and image */
+.photo-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Caption */
+.spread-caption {
+  font-family: var(--font-inconsolata), monospace;
+  font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--essay-text-muted);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0));
+  max-width: 600px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: caption-reveal 0.6s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.spread-caption::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--essay-dot);
+  margin: 0 auto 1rem;
+}
+
+@keyframes caption-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navigation dots */
+.essay-dots {
+  position: fixed;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 90;
+}
+
+.essay-dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.essay-dot:hover {
+  transform: scale(1.3);
+}
+
+.dot-inner {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--essay-dot);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.essay-dot.active .dot-inner {
+  background: var(--essay-dot-active);
+  transform: scale(1.5);
+}
+
+/* Keyboard hints */
+.essay-keyboard-hints {
+  position: fixed;
+  right: 1.5rem;
+  top: calc(50% + 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  z-index: 90;
+}
+
+.essay-keyboard-hints.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.key-hint {
+  font-family: var(--font-inconsolata), monospace;
+  font-size: 0.65rem;
+  color: var(--essay-text-muted);
+  padding: 0.15rem 0.3rem;
+  border: 1px solid var(--essay-dot);
+  border-radius: 2px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 800px) {
+  .spread {
+    padding: 4rem 1rem 1.5rem;
+  }
+
+  .spread-photos {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .spread[data-layout="duo"] .photo-wrapper,
+  .spread[data-layout="trio"] .photo-wrapper {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    flex: none;
+  }
+
+  .spread[data-layout="duo"] .photo-wrapper img,
+  .spread[data-layout="trio"] .photo-wrapper img {
+    max-height: 35vh;
+  }
+
+  .spread[data-layout="single"] .photo-wrapper {
+    height: auto;
+    max-height: none;
+  }
+
+  .spread[data-layout="single"] .photo-wrapper img {
+    max-height: calc(100dvh - 12rem);
+  }
+
+  .essay-dots {
+    right: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .essay-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .dot-inner {
+    width: 5px;
+    height: 5px;
+  }
+
+  .essay-keyboard-hints {
+    display: none;
+  }
+
+  .spread-caption {
+    font-size: 0.65rem;
+    padding: 1rem 0.5rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0));
+  }
+
+  .spread-caption::before {
+    width: 30px;
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1900px) {
+  .spread-photos {
+    max-width: 2200px;
+  }
+
+  .spread[data-layout="single"] .spread-photos {
+    max-width: 1800px;
+  }
+
+  .essay-dots {
+    right: 2.5rem;
+  }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .essay-container {
+    scroll-behavior: auto;
+  }
+
+  .spread-caption {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
