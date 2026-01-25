@@ -1,0 +1,98 @@
+---
+import { type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+type Props = {
+  essay: CollectionEntry<"photoessays">;
+  url?: string;
+};
+
+const { essay, url: providedUrl } = Astro.props;
+const { title, description, pubDate } = essay.data;
+
+const coverImage =
+  essay.data.cover?.src || essay.data.spreads[0]?.photos[0]?.src;
+const coverAlt =
+  essay.data.cover?.alt ||
+  essay.data.spreads[0]?.photos[0]?.alt ||
+  title;
+
+const publishedDate = pubDate.toDateString().split(" ").slice(1).join(" ");
+const url = providedUrl || `/essays/${essay.id}`;
+---
+
+<div
+  class="flex flex-col sm:flex-row md:space-x-14 md:mb-20 sm:mb-14 gap-4 sm:justify-center md:mx-24 mb-4 not-prose"
+>
+  {
+    coverImage && (
+      <div class="flex aspect-square md:h-[360px] h-[360px] fade-image">
+        <a href={url}>
+          <Image
+            src={coverImage}
+            alt={coverAlt}
+            inferSize
+            width={1280}
+            height={720}
+            loading="lazy"
+            class="h-full object-cover object-center"
+          />
+        </a>
+      </div>
+    )
+  }
+
+  <div
+    class="sm:w-2/3 flex flex-col justify-start sm:space-y-4 space-y-2 mb-6 md:mt-10"
+  >
+    <ul class="flex-row">
+      <a href={url}>
+        <h2
+          class="font-overpass-mono font-bold text-xl lg:text-2xl xl:text-4xl capitalize"
+        >
+          {title}
+        </h2>
+      </a>
+      <p class="font-inconsolata text-sm">Published on {publishedDate}</p>
+    </ul>
+    {
+      description && (
+        <a href={url}>
+          <p class="font-inconsolata normal-case line-clamp-3 sm:text-base text-sm">
+            {description}
+          </p>
+        </a>
+      )
+    }
+    <a
+      href={url}
+      class="dark:prose-invert max-w-max max-h-max flex flex-row items-center flex-shrink-0 hover:opacity-70 transition-opacity mt-1"
+    >
+      <span class="font-inconsolata mt-2 mb-2">View essay</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 mt-2 mb-2 pt-1"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5l7 7-7 7"></path>
+      </svg>
+    </a>
+    <slot />
+  </div>
+</div>
+<style>
+  .fade-image {
+    transition: opacity 0.25s ease-in;
+    opacity: 1;
+  }
+
+  .fade-image:hover {
+    opacity: 0.7;
+  }
+</style>

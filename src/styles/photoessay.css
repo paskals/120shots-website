@@ -103,8 +103,42 @@
 .essay-header-actions {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1.5rem;
   flex-shrink: 0;
+  position: relative;
+}
+
+/* Scale down theme toggle for essay header */
+.essay-header-actions #themeToggle svg {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+/* Scale down hamburger for essay header */
+.essay-header-actions .hamburger {
+  transform: scale(0.75);
+}
+
+.essay-header-actions .hamburger div {
+  height: 1.5px;
+}
+
+.essay-header-actions .hamburger div:nth-child(1) {
+  top: 0;
+}
+
+.essay-header-actions .hamburger div:nth-child(2) {
+  top: 4px;
+}
+
+.essay-header-actions .hamburger div:nth-child(3) {
+  top: 8px;
+}
+
+.essay-header-actions .hamburger.open div:nth-child(1),
+.essay-header-actions .hamburger.open div:nth-child(3) {
+  top: 4px;
 }
 
 /* Main scroll container */

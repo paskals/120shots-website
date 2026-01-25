@@ -31,7 +31,7 @@ spreads:
       - src: https://cdn.120shots.com/images/EHV-01/EHV-01-Kodak-Portra-400-021-F8D1C1.webp
         alt: City street with soft natural light
 
-  - layout: trio
+  - layout: trio-l
     photos:
       - src: https://cdn.120shots.com/images/EHV-01/EHV-01-Kodak-Portra-400-019-E29D70.webp
         alt: Dutch street corner bathed in golden hour light

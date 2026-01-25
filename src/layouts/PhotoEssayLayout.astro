@@ -3,6 +3,8 @@ import { ViewTransitions } from "astro:transitions";
 import { Image } from "astro:assets";
 import ThemeIcon from "../components/ThemeIcon.astro";
 import IconPill from "../components/IconPill.astro";
+import Hamburger from "../components/Hamburger.astro";
+import Navigation from "../components/Navigation.astro";
 import "@fontsource-variable/overpass-mono";
 import "@fontsource-variable/inconsolata";
 import "../styles/global.css";
@@ -63,7 +65,7 @@ const favicon = {
     <header class="essay-header">
       <nav class="essay-nav">
         <div class="essay-nav-left">
-          <a href="/essays" class="essay-back" aria-label="Back to essays">
+          <!-- <a href="/essays" class="essay-back" aria-label="Back to essays">
             <svg
               width="24"
               height="24"
@@ -74,7 +76,7 @@ const favicon = {
             >
               <path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-          </a>
+          </a> -->
           <a href="/" class="essay-logo" aria-label="Home">
             <Image
               src="/120Shots_icon_nobackground.png"
@@ -88,6 +90,8 @@ const favicon = {
         <span class="essay-title-header">{title}</span>
         <div class="essay-header-actions">
           <ThemeIcon />
+          <Hamburger />
+          <Navigation />
         </div>
       </nav>
     </header>

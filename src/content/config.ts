@@ -123,4 +123,4 @@ const photoessays = defineCollection({
   }),
 });
 
-export const collections = { posts: blog, authors, rolls, films, photoessays };
+export const collections = { authors, rolls, films, photoessays };

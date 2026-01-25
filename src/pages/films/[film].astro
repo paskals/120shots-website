@@ -1,29 +1,29 @@
 ---
 import { getCollection, getEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import BlogPost from "../../components/BlogPostCard.astro";
+import EssayCard from "../../components/EssayCard.astro";
 import TagComponent from "../../components/TagPill.astro";
 import ProseHeadings from "../../components/ProseHeadings.astro";
 
 export async function getStaticPaths() {
-  const allPosts = await getCollection("posts");
+  const allEssays = await getCollection("photoessays");
   const allFilms = await getCollection("films");
 
   const result: {}[] = [];
 
   for (const film of allFilms) {
-    const filteredPosts = allPosts.filter((post) => {
-      if (post.data.filmStocks === undefined) {
+    const filteredEssays = allEssays.filter((essay) => {
+      if (essay.data.filmStocks === undefined) {
         return false;
       } else {
-        return post.data.filmStocks
+        return essay.data.filmStocks
           .map((filmStock) => filmStock.id)
           .includes(film.id);
       }
     });
     result.push({
       params: { film: film.id },
-      props: { posts: filteredPosts, film },
+      props: { essays: filteredEssays, film },
     });
   }
 
@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 }
 
 const filmId = Astro.params.film;
-const { posts, film } = Astro.props;
+const { essays, film } = Astro.props;
 ---
 
 <BaseLayout title={`${film.data.brand} ${film.data.name}`}>
@@ -48,13 +48,13 @@ const { posts, film } = Astro.props;
   >
     <ProseHeadings>
       <p class="md:space-x-14 md:mb-20 mb-10 text-4xl font-bold capitalize">
-        Posts with <TagComponent tag={film.data.name} class:list="text-base" />
+        Essays with <TagComponent tag={film.data.name} class:list="text-base" />
       </p>
     </ProseHeadings>
     <ul>
       {
-        posts.map((post) => (
-          <BlogPost post={post} url={`/posts/${post.slug}`} />
+        essays.map((essay) => (
+          <EssayCard essay={essay} url={`/essays/${essay.id}`} />
         ))
       }
     </ul>
