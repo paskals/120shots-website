@@ -13,8 +13,7 @@ const { images } = Astro.props;
         image ? (
           <div class="film-frame my-2 mx-1">
             <a
-              href={image.src}
-              class="glightbox block"
+              class="block"
               data-astro-prefetch="false"
             >
               <img
@@ -52,7 +51,8 @@ const { images } = Astro.props;
     --background: #393939;
     align-items: center;
     --size: 1rem;
-    background-image: linear-gradient(
+    background-image:
+      linear-gradient(
         to right,
         var(--background) calc(var(--size) * 1.4),
         transparent var(--size)
@@ -93,8 +93,6 @@ const { images } = Astro.props;
     box-sizing: border-box;
   }
 </style>
-
-<script src="../scripts/lightbox.js"></script>
 
 <script>
   function handleFilmImage(img: HTMLImageElement) {
