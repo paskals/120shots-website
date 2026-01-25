@@ -23,6 +23,7 @@ shots:
         - Black hair
         - Portrait photography
         - Happiness
+
   - sequence: "001"
     date: 2021-10-02T12:11:16.000Z
     offsetTime: +02:00
@@ -43,6 +44,7 @@ shots:
         - Portrait photography
         - Long hair
         - Portrait
+
   - sequence: "002"
     date: 2021-10-02T12:16:16.000Z
     offsetTime: +02:00
@@ -58,6 +60,7 @@ shots:
         - Urban design
         - Mixed-use
         - Headquarters
+
   - sequence: "003"
     date: 2021-10-02T12:21:16.000Z
     offsetTime: +02:00
@@ -73,6 +76,7 @@ shots:
         - Urban design
         - Mixed-use
         - Headquarters
+
   - sequence: "004"
     date: 2021-10-02T12:26:16.000Z
     offsetTime: +02:00
@@ -93,6 +97,7 @@ shots:
         - Iron
         - Bicycle frame
         - Bicycle Wheel Rim
+
   - sequence: "005"
     date: 2021-10-02T12:31:16.000Z
     offsetTime: +02:00
@@ -111,6 +116,7 @@ shots:
         - Skyscraper
         - Holiday
         - Vacation
+
   - sequence: "006"
     date: 2021-10-02T12:36:16.000Z
     offsetTime: +01:00
@@ -132,6 +138,7 @@ shots:
         - Travel
         - Backpack
       location: Klokgebouw Cultuurhallen
+
   - sequence: "007"
     date: 2021-10-02T12:41:16.000Z
     offsetTime: +02:00
@@ -153,6 +160,7 @@ shots:
         - Backpack
         - Handbag
       location: Klokgebouw Cultuurhallen
+
   - sequence: "008"
     date: 2021-10-02T12:46:16.000Z
     offsetTime: +02:00
@@ -168,6 +176,7 @@ shots:
         - Winter
         - Hood
         - Vacation
+
   - sequence: "009"
     date: 2021-10-02T12:51:16.000Z
     offsetTime: +02:00
@@ -188,6 +197,7 @@ shots:
         - Thoroughfare
         - Trunk
         - Asphalt
+
   - sequence: "010"
     date: 2021-10-04T18:00:00.000Z
     offsetTime: +01:00
@@ -208,6 +218,7 @@ shots:
         - Road
         - Thoroughfare
         - Trunk
+
   - sequence: "011"
     date: 2021-10-04T18:05:00.000Z
     offsetTime: +02:00
@@ -222,6 +233,7 @@ shots:
         - Freight transport
         - Cargo
         - Shadow
+
   - sequence: "012"
     date: 2021-10-04T18:10:00.000Z
     offsetTime: +02:00
@@ -242,6 +254,7 @@ shots:
         - Knit cap
         - Jacket
         - Luggage & bags
+
   - sequence: "013"
     date: 2021-10-04T18:15:00.000Z
     offsetTime: +02:00
@@ -262,6 +275,7 @@ shots:
         - Knit cap
         - Luggage & bags
         - Winter
+
   - sequence: "014"
     date: 2021-10-04T18:20:00.000Z
     offsetTime: +02:00
@@ -282,6 +296,7 @@ shots:
         - Photo shoot
         - Beanie
         - Whiskers
+
   - sequence: "015"
     date: 2021-10-04T18:25:00.000Z
     offsetTime: +02:00
@@ -302,6 +317,7 @@ shots:
         - Photo shoot
         - Winter
         - Whiskers
+
   - sequence: "016"
     date: 2021-10-04T18:30:00.000Z
     offsetTime: +02:00
@@ -322,6 +338,7 @@ shots:
         - atmospheric phenomenon
         - Woody plant
         - Cumulus
+
   - sequence: "017"
     date: 2021-10-07T14:00:00.000Z
     offsetTime: +01:00
@@ -342,6 +359,7 @@ shots:
         - Poultry
         - Yard
         - Landfowl
+
   - sequence: "018"
     date: 2021-10-07T14:05:00.000Z
     offsetTime: +01:00
@@ -356,6 +374,7 @@ shots:
         - Chimney
         - Arcade
         - Factory
+
   - sequence: "019"
     date: 2021-10-07T14:10:00.000Z
     offsetTime: +01:00
@@ -376,6 +395,7 @@ shots:
         - Natural landscape
         - Shrub
         - Landscape
+
   - sequence: "020"
     date: 2021-10-07T14:15:00.000Z
     offsetTime: +02:00
@@ -391,6 +411,7 @@ shots:
         - Shade
         - Building material
         - Daylighting
+
   - sequence: "021"
     date: 2021-10-07T14:20:00.000Z
     offsetTime: +01:00
@@ -411,6 +432,7 @@ shots:
         - Byzantine architecture
         - Cathedral
         - Castle
+
   - sequence: "022"
     date: 2021-10-07T14:25:00.000Z
     offsetTime: +02:00
@@ -432,6 +454,7 @@ shots:
         - Spire
         - Classical architecture
       location: Stadspark De Kartuis
+
   - sequence: "023"
     date: 2021-10-07T14:30:00.000Z
     offsetTime: +01:00
@@ -452,6 +475,7 @@ shots:
         - Trunk
         - Spring
         - Morning
+
   - sequence: "024"
     date: 2021-10-07T14:35:00.000Z
     offsetTime: +02:00
@@ -472,6 +496,7 @@ shots:
         - Shrub
         - Plant community
         - Trunk
+
   - sequence: "025"
     date: 2021-10-07T14:40:00.000Z
     offsetTime: +02:00
@@ -493,6 +518,7 @@ shots:
         - Cottage
         - Garden
       location: Kasteelhoeve Geldrop
+
   - sequence: "026"
     date: 2021-10-07T14:45:00.000Z
     offsetTime: +02:00
@@ -513,6 +539,7 @@ shots:
         - Landscaping
         - Flagstone
         - Path
+
   - sequence: "027"
     date: 2021-10-07T14:50:00.000Z
     offsetTime: +02:00
@@ -534,6 +561,7 @@ shots:
         - Spring
         - Twig
       location: Kasteelhoeve Geldrop
+
   - sequence: "028"
     date: 2021-10-15T14:00:00.000Z
     offsetTime: +01:00
@@ -554,6 +582,7 @@ shots:
         - Vegetation
         - Forest
         - Thoroughfare
+
   - sequence: "029"
     date: 2021-10-15T14:05:00.000Z
     offsetTime: +01:00
@@ -574,6 +603,7 @@ shots:
         - Bank
         - Cottage
         - Reflection
+
   - sequence: "030"
     date: 2021-10-15T14:10:00.000Z
     offsetTime: +02:00
@@ -595,6 +625,7 @@ shots:
         - Botanical garden
         - Fence
       location: Heeze Castle
+
   - sequence: "031"
     date: 2021-10-15T14:15:00.000Z
     offsetTime: +02:00
@@ -615,6 +646,7 @@ shots:
         - Watercourse
         - Waterway
         - Bank
+
   - sequence: "032"
     date: 2021-10-15T14:20:00.000Z
     offsetTime: +02:00
@@ -634,6 +666,7 @@ shots:
         - Antique car
         - Mansion
       location: Heeze Castle
+
   - sequence: "033"
     date: 2021-10-15T14:25:00.000Z
     offsetTime: +02:00
@@ -655,6 +688,7 @@ shots:
         - Yard
         - Landscaping
       location: Heeze Castle
+
   - sequence: "034"
     date: 2021-10-15T14:30:00.000Z
     offsetTime: +02:00
@@ -675,6 +709,7 @@ shots:
         - Park
         - Walking
         - Lawn
+
   - sequence: "035"
     date: 2021-10-15T14:35:00.000Z
     offsetTime: +02:00
@@ -695,6 +730,7 @@ shots:
         - Waist
         - Spring
         - Happiness
+
   - sequence: "036"
     date: 2021-10-15T14:40:00.000Z
     offsetTime: +02:00
@@ -715,6 +751,7 @@ shots:
         - Lawn
         - Groundcover
         - People in nature
+
   - sequence: "037"
     date: 2021-10-15T14:45:00.000Z
     offsetTime: +02:00

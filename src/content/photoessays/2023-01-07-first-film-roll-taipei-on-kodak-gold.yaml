@@ -1,5 +1,5 @@
-title: "First Film Roll – Taipei On Kodak Gold"
-description: "My first film photography journey begins in Taipei, exploring the streets with a Nikon F3 and Kodak Gold 200"
+title: First Film Roll – Taipei On Kodak Gold
+description: My first film photography journey begins in Taipei, exploring the streets with a Nikon F3 and Kodak Gold 200
 pubDate: 2023-01-07
 author: paskal
 rolls:
@@ -10,17 +10,15 @@ tags:
   - taiwan
   - first roll
   - nikon F3
-
 cover:
   src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-006-883778.webp
   alt: First glimpse of Taipei through film
-
 spreads:
   - layout: single
     photos:
       - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-006-883778.webp
         alt: Taipei neighborhood view through a window
-    caption: "The beginning of a film journey"
+    caption: The beginning of a film journey
 
   - layout: duo
     photos:
@@ -37,7 +35,7 @@ spreads:
         alt: Urban street scene with local atmosphere
       - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-007-66FFED.webp
         alt: Traditional architecture amid modern buildings
-    caption: "Layers of the city"
+    caption: Layers of the city
 
   - layout: single
     photos:
@@ -50,7 +48,7 @@ spreads:
         alt: Street corner with everyday Taipei life
       - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-010-B2032B.webp
         alt: Bicycle on a bridge with highway in background
-    caption: "Finding rhythm in the streets"
+    caption: Finding rhythm in the streets
 
   - layout: trio
     photos:
@@ -65,7 +63,7 @@ spreads:
     photos:
       - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-015-E52BF1.webp
         alt: Golden afternoon light on Taipei street
-    caption: "Kodak Gold living up to its name"
+    caption: Kodak Gold living up to its name
 
   - layout: duo
     photos:
@@ -82,7 +80,7 @@ spreads:
         alt: Evening light on Taipei buildings
       - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-020-60E2B7.webp
         alt: Quiet moment in a Taipei neighborhood
-    caption: "The everyday beauty"
+    caption: The everyday beauty
 
   - layout: single
     photos:
@@ -95,7 +93,7 @@ spreads:
         alt: Urban landscape with Taipei architecture
       - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-024-9B73B6.webp
         alt: Local neighborhood with residential buildings
-    caption: "Exploring the side streets"
+    caption: Exploring the side streets
 
   - layout: trio
     photos:
@@ -117,4 +115,4 @@ spreads:
     photos:
       - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-031-ABC772.webp
         alt: Final frame of the first roll in Taipei
-    caption: "The last frame – hooked on film"
+    caption: The last frame – hooked on film

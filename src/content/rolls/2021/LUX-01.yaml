@@ -21,6 +21,7 @@ shots:
         - Twig
         - Morning
         - Sunlight
+
   - sequence: "001"
     date: 2021-12-31T14:10:34.000Z
     offsetTime: +02:00
@@ -35,6 +36,7 @@ shots:
         - Alley
         - Cobblestone
       location: Mesa Verde
+
   - sequence: "002"
     date: 2021-12-31T15:10:34.000Z
     offsetTime: +02:00
@@ -55,6 +57,7 @@ shots:
         - Cobblestone
         - Fence
         - Walking
+
   - sequence: "003"
     date: 2021-12-31T16:10:34.000Z
     offsetTime: +02:00
@@ -71,6 +74,7 @@ shots:
         - Walkway
         - Alley
         - Bridge
+
   - sequence: "004"
     date: 2021-12-31T17:50:34.000Z
     offsetTime: +02:00
@@ -87,6 +91,7 @@ shots:
         - Haze
         - Turret
         - Fog
+
   - sequence: "005"
     date: 2021-12-31T18:00:00.000Z
     offsetTime: +02:00
@@ -107,6 +112,7 @@ shots:
         - House
         - Residential area
         - Canal
+
   - sequence: "006"
     date: 2021-12-31T18:08:34.000Z
     offsetTime: +02:00
@@ -127,6 +133,7 @@ shots:
         - Bank
         - Urban design
         - Human settlement
+
   - sequence: "007"
     date: 2021-12-31T18:10:00.000Z
     offsetTime: +02:00
@@ -148,6 +155,7 @@ shots:
         - Residential area
         - Human settlement
       location: Spanish Turret
+
   - sequence: "008"
     date: 2022-01-01T12:00:00.000Z
     offsetTime: +02:00
@@ -168,6 +176,7 @@ shots:
         - Autumn
         - Bridge
         - Backyard
+
   - sequence: "009"
     date: 2022-01-01T12:01:00.000Z
     offsetTime: +02:00
@@ -180,6 +189,7 @@ shots:
       labels:
         - Roof
       location: Citadel Of The Holy Spirit
+
   - sequence: "010"
     date: 2022-01-01T12:10:00.000Z
     offsetTime: +02:00
@@ -200,6 +210,7 @@ shots:
         - Woodland
         - Bryophyte
         - Alley
+
   - sequence: "011"
     date: 2022-01-01T12:20:00.000Z
     offsetTime: +02:00
@@ -220,6 +231,7 @@ shots:
         - Stone wall
         - Concrete bridge
         - Brick
+
   - sequence: "012"
     date: 2022-01-01T12:30:00.000Z
     offsetTime: +02:00
@@ -239,6 +251,7 @@ shots:
         - Turret
         - Chimney
         - Alley
+
   - sequence: "013"
     date: 2022-01-01T12:35:00.000Z
     offsetTime: +02:00
@@ -260,6 +273,7 @@ shots:
         - Suburb
         - Winter
       location: Chemin De La Corniche
+
   - sequence: "014"
     date: 2022-01-01T12:40:00.000Z
     offsetTime: +02:00
@@ -280,6 +294,7 @@ shots:
         - Thoroughfare
         - Slope
         - Suburb
+
   - sequence: "015"
     date: 2022-02-07T18:00:00.000Z
     offsetTime: +02:00
@@ -300,6 +315,7 @@ shots:
         - Metropolis
         - Urban design
         - Midnight
+
   - sequence: "016"
     date: 2022-02-08T12:00:00.000Z
     offsetTime: +02:00
@@ -320,6 +336,7 @@ shots:
         - Architecture
         - Residential area
         - Apartment
+
   - sequence: "017"
     date: 2022-02-08T12:05:00.000Z
     offsetTime: +02:00
@@ -340,6 +357,7 @@ shots:
         - High-rise building
         - Condominium
         - Metropolis
+
   - sequence: "018"
     date: 2022-02-08T17:00:00.000Z
     offsetTime: +02:00
@@ -360,6 +378,7 @@ shots:
         - Residential area
         - Apartment
         - Metropolis
+
   - sequence: "019"
     date: 2022-02-08T17:10:00.000Z
     offsetTime: +02:00
@@ -380,6 +399,7 @@ shots:
         - Residential area
         - Metropolis
         - Apartment
+
   - sequence: "020"
     date: 2022-02-12T18:00:00.000Z
     offsetTime: +02:00
@@ -400,6 +420,7 @@ shots:
         - Residential area
         - atmospheric phenomenon
         - Metropolis
+
   - sequence: "021"
     date: 2022-02-12T18:01:00.000Z
     offsetTime: +02:00
@@ -420,6 +441,7 @@ shots:
         - Skyscraper
         - Residential area
         - Metropolis
+
   - sequence: "022"
     date: 2022-02-12T18:02:00.000Z
     offsetTime: +02:00
@@ -440,6 +462,7 @@ shots:
         - Metropolis
         - Skyscraper
         - Residential area
+
   - sequence: "023"
     date: 2022-02-12T18:04:00.000Z
     offsetTime: +02:00
@@ -460,6 +483,7 @@ shots:
         - High-rise building
         - Landmark
         - atmospheric phenomenon
+
   - sequence: "024"
     date: 2022-02-12T20:00:00.000Z
     offsetTime: +02:00
@@ -480,6 +504,7 @@ shots:
         - High-rise building
         - Highway
         - Commercial building
+
   - sequence: "025"
     date: 2022-02-12T20:05:00.000Z
     offsetTime: +02:00
@@ -500,6 +525,7 @@ shots:
         - High-rise building
         - Commercial building
         - Electricity
+
   - sequence: "026"
     date: 2022-02-12T20:10:00.000Z
     offsetTime: +02:00
@@ -520,6 +546,7 @@ shots:
         - High-rise building
         - Electricity
         - Commercial building
+
   - sequence: "027"
     date: 2022-02-12T20:29:00.000Z
     offsetTime: +02:00
@@ -540,6 +567,7 @@ shots:
         - Metropolis
         - Cityscape
         - Architecture
+
   - sequence: "028"
     date: 2022-02-12T20:30:00.000Z
     offsetTime: +02:00
@@ -560,6 +588,7 @@ shots:
         - Metropolis
         - Cityscape
         - Tower
+
   - sequence: "029"
     date: 2022-02-21T17:00:00.000Z
     offsetTime: +02:00
@@ -577,6 +606,7 @@ shots:
         - Automotive Tail & Brake Light
         - Sedan
         - Executive car
+
   - sequence: "030"
     date: 2022-02-25T12:00:00.000Z
     offsetTime: +02:00
@@ -597,6 +627,7 @@ shots:
         - Electrical Supply
         - Transport hub
         - Steel
+
   - sequence: "031"
     date: 2022-02-25T12:01:34.000Z
     offsetTime: +02:00
@@ -613,6 +644,7 @@ shots:
         - Steel
         - Passenger
         - Rail transport
+
   - sequence: "032"
     date: 2022-02-26T12:00:00.000Z
     offsetTime: +02:00
@@ -633,6 +665,7 @@ shots:
         - Daylighting
         - Brutalist architecture
         - Symmetry
+
   - sequence: "033"
     date: 2022-02-26T13:00:00.000Z
     offsetTime: +02:00
@@ -645,6 +678,7 @@ shots:
       labels:
         - Graphics
         - Graphic design
+
   - sequence: "034"
     date: 2022-02-26T17:00:00.000Z
     offsetTime: +02:00

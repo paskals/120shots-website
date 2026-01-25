@@ -15,6 +15,7 @@ import {
   deleteTempFiles,
   createNewRoll,
   createEssayFromRolls,
+  reformatYamlFile,
 } from "./utils.js";
 import sanitize from "sanitize-filename";
 
@@ -145,6 +146,19 @@ const argv = yargs(hideBin(process.argv))
       demandOption: false,
     },
   })
+  .command("reformat", "Reformats an existing roll or essay YAML file with consistent formatting.", {
+    filePath: {
+      alias: "f",
+      describe: "Path to the YAML file to reformat (relative to project root)",
+      type: "string",
+      demandOption: true,
+    },
+    noBackup: {
+      describe: "Skip creating a backup file (.bak)",
+      type: "boolean",
+      default: false,
+    },
+  })
   .help().argv;
 
 if (argv._.includes("create-essay")) {
@@ -250,6 +264,17 @@ if (argv._.includes("create-essay")) {
 
   const result = await createEssayFromRolls(rolls.split(","), essayTitle);
   console.info(`✅ Essay created at ${path.normalize(result)}`);
+} else if (argv._.includes("reformat")) {
+  const { filePath, noBackup } = argv;
+
+  try {
+    console.info(`🔄 Reformatting: ${filePath}`);
+    const result = await reformatYamlFile(filePath, !noBackup);
+    console.info(`✅ File reformatted: ${path.normalize(result)}`);
+  } catch (error: any) {
+    console.error(`❌ Error: ${error.message}`);
+    process.exit(1);
+  }
 } else {
   console.error("Invalid command");
 }

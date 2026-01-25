@@ -13,6 +13,7 @@
     "create-essay": "tsx ./src/utils/photer.ts create-essay",
     "create-roll": "tsx ./src/utils/photer.ts create-roll",
     "create-roll-essay": "tsx ./src/utils/photer.ts create-roll-essay",
+    "reformat": "tsx ./src/utils/photer.ts reformat",
     "r2-stats": "tsx ./src/utils/r2-stats.ts",
     "describe-images": "tsx ./src/utils/vision-describer.ts describe",
     "update-roll-descriptions": "tsx ./src/utils/update-roll-descriptions.ts"

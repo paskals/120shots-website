@@ -5,6 +5,7 @@ allowed-tools:
   [
     "Bash",
     "Read",
+    "Edit",
     "Glob",
     "TodoWrite",
     "mcp__sequential-thinking__sequentialthinking",
@@ -43,6 +44,27 @@ Read the available films from `src/content/films/*.yaml` to validate film select
 
 Valid formats: "half-frame", "35mm", "6x6", "6x7", "6x8", "6x9", "4x5"
 
+## Available Cameras
+
+The user owns these cameras only:
+- **Nikon F3** - 35mm SLR
+- **Nikon FM3a** - 35mm SLR
+- **Bronica SQ-Ai** - Medium format 6x6
+- **Bronica GS1** - Medium format 6x7
+
+Only suggest these cameras when asking for roll creation. Match the format to the camera (35mm for Nikon, 6x6 for SQ-Ai, 6x7 for GS1).
+
+## Photo Essay Structure
+
+Essays are composed of **spreads** (pages), each with a layout and photos:
+
+- Layout types: `single`, `duo`, `trio`, `trio-l`, `trio-r`
+- Each spread can have an optional `caption` field
+- Essays have a `description` field for the overall essay description
+- Essays have a `tags` array for categorization
+
+**Important**: The Vision API generates detailed image descriptions during roll creation. These descriptions are available in the photo alt text and can be used to create meaningful captions for spreads.
+
 ## Author Information
 
 The author is always "paskal" (from `src/content/authors/paskal.mdx`), so don't ask about the author.
@@ -64,8 +86,8 @@ If no arguments provided, ask the user what they want to do:
 - Photos source path (required)
 - Roll name (required)
 - Film type (required - validate against available films)
-- Camera used (optional)
-- Format (optional, default "35mm")
+- Camera used (optional - only suggest: Nikon F3, Nikon FM3a, Bronica SQ-Ai, Bronica GS1)
+- Format (optional, default "35mm" - should match camera: 35mm for Nikons, 6x6 for SQ-Ai, 6x7 for GS1)
 - Max dimension (optional, default 2000)
 - Whether to rename files (optional)
 - Whether to add random suffix (optional)
@@ -90,8 +112,19 @@ If no arguments provided, ask the user what they want to do:
 
 ### Step 4: Post-creation workflow
 
-- If a roll was just created, ask if the user wants to create a photo essay with it
-- Provide success feedback and next steps
+**After creating a film roll:**
+- Ask if the user wants to create a photo essay with the newly created roll
+- Provide success feedback with the path to the created YAML file
+
+**After creating a photo essay:**
+- Offer to enhance the essay by:
+  1. Adding a descriptive essay description based on the photo content
+  2. Adding relevant tags for categorization (e.g., location, subject matter, photography style)
+  3. Adding captions to spreads based on the Vision API image descriptions
+- If the user accepts, read the essay file and the roll file(s) to get the Vision API descriptions
+- Create thoughtful captions that group related photos and tell a cohesive visual story
+- Add tags that reflect the essay's content (places, subjects, themes, photography styles)
+- Write a compelling essay description that captures the essence of the photo story
 
 ## Smart Defaults and Validation
 

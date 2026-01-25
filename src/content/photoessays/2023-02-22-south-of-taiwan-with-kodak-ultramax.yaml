@@ -1,5 +1,5 @@
-title: "South Of Taiwan With Kodak UltraMax"
-description: "Exploring southern Taiwan's cities of Tainan and Kaohsiung with the versatile Kodak UltraMax 400"
+title: South Of Taiwan With Kodak UltraMax
+description: Exploring southern Taiwan's cities of Tainan and Kaohsiung with the versatile Kodak UltraMax 400
 pubDate: 2023-02-22
 author: paskal
 rolls:
@@ -11,17 +11,15 @@ tags:
   - kaohsiung
   - tainan
   - street
-
 cover:
   src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-001-07BE1F.webp
   alt: Street scene in southern Taiwan bathed in warm afternoon light
-
 spreads:
   - layout: single
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-001-07BE1F.webp
         alt: Street scene in southern Taiwan bathed in warm afternoon light
-    caption: "First impressions of the south"
+    caption: First impressions of the south
 
   - layout: duo
     photos:
@@ -38,7 +36,7 @@ spreads:
         alt: Temple entrance with ornate decorations
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-005-F52114.webp
         alt: Street vendor setting up shop in morning light
-    caption: "Daily rhythms of Tainan"
+    caption: Daily rhythms of Tainan
 
   - layout: single
     photos:
@@ -51,7 +49,7 @@ spreads:
         alt: Pedestrians crossing a busy intersection
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-008-5C78F2.webp
         alt: Local market stall with fresh produce
-    caption: "Where old meets new"
+    caption: Where old meets new
 
   - layout: single
     photos:
@@ -73,7 +71,7 @@ spreads:
         alt: Kaohsiung harbor view with industrial cranes
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-014-269643.webp
         alt: Waterfront promenade with palm trees
-    caption: "Kaohsiung's harbor district"
+    caption: Kaohsiung's harbor district
 
   - layout: single
     photos:
@@ -88,7 +86,7 @@ spreads:
         alt: Night market entrance crowded with visitors
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-018-BAE711.webp
         alt: Neon signs illuminating an evening street
-    caption: "As the sun sets"
+    caption: As the sun sets
 
   - layout: duo
     photos:
@@ -101,7 +99,7 @@ spreads:
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-021-7544D0.webp
         alt: Traditional temple with incense smoke swirling
-    caption: "Moments of stillness"
+    caption: Moments of stillness
 
   - layout: duo
     photos:
@@ -125,4 +123,4 @@ spreads:
         alt: Old railway tracks converted to pedestrian path
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-030-2737FF.webp
         alt: Final glimpse of southern Taiwan as evening approaches
-    caption: "Until next time"
+    caption: Until next time

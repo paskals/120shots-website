@@ -1,5 +1,5 @@
 title: "Taiwan Adventure: From Pingtung to Xiao Liuqiu"
-description: "A summer island adventure exploring Pingtung and the beautiful Xiao Liuqiu island in Taiwan"
+description: A summer island adventure exploring Pingtung and the beautiful Xiao Liuqiu island in Taiwan
 pubDate: 2025-08-23
 author: paskal
 rolls:
@@ -11,11 +11,9 @@ tags:
   - xiao-liuqiu
   - island
   - street
-
 cover:
   src: https://cdn.120shots.com/images/TN-02/R1-01825-0033.webp
   alt: Motorcycle parked on a night street in Taiwan with warm lights
-
 spreads:
   - layout: duo
     photos:
@@ -23,7 +21,7 @@ spreads:
         alt: Scooter parked along a sunny coastal road in Taiwan
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0002.webp
         alt: Rocky coastline with turquoise waters on Xiao Liuqiu
-    caption: "The island awaits"
+    caption: The island awaits
 
   - layout: single
     photos:
@@ -38,7 +36,7 @@ spreads:
         alt: Weathered coral rock formation along the island coast
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0008.webp
         alt: Winding coastal road perfect for motorcycle exploration
-    caption: "Circling the island"
+    caption: Circling the island
 
   - layout: duo
     photos:
@@ -55,13 +53,13 @@ spreads:
         alt: Old theater facade glowing in the evening darkness
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0015.webp
         alt: Crystal clear waters lapping against the sandy beach
-    caption: "Day turns to night"
+    caption: Day turns to night
 
   - layout: single
     photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0016.webp
         alt: Motorcycle parked overlooking the stunning Xiao Liuqiu coastline
-    caption: "Freedom on two wheels"
+    caption: Freedom on two wheels
 
   - layout: duo
     photos:
@@ -78,7 +76,7 @@ spreads:
         alt: Portrait of a traveler enjoying the island adventure
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0022.webp
         alt: Jagged coral rocks meeting the turquoise sea
-    caption: "Island life"
+    caption: Island life
 
   - layout: single
     photos:
@@ -91,7 +89,7 @@ spreads:
         alt: Brilliant blue water contrasting with dark volcanic rock
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0025.webp
         alt: Busy urban intersection with buses and motorcycles
-    caption: "From island to city"
+    caption: From island to city
 
   - layout: trio
     photos:
@@ -108,7 +106,7 @@ spreads:
         alt: Narrow alley between old buildings in Taiwan
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0031.webp
         alt: Neon signs lighting up a quiet night street
-    caption: "Nocturnal wandering"
+    caption: Nocturnal wandering
 
   - layout: single
     photos:
@@ -130,4 +128,4 @@ spreads:
         alt: Towering skyscraper reaching into the Taiwan sky
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0037.webp
         alt: City road stretching through the urban landscape
-    caption: "Until next time"
+    caption: Until next time

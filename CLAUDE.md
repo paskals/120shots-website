@@ -21,6 +21,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `yarn create-essay -p /path/to/photos -d upload-dir -t "Essay Title" -m 2000` - Create new essay from photo folder
 - `yarn create-roll -p /path/to/photos -n ROLL-NAME -f film-stock -c "Camera Used"` - Create new film roll from photos (auto-generates image descriptions via Vision API)
 - `yarn create-roll-essay -r "ROLL1,ROLL2" -t "Essay Title"` - Create essay from existing film rolls
+- `yarn reformat -f path/to/file.yaml` - Reformat an existing roll or essay YAML file with consistent formatting (creates .bak backup by default, use --noBackup to skip)
 
 Note: `create-roll` uses Google Vision API by default to generate meaningful alt text descriptions. Use `--skipVision` flag to disable this.
 

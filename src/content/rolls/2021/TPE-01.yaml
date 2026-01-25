@@ -24,6 +24,7 @@ shots:
         - Metropolitan area
         - Commercial building
         - Metropolis
+
   - sequence: "001"
     date: 2021-08-21T09:15:24.000Z
     offsetTime: +08:00
@@ -44,6 +45,7 @@ shots:
         - Metropolitan area
         - Neighbourhood
         - Public space
+
   - sequence: "002"
     date: 2021-08-21T09:20:24.000Z
     offsetTime: +08:00
@@ -64,6 +66,7 @@ shots:
         - Metropolitan area
         - Neighbourhood
         - Public space
+
   - sequence: "003"
     date: 2021-08-21T09:25:24.000Z
     offsetTime: +08:00
@@ -84,6 +87,7 @@ shots:
         - Public space
         - Metropolis
         - Condominium
+
   - sequence: "004"
     date: 2021-08-21T09:30:24.000Z
     offsetTime: +08:00
@@ -104,6 +108,7 @@ shots:
         - Customer
         - Shopping mall
         - Lobby
+
   - sequence: "005"
     date: 2021-08-21T09:35:24.000Z
     offsetTime: +08:00
@@ -124,6 +129,7 @@ shots:
         - Lobby
         - Commercial building
         - Electricity
+
   - sequence: "006"
     date: 2021-08-21T09:40:24.000Z
     offsetTime: +08:00
@@ -144,6 +150,7 @@ shots:
         - Urban design
         - Metropolitan area
         - Thoroughfare
+
   - sequence: "007"
     date: 2021-08-21T09:45:24.000Z
     offsetTime: +08:00
@@ -159,6 +166,7 @@ shots:
         - High-rise building
         - Chinese restaurant
         - Restaurant
+
   - sequence: "008"
     date: 2021-08-21T09:50:24.000Z
     offsetTime: +08:00
@@ -179,6 +187,7 @@ shots:
         - Street
         - Thoroughfare
         - Asphalt
+
   - sequence: "009"
     date: 2021-08-21T09:55:24.000Z
     offsetTime: +08:00
@@ -191,6 +200,7 @@ shots:
       labels:
         - Column
         - Walkway
+
   - sequence: "010"
     date: 2021-08-21T10:00:24.000Z
     offsetTime: +08:00
@@ -211,6 +221,7 @@ shots:
         - Thoroughfare
         - Bicycle handlebar
         - Highway
+
   - sequence: "011"
     date: 2021-08-21T10:05:24.000Z
     offsetTime: +08:00
@@ -232,6 +243,7 @@ shots:
         - High-rise building
         - Bridge
       location: Yanping Riverside Park
+
   - sequence: "012"
     date: 2021-08-21T10:10:24.000Z
     offsetTime: +08:00
@@ -253,6 +265,7 @@ shots:
         - Overpass
         - Skyscraper
       location: Yuquan Park
+
   - sequence: "013"
     date: 2021-08-21T10:15:24.000Z
     offsetTime: +08:00
@@ -273,6 +286,7 @@ shots:
         - Road
         - Metropolis
         - Neighbourhood
+
   - sequence: "014"
     date: 2021-08-21T10:20:24.000Z
     offsetTime: +08:00
@@ -293,6 +307,7 @@ shots:
         - Place of worship
         - Holy places
         - Shrine
+
   - sequence: "015"
     date: 2021-08-21T10:25:24.000Z
     offsetTime: +08:00
@@ -313,6 +328,7 @@ shots:
         - Historic site
         - Travel
         - Monument
+
   - sequence: "016"
     date: 2021-08-21T10:30:24.000Z
     offsetTime: +08:00
@@ -334,6 +350,7 @@ shots:
         - Holy places
         - Shrine
       location: Liberty Square
+
   - sequence: "017"
     date: 2021-08-21T10:35:24.000Z
     offsetTime: +08:00
@@ -355,6 +372,7 @@ shots:
         - Morning
         - Pagoda
       location: National Concert Hall
+
   - sequence: "018"
     date: 2021-08-21T10:40:24.000Z
     offsetTime: +08:00
@@ -376,6 +394,7 @@ shots:
         - Shade
         - Pagoda
       location: Liberty Square
+
   - sequence: "019"
     date: 2021-08-21T10:45:24.000Z
     offsetTime: +08:00
@@ -394,6 +413,7 @@ shots:
         - Headquarters
         - Corporate headquarters
         - Walking
+
   - sequence: "020"
     date: 2021-08-21T10:50:24.000Z
     offsetTime: +08:00
@@ -414,6 +434,7 @@ shots:
         - Pagoda
         - Place of worship
         - Spring
+
   - sequence: "021"
     date: 2021-08-21T10:55:24.000Z
     offsetTime: +08:00
@@ -434,6 +455,7 @@ shots:
         - Architecture
         - Commercial building
         - Landmark
+
   - sequence: "022"
     date: 2021-08-23T09:09:24.000Z
     offsetTime: +08:00
@@ -454,6 +476,7 @@ shots:
         - Overpass
         - Condominium
         - Traffic
+
   - sequence: "023"
     date: 2021-08-23T09:14:24.000Z
     offsetTime: +08:00
@@ -474,6 +497,7 @@ shots:
         - Thoroughfare
         - Lane
         - Motorcycling
+
   - sequence: "024"
     date: 2021-08-23T09:19:24.000Z
     offsetTime: +08:00
@@ -494,6 +518,7 @@ shots:
         - Corporate headquarters
         - Walking
       location: Du Xiao Yue Danzi Noodle
+
   - sequence: "025"
     date: 2021-08-23T03:24:24.000Z
     offsetTime: +02:00
@@ -514,6 +539,7 @@ shots:
         - Residential area
         - Metropolis
         - Urban design
+
   - sequence: "026"
     date: 2021-08-24T18:00:24.000Z
     offsetTime: +08:00
@@ -534,6 +560,7 @@ shots:
         - Street
         - Metropolitan area
         - Car
+
   - sequence: "027"
     date: 2021-08-24T18:05:24.000Z
     offsetTime: +08:00
@@ -554,6 +581,7 @@ shots:
         - Aisle
         - Library
         - Book cover
+
   - sequence: "028"
     date: 2021-08-24T18:10:24.000Z
     offsetTime: +08:00
@@ -572,6 +600,7 @@ shots:
         - Bookcase
         - Bookselling
         - Collection
+
   - sequence: "029"
     date: 2021-08-24T18:15:24.000Z
     offsetTime: +08:00
@@ -592,6 +621,7 @@ shots:
         - Architecture
         - Town
         - Commercial building
+
   - sequence: "030"
     date: 2021-08-24T18:20:24.000Z
     offsetTime: +08:00
@@ -612,6 +642,7 @@ shots:
         - Town
         - Skyscraper
         - Metropolis
+
   - sequence: "031"
     date: 2021-08-24T18:25:24.000Z
     offsetTime: +08:00

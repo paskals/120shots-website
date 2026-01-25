@@ -1,776 +1,812 @@
-manualId: "2022/TN-02"
-film: "lomo-800"
-camera: "Nikon F3"
-format: "35mm"
+manualId: 2022/TN-02
+film: lomo-800
+camera: Nikon F3
+format: 35mm
 cover: "001"
 shots:
   - sequence: "000"
-    date: "2022-02-27T10:01:00.000Z"
-    offsetTime: "+01:00"
+    date: 2022-02-27T10:01:00.000Z
+    offsetTime: +01:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0001.webp"
-      alt: "Film photo of land vehicle, mode of transport, wheel, motorcycle, tire, scooter."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0001.webp
+      alt: Film photo of land vehicle, mode of transport, wheel, motorcycle, tire, scooter.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Land vehicle"
-        - "Mode of transport"
-        - "Wheel"
-        - "Motorcycle"
-        - "Tire"
-        - "Scooter"
-        - "Motor vehicle"
-        - "Automotive Tire"
-        - "Automotive lighting"
-        - "Automotive Wheel System"
-      location: "Pingtung, Taiwan"
+        - Land vehicle
+        - Mode of transport
+        - Wheel
+        - Motorcycle
+        - Tire
+        - Scooter
+        - Motor vehicle
+        - Automotive Tire
+        - Automotive lighting
+        - Automotive Wheel System
+      location: Pingtung, Taiwan
+
   - sequence: "001"
-    date: "2022-02-27T12:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-27T12:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0002.webp"
-      alt: "Film photo of coast, sea, beach, coastal and oceanic landforms, shore, ocean."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0002.webp
+      alt: Film photo of coast, sea, beach, coastal and oceanic landforms, shore, ocean.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Coast"
-        - "Sea"
-        - "Beach"
-        - "Coastal and oceanic landforms"
-        - "Shore"
-        - "Ocean"
-        - "Vacation"
-        - "Wind wave"
-        - "Leisure"
-        - "Wave"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Coast
+        - Sea
+        - Beach
+        - Coastal and oceanic landforms
+        - Shore
+        - Ocean
+        - Vacation
+        - Wind wave
+        - Leisure
+        - Wave
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "002"
-    date: "2022-02-27T12:10:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-27T12:10:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0003.webp"
-      alt: "Film photo of summer, rock, beauty, leisure, black, vacation."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0003.webp
+      alt: Film photo of summer, rock, beauty, leisure, black, vacation.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Summer"
-        - "Rock"
-        - "Beauty"
-        - "Leisure"
-        - "Black"
-        - "Vacation"
-        - "Bag"
-        - "Luggage & bags"
-        - "Coastal and oceanic landforms"
-        - "Coast"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Summer
+        - Rock
+        - Beauty
+        - Leisure
+        - Black
+        - Vacation
+        - Bag
+        - Luggage & bags
+        - Coastal and oceanic landforms
+        - Coast
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "003"
-    date: "2022-02-27T12:20:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-27T12:20:00.000Z
+    offsetTime: +02:00
     hidden: true
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0004.webp"
-      alt: "Film photo of summer, black, sea, leisure, coast, ocean."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0004.webp
+      alt: Film photo of summer, black, sea, leisure, coast, ocean.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Summer"
-        - "Black"
-        - "Sea"
-        - "Leisure"
-        - "Coast"
-        - "Ocean"
-        - "People in nature"
-        - "Vacation"
-        - "Travel"
-        - "Holiday"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Summer
+        - Black
+        - Sea
+        - Leisure
+        - Coast
+        - Ocean
+        - People in nature
+        - Vacation
+        - Travel
+        - Holiday
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "004"
-    date: "2022-02-27T12:30:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-27T12:30:00.000Z
+    offsetTime: +02:00
     hidden: true
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0005.webp"
-      alt: "Film photo of fluid, sea, liquid, coastal and oceanic landforms, ocean, coast."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0005.webp
+      alt: Film photo of fluid, sea, liquid, coastal and oceanic landforms, ocean, coast.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Fluid"
-        - "Sea"
-        - "Liquid"
-        - "Coastal and oceanic landforms"
-        - "Ocean"
-        - "Coast"
-        - "Shore"
-        - "Wave"
-        - "Wind wave"
-        - "Sound"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Fluid
+        - Sea
+        - Liquid
+        - Coastal and oceanic landforms
+        - Ocean
+        - Coast
+        - Shore
+        - Wave
+        - Wind wave
+        - Sound
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "005"
-    date: "2022-02-27T13:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-27T13:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0006.webp"
-      alt: "Film photo of sea, ocean, watercraft, coast, boat, tropics."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0006.webp
+      alt: Film photo of sea, ocean, watercraft, coast, boat, tropics.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Sea"
-        - "Ocean"
-        - "Watercraft"
-        - "Coast"
-        - "Boat"
-        - "Tropics"
-        - "Mountain-ash"
-        - "Island"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Sea
+        - Ocean
+        - Watercraft
+        - Coast
+        - Boat
+        - Tropics
+        - Mountain-ash
+        - Island
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "006"
-    date: "2022-02-27T13:10:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-27T13:10:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0007.webp"
-      alt: "Film photo of rock, geological formation, geology, bedrock, walkway, outcrop."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0007.webp
+      alt: Film photo of rock, geological formation, geology, bedrock, walkway, outcrop.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Rock"
-        - "Geological formation"
-        - "Geology"
-        - "Bedrock"
-        - "Walkway"
-        - "Outcrop"
-        - "Trail"
-        - "Erosion"
-        - "Path"
-        - "Moss"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Rock
+        - Geological formation
+        - Geology
+        - Bedrock
+        - Walkway
+        - Outcrop
+        - Trail
+        - Erosion
+        - Path
+        - Moss
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "007"
-    date: "2022-02-27T13:30:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-27T13:30:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0008.webp"
-      alt: "Film photo of road surface, road, asphalt, thoroughfare, lane, motorcycling."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0008.webp
+      alt: Film photo of road surface, road, asphalt, thoroughfare, lane, motorcycling.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Road surface"
-        - "Road"
-        - "Asphalt"
-        - "Thoroughfare"
-        - "Lane"
-        - "Motorcycling"
-        - "Motorcycle"
-        - "Tar"
-        - "Highway"
-        - "Rolling"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Road surface
+        - Road
+        - Asphalt
+        - Thoroughfare
+        - Lane
+        - Motorcycling
+        - Motorcycle
+        - Tar
+        - Highway
+        - Rolling
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "008"
-    date: "2022-02-27T13:40:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-27T13:40:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0009.webp"
-      alt: "Film photo of road, road surface, vegetation, motorcycle, asphalt, sunlight."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0009.webp
+      alt: Film photo of road, road surface, vegetation, motorcycle, asphalt, sunlight.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Road"
-        - "Road surface"
-        - "Vegetation"
-        - "Motorcycle"
-        - "Asphalt"
-        - "Sunlight"
-        - "Thoroughfare"
-        - "Morning"
-        - "Lane"
-        - "Motorcycling"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Road
+        - Road surface
+        - Vegetation
+        - Motorcycle
+        - Asphalt
+        - Sunlight
+        - Thoroughfare
+        - Morning
+        - Lane
+        - Motorcycling
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "009"
-    date: "2022-02-27T15:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-27T15:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0010.webp"
-      alt: "Film photo of cooking, food, kitchen appliance, kitchen, cookware and bakeware, cook."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0010.webp
+      alt: Film photo of cooking, food, kitchen appliance, kitchen, cookware and bakeware, cook.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Cooking"
-        - "Food"
-        - "Kitchen Appliance"
-        - "Kitchen"
-        - "Cookware and bakeware"
-        - "Cook"
-        - "Kitchen stove"
-        - "Stove"
-        - "Countertop"
-        - "Home appliance"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Cooking
+        - Food
+        - Kitchen Appliance
+        - Kitchen
+        - Cookware and bakeware
+        - Cook
+        - Kitchen stove
+        - Stove
+        - Countertop
+        - Home appliance
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "010"
-    date: "2022-02-27T20:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-27T20:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0011.webp"
-      alt: "Film photo of lighting, electricity, night, midnight, electrical supply, public utility."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0011.webp
+      alt: Film photo of lighting, electricity, night, midnight, electrical supply, public utility.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Lighting"
-        - "Electricity"
-        - "Night"
-        - "Midnight"
-        - "Electrical Supply"
-        - "Public utility"
-        - "Street light"
-        - "Evening"
-        - "Light fixture"
-        - "Security lighting"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Lighting
+        - Electricity
+        - Night
+        - Midnight
+        - Electrical Supply
+        - Public utility
+        - Street light
+        - Evening
+        - Light fixture
+        - Security lighting
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "011"
-    date: "2022-02-27T20:10:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-27T20:10:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0012.webp"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0012.webp
       alt: "Film photo of electricity, lighting, night, orange, midnight, electrical supply. Location: Shengping Theater."
-      positionx: "50%"
-      positiony: "50%"
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Electricity"
-        - "Lighting"
-        - "Night"
-        - "Orange"
-        - "Midnight"
-        - "Electrical Supply"
-        - "Public utility"
-        - "Light fixture"
-        - "Security lighting"
-        - "Street light"
-      location: "Shengping Theater, Xiao Liuqiu island, Taiwan"
+        - Electricity
+        - Lighting
+        - Night
+        - Orange
+        - Midnight
+        - Electrical Supply
+        - Public utility
+        - Light fixture
+        - Security lighting
+        - Street light
+      location: Shengping Theater, Xiao Liuqiu island, Taiwan
+
   - sequence: "012"
-    date: "2022-02-27T20:21:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-27T20:21:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0013.webp"
-      alt: "Film photo of night, electricity, lighting, orange, light fixture, midnight."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0013.webp
+      alt: Film photo of night, electricity, lighting, orange, light fixture, midnight.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Night"
-        - "Electricity"
-        - "Lighting"
-        - "Orange"
-        - "Light fixture"
-        - "Midnight"
-        - "Lantern"
-        - "Electrical Supply"
-        - "Security lighting"
-        - "Mid-Autumn Festival"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Night
+        - Electricity
+        - Lighting
+        - Orange
+        - Light fixture
+        - Midnight
+        - Lantern
+        - Electrical Supply
+        - Security lighting
+        - Mid-Autumn Festival
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "013"
-    date: "2022-02-27T20:22:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-27T20:22:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0014.webp"
-      alt: "Film photo of red, lighting, lantern, orange, electricity, light fixture."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0014.webp
+      alt: Film photo of red, lighting, lantern, orange, electricity, light fixture.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Red"
-        - "Lighting"
-        - "Lantern"
-        - "Orange"
-        - "Electricity"
-        - "Light fixture"
-        - "Night"
-        - "Mid-Autumn Festival"
-        - "Festival"
-        - "Chinese New Year"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Red
+        - Lighting
+        - Lantern
+        - Orange
+        - Electricity
+        - Light fixture
+        - Night
+        - Mid-Autumn Festival
+        - Festival
+        - Chinese New Year
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "014"
-    date: "2022-02-28T12:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-28T12:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0015.webp"
-      alt: "Film photo of water, body of water, beach, natural environment, fluid, sea."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0015.webp
+      alt: Film photo of water, body of water, beach, natural environment, fluid, sea.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Water"
-        - "Body of water"
-        - "Beach"
-        - "Natural environment"
-        - "Fluid"
-        - "Sea"
-        - "Summer"
-        - "Horizon"
-        - "Shore"
-        - "Coast"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Water
+        - Body of water
+        - Beach
+        - Natural environment
+        - Fluid
+        - Sea
+        - Summer
+        - Horizon
+        - Shore
+        - Coast
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "015"
-    date: "2022-02-28T12:02:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-28T12:02:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0016.webp"
-      alt: "Film photo of road, motorcycle, asphalt, coast, ocean, motorcycling."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0016.webp
+      alt: Film photo of road, motorcycle, asphalt, coast, ocean, motorcycling.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Road"
-        - "Motorcycle"
-        - "Asphalt"
-        - "Coast"
-        - "Ocean"
-        - "Motorcycling"
-        - "Tar"
-        - "Highway"
-        - "Road trip"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Road
+        - Motorcycle
+        - Asphalt
+        - Coast
+        - Ocean
+        - Motorcycling
+        - Tar
+        - Highway
+        - Road trip
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "016"
-    date: "2022-02-28T13:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-28T13:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0017.webp"
-      alt: "Film photo of boat, watercraft, waterway, channel, port, boats and boating--equipment and supplies."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0017.webp
+      alt: Film photo of boat, watercraft, waterway, channel, port, boats and boating--equipment and supplies.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Boat"
-        - "Watercraft"
-        - "Waterway"
-        - "Channel"
-        - "Port"
-        - "Boats and boating--Equipment and supplies"
-        - "Naval architecture"
-        - "Harbor"
-        - "Dock"
-        - "Ship"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Boat
+        - Watercraft
+        - Waterway
+        - Channel
+        - Port
+        - Boats and boating--Equipment and supplies
+        - Naval architecture
+        - Harbor
+        - Dock
+        - Ship
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "017"
-    date: "2022-02-28T13:10:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-28T13:10:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0018.webp"
-      alt: "Film photo of blue, sky, water resources, daytime, horizon, fluid."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0018.webp
+      alt: Film photo of blue, sky, water resources, daytime, horizon, fluid.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Blue"
-        - "Sky"
-        - "Water resources"
-        - "Daytime"
-        - "Horizon"
-        - "Fluid"
-        - "Sea"
-        - "Liquid"
-        - "Ocean"
-        - "Sound"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Blue
+        - Sky
+        - Water resources
+        - Daytime
+        - Horizon
+        - Fluid
+        - Sea
+        - Liquid
+        - Ocean
+        - Sound
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "018"
-    date: "2022-02-28T13:20:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-28T13:20:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0019.webp"
-      alt: "Film photo of summer, dress, leisure, people in nature, vacation, sea."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0019.webp
+      alt: Film photo of summer, dress, leisure, people in nature, vacation, sea.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Summer"
-        - "Dress"
-        - "Leisure"
-        - "People in nature"
-        - "Vacation"
-        - "Sea"
-        - "Travel"
-        - "Day Dress"
-        - "Holiday"
-        - "Ocean"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Summer
+        - Dress
+        - Leisure
+        - People in nature
+        - Vacation
+        - Sea
+        - Travel
+        - Day Dress
+        - Holiday
+        - Ocean
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "019"
-    date: "2022-02-28T13:21:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-28T13:21:00.000Z
+    offsetTime: +02:00
     hidden: true
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0020.webp"
-      alt: "Film photo of dress, day dress, one-piece garment, people in nature, leisure, vacation."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0020.webp
+      alt: Film photo of dress, day dress, one-piece garment, people in nature, leisure, vacation.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Dress"
-        - "Day Dress"
-        - "One-piece garment"
-        - "People in nature"
-        - "Leisure"
-        - "Vacation"
-        - "Holiday"
-        - "Wind"
-        - "Beach"
-        - "Photo shoot"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Dress
+        - Day Dress
+        - One-piece garment
+        - People in nature
+        - Leisure
+        - Vacation
+        - Holiday
+        - Wind
+        - Beach
+        - Photo shoot
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "020"
-    date: "2022-02-28T13:22:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-28T13:22:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0021.webp"
-      alt: "Film photo of eyewear, glasses, vision care, head, sleeve, facial hair."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0021.webp
+      alt: Film photo of eyewear, glasses, vision care, head, sleeve, facial hair.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Eyewear"
-        - "Glasses"
-        - "Vision Care"
-        - "Head"
-        - "Sleeve"
-        - "Facial hair"
-        - "Beard"
-        - "Shoulder"
-        - "Neck"
-        - "Mouth"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Eyewear
+        - Glasses
+        - Vision Care
+        - Head
+        - Sleeve
+        - Facial hair
+        - Beard
+        - Shoulder
+        - Neck
+        - Mouth
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "021"
-    date: "2022-02-28T13:30:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-28T13:30:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0022.webp"
-      alt: "Film photo of rock, sea, coast, geological formation, coastal and oceanic landforms, ocean."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0022.webp
+      alt: Film photo of rock, sea, coast, geological formation, coastal and oceanic landforms, ocean.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Rock"
-        - "Sea"
-        - "Coast"
-        - "Geological formation"
-        - "Coastal and oceanic landforms"
-        - "Ocean"
-        - "Bedrock"
-        - "Geology"
-        - "Shore"
-        - "Outcrop"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Rock
+        - Sea
+        - Coast
+        - Geological formation
+        - Coastal and oceanic landforms
+        - Ocean
+        - Bedrock
+        - Geology
+        - Shore
+        - Outcrop
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "022"
-    date: "2022-02-28T13:31:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-28T13:31:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0023.webp"
-      alt: "Film photo of rock, sea, coast, geological formation, coastal and oceanic landforms, ocean."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0023.webp
+      alt: Film photo of rock, sea, coast, geological formation, coastal and oceanic landforms, ocean.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Rock"
-        - "Sea"
-        - "Coast"
-        - "Geological formation"
-        - "Coastal and oceanic landforms"
-        - "Ocean"
-        - "Terrain"
-        - "Shore"
-        - "Geology"
-        - "Outcrop"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Rock
+        - Sea
+        - Coast
+        - Geological formation
+        - Coastal and oceanic landforms
+        - Ocean
+        - Terrain
+        - Shore
+        - Geology
+        - Outcrop
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "023"
-    date: "2022-02-28T13:32:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-28T13:32:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0024.webp"
-      alt: "Film photo of blue, rock, water, body of water, coast, sea."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0024.webp
+      alt: Film photo of blue, rock, water, body of water, coast, sea.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Blue"
-        - "Rock"
-        - "Water"
-        - "Body of water"
-        - "Coast"
-        - "Sea"
-        - "Coastal and oceanic landforms"
-        - "Summer"
-        - "Geological formation"
-        - "Outcrop"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Blue
+        - Rock
+        - Water
+        - Body of water
+        - Coast
+        - Sea
+        - Coastal and oceanic landforms
+        - Summer
+        - Geological formation
+        - Outcrop
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "024"
-    date: "2022-02-28T14:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-28T14:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0025.webp"
-      alt: "Film photo of land vehicle, mode of transport, vehicle, urban area, road, motor vehicle."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0025.webp
+      alt: Film photo of land vehicle, mode of transport, vehicle, urban area, road, motor vehicle.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Land vehicle"
-        - "Mode of transport"
-        - "Vehicle"
-        - "Urban area"
-        - "Road"
-        - "Motor vehicle"
-        - "City"
-        - "Car"
-        - "Transport"
-        - "Automotive lighting"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Land vehicle
+        - Mode of transport
+        - Vehicle
+        - Urban area
+        - Road
+        - Motor vehicle
+        - City
+        - Car
+        - Transport
+        - Automotive lighting
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "025"
-    date: "2022-02-28T14:01:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-02-28T14:01:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0026.webp"
-      alt: "Film photo of mode of transport, urban area, road, city, motor vehicle, street."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0026.webp
+      alt: Film photo of mode of transport, urban area, road, city, motor vehicle, street.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Mode of transport"
-        - "Urban area"
-        - "Road"
-        - "City"
-        - "Motor vehicle"
-        - "Street"
-        - "Road surface"
-        - "Thoroughfare"
-        - "Town"
-        - "Electricity"
-      location: "Xiao Liuqiu island, Taiwan"
+        - Mode of transport
+        - Urban area
+        - Road
+        - City
+        - Motor vehicle
+        - Street
+        - Road surface
+        - Thoroughfare
+        - Town
+        - Electricity
+      location: Xiao Liuqiu island, Taiwan
+
   - sequence: "026"
-    date: "2022-03-03T20:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-03-03T20:00:00.000Z
+    offsetTime: +02:00
     hidden: true
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0027.webp"
-      alt: "Film photo of night, lighting, electricity, electronic signage, midnight, pedestrian."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0027.webp
+      alt: Film photo of night, lighting, electricity, electronic signage, midnight, pedestrian.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Night"
-        - "Lighting"
-        - "Electricity"
-        - "Electronic signage"
-        - "Midnight"
-        - "Pedestrian"
-        - "Neon"
-        - "Logo"
-        - "Lantern"
-        - "Neon sign"
-      location: "Tainan, Taiwan"
+        - Night
+        - Lighting
+        - Electricity
+        - Electronic signage
+        - Midnight
+        - Pedestrian
+        - Neon
+        - Logo
+        - Lantern
+        - Neon sign
+      location: Tainan, Taiwan
+
   - sequence: "027"
-    date: "2022-03-03T20:01:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-03-03T20:01:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0028.webp"
-      alt: "Film photo of red, orange, lantern, lighting, light fixture, lampshade."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0028.webp
+      alt: Film photo of red, orange, lantern, lighting, light fixture, lampshade.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Red"
-        - "Orange"
-        - "Lantern"
-        - "Lighting"
-        - "Light fixture"
-        - "Lampshade"
-        - "Mid-Autumn Festival"
-        - "Lamp"
-        - "Chinese New Year"
-        - "Still life photography"
-      location: "Tainan, Taiwan"
+        - Red
+        - Orange
+        - Lantern
+        - Lighting
+        - Light fixture
+        - Lampshade
+        - Mid-Autumn Festival
+        - Lamp
+        - Chinese New Year
+        - Still life photography
+      location: Tainan, Taiwan
+
   - sequence: "028"
-    date: "2022-03-03T20:30:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-03-03T20:30:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0029.webp"
-      alt: "Film photo of retail, logo, display window, night, convenience store, market."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0029.webp
+      alt: Film photo of retail, logo, display window, night, convenience store, market.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Retail"
-        - "Logo"
-        - "Display window"
-        - "Night"
-        - "Convenience store"
-        - "Market"
-        - "Display case"
-      location: "Tainan, Taiwan"
+        - Retail
+        - Logo
+        - Display window
+        - Night
+        - Convenience store
+        - Market
+        - Display case
+      location: Tainan, Taiwan
+
   - sequence: "029"
-    date: "2022-03-03T20:32:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-03-03T20:32:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0030.webp"
-      alt: "Film photo of alley, yellow, street, road, neighbourhood, lighting."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0030.webp
+      alt: Film photo of alley, yellow, street, road, neighbourhood, lighting.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Alley"
-        - "Yellow"
-        - "Street"
-        - "Road"
-        - "Neighbourhood"
-        - "Lighting"
-        - "Flowerpot"
-        - "Houseplant"
-        - "Sidewalk"
-        - "Cobblestone"
-      location: "Tainan, Taiwan"
+        - Alley
+        - Yellow
+        - Street
+        - Road
+        - Neighbourhood
+        - Lighting
+        - Flowerpot
+        - Houseplant
+        - Sidewalk
+        - Cobblestone
+      location: Tainan, Taiwan
+
   - sequence: "030"
-    date: "2022-03-03T20:35:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-03-03T20:35:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0031.webp"
-      alt: "Film photo of road surface, road, night, urban area, yellow, street."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0031.webp
+      alt: Film photo of road surface, road, night, urban area, yellow, street.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Road surface"
-        - "Road"
-        - "Night"
-        - "Urban area"
-        - "Yellow"
-        - "Street"
-        - "City"
-        - "Town"
-        - "Alley"
-        - "Lighting"
+        - Road surface
+        - Road
+        - Night
+        - Urban area
+        - Yellow
+        - Street
+        - City
+        - Town
+        - Alley
+        - Lighting
+
   - sequence: "031"
-    date: "2022-03-03T20:36:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-03-03T20:36:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0032.webp"
-      alt: "Film photo of road surface, road, street, urban area, night, town."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0032.webp
+      alt: Film photo of road surface, road, street, urban area, night, town.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Road surface"
-        - "Road"
-        - "Street"
-        - "Urban area"
-        - "Night"
-        - "Town"
-        - "City"
-        - "Alley"
-        - "Neighbourhood"
-        - "Lighting"
-      location: "Tainan, Taiwan"
+        - Road surface
+        - Road
+        - Street
+        - Urban area
+        - Night
+        - Town
+        - City
+        - Alley
+        - Neighbourhood
+        - Lighting
+      location: Tainan, Taiwan
+
   - sequence: "032"
-    date: "2022-03-03T20:55:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-03-03T20:55:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0033.webp"
-      alt: "Film photo of motorcycle, automotive lighting, wheel, tire, night, automotive tire."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0033.webp
+      alt: Film photo of motorcycle, automotive lighting, wheel, tire, night, automotive tire.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Motorcycle"
-        - "Automotive lighting"
-        - "Wheel"
-        - "Tire"
-        - "Night"
-        - "Automotive Tire"
-        - "Automotive Exterior"
-        - "Automotive Wheel System"
-        - "Scooter"
-        - "Asphalt"
-      location: "Tainan, Taiwan"
+        - Motorcycle
+        - Automotive lighting
+        - Wheel
+        - Tire
+        - Night
+        - Automotive Tire
+        - Automotive Exterior
+        - Automotive Wheel System
+        - Scooter
+        - Asphalt
+      location: Tainan, Taiwan
+
   - sequence: "033"
-    date: "2022-03-05T12:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-03-05T12:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0034.webp"
-      alt: "Film photo of building, urban area, metropolitan area, city, high-rise building, apartment."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0034.webp
+      alt: Film photo of building, urban area, metropolitan area, city, high-rise building, apartment.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Building"
-        - "Urban area"
-        - "Metropolitan area"
-        - "City"
-        - "High-rise building"
-        - "Apartment"
-        - "Commercial building"
-        - "Metropolis"
-        - "Condominium"
-        - "Skyscraper"
-      location: "Taipei, Taiwan"
+        - Building
+        - Urban area
+        - Metropolitan area
+        - City
+        - High-rise building
+        - Apartment
+        - Commercial building
+        - Metropolis
+        - Condominium
+        - Skyscraper
+      location: Taipei, Taiwan
+
   - sequence: "034"
-    date: "2022-03-05T17:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-03-05T17:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0035.webp"
-      alt: "Film photo of daytime, building, urban area, high-rise building, city, apartment."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0035.webp
+      alt: Film photo of daytime, building, urban area, high-rise building, city, apartment.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Daytime"
-        - "Building"
-        - "Urban area"
-        - "High-rise building"
-        - "City"
-        - "Apartment"
-        - "Metropolitan area"
-        - "Neighbourhood"
-        - "Residential area"
-        - "Condominium"
-      location: "Taipei, Taiwan"
+        - Daytime
+        - Building
+        - Urban area
+        - High-rise building
+        - City
+        - Apartment
+        - Metropolitan area
+        - Neighbourhood
+        - Residential area
+        - Condominium
+      location: Taipei, Taiwan
+
   - sequence: "035"
-    date: "2022-03-11T18:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-03-11T18:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0036.webp"
-      alt: "Film photo of skyscraper, building, urban area, city, daytime, metropolitan area."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0036.webp
+      alt: Film photo of skyscraper, building, urban area, city, daytime, metropolitan area.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Skyscraper"
-        - "Building"
-        - "Urban area"
-        - "City"
-        - "Daytime"
-        - "Metropolitan area"
-        - "High-rise building"
-        - "Metropolis"
-        - "Facade"
-        - "Tower"
-      location: "Taipei, Taiwan"
+        - Skyscraper
+        - Building
+        - Urban area
+        - City
+        - Daytime
+        - Metropolitan area
+        - High-rise building
+        - Metropolis
+        - Facade
+        - Tower
+      location: Taipei, Taiwan
+
   - sequence: "036"
-    date: "2022-03-12T11:00:00.000Z"
-    offsetTime: "+02:00"
+    date: 2022-03-12T11:00:00.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-02/R1-01825-0037.webp"
-      alt: "Film photo of road surface, road, city, street, urban area, thoroughfare."
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-02/R1-01825-0037.webp
+      alt: Film photo of road surface, road, city, street, urban area, thoroughfare.
+      positionx: 50%
+      positiony: 50%
       labels:
-        - "Road surface"
-        - "Road"
-        - "City"
-        - "Street"
-        - "Urban area"
-        - "Thoroughfare"
-        - "Neighbourhood"
-        - "Town"
-        - "Residential area"
-        - "Asphalt"
-      location: "Taipei, Taiwan"
+        - Road surface
+        - Road
+        - City
+        - Street
+        - Urban area
+        - Thoroughfare
+        - Neighbourhood
+        - Town
+        - Residential area
+        - Asphalt
+      location: Taipei, Taiwan

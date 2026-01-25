@@ -161,18 +161,20 @@ function addBlankLinesBetweenArrayItems(
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
+    let justEnteredArray = false;
 
     // Check if entering a target array
     for (const arrayName of arrayNames) {
       if (line === `${arrayName}:`) {
         currentArray = arrayName;
         firstItemInArray = true;
+        justEnteredArray = true;
         break;
       }
     }
 
-    // Check if exited array (dedent to root)
-    if (currentArray && line.length > 0 && !line.startsWith(' ')) {
+    // Check if exited array (dedent to root) - but not on the line we just entered
+    if (currentArray && !justEnteredArray && line.length > 0 && !line.startsWith(' ')) {
       currentArray = null;
     }
 
@@ -465,4 +467,51 @@ export const createEssayFromRolls = async (
 
   const yamlContent = formatYamlWithSpacing(essay, ['spreads']);
   return saveFile(filePath, yamlContent);
+};
+
+/**
+ * Reformats an existing YAML file (roll or essay) with consistent formatting
+ * @param filePath - Path to the YAML file to reformat
+ * @param createBackup - Whether to create a backup of the original file
+ * @returns Promise that resolves with the file path when complete
+ */
+export const reformatYamlFile = async (
+  filePath: string,
+  createBackup: boolean = true,
+) => {
+  // Check if file exists
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`File not found: ${filePath}`);
+  }
+
+  // Read and parse the YAML file
+  const yamlContent = fs.readFileSync(filePath, "utf8");
+  const data = parse(yamlContent);
+
+  // Create backup if requested
+  if (createBackup) {
+    const backupPath = filePath + ".bak";
+    fs.writeFileSync(backupPath, yamlContent);
+    console.log(`📦 Backup created: ${backupPath}`);
+  }
+
+  // Determine file type and appropriate array names to space
+  let arrayNames: string[] = [];
+  if (data.spreads) {
+    arrayNames = ['spreads'];
+    console.log("📄 Detected: Photo essay");
+  } else if (data.shots) {
+    arrayNames = ['shots'];
+    console.log("📄 Detected: Film roll");
+  } else {
+    throw new Error("Unknown YAML format (no 'spreads' or 'shots' found)");
+  }
+
+  // Reformat with spacing
+  const reformattedYaml = formatYamlWithSpacing(data, arrayNames);
+
+  // Write back to file
+  fs.writeFileSync(filePath, reformattedYaml, "utf8");
+
+  return filePath;
 };
