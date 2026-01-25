@@ -1,5 +1,4 @@
 ---
-import { Image, getImage, imageConfig } from "astro:assets";
 const { images } = Astro.props;
 ---
 
@@ -12,21 +11,19 @@ const { images } = Astro.props;
     {
       images.map((image) =>
         image ? (
-          <div
-            class="image-container flex flex-row my-2 mx-1 max-w-fit"
-            id="gallery"
-          >
+          <div class="film-frame my-2 mx-1">
             <a
               href={image.src}
-              class="image-link glightbox m-0 p-0 flex-auto h-fit"
+              class="glightbox block"
               data-astro-prefetch="false"
             >
               <img
                 src={image.src}
                 alt={image.alt}
                 loading="lazy"
-                class="film-image m-0 p-0 md:max-h-44 sm:max-h-36 max-h-32"
-                decoding={"async"}
+                decoding="async"
+                class="film-image md:h-44 sm:h-36 h-32 w-auto"
+                data-film-image
               />
             </a>
           </div>
@@ -35,9 +32,25 @@ const { images } = Astro.props;
     }
   </div>
 </div>
+
 <style>
+  .film-frame {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .film-frame.portrait .film-image {
+    transform: rotate(90deg);
+    /* Override height constraint, use width constraint instead */
+    height: auto !important;
+    max-height: none !important;
+  }
+
   .film-scroll-container {
     --background: #393939;
+    align-items: center;
     --size: 1rem;
     background-image: linear-gradient(
         to right,
@@ -82,3 +95,45 @@ const { images } = Astro.props;
 </style>
 
 <script src="../scripts/lightbox.js"></script>
+
+<script>
+  function handleFilmImage(img: HTMLImageElement) {
+    const applyRotation = () => {
+      const { naturalWidth, naturalHeight, offsetHeight } = img;
+      if (!naturalWidth || !naturalHeight) return;
+
+      // Check if portrait
+      if (naturalHeight > naturalWidth) {
+        const frame = img.closest(".film-frame") as HTMLElement;
+        if (!frame) return;
+
+        // For portrait images, we want the rotated visual height to match
+        // landscape image heights. So set image width = current offsetHeight
+        // (what landscape images use for height), then height scales by aspect ratio.
+        const targetWidth = offsetHeight; // e.g., 176px
+        const aspectRatio = naturalHeight / naturalWidth;
+        const targetHeight = targetWidth * aspectRatio;
+
+        // Set image dimensions: width fixed, height by aspect ratio
+        img.style.width = `${targetWidth}px`;
+        img.style.height = `${targetHeight}px`;
+
+        // Frame width = rotated visual width = image height
+        // Frame height = rotated visual height = image width (same as landscape img height)
+        frame.style.width = `${targetHeight}px`;
+        frame.style.height = `${targetWidth}px`;
+        frame.classList.add("portrait");
+      }
+    };
+
+    if (img.complete && img.naturalWidth) {
+      requestAnimationFrame(applyRotation);
+    } else {
+      img.addEventListener("load", () => requestAnimationFrame(applyRotation));
+    }
+  }
+
+  document
+    .querySelectorAll<HTMLImageElement>("[data-film-image]")
+    .forEach(handleFilmImage);
+</script>
