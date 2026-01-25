@@ -80,7 +80,9 @@ const formattedRolls = rollIds.map(id => id.split('/').pop() || id);
   .intro-spread {
     position: relative;
     overflow: hidden;
-    background: var(--bg-primary);
+    background: var(--essay-cover-middle);
+    height: 100vh;
+    max-height: 100vh;
   }
 
   /* Image container - full bleed with artistic treatment */
@@ -127,7 +129,7 @@ const formattedRolls = rollIds.map(id => id.split('/').pop() || id);
       ellipse 120% 80% at 50% 60%,
       transparent 0%,
       transparent 30%,
-      var(--bg-primary) 100%
+      var(--essay-cover-outer) 100%
     );
     z-index: 2;
   }
@@ -159,7 +161,8 @@ const formattedRolls = rollIds.map(id => id.split('/').pop() || id);
     max-width: 1200px;
     margin: 0 auto;
     padding: 4rem clamp(2rem, 8vw, 6rem);
-    min-height: 100vh;
+    height: 100%;
+    box-sizing: border-box;
   }
 
   /* Film roll IDs */
