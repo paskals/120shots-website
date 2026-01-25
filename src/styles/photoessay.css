@@ -190,6 +190,38 @@
   flex: 1.5;
 }
 
+/* Trio-L layout: stack on left, main on right */
+.spread[data-layout="trio-l"] .spread-photos,
+.spread[data-layout="trio-r"] .spread-photos {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.spread[data-layout="trio-l"] .photo-stack,
+.spread[data-layout="trio-r"] .photo-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+  height: calc(100dvh - 10rem);
+  max-height: 80vh;
+}
+
+.spread[data-layout="trio-l"] .photo-stack .photo-wrapper,
+.spread[data-layout="trio-r"] .photo-stack .photo-wrapper {
+  flex: 1;
+  min-height: 0;
+}
+
+.spread[data-layout="trio-l"] .photo-main,
+.spread[data-layout="trio-r"] .photo-main {
+  flex: 1.5;
+  height: calc(100dvh - 10rem);
+  max-height: 80vh;
+}
+
 /* Photo wrapper and image */
 .photo-wrapper {
   position: relative;
@@ -317,7 +349,9 @@
   }
 
   .spread[data-layout="duo"] .photo-wrapper,
-  .spread[data-layout="trio"] .photo-wrapper {
+  .spread[data-layout="trio"] .photo-wrapper,
+  .spread[data-layout="trio-l"] .photo-wrapper,
+  .spread[data-layout="trio-r"] .photo-wrapper {
     width: 100%;
     height: auto;
     max-height: none;
@@ -325,8 +359,29 @@
   }
 
   .spread[data-layout="duo"] .photo-wrapper img,
-  .spread[data-layout="trio"] .photo-wrapper img {
+  .spread[data-layout="trio"] .photo-wrapper img,
+  .spread[data-layout="trio-l"] .photo-wrapper img,
+  .spread[data-layout="trio-r"] .photo-wrapper img {
     max-height: 35vh;
+  }
+
+  /* Stack vertically on mobile for trio-l and trio-r */
+  .spread[data-layout="trio-l"] .spread-photos,
+  .spread[data-layout="trio-r"] .spread-photos {
+    flex-direction: column;
+  }
+
+  .spread[data-layout="trio-l"] .photo-stack,
+  .spread[data-layout="trio-r"] .photo-stack {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+  }
+
+  .spread[data-layout="trio-l"] .photo-main,
+  .spread[data-layout="trio-r"] .photo-main {
+    height: auto;
+    max-height: none;
   }
 
   .spread[data-layout="single"] .photo-wrapper {

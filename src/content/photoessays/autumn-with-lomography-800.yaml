@@ -1,0 +1,130 @@
+title: "Autumn with Lomography 800"
+description: "Capturing the vibrant colors of autumn across Netherlands and Belgium with Lomography 800's vivid tones"
+pubDate: 2024-06-20
+author: paskal
+rolls:
+  - 2021/GEL-01
+filmStocks:
+  - lomo-800
+tags:
+  - netherlands
+  - belgium
+  - autumn
+
+cover:
+  src: https://cdn.120shots.com/images/GEL-01/GEL-01-035-280516.webp
+  alt: Autumn park scene with golden foliage
+
+spreads:
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-001-15CCFA.webp
+        alt: Early autumn light filtering through trees in a Dutch park
+    caption: "The season begins"
+
+  - layout: duo
+    photos:
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-003-BF6847.webp
+        alt: Fallen leaves scattered on a cobblestone path
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-004-7F5CB7.webp
+        alt: Warm orange tones of autumn trees against grey sky
+
+  - layout: trio
+    photos:
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-006-F28ABA.webp
+        alt: Misty morning in a Belgian forest
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-007-A4004F.webp
+        alt: Red and yellow leaves reflected in a canal
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-008-132956.webp
+        alt: Old brick building framed by autumn branches
+    caption: "Colors of the Low Countries"
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-009-BAF1A5.webp
+        alt: Golden sunlight breaking through autumn canopy
+
+  - layout: duo
+    photos:
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-010-7165FB.webp
+        alt: Cyclist passing through tree-lined avenue
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-011-7D1ED0.webp
+        alt: Bench beneath changing maple trees
+    caption: "Quiet moments in the Netherlands"
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-012-EA4BE2.webp
+        alt: Wide view of autumn landscape with distant church spire
+
+  - layout: trio
+    photos:
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-013-73737D.webp
+        alt: Close-up of amber leaves on wet pavement
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-014-7AB7AC.webp
+        alt: Row of trees showing gradient of seasonal change
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-016-660FAC.webp
+        alt: Old Dutch windmill surrounded by autumn colors
+
+  - layout: duo
+    photos:
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-017-17CE16.webp
+        alt: Moody Belgian street scene in late afternoon
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-019-D7DE3F.webp
+        alt: Garden with chrysanthemums and falling leaves
+    caption: "Between two countries"
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-022-A0AAE1.webp
+        alt: Dramatic clouds over autumn countryside
+
+  - layout: trio
+    photos:
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-023-D6659D.webp
+        alt: Bridge over still water reflecting autumn trees
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-024-FBD7E1.webp
+        alt: Person walking dog through carpet of leaves
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-025-84C527.webp
+        alt: Traditional Dutch house with garden in peak autumn
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-026-2A24C3.webp
+        alt: Lone tree with vibrant red foliage against open field
+    caption: "Standing alone"
+
+  - layout: duo
+    photos:
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-027-25949A.webp
+        alt: Foggy path through birch forest
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-028-F871A6.webp
+        alt: Canal boats moored beneath colorful trees
+
+  - layout: trio
+    photos:
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-029-6A0E38.webp
+        alt: Rustic fence line disappearing into autumn mist
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-030-F9E564.webp
+        alt: Children playing in pile of fallen leaves
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-031-D41D63.webp
+        alt: Historic Belgian square with autumn market stalls
+    caption: "Life continues"
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-032-7544D3.webp
+        alt: Sunset casting long shadows through bare branches
+
+  - layout: duo
+    photos:
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-034-17D776.webp
+        alt: Rain droplets on window overlooking autumn garden
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-035-280516.webp
+        alt: Park pathway covered in golden leaves with tall trees
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-036-E9FD80.webp
+        alt: Last light of autumn day over Dutch horizon
+    caption: "Until next year"

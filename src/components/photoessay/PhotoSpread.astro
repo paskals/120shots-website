@@ -8,7 +8,7 @@ interface Photo {
 }
 
 interface Props {
-  layout: "single" | "duo" | "trio";
+  layout: "single" | "duo" | "trio" | "trio-l" | "trio-r";
   photos: Photo[];
   caption?: string;
   index: number;
@@ -17,26 +17,108 @@ interface Props {
 const { layout, photos, caption, index } = Astro.props;
 
 // Validate photo count for layout
-const expectedPhotos = { single: 1, duo: 2, trio: 3 };
+const expectedPhotos: Record<string, number> = {
+  single: 1,
+  duo: 2,
+  trio: 3,
+  "trio-l": 3,
+  "trio-r": 3,
+};
 const photoCount = Math.min(photos.length, expectedPhotos[layout]);
 const displayPhotos = photos.slice(0, photoCount);
+
+// For trio-l and trio-r, we need to separate photos into stack and main
+// trio-l: photos 1,2 stacked on left, photo 3 main on right
+// trio-r: photo 1 main on left, photos 2,3 stacked on right
+const isTrioVariant = layout === "trio-l" || layout === "trio-r";
+const stackPhotos = isTrioVariant
+  ? layout === "trio-l"
+    ? displayPhotos.slice(0, 2)
+    : displayPhotos.slice(1, 3)
+  : [];
+const mainPhoto = isTrioVariant
+  ? layout === "trio-l"
+    ? displayPhotos[2]
+    : displayPhotos[0]
+  : null;
 ---
 
 <section class="spread" data-layout={layout} data-index={index}>
-  <div class="spread-photos">
-    {
-      displayPhotos.map((photo, i) => (
-        <div class="photo-wrapper">
-          <Image
-            src={photo.src}
-            alt={photo.alt}
-            inferSize
-            loading={index === 0 ? "eager" : "lazy"}
-            decoding={index === 0 ? "sync" : "async"}
-          />
-        </div>
-      ))
-    }
-  </div>
+  {
+    isTrioVariant ? (
+      <div class="spread-photos">
+        {layout === "trio-l" && (
+          <>
+            <div class="photo-stack">
+              {stackPhotos.map((photo) => (
+                <div class="photo-wrapper">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    inferSize
+                    loading={index === 0 ? "eager" : "lazy"}
+                    decoding={index === 0 ? "sync" : "async"}
+                  />
+                </div>
+              ))}
+            </div>
+            {mainPhoto && (
+              <div class="photo-wrapper photo-main">
+                <Image
+                  src={mainPhoto.src}
+                  alt={mainPhoto.alt}
+                  inferSize
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding={index === 0 ? "sync" : "async"}
+                />
+              </div>
+            )}
+          </>
+        )}
+        {layout === "trio-r" && (
+          <>
+            {mainPhoto && (
+              <div class="photo-wrapper photo-main">
+                <Image
+                  src={mainPhoto.src}
+                  alt={mainPhoto.alt}
+                  inferSize
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding={index === 0 ? "sync" : "async"}
+                />
+              </div>
+            )}
+            <div class="photo-stack">
+              {stackPhotos.map((photo) => (
+                <div class="photo-wrapper">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    inferSize
+                    loading={index === 0 ? "eager" : "lazy"}
+                    decoding={index === 0 ? "sync" : "async"}
+                  />
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    ) : (
+      <div class="spread-photos">
+        {displayPhotos.map((photo) => (
+          <div class="photo-wrapper">
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              inferSize
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding={index === 0 ? "sync" : "async"}
+            />
+          </div>
+        ))}
+      </div>
+    )
+  }
   {caption && <p class="spread-caption">{caption}</p>}
 </section>

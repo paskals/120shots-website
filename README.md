@@ -29,6 +29,89 @@ After creating your site with this template:
 - Text content is "hosted" in the repo in the form of markdown files. Deployment is done (for free) with [CloudFlare pages](https://pages.cloudflare.com).
 - Photos are hosted separately and are only referenced via URLs in the markdown blog posts. There's a script to help you process and upload photos to a [CloudFlare R2 bucket](https://developers.cloudflare.com/r2/) - see [Utility Scripts](#utility-scripts).
 
+## Content Types
+
+### Blog Posts (MDX)
+Traditional blog posts in `/src/content/posts/` using MDX format. These support rich content with text, photos, and custom components like Masonry galleries and FilmStrip displays.
+
+### Photo Essays (YAML) - *New*
+A minimal, photography-focused content type in `/src/content/photoessays/`. Photo essays are designed as visual stories with full-screen images and minimal text captions, similar to a photo magazine or gallery experience.
+
+**Key features:**
+- Full-viewport photo spreads with scroll-snap navigation
+- Five layout options per spread:
+  - `single` - One photo centered
+  - `duo` - Two photos side-by-side
+  - `trio` - Three photos in a row (center emphasized)
+  - `trio-l` - Two photos stacked on left, one large on right
+  - `trio-r` - One large photo on left, two stacked on right
+- Optional captions for each spread
+- White matte borders around images (gallery-style framing)
+- Circular progress indicator showing current position
+- Keyboard navigation (↑/↓ or j/k keys)
+- Mobile responsive with vertical stacking
+
+**Example photo essay YAML:**
+```yaml
+title: "Taipei Streets"
+description: "Wandering through the urban layers of Taiwan's capital"
+pubDate: 2024-01-20
+author: paskal
+rolls:
+  - 2021/TPE-01
+filmStocks:
+  - gold-200
+tags:
+  - street
+  - taiwan
+
+spreads:
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/photo-001.webp
+        alt: Taipei skyline
+    caption: "Looking up at Taipei 101"
+
+  - layout: duo
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/photo-002.webp
+        alt: Street scene
+      - src: https://cdn.120shots.com/images/TPE-01/photo-003.webp
+        alt: Night market
+    caption: "Day and night"
+
+  - layout: trio
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/photo-004.webp
+        alt: Temple
+      - src: https://cdn.120shots.com/images/TPE-01/photo-005.webp
+        alt: Incense
+      - src: https://cdn.120shots.com/images/TPE-01/photo-006.webp
+        alt: Lanterns
+
+  - layout: trio-l
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/photo-007.webp
+        alt: Stack photo 1
+      - src: https://cdn.120shots.com/images/TPE-01/photo-008.webp
+        alt: Stack photo 2
+      - src: https://cdn.120shots.com/images/TPE-01/photo-009.webp
+        alt: Main photo on right
+    caption: "Left stack with right main"
+
+  - layout: trio-r
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/photo-010.webp
+        alt: Stack photo 1
+      - src: https://cdn.120shots.com/images/TPE-01/photo-011.webp
+        alt: Stack photo 2
+      - src: https://cdn.120shots.com/images/TPE-01/photo-012.webp
+        alt: Main photo on left
+    caption: "Right stack with left main"
+```
+
+> **Note:** Photo essays are intended to eventually replace traditional blog posts as the primary content format, providing a more immersive photography-first experience.
+
 ## Install (to use this repo directly)
 
 ```sh
