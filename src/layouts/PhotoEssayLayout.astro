@@ -91,38 +91,63 @@ const favicon = {
       <slot />
     </main>
 
-    <!-- Navigation dots -->
-    <nav class="essay-dots" id="essay-dots" aria-label="Spread navigation">
-      {
-        Array.from({ length: spreadCount }, (_, i) => (
-          <button
-            class="essay-dot"
-            data-spread-index={i}
-            aria-label={`Go to spread ${i + 1}`}
-          >
-            <span class="dot-inner" />
-          </button>
-        ))
-      }
-    </nav>
-
-    <!-- Keyboard hints (shown on hover near dots) -->
-    <div class="essay-keyboard-hints" id="keyboard-hints">
-      <span class="key-hint">↑</span>
-      <span class="key-hint">↓</span>
+    <!-- Progress indicator -->
+    <div class="essay-progress" id="essay-progress" aria-label="Spread progress">
+      <svg class="progress-ring" viewBox="0 0 36 36">
+        <circle
+          class="progress-ring-bg"
+          cx="18"
+          cy="18"
+          r="16"
+          fill="none"
+          stroke-width="2"
+        />
+        <circle
+          class="progress-ring-fill"
+          cx="18"
+          cy="18"
+          r="16"
+          fill="none"
+          stroke-width="2"
+          stroke-dasharray="100.53"
+          stroke-dashoffset="100.53"
+        />
+      </svg>
+      <span class="progress-text">
+        <span class="progress-current">1</span>
+        <span class="progress-separator">/</span>
+        <span class="progress-total">{spreadCount}</span>
+      </span>
     </div>
 
     <script>
       function initEssayNav() {
         const container = document.getElementById("essay-container");
-        const dots = document.querySelectorAll(".essay-dot");
         const spreads = document.querySelectorAll(".spread");
-        const keyboardHints = document.getElementById("keyboard-hints");
-        const dotsNav = document.getElementById("essay-dots");
+        const progressRing = document.querySelector(".progress-ring-fill") as SVGCircleElement;
+        const progressCurrent = document.querySelector(".progress-current");
 
-        if (!container || !dots.length || !spreads.length) return;
+        if (!container || !spreads.length) return;
 
-        // Update active dot based on scroll position
+        const totalSpreads = spreads.length;
+        const circumference = 2 * Math.PI * 16; // r=16
+        let currentIndex = 0;
+
+        // Update progress indicator
+        function updateProgress(index: number) {
+          currentIndex = index;
+          const progress = (index + 1) / totalSpreads;
+          const offset = circumference * (1 - progress);
+
+          if (progressRing) {
+            progressRing.style.strokeDashoffset = String(offset);
+          }
+          if (progressCurrent) {
+            progressCurrent.textContent = String(index + 1);
+          }
+        }
+
+        // Observe spreads for scroll position
         const observerOptions = {
           root: container,
           threshold: 0.5,
@@ -132,28 +157,15 @@ const favicon = {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               const index = Array.from(spreads).indexOf(entry.target as Element);
-              dots.forEach((dot, i) => {
-                dot.classList.toggle("active", i === index);
-              });
+              updateProgress(index);
             }
           });
         }, observerOptions);
 
         spreads.forEach((spread) => observer.observe(spread));
 
-        // Click on dot to scroll to spread
-        dots.forEach((dot, i) => {
-          dot.addEventListener("click", () => {
-            spreads[i]?.scrollIntoView({ behavior: "smooth" });
-          });
-        });
-
         // Keyboard navigation
         document.addEventListener("keydown", (e) => {
-          const currentIndex = Array.from(dots).findIndex((dot) =>
-            dot.classList.contains("active")
-          );
-
           if (e.key === "ArrowDown" || e.key === "j") {
             e.preventDefault();
             const nextIndex = Math.min(currentIndex + 1, spreads.length - 1);
@@ -165,15 +177,17 @@ const favicon = {
           }
         });
 
-        // Show keyboard hints on dots hover
-        if (dotsNav && keyboardHints) {
-          dotsNav.addEventListener("mouseenter", () => {
-            keyboardHints.classList.add("visible");
-          });
-          dotsNav.addEventListener("mouseleave", () => {
-            keyboardHints.classList.remove("visible");
+        // Click on progress to go to next spread
+        const progressEl = document.getElementById("essay-progress");
+        if (progressEl) {
+          progressEl.addEventListener("click", () => {
+            const nextIndex = (currentIndex + 1) % totalSpreads;
+            spreads[nextIndex]?.scrollIntoView({ behavior: "smooth" });
           });
         }
+
+        // Initialize first spread
+        updateProgress(0);
       }
 
       // Initialize on page load and after view transitions
