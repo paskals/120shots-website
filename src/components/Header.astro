@@ -3,56 +3,85 @@ import { Image } from "astro:assets";
 import Hamburger from "./Hamburger.astro";
 import Navigation from "./Navigation.astro";
 import ThemeIcon from "./ThemeIcon.astro";
-const { is404Page = false } = Astro.props; // Get the prop from Astro.props
+
+interface Props {
+  is404Page?: boolean;
+  compact?: boolean;
+  essayTitle?: string;
+}
+
+const { is404Page = false, compact = false, essayTitle } = Astro.props;
 
 const favicon_avif = {
   src: "/120Shots_icon_nobackground.png",
   alt: "favicon",
-  // inferSize: true,
   width: "512",
   height: "512",
 };
+
+const headerClass = compact
+  ? "site-header site-header--compact"
+  : "site-header mb-[30px] dark:bg-[rgb(34,33,37)] bg-[#f2f2f2] h-16 w-screen px-4 flex justify-center";
+
+const navClass = compact
+  ? "site-header__nav"
+  : "flex items-center justify-between w-full h-full relative align-center max-w-7xl";
+
+const logoSize = compact ? 32 : 50;
 ---
 
-<header
-  class="mb-[30px] dark:bg-[rgb(34,33,37)] bg-[#f2f2f2] h-16 w-screen px-4 flex justify-center"
->
-  <nav
-    class="flex items-center justify-between w-full h-full relative align-center max-w-7xl"
-  >
+<header class={headerClass} transition:name="site-header" transition:animate="none">
+  <nav class={navClass}>
     {
       !is404Page && (
-        <div class="w-auto h-auto">
-          <a href="/" class=" min-w-fit min-h-fit">
+        <div class={compact ? "site-header__left" : "w-auto h-auto"}>
+          <a href="/" class={compact ? "site-header__logo" : "min-w-fit min-h-fit"}>
             <Image
-              class="favicon absolute left-0 dark:invert -mt-[25px]"
+              class:list={[
+                "dark:invert",
+                compact ? "" : "favicon absolute left-0 -mt-[25px]",
+              ]}
               src={favicon_avif.src}
               alt="Home"
-              width={50}
-              height={50}
+              width={logoSize}
+              height={logoSize}
               loading={"eager"}
+              transition:name="site-logo"
             />
           </a>
         </div>
       )
     }
     {
+      compact && essayTitle && (
+        <span class="site-header__essay-title" transition:name="essay-title">
+          {essayTitle}
+        </span>
+      )
+    }
+    {
       !is404Page && (
-        <div class="absolute right-[55px] -mb-[5px]">
+        <div
+          class={compact ? "site-header__actions" : "absolute right-[55px] -mb-[5px]"}
+          transition:name="site-theme-toggle"
+        >
           <ThemeIcon />
         </div>
       )
     }
     {
       !is404Page && (
-        <div class="-mt-[3px]">
+        <div
+          class={compact ? "site-header__hamburger" : "-mt-[3px]"}
+          transition:name="site-hamburger"
+        >
           <Hamburger />
         </div>
       )
     }
     {
       !is404Page && (
-        <div class="absolute right-0">
+        <div class={compact ? "site-header__navigation" : "absolute right-0"}>
           <Navigation />
         </div>
       )
