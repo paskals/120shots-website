@@ -2,6 +2,7 @@
 import { ViewTransitions } from "astro:transitions";
 import { Image } from "astro:assets";
 import ThemeIcon from "../components/ThemeIcon.astro";
+import IconPill from "../components/IconPill.astro";
 import "@fontsource-variable/overpass-mono";
 import "@fontsource-variable/inconsolata";
 import "../styles/global.css";
@@ -14,10 +15,16 @@ interface Props {
   pubDate?: Date;
   updatedDate?: Date;
   spreadCount: number;
+  authorName?: string;
+  authorSlug?: string;
+  rolls?: string[];
 }
 
-const { title, description, image, pubDate, updatedDate, spreadCount } =
+const { title, description, image, pubDate, updatedDate, spreadCount, authorName, authorSlug, rolls } =
   Astro.props;
+
+const publishedDate = pubDate?.toDateString().split(" ").slice(1).join(" ");
+const updatedDateStr = updatedDate?.toDateString().split(" ").slice(1).join(" ");
 
 const baseUrl = new URL(Astro.request.url).origin;
 const siteName = "120 Shots";
@@ -88,6 +95,38 @@ const favicon = {
     <!-- Main essay container with scroll snap -->
     <main class="essay-container" id="essay-container" data-spread-count={spreadCount}>
       <slot />
+      
+      <!-- Essay footer with author and rolls -->
+      <footer class="essay-footer spread">
+        <div class="essay-footer-content">
+          {authorName && authorSlug && (
+            <div class="essay-author">
+              <span class="essay-author-prefix">—</span>
+              <a href={`/authors/${authorSlug}`} class="essay-author-link">
+                {authorName}
+              </a>
+            </div>
+          )}
+          
+          {rolls && rolls.length > 0 && (
+            <div class="essay-rolls">
+              <span class="essay-rolls-label">Film Rolls</span>
+              <div class="essay-rolls-list">
+                {rolls.map((rollSlug) => (
+                  <IconPill icon="mdi:film" url={`/rolls/${rollSlug}`}>
+                    {rollSlug}
+                  </IconPill>
+                ))}
+              </div>
+            </div>
+          )}
+          
+          <div class="essay-dates">
+            {publishedDate && <span>Published: {publishedDate}</span>}
+            {updatedDateStr && <span>Updated: {updatedDateStr}</span>}
+          </div>
+        </div>
+      </footer>
     </main>
 
     <!-- Progress indicator -->

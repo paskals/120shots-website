@@ -2,6 +2,8 @@
 import { getCollection, getEntry } from "astro:content";
 import PhotoEssayLayout from "../../layouts/PhotoEssayLayout.astro";
 import PhotoSpread from "../../components/photoessay/PhotoSpread.astro";
+import { getRollSlug } from "../../components/rolls";
+import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
   const essays = await getCollection("photoessays");
@@ -12,9 +14,17 @@ export async function getStaticPaths() {
 }
 
 const { essay } = Astro.props;
-const { title, description, pubDate, updatedDate, cover, spreads } = essay.data;
+const { title, description, pubDate, updatedDate, cover, spreads, author, rolls } = essay.data;
 
 const coverImage = cover?.src || spreads[0]?.photos[0]?.src;
+
+// Fetch author data
+const authorObject = await getEntry(author);
+const authorFullName = authorObject?.data.name || "Unknown";
+const authorSlug = authorObject?.slug || "";
+
+// Prepare rolls data
+const rollSlugs = rolls?.map((roll) => getRollSlug(roll.id)) || [];
 ---
 
 <PhotoEssayLayout
@@ -24,6 +34,9 @@ const coverImage = cover?.src || spreads[0]?.photos[0]?.src;
   pubDate={pubDate}
   updatedDate={updatedDate}
   spreadCount={spreads.length}
+  authorName={authorFullName}
+  authorSlug={authorSlug}
+  rolls={rollSlugs}
 >
   {
     spreads.map((spread, index) => (
