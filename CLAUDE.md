@@ -10,17 +10,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Core Development
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run postbuild` - Run after build to generate search index with Pagefind
-- `npm run preview` - Preview built site locally
-- `npm run lint` - Format code with Prettier
+- `yarn dev` - Start development server
+- `yarn build` - Build for production
+- `yarn postbuild` - Run after build to generate search index with Pagefind
+- `yarn preview` - Preview built site locally
+- `yarn lint` - Format code with Prettier
 
 ### Content Creation Scripts
 
-- `npm run create-post -- -p /path/to/photos -d upload-dir -t "Post Title" -m 2000` - Create new blog post from photo folder
-- `npm run create-roll -- -p /path/to/photos -n ROLL-NAME -f film-stock -c "Camera Used"` - Create new film roll from photos
-- `npm run create-roll-post -- -r "ROLL1,ROLL2" -t "Post Title"` - Create post from existing film rolls
+- `yarn create-post -p /path/to/photos -d upload-dir -t "Post Title" -m 2000` - Create new blog post from photo folder
+- `yarn create-roll -p /path/to/photos -n ROLL-NAME -f film-stock -c "Camera Used"` - Create new film roll from photos
+- `yarn create-roll-post -r "ROLL1,ROLL2" -t "Post Title"` - Create post from existing film rolls
 
 ## Architecture
 
@@ -78,7 +78,7 @@ TOP_LEVEL_DIR=images/
 
 ### Build Process
 
-Always run `npm run build && npm run postbuild` for full production build. The postbuild step generates the search index required for Pagefind functionality.
+Always run `yarn build && yarn postbuild` for full production build. The postbuild step generates the search index required for Pagefind functionality.
 
 ### Content Workflows
 

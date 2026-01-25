@@ -1,6 +1,51 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Custom colors */
+  --color-gray-dark: #273444;
+  --color-gray-light: #d3dce6;
+  --color-dark-background: rgb(34, 33, 37);
+
+  /* Custom fonts */
+  --font-overpass-mono: "Overpass Mono Variable", sans-serif;
+  --font-inconsolata: "Inconsolata Variable", sans-serif;
+
+  /* Custom breakpoints (replacing defaults) */
+  --breakpoint-xs: 440px;
+  --breakpoint-sm: 800px;
+  --breakpoint-md: 1200px;
+  --breakpoint-lg: 1900px;
+  --breakpoint-xl: 2500px;
+  --breakpoint-2xl: 3800px;
+}
+
+/* Custom utilities for object-position */
+@utility object-top-33 {
+  object-position: center top 33.33%;
+}
+
+@utility object-top-50 {
+  object-position: center top 50%;
+}
+
+@utility bg-center-33 {
+  background-position: center 33.33%;
+}
+
+@utility bg-size-66 {
+  background-size: 100% 66.67%;
+}
+
+/* Typography plugin customization - remove quotes from blockquotes */
+@layer base {
+  .prose blockquote p:first-of-type::before {
+    content: none !important;
+  }
+  .prose blockquote p:last-of-type::after {
+    content: none !important;
+  }
+}
 
 /* TODO:ensure no other colors override these, or define better in tailwind config */
 
@@ -19,16 +64,6 @@ html.dark {
   color: #fff;
 }
 
-/* body {
-  margin: 0 auto;
-  width: 100vw;
-  padding: 2rem 2rem 2rem 2rem;
-  line-height: 1.5;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-} */
-
 * {
   box-sizing: border-box;
 }
@@ -40,4 +75,8 @@ h1 {
 
 body {
   transition: all 0.3s ease-out;
+}
+
+.film-image {
+  margin-top: 0;
 }

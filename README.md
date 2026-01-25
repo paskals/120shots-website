@@ -32,28 +32,28 @@ After creating your site with this template:
 ## Install (to use this repo directly)
 
 ```sh
-npm install
+yarn install
 ```
 
 ## Development Server
 
 ```sh
-npm run dev
+yarn dev
 ```
 
 ## Lint
 
 ```sh
-npm run lint
+yarn lint
 ```
 
 ## Build for deployment
 
 ```sh
-npm run build && npm run postbuild
+yarn build && yarn postbuild
 ```
 
-If you want to preview the built site, use `npm run preview` after building. The pagefind search functionality only works after building (not with the dev server).
+If you want to preview the built site, use `yarn preview` after building. The pagefind search functionality only works after building (not with the dev server).
 
 ## External Usage
 
@@ -67,7 +67,7 @@ This script creates a new post under `/src/content/posts`. By default the name o
 You can specify the max dimension fo the photos. The photos are converted to `.webp` format and then uploaded to the R2 bucket.
 
 ```sh
-npm run create-post -- -p /dir/with/photos -d upload-sub-dir -t "Post Title" -m 2000 -r "File Name Prefix" --randomSuffix
+yarn create-post -p /dir/with/photos -d upload-sub-dir -t "Post Title" -m 2000 -r "File Name Prefix" --randomSuffix
 ```
 
 - `-p` - Photos source directory (not recursive).
@@ -82,7 +82,7 @@ npm run create-post -- -p /dir/with/photos -d upload-sub-dir -t "Post Title" -m 
 This script creates a new roll under `/src/content/rolls`. The rolls content library is made of YAML files with information about each roll, including URLs to all images.
 
 ```sh
-npm run create-roll -- -p /dir/with/photos -n ROLL-NAME -f film-stock -c "Camera Used" -rs
+yarn create-roll -p /dir/with/photos -n ROLL-NAME -f film-stock -c "Camera Used" -rs
 ```
 
 - `-p` - Photos source directory (not recursive).
@@ -99,7 +99,7 @@ This script assumes that photos have their exif date/time information updated. D
 This script takes film rolls from the rolls content library and creates a draft post containing all photos in one masonry component per roll.
 
 ```sh
-npm run create-roll-post -- -r "ROLL-NAME1,ROLL-NAME2" -t "Post Title"
+yarn create-roll-post -r "ROLL-NAME1,ROLL-NAME2" -t "Post Title"
 ```
 
 - `-r` - Comma separated list of roll IDs to include in the post.
@@ -132,7 +132,7 @@ You can also skip directly to specific workflows:
 This utility generates meaningful alt text descriptions for your photography using Google Vision API. It focuses on landmarks and visual elements, filtering out generic photography terms to create descriptions suitable for accessibility and SEO.
 
 ```sh
-npm run describe-images "https://cdn.120shots.com/images/roll/photo.webp"
+yarn describe-images "https://cdn.120shots.com/images/roll/photo.webp"
 ```
 
 Options:
@@ -144,19 +144,19 @@ Examples:
 
 ```sh
 # Single image with default (detailed) level
-npm run describe-images "https://cdn.120shots.com/images/EHV-01/photo.webp"
+yarn describe-images "https://cdn.120shots.com/images/EHV-01/photo.webp"
 
 # Multiple images
-npm run describe-images "photo1.webp" "photo2.webp" "photo3.webp"
+yarn describe-images "photo1.webp" "photo2.webp" "photo3.webp"
 
 # Basic descriptions (fewer terms)
-npm run describe-images -- --detailLevel basic "photo.webp"
+yarn describe-images --detailLevel basic "photo.webp"
 
 # Comprehensive descriptions (more terms + landmarks)
-npm run describe-images -- --detailLevel comprehensive "photo.webp"
+yarn describe-images --detailLevel comprehensive "photo.webp"
 
 # Custom delay for rate limiting
-npm run describe-images -- --delay 200 "photo1.webp" "photo2.webp"
+yarn describe-images --delay 200 "photo1.webp" "photo2.webp"
 ```
 
 **Requirements:** Add `GOOGLE_API_KEY=your_google_cloud_api_key` to your `.env` file and enable the Cloud Vision API in your Google Cloud Console.
@@ -166,7 +166,7 @@ npm run describe-images -- --delay 200 "photo1.webp" "photo2.webp"
 This command provides comprehensive statistics about your CloudFlare R2 bucket, including folder breakdowns, file type analysis, and storage usage.
 
 ```sh
-npm run r2-stats
+yarn r2-stats
 ```
 
 Options:
@@ -180,19 +180,19 @@ Examples:
 
 ```sh
 # Basic bucket statistics
-npm run r2-stats
+yarn r2-stats
 
 # Detailed breakdown
-npm run r2-stats -- --detailed
+yarn r2-stats --detailed
 
 # Statistics for specific folder
-npm run r2-stats -- --prefix images/GEL-01/
+yarn r2-stats --prefix images/GEL-01/
 
 # JSON output for scripts
-npm run r2-stats -- --json
+yarn r2-stats --json
 
 # Limit processing to first 100 objects
-npm run r2-stats -- --limit 100
+yarn r2-stats --limit 100
 ```
 
 ### R2 Bucket configuration

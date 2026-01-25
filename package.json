@@ -20,10 +20,10 @@
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/markdoc": "^0.15.10",
-    "@astrojs/mdx": "^2.2.2",
+    "@astrojs/mdx": "^4.3.13",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.2",
-    "@astrojs/tailwind": "^6.0.2",
+    "@tailwindcss/vite": "^4.1.0",
     "@astrojs/ts-plugin": "^1.8.0",
     "@aws-sdk/client-s3": "^3.873.0",
     "@fontsource-variable/inconsolata": "^5.0.16",
@@ -42,8 +42,7 @@
   "devDependencies": {
     "@iconify-json/bi": "^1.1.23",
     "@iconify-json/mdi": "^1.1.66",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/json-to-pretty-yaml": "^1.2.1",
     "@types/yargs": "^17.0.32",
     "astro-icon": "^1.1.0",
