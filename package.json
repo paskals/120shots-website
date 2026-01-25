@@ -52,7 +52,7 @@
     "node-cloudflare-r2": "^0.1.5",
     "pagefind": "^1.0.4",
     "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-astro": "^0.14.1",
     "sanitize-filename": "^1.6.3",
     "sharp": "^0.34.5",
     "tsx": "^4.11.0",
