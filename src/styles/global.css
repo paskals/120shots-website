@@ -58,6 +58,7 @@
   --text-primary: #1a1a1a;
   --text-muted: rgba(26, 26, 26, 0.5);
   --header-bg: rgba(242, 242, 242, 0.9);
+  --header-normal-bg: #f2f2f2;
   --border-color: rgba(26, 26, 26, 0.25);
 }
 
@@ -66,6 +67,7 @@
   --text-primary: #fff;
   --text-muted: rgba(255, 255, 255, 0.5);
   --header-bg: rgba(34, 33, 37, 0.9);
+  --header-normal-bg: rgb(34, 33, 37);
   --border-color: rgba(255, 255, 255, 0.25);
 }
 
@@ -98,11 +100,28 @@ body {
   transition: all 0.3s ease-out;
 }
 
-/* ========================================
-   Unified Header Styles
-   ======================================== */
+/* ===================================
+   SITE HEADER - UNIFIED LAYOUT
+   =================================== */
 
-/* Compact header mode (for essays) */
+/* Base header */
+.site-header {
+  width: 100%;
+  background: var(--header-normal-bg);
+  z-index: 50;
+}
+
+/* Normal mode */
+.site-header:not(.site-header--compact) {
+  height: 4rem;
+  margin-bottom: 1.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+/* Compact mode */
 .site-header--compact {
   position: fixed;
   top: 0;
@@ -115,35 +134,46 @@ body {
   border-bottom: 1px solid var(--border-color);
 }
 
+/* Nav container - unified */
 .site-header__nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* max-width: 100%; */
-  padding: 0.75rem 1.5rem;
-  gap: 1rem;
+  width: 100%;
+  height: 100%;
   position: relative;
 }
 
+.site-header:not(.site-header--compact) .site-header__nav {
+  max-width: 80rem;
+}
+
+.site-header--compact .site-header__nav {
+  padding: 0.75rem 1.5rem;
+  max-width: 2200px;
+  margin: 0 auto;
+}
+
+/* Left section */
 .site-header__left {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   flex-shrink: 0;
+  min-width: 0;
 }
 
 .site-header__logo {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
-.site-header__logo img {
-  width: 32px;
-  height: 32px;
-}
+/* Logo is vertically centered by flexbox in normal mode */
 
-.site-header__essay-title {
+/* Optional title */
+.site-header__title {
   font-family: var(--font-inconsolata, "Inconsolata Variable", monospace);
   font-size: 1rem;
   font-weight: 600;
@@ -155,12 +185,25 @@ body {
   white-space: nowrap;
   flex: 1;
   text-align: center;
+  min-width: 0;
 }
 
-.site-header__actions {
+/* Right section - FIXES ALIGNMENT */
+.site-header__right {
   display: flex;
   align-items: center;
+  gap: 1rem;
   flex-shrink: 0;
+}
+
+.site-header:not(.site-header--compact) .site-header__right {
+  margin-right: 3.4375rem;
+  margin-bottom: 0.3125rem;
+}
+
+.site-header__theme {
+  display: flex;
+  align-items: center;
 }
 
 .site-header__hamburger {
@@ -168,13 +211,22 @@ body {
   align-items: center;
 }
 
+.site-header:not(.site-header--compact) .site-header__hamburger {
+  margin-top: -0.1875rem;
+}
+
+/* Navigation */
 .site-header__navigation {
   position: absolute;
+  right: 0;
+}
+
+.site-header--compact .site-header__navigation {
   right: 1.5rem;
 }
 
-/* Scale down theme toggle and hamburger for compact header */
-.site-header--compact .site-header__actions #themeToggle svg {
+/* Compact mode scaling */
+.site-header--compact .site-header__theme #themeToggle svg {
   width: 20px;
   height: 20px;
   margin-top: 2px;

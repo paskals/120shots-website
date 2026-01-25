@@ -18,74 +18,45 @@ const favicon_avif = {
   width: "512",
   height: "512",
 };
-
-const headerClass = compact
-  ? "site-header site-header--compact w-full"
-  : "site-header mb-[30px] dark:bg-[rgb(34,33,37)] bg-[#f2f2f2] h-16 w-screen px-4 flex justify-center relative z-50";
-
-const navClass = compact
-  ? "site-header__nav"
-  : "flex items-center justify-between w-full h-full relative align-center max-w-7xl";
-
-const logoSize = compact ? 32 : 50;
 ---
 
-<header class={headerClass } transition:name="site-header" transition:animate="none">
-  <nav class={navClass}>
-    {
-      !is404Page && (
-        <div class={compact ? "site-header__left " : "w-auto h-auto"}>
-          <a href="/" class={compact ? "site-header__logo" : "min-w-fit min-h-fit"}>
-            <Image
-              class:list={[
-                "dark:invert",
-                compact ? "" : "favicon absolute left-0 -mt-[25px]",
-              ]}
-              src={favicon_avif.src}
-              alt="Home"
-              width={logoSize}
-              height={logoSize}
-              loading={"eager"}
-              transition:name="site-logo"
-            />
-          </a>
-        </div>
-      )
-    }
-    {
-      compact && essayTitle && (
-        <span class="site-header__essay-title" transition:name="essay-title">
-          {essayTitle}
-        </span>
-      )
-    }
-    {
-      !is404Page && (
-        <div
-          class={compact ? "site-header__actions" : "absolute right-[55px] -mb-[5px]"}
-          transition:name="site-theme-toggle"
-        >
+<header class={compact ? "site-header site-header--compact" : "site-header"}>
+  <nav class="site-header__nav">
+    {!is404Page && (
+      <div class="site-header__left">
+        <a href="/" class="site-header__logo">
+          <Image
+            class="dark:invert"
+            src={favicon_avif.src}
+            alt="Home"
+            width={compact ? 32 : 50}
+            height={compact ? 32 : 50}
+            loading="eager"
+            transition:name="site-logo"
+          />
+        </a>
+        {compact && essayTitle && (
+          <span class="site-header__title" transition:name="essay-title">
+            {essayTitle}
+          </span>
+        )}
+      </div>
+    )}
+    {!is404Page && (
+      <div class="site-header__right">
+        <div class="site-header__theme" transition:name="site-theme-toggle">
           <ThemeIcon />
         </div>
-      )
-    }
-    {
-      !is404Page && (
-        <div
-          class={compact ? "site-header__hamburger" : "-mt-[3px]"}
-          transition:name="site-hamburger"
-        >
+        <div class="site-header__hamburger" transition:name="site-hamburger">
           <Hamburger />
         </div>
-      )
-    }
-    {
-      !is404Page && (
-        <div class={compact ? "site-header__navigation" : "absolute right-0"}>
-          <Navigation />
-        </div>
-      )
-    }
+      </div>
+    )}
+    {!is404Page && (
+      <div class="site-header__navigation">
+        <Navigation />
+      </div>
+    )}
   </nav>
   <slot />
 </header>
