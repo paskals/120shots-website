@@ -109,7 +109,7 @@ const photoessays = defineCollection({
       .optional(),
     spreads: z.array(
       z.object({
-        layout: z.enum(["single", "duo", "trio", "trio-l", "trio-r"]),
+        layout: z.enum(["single", "duo", "duo-h", "duo-l", "duo-r", "trio", "trio-l", "trio-r"]),
         photos: z.array(
           z.object({
             src: z.string(),

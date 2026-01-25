@@ -26,7 +26,7 @@ spreads:
       - src: https://cdn.120shots.com/images/PT-05/R1-06362-000A.webp
         alt: Film photo of plantation, agriculture, palm trees, crop, evening, farm.
 
-  - layout: duo
+  - layout: duo-l
     caption: The rural landscape, shaped by wind and cultivation.
     photos:
       - src: https://cdn.120shots.com/images/PT-05/R1-06362-000A_0001.webp
@@ -34,7 +34,7 @@ spreads:
       - src: https://cdn.120shots.com/images/PT-05/R1-06362-001A.webp
         alt: Film photo of woody plant, palm trees, california palm, coconut, royal palms, wind.
 
-  - layout: trio
+  - layout: trio-r
     caption: Traditional streets and temple architecture in the old town, where daily life mingles with cultural heritage.
     photos:
       - src: https://cdn.120shots.com/images/PT-05/R1-06362-002A.webp
@@ -50,7 +50,7 @@ spreads:
       - src: https://cdn.120shots.com/images/PT-05/R1-06362-005A.webp
         alt: Film photo of wall, arch, brown, brick, brickwork, composite material.
 
-  - layout: duo
+  - layout: duo-r
     caption: Quiet interiors and the patina of time.
     photos:
       - src: https://cdn.120shots.com/images/PT-05/R1-06362-006A.webp

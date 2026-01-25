@@ -8,7 +8,7 @@ interface Photo {
 }
 
 interface Props {
-  layout: "single" | "duo" | "trio" | "trio-l" | "trio-r";
+  layout: "single" | "duo" | "duo-h" | "duo-l" | "duo-r" | "trio" | "trio-l" | "trio-r";
   photos: Photo[];
   caption?: string;
   index: number;
@@ -20,6 +20,9 @@ const { layout, photos, caption, index } = Astro.props;
 const expectedPhotos: Record<string, number> = {
   single: 1,
   duo: 2,
+  "duo-h": 2,
+  "duo-l": 2,
+  "duo-r": 2,
   trio: 3,
   "trio-l": 3,
   "trio-r": 3,
@@ -41,13 +44,20 @@ const mainPhoto = isTrioVariant
     ? displayPhotos[2]
     : displayPhotos[0]
   : null;
+
+// For duo-l and duo-r, we emphasize one side with wider width
+// duo-l: left photo is emphasized (wider)
+// duo-r: right photo is emphasized (wider)
+const isDuoVariant = layout === "duo-l" || layout === "duo-r";
+const leftPhoto = isDuoVariant ? displayPhotos[0] : null;
+const rightPhoto = isDuoVariant ? displayPhotos[1] : null;
 ---
 
 <section class="spread" data-layout={layout} data-index={index}>
   {
     isTrioVariant ? (
       <div class="spread-photos">
-        {layout === "trio-l" && (
+        {layout === "trio-r" && (
           <>
             <div class="photo-stack">
               {stackPhotos.map((photo) => (
@@ -75,7 +85,7 @@ const mainPhoto = isTrioVariant
             )}
           </>
         )}
-        {layout === "trio-r" && (
+        {layout === "trio-l" && (
           <>
             {mainPhoto && (
               <div class="photo-wrapper photo-main">
@@ -102,6 +112,31 @@ const mainPhoto = isTrioVariant
               ))}
             </div>
           </>
+        )}
+      </div>
+    ) : isDuoVariant ? (
+      <div class="spread-photos">
+        {leftPhoto && (
+          <div class={`photo-wrapper ${layout === "duo-l" ? "photo-emphasized" : ""}`}>
+            <Image
+              src={leftPhoto.src}
+              alt={leftPhoto.alt}
+              inferSize
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding={index === 0 ? "sync" : "async"}
+            />
+          </div>
+        )}
+        {rightPhoto && (
+          <div class={`photo-wrapper ${layout === "duo-r" ? "photo-emphasized" : ""}`}>
+            <Image
+              src={rightPhoto.src}
+              alt={rightPhoto.alt}
+              inferSize
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding={index === 0 ? "sync" : "async"}
+            />
+          </div>
         )}
       </div>
     ) : (

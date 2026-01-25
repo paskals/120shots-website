@@ -20,7 +20,7 @@ const favicon_avif = {
 };
 
 const headerClass = compact
-  ? "site-header site-header--compact"
+  ? "site-header site-header--compact w-full"
   : "site-header mb-[30px] dark:bg-[rgb(34,33,37)] bg-[#f2f2f2] h-16 w-screen px-4 flex justify-center relative z-50";
 
 const navClass = compact
@@ -30,11 +30,11 @@ const navClass = compact
 const logoSize = compact ? 32 : 50;
 ---
 
-<header class={headerClass} transition:name="site-header" transition:animate="none">
+<header class={headerClass } transition:name="site-header" transition:animate="none">
   <nav class={navClass}>
     {
       !is404Page && (
-        <div class={compact ? "site-header__left" : "w-auto h-auto"}>
+        <div class={compact ? "site-header__left " : "w-auto h-auto"}>
           <a href="/" class={compact ? "site-header__logo" : "min-w-fit min-h-fit"}>
             <Image
               class:list={[

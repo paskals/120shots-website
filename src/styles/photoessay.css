@@ -1,32 +1,11 @@
 /* Photo Essay Styles - "Aperture" Design System */
 
-/* CSS Custom Properties for essay theming */
-:root {
-  --essay-bg: #fafafa;
-  --essay-text: #1a1a1a;
-  --essay-text-muted: rgba(26, 26, 26, 0.5);
-  --essay-caption: #1a1a1a;
-  --essay-header-bg: rgba(250, 250, 250, 0.9);
-  --essay-dot: rgba(26, 26, 26, 0.25);
-  --essay-dot-active: rgba(26, 26, 26, 0.9);
-}
-
-.dark {
-  --essay-bg: #0a0a0a;
-  --essay-text: #e5e5e5;
-  --essay-text-muted: rgba(229, 229, 229, 0.5);
-  --essay-caption: #e5e5e5;
-  --essay-header-bg: rgba(10, 10, 10, 0.9);
-  --essay-dot: rgba(229, 229, 229, 0.25);
-  --essay-dot-active: rgba(229, 229, 229, 0.9);
-}
-
 /* Body reset for essay mode */
 .essay-body {
   margin: 0;
   padding: 0;
-  background-color: var(--essay-bg);
-  color: var(--essay-text);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   overflow: hidden;
   height: 100vh;
   height: 100dvh;
@@ -99,6 +78,49 @@
   flex: 1;
   height: calc(100dvh - 10rem);
   max-height: 80vh;
+}
+
+/* Duo-H layout: vertical stack on desktop */
+.spread[data-layout="duo-h"] .spread-photos {
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 1400px;
+}
+
+.spread[data-layout="duo-h"] .photo-wrapper {
+  width: 100%;
+  height: 40vh;
+  max-height: 40vh;
+}
+
+.spread[data-layout="duo-h"] .photo-wrapper img {
+  width: auto;
+  height: auto;
+  max-height: 40vh;
+  max-width: 100%;
+}
+
+/* Duo-L and Duo-R layouts: emphasized side */
+.spread[data-layout="duo-l"] .spread-photos,
+.spread[data-layout="duo-r"] .spread-photos {
+  gap: 1.5rem;
+}
+
+.spread[data-layout="duo-l"] .photo-wrapper,
+.spread[data-layout="duo-r"] .photo-wrapper {
+  flex: 1;
+  height: calc(100dvh - 10rem);
+  max-height: 80vh;
+}
+
+/* Emphasize left side in duo-l */
+.spread[data-layout="duo-l"] .photo-wrapper.photo-emphasized {
+  flex: 1.5;
+}
+
+/* Emphasize right side in duo-r */
+.spread[data-layout="duo-r"] .photo-wrapper.photo-emphasized {
+  flex: 1.5;
 }
 
 /* Trio layout */
@@ -177,7 +199,7 @@
   font-size: clamp(0.7rem, 1.2vw, 0.8rem);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--essay-text-muted);
+  color: var(--text-muted);
   text-align: center;
   padding: 1.5rem 1rem;
   padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0));
@@ -193,7 +215,7 @@
   display: block;
   width: 40px;
   height: 1px;
-  background: var(--essay-dot);
+  background: var(--border-color);
   margin: 0 auto 1rem;
 }
 
@@ -232,11 +254,11 @@
 }
 
 .progress-ring-bg {
-  stroke: var(--essay-dot);
+  stroke: var(--border-color);
 }
 
 .progress-ring-fill {
-  stroke: var(--essay-text);
+  stroke: var(--text-primary);
   stroke-linecap: round;
   transition: stroke-dashoffset 0.4s ease;
 }
@@ -244,14 +266,14 @@
 .progress-text {
   font-family: var(--font-inconsolata), monospace;
   font-size: 0.7rem;
-  color: var(--essay-text-muted);
+  color: var(--text-muted);
   display: flex;
   align-items: baseline;
   gap: 0.1rem;
 }
 
 .progress-current {
-  color: var(--essay-text);
+  color: var(--text-primary);
   font-weight: 500;
 }
 
@@ -275,6 +297,9 @@
   }
 
   .spread[data-layout="duo"] .photo-wrapper,
+  .spread[data-layout="duo-h"] .photo-wrapper,
+  .spread[data-layout="duo-l"] .photo-wrapper,
+  .spread[data-layout="duo-r"] .photo-wrapper,
   .spread[data-layout="trio"] .photo-wrapper,
   .spread[data-layout="trio-l"] .photo-wrapper,
   .spread[data-layout="trio-r"] .photo-wrapper {
@@ -285,6 +310,9 @@
   }
 
   .spread[data-layout="duo"] .photo-wrapper img,
+  .spread[data-layout="duo-h"] .photo-wrapper img,
+  .spread[data-layout="duo-l"] .photo-wrapper img,
+  .spread[data-layout="duo-r"] .photo-wrapper img,
   .spread[data-layout="trio"] .photo-wrapper img,
   .spread[data-layout="trio-l"] .photo-wrapper img,
   .spread[data-layout="trio-r"] .photo-wrapper img {
@@ -346,6 +374,9 @@
   }
 }
 
+/*     max-width: 2200px;
+    width: 100%; */
+
 /* Large screens */
 @media (min-width: 1900px) {
   .spread-photos {
@@ -371,7 +402,7 @@
   justify-content: center;
   align-items: center;
   padding: 4rem 2rem;
-  background-color: var(--essay-bg);
+  background-color: var(--bg-primary);
 }
 
 .essay-footer-content {
@@ -392,11 +423,11 @@
 }
 
 .essay-author-prefix {
-  color: var(--essay-text-muted);
+  color: var(--text-muted);
 }
 
 .essay-author-link {
-  color: var(--essay-text);
+  color: var(--text-primary);
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
@@ -417,7 +448,7 @@
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--essay-text-muted);
+  color: var(--text-muted);
 }
 
 .essay-rolls-list {
@@ -434,7 +465,7 @@
   font-family: var(--font-inconsolata), monospace;
   font-size: 0.7rem;
   letter-spacing: 0.05em;
-  color: var(--essay-text-muted);
+  color: var(--text-muted);
 }
 
 /* Mobile adjustments for footer */
