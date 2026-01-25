@@ -25,6 +25,11 @@ const authorSlug = authorObject?.slug || "";
 
 // Prepare rolls data
 const rollSlugs = rolls?.map((roll) => getRollSlug(roll.id)) || [];
+
+// Extract captions for search indexing
+const captions = spreads
+  .filter((spread) => spread.caption)
+  .map((spread) => spread.caption as string);
 ---
 
 <PhotoEssayLayout
@@ -37,6 +42,7 @@ const rollSlugs = rolls?.map((roll) => getRollSlug(roll.id)) || [];
   authorName={authorFullName}
   authorSlug={authorSlug}
   rolls={rollSlugs}
+  captions={captions}
 >
   {
     spreads.map((spread, index) => (

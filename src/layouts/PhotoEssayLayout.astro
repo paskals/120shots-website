@@ -20,9 +20,10 @@ interface Props {
   authorName?: string;
   authorSlug?: string;
   rolls?: string[];
+  captions?: string[];
 }
 
-const { title, description, image, pubDate, updatedDate, spreadCount, authorName, authorSlug, rolls } =
+const { title, description, image, pubDate, updatedDate, spreadCount, authorName, authorSlug, rolls, captions } =
   Astro.props;
 
 const publishedDate = pubDate?.toDateString().split(" ").slice(1).join(" ");
@@ -61,6 +62,26 @@ const favicon = {
     <ViewTransitions />
   </head>
   <body class="essay-body">
+    <!-- Search indexing content (visually hidden) -->
+    <div
+      data-pagefind-body
+      class="absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0"
+      style="clip: rect(0, 0, 0, 0);"
+      aria-hidden="true"
+    >
+      <h1 data-pagefind-meta="title">{title}</h1>
+      {image && <img data-pagefind-meta="image" src={image} alt="" />}
+      <p>{description}</p>
+      {captions && captions.length > 0 && (
+        <div>
+          {captions.map((caption) => <p>{caption}</p>)}
+        </div>
+      )}
+    </div>
+
+    <!-- Modal portal for search (escapes backdrop-filter containing block) -->
+    <div id="modal-portal"></div>
+
     <!-- Minimal header -->
     <header class="essay-header">
       <nav class="essay-nav">
@@ -232,8 +253,20 @@ const favicon = {
         updateProgress(0);
       }
 
+      // Move search modal to portal (escapes backdrop-filter containing block)
+      function moveModalToPortal() {
+        const modal = document.getElementById("myModal");
+        const portal = document.getElementById("modal-portal");
+        if (modal && portal && modal.parentElement !== portal) {
+          portal.appendChild(modal);
+        }
+      }
+
       // Initialize on page load and after view transitions
-      document.addEventListener("astro:page-load", initEssayNav);
+      document.addEventListener("astro:page-load", () => {
+        initEssayNav();
+        moveModalToPortal();
+      });
     </script>
   </body>
 </html>
