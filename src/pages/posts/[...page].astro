@@ -1,13 +1,20 @@
 ---
+import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPost from "../../components/BlogPostCard.astro";
 import ProseHeadings from "../../components/ProseHeadings.astro";
+import Pagination from "../../components/Pagination.astro";
 import { sortByDate } from "../../components/sortbydate";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allPosts = await getCollection("posts");
+  const sortedPosts = allPosts.sort(sortByDate);
+  return paginate(sortedPosts, { pageSize: 10 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
 const pageTitle = "Blog Posts";
-const allPosts = await getCollection("posts");
-//TODO: Implement pagination
-//TODO: isolate layout styling - padding and margins
 ---
 
 <BaseLayout title={pageTitle} is404Page={false}>
@@ -19,10 +26,13 @@ const allPosts = await getCollection("posts");
         {pageTitle}
       </p>
     </ProseHeadings>
-    {
-      allPosts
-        .sort(sortByDate)
-        .map((post) => <BlogPost post={post} url={`/posts/${post.slug}`} />)
-    }
+    {page.data.map((post) => <BlogPost post={post} url={`/posts/${post.slug}`} />)}
+    <Pagination
+      currentPage={page.currentPage}
+      lastPage={page.lastPage}
+      prevUrl={page.url.prev}
+      nextUrl={page.url.next}
+      baseUrl="/posts/"
+    />
   </div>
 </BaseLayout>

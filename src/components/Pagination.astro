@@ -1,0 +1,171 @@
+---
+interface Props {
+  currentPage: number;
+  lastPage: number;
+  prevUrl: string | undefined;
+  nextUrl: string | undefined;
+  baseUrl: string;
+}
+
+const { currentPage, lastPage, prevUrl, nextUrl, baseUrl } = Astro.props;
+
+// Don't render if there's only one page
+if (lastPage <= 1) {
+  return null;
+}
+
+// Generate page numbers with ellipsis for large page counts
+function getPageNumbers(current: number, total: number): (number | string)[] {
+  const pages: (number | string)[] = [];
+  const delta = 1; // Pages to show on each side of current
+
+  for (let i = 1; i <= total; i++) {
+    if (
+      i === 1 ||
+      i === total ||
+      (i >= current - delta && i <= current + delta)
+    ) {
+      pages.push(i);
+    } else if (pages[pages.length - 1] !== "...") {
+      pages.push("...");
+    }
+  }
+
+  return pages;
+}
+
+const pageNumbers = getPageNumbers(currentPage, lastPage);
+
+function getPageUrl(page: number): string {
+  if (page === 1) {
+    return baseUrl;
+  }
+  return `${baseUrl}${page}/`;
+}
+---
+
+<nav
+  class="flex items-center justify-center gap-2 mt-12 mb-8 font-inconsolata"
+  aria-label="Pagination"
+>
+  {/* Previous button */}
+  {
+    prevUrl ? (
+      <a
+        href={prevUrl}
+        class="px-3 py-2 text-sm hover:opacity-70 transition-opacity flex items-center gap-1"
+        aria-label="Previous page"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+        <span class="hidden sm:inline">Prev</span>
+      </a>
+    ) : (
+      <span
+        class="px-3 py-2 text-sm opacity-30 cursor-not-allowed flex items-center gap-1"
+        aria-disabled="true"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+        <span class="hidden sm:inline">Prev</span>
+      </span>
+    )
+  }
+
+  {/* Page numbers */}
+  <div class="flex items-center gap-1">
+    {
+      pageNumbers.map((page) =>
+        page === "..." ? (
+          <span class="px-2 py-1 text-sm opacity-50">...</span>
+        ) : page === currentPage ? (
+          <span
+            class="px-3 py-1 text-sm font-bold border border-current rounded"
+            aria-current="page"
+          >
+            {page}
+          </span>
+        ) : (
+          <a
+            href={getPageUrl(page as number)}
+            class="px-3 py-1 text-sm hover:opacity-70 transition-opacity"
+          >
+            {page}
+          </a>
+        )
+      )
+    }
+  </div>
+
+  {/* Next button */}
+  {
+    nextUrl ? (
+      <a
+        href={nextUrl}
+        class="px-3 py-2 text-sm hover:opacity-70 transition-opacity flex items-center gap-1"
+        aria-label="Next page"
+      >
+        <span class="hidden sm:inline">Next</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </a>
+    ) : (
+      <span
+        class="px-3 py-2 text-sm opacity-30 cursor-not-allowed flex items-center gap-1"
+        aria-disabled="true"
+      >
+        <span class="hidden sm:inline">Next</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </span>
+    )
+  }
+</nav>

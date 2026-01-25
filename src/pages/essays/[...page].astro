@@ -1,16 +1,22 @@
 ---
+import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProseHeadings from "../../components/ProseHeadings.astro";
+import Pagination from "../../components/Pagination.astro";
 import { Image } from "astro:assets";
 
-const essays = await getCollection("photoessays");
-const pageTitle = "Photo Essays";
+export const getStaticPaths = (async ({ paginate }) => {
+  const essays = await getCollection("photoessays");
+  // Sort by publication date, newest first
+  const sortedEssays = essays.sort(
+    (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+  );
+  return paginate(sortedEssays, { pageSize: 10 });
+}) satisfies GetStaticPaths;
 
-// Sort by publication date, newest first
-const sortedEssays = essays.sort(
-  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
-);
+const { page } = Astro.props;
+const pageTitle = "Photo Essays";
 
 const formatDate = (date: Date) => {
   const d = date.toDateString().split(" ").slice(1).join(" ");
@@ -30,12 +36,12 @@ const formatDate = (date: Date) => {
     </ProseHeadings>
 
     {
-      sortedEssays.length === 0 ? (
+      page.data.length === 0 ? (
         <p class="font-inconsolata text-gray-500 dark:text-gray-400 italic">
           No photo essays yet. Check back soon.
         </p>
       ) : (
-        sortedEssays.map((essay) => {
+        page.data.map((essay) => {
           const coverImage =
             essay.data.cover?.src || essay.data.spreads[0]?.photos[0]?.src;
           const coverAlt =
@@ -105,6 +111,13 @@ const formatDate = (date: Date) => {
         })
       )
     }
+    <Pagination
+      currentPage={page.currentPage}
+      lastPage={page.lastPage}
+      prevUrl={page.url.prev}
+      nextUrl={page.url.next}
+      baseUrl="/essays/"
+    />
   </div>
 </BaseLayout>
 
