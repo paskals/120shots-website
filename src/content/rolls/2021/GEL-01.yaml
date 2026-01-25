@@ -1,0 +1,330 @@
+manualId: "2021/GEL-01"
+film: "lomo-800"
+camera: "Nikon F3"
+format: "35mm"
+cover: "032"
+shots:
+  - sequence: "001"
+    date: "2021-10-16T14:00:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-001-15CCFA.webp"
+      alt: "GEL-01 001"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "002"
+    date: "2021-10-16T14:01:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-002-141455.webp"
+      alt: "GEL-01 002"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "003"
+    date: "2021-10-16T14:02:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-003-BF6847.webp"
+      alt: "GEL-01 003"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "004"
+    date: "2021-10-16T14:04:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-004-7F5CB7.webp"
+      alt: "GEL-01 004"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "005"
+    date: "2021-10-16T14:06:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-005-A7D8B9.webp"
+      alt: "GEL-01 005"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "006"
+    date: "2021-10-16T14:08:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-006-F28ABA.webp"
+      alt: "GEL-01 006"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "007"
+    date: "2021-10-16T14:10:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-007-A4004F.webp"
+      alt: "GEL-01 007"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "008"
+    date: "2021-10-16T14:11:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-008-132956.webp"
+      alt: "GEL-01 008"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "009"
+    date: "2021-10-23T11:00:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-009-BAF1A5.webp"
+      alt: "GEL-01 009"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "010"
+    date: "2021-10-23T11:05:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-010-7165FB.webp"
+      alt: "GEL-01 010"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "011"
+    date: "2021-10-23T11:30:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-011-7D1ED0.webp"
+      alt: "GEL-01 011"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "012"
+    date: "2021-10-23T11:35:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-012-EA4BE2.webp"
+      alt: "GEL-01 012"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "013"
+    date: "2021-10-23T11:40:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-013-73737D.webp"
+      alt: "GEL-01 013"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "014"
+    date: "2021-10-23T11:50:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-014-7AB7AC.webp"
+      alt: "GEL-01 014"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "015"
+    date: "2021-10-24T12:00:00.000Z"
+    offsetTime: "+01:00"
+    hidden: true
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-015-23DEA9.webp"
+      alt: "GEL-01 015"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "016"
+    date: "2021-10-24T12:05:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-016-660FAC.webp"
+      alt: "GEL-01 016"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "017"
+    date: "2021-10-24T12:08:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-017-17CE16.webp"
+      alt: "GEL-01 017"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "018"
+    date: "2021-10-24T12:08:12.000Z"
+    offsetTime: "+01:00"
+    hidden: true
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-018-DAE834.webp"
+      alt: "GEL-01 018"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "019"
+    date: "2021-10-24T12:25:12.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-019-D7DE3F.webp"
+      alt: "GEL-01 019"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "020"
+    date: "2021-10-24T12:26:12.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-020-A616F0.webp"
+      alt: "GEL-01 020"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "021"
+    date: "2021-10-24T12:29:00.000Z"
+    offsetTime: "+01:00"
+    hidden: true
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-021-942FC7.webp"
+      alt: "GEL-01 021"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "022"
+    date: "2021-10-24T12:40:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-022-A0AAE1.webp"
+      alt: "GEL-01 022"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "023"
+    date: "2021-10-24T12:45:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-023-D6659D.webp"
+      alt: "GEL-01 023"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "024"
+    date: "2021-10-24T12:46:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-024-FBD7E1.webp"
+      alt: "GEL-01 024"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "025"
+    date: "2021-10-24T12:59:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-025-84C527.webp"
+      alt: "GEL-01 025"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "026"
+    date: "2021-11-13T14:00:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-026-2A24C3.webp"
+      alt: "GEL-01 026"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "027"
+    date: "2021-11-13T16:00:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-027-25949A.webp"
+      alt: "GEL-01 027"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "028"
+    date: "2021-11-14T14:00:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-028-F871A6.webp"
+      alt: "GEL-01 028"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "029"
+    date: "2021-11-14T14:02:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-029-6A0E38.webp"
+      alt: "GEL-01 029"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "030"
+    date: "2021-11-14T14:05:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-030-F9E564.webp"
+      alt: "GEL-01 030"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "031"
+    date: "2021-11-14T14:07:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-031-D41D63.webp"
+      alt: "GEL-01 031"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "032"
+    date: "2021-11-14T14:09:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-032-7544D3.webp"
+      alt: "GEL-01 032"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "033"
+    date: "2021-11-14T14:11:00.000Z"
+    offsetTime: "+01:00"
+    hidden: true
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-033-12BC5E.webp"
+      alt: "GEL-01 033"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "034"
+    date: "2021-11-14T14:12:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-034-17D776.webp"
+      alt: "GEL-01 034"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "035"
+    date: "2021-11-14T14:13:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-035-280516.webp"
+      alt: "GEL-01 035"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "036"
+    date: "2021-11-14T14:40:00.000Z"
+    offsetTime: "+01:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/GEL-01/GEL-01-036-E9FD80.webp"
+      alt: "GEL-01 036"
+      positionx: "50%"
+      positiony: "50%"
