@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 import IconPill from "../components/IconPill.astro";
 import "@fontsource-variable/overpass-mono";
@@ -49,7 +49,7 @@ const pageTitle = title.concat(" › ", siteName);
     <meta name="og:url" content={Astro.url} />
     <meta name="twitter:card" content="summary_large_image" />
     <title>{pageTitle}</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="essay-body">
     <!-- Search indexing content (visually hidden) -->
@@ -72,8 +72,8 @@ const pageTitle = title.concat(" › ", siteName);
     <!-- Modal portal for search (escapes backdrop-filter containing block) -->
     <div id="modal-portal"></div>
 
-    <!-- Unified header in compact mode -->
-    <Header compact={true} essayTitle={title} />
+    <!-- Unified header in compact mode (no title since it's in intro spread) -->
+    <Header compact={true} />
 
     <!-- Main essay container with scroll snap -->
     <main class="essay-container" id="essay-container" data-spread-count={spreadCount}>
