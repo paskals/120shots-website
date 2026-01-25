@@ -148,55 +148,47 @@ export const deleteTempFiles = (newFiles: string[]) => {
   });
 };
 
-export const createNewPost = (
+export const createNewEssay = (
   imageURLs: string[],
-  postTitle?: string,
-  frontMatterParameters?: {},
+  essayTitle?: string,
+  options?: { rolls?: string[]; filmStocks?: string[]; tags?: string[] },
 ) => {
   const now = new Date();
-  const title = postTitle || "Draft post";
-  const fileName =
-    slugify(now.toISOString().split("T")[0] + "-" + title) + ".mdx";
-  const filePath = path.normalize("./src/content/posts/") + fileName;
+  const title = essayTitle || "Draft essay";
+  const dateStr = now.toISOString().split("T")[0];
+  const fileName = slugify(dateStr + "-" + title) + ".yaml";
+  const filePath = path.normalize("./src/content/photoessays/") + fileName;
 
-  const textContent = `---
-title: ${title}
-slug: ${slugify(title)}
-pubDate: ${now.toISOString()}
-updatedDate: ${now.toISOString()}
-tags: []
-author: paskal
-image:
-  {
-    src: ${imageURLs[Math.floor(Math.random() * imageURLs.length)]},
-    alt: "${title}",
-    positionx: 50%,
-    positiony: 50%,
-  }
-description: ""
-${
-  frontMatterParameters
-    ? Object.entries(frontMatterParameters).map(
-        ([key, value]) => `${key}: ${JSON.stringify(value)}\n`,
-      )
-    : ""
-}
----
-import Masonry from "../../components/Masonry.astro";
-import FilmStrip from "../../components/FilmStrip.astro";
+  // Build spreads - one single-layout spread per image
+  const spreads = imageURLs.map((url, index) => ({
+    layout: "single",
+    photos: [
+      {
+        src: url,
+        alt: `${title} ${index + 1}`,
+      },
+    ],
+  }));
 
-> Post content goes here
+  // Build essay object
+  const essay = {
+    title,
+    description: "",
+    pubDate: dateStr,
+    author: "paskal",
+    ...(options?.rolls && options.rolls.length > 0 && { rolls: options.rolls }),
+    ...(options?.filmStocks &&
+      options.filmStocks.length > 0 && { filmStocks: options.filmStocks }),
+    tags: options?.tags || [],
+    cover: {
+      src: imageURLs[0],
+      alt: `${title} cover`,
+    },
+    spreads,
+  };
 
-<Masonry
-  columns='3'
-  images={
-    [
-      ${imageURLs.map((url, index) => `{ src: "${url}", alt: "${title} ${index}" }`).join(`,\n      `)}
-    ]
-  }
-/>`;
-
-  return saveFile(filePath, textContent);
+  const yamlContent = PrettyYAML.stringify(essay);
+  return saveFile(filePath, yamlContent);
 };
 
 interface FilmRollObject {
@@ -312,10 +304,10 @@ const getRollData = async (rollName: string) => {
     : undefined;
 };
 
-export const createPostFromRolls = async (
+export const createEssayFromRolls = async (
   rolls: string[],
-  postTitle?: string,
-  frontMatterParameters?: {},
+  essayTitle?: string,
+  options?: { tags?: string[] },
 ) => {
   // Get rolls data from content library
   const rollsData: FilmRollObject[] = [];
@@ -333,63 +325,80 @@ export const createPostFromRolls = async (
 
   const now = new Date();
   const title =
-    postTitle ||
-    `Draft post: ${rollsData.map((roll) => roll.manualId).join(", ")}`;
+    essayTitle ||
+    `Draft essay: ${rollsData.map((roll) => roll.manualId).join(", ")}`;
+  const dateStr = now.toISOString().split("T")[0];
+  const fileName = slugify(dateStr + "-" + title) + ".yaml";
+  const filePath = path.normalize("./src/content/photoessays/") + fileName;
 
-  const fileName =
-    slugify(now.toISOString().split("T")[0] + "-" + title) + ".mdx";
-  const filePath = path.normalize("./src/content/posts/") + fileName;
+  // Extract film stocks from rolls (unique values)
+  const filmStocks = [...new Set(rollsData.map((roll) => roll.film))];
 
-  const randomShot =
-    rollsData[0].shots[Math.floor(Math.random() * rollsData[0].shots.length)];
+  // Extract roll IDs
+  const rollIds = rollsData.map((roll) => roll.manualId);
 
-  const textContent = `---
-title: "${title}"
-slug: ${slugify(title)}
-pubDate: ${now.toISOString()}
-updatedDate: ${now.toISOString()}
-tags: []
-rolls: \n  ${rollsData.map((roll) => `- ${roll.manualId}`).join("\n  ")}
-author: paskal
-image:
-  {
-    src: ${randomShot.image.src},  
-    alt: "${title}",
-    positionx: ${randomShot.image.positionx},
-    positiony: ${randomShot.image.positiony},
+  // Collect all visible shots from all rolls
+  const allShots: { src: string; alt: string }[] = [];
+  for (const roll of rollsData) {
+    for (const shot of roll.shots) {
+      if (!shot.hidden) {
+        allShots.push({
+          src: shot.image.src,
+          alt: shot.image.alt,
+        });
+      }
+    }
   }
-description: ""
-${
-  frontMatterParameters
-    ? Object.entries(frontMatterParameters).map(
-        ([key, value]) => `${key}: ${JSON.stringify(value)}\n`,
-      )
-    : ""
-}
----
-import Masonry from "../../components/Masonry.astro";
-import FilmStrip from "../../components/FilmStrip.astro";
 
-> Post content goes here
+  // Build spreads with varied layouts for visual interest
+  // Pattern: single → duo → trio → repeat
+  const spreads: {
+    layout: string;
+    photos: { src: string; alt: string }[];
+  }[] = [];
+  const layoutPattern = ["single", "duo", "trio"];
+  let patternIndex = 0;
+  let shotIndex = 0;
 
-${rollsData
-  .map((roll) => {
-    // Make a new section per roll with a masonry element
-    return `## ${roll.manualId.toUpperCase()}
+  while (shotIndex < allShots.length) {
+    const layout = layoutPattern[patternIndex % layoutPattern.length];
+    const photosNeeded = layout === "single" ? 1 : layout === "duo" ? 2 : 3;
+    const photosAvailable = allShots.length - shotIndex;
 
-  <Masonry
-  columns='3'
-  images = {
-    [
-      ${roll.shots
-        .filter((shot) => !shot.hidden)
-        .map((shot) => `{ src: "${shot.image.src}", alt: "${shot.image.alt}" }`)
-        .join(`,\n      `)}
-    ]
+    // If we don't have enough photos for this layout, use what's left
+    const photosToUse = Math.min(photosNeeded, photosAvailable);
+    const actualLayout =
+      photosToUse === 1 ? "single" : photosToUse === 2 ? "duo" : "trio";
+
+    const photos = allShots.slice(shotIndex, shotIndex + photosToUse);
+    spreads.push({
+      layout: actualLayout,
+      photos,
+    });
+
+    shotIndex += photosToUse;
+    patternIndex++;
   }
-/>`;
-  })
-  .join("\n\n")}`;
 
-  return saveFile(filePath, textContent);
+  // Use first visible shot as cover
+  const cover =
+    allShots.length > 0
+      ? { src: allShots[0].src, alt: allShots[0].alt }
+      : { src: "", alt: title };
+
+  // Build essay object
+  const essay = {
+    title,
+    description: "",
+    pubDate: dateStr,
+    author: "paskal",
+    rolls: rollIds,
+    filmStocks,
+    tags: options?.tags || [],
+    cover,
+    spreads,
+  };
+
+  const yamlContent = PrettyYAML.stringify(essay);
+  return saveFile(filePath, yamlContent);
 };

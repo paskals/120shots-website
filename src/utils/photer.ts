@@ -8,20 +8,20 @@ import yargs from "yargs";
 import path from "path";
 import { uploadFiles } from "./r2-wrangler";
 import {
-  createNewPost,
+  createNewEssay,
   getSourceFiles,
   createTempDir,
   processFiles,
   deleteTempFiles,
   createNewRoll,
-  createPostFromRolls,
+  createEssayFromRolls,
 } from "./utils.js";
 import sanitize from "sanitize-filename";
 
 const argv = yargs(hideBin(process.argv))
   .command(
-    "create-post",
-    "Gets photos from a folder, converts and processes them, uploads them to an R2 bucket and creates a draft MDX post containing the URLs of all the photos uploaded.",
+    "create-essay",
+    "Gets photos from a folder, converts and processes them, uploads them to an R2 bucket and creates a draft YAML essay containing the URLs of all the photos uploaded.",
     {
       sourcePath: {
         alias: "p",
@@ -52,13 +52,13 @@ const argv = yargs(hideBin(process.argv))
       renameFiles: {
         alias: "r",
         describe:
-          "If not specified, the original file names will be kept. When specified, this will be used ast the file name prefix, after which a numeric sequence number will be added. If a random suffix is also specified, it will be added after the sequence number.",
+          "If not specified, the original file names will be kept. When specified, this will be used as the file name prefix, after which a numeric sequence number will be added. If a random suffix is also specified, it will be added after the sequence number.",
         type: "string",
         demandOption: false,
       },
-      postTitle: {
+      essayTitle: {
         alias: "t",
-        describe: "Title of the post",
+        describe: "Title of the essay",
         type: "string",
         demandOption: false,
       },
@@ -131,30 +131,30 @@ const argv = yargs(hideBin(process.argv))
       },
     },
   )
-  .command("create-roll-post", "Creates a post from existing rolls.", {
+  .command("create-roll-essay", "Creates an essay from existing rolls.", {
     rolls: {
       alias: "r",
-      describe: "Comma separated list of roll IDs to include in the post",
+      describe: "Comma separated list of roll IDs to include in the essay",
       type: "string",
       demandOption: true,
     },
-    postTitle: {
+    essayTitle: {
       alias: "t",
-      describe: "Title of the post",
+      describe: "Title of the essay",
       type: "string",
       demandOption: false,
     },
   })
   .help().argv;
 
-if (argv._.includes("create-post")) {
+if (argv._.includes("create-essay")) {
   // Prep Arguments
 
   const {
     sourcePath,
     destinationDir,
     randomSuffix,
-    postTitle,
+    essayTitle,
     maxDimensionSize,
     renameFiles,
   } = argv;
@@ -173,16 +173,13 @@ if (argv._.includes("create-post")) {
   });
   const newFiles = processedFilesInfo.map((v) => v.filePath);
 
-  //==== create-post specific ====
+  //==== create-essay specific ====
   console.info("⏫ Uploading files...");
 
   uploadFiles(newFiles, destinationDir)
     .then((result) => {
-      // TODO: use roll instead of list of files
-      return createNewPost(result as string[], postTitle, {
-        referencedImages: result,
-      }).then((result) => {
-        console.info(`✅ Post created at ${path.normalize(result)}`);
+      return createNewEssay(result as string[], essayTitle).then((result) => {
+        console.info(`✅ Essay created at ${path.normalize(result)}`);
       });
     })
     .catch((err) => {
@@ -248,11 +245,11 @@ if (argv._.includes("create-post")) {
       // ====== Delete TMP files ====
       deleteTempFiles(newFiles);
     });
-} else if (argv._.includes("create-roll-post")) {
-  const { rolls, postTitle } = argv;
+} else if (argv._.includes("create-roll-essay")) {
+  const { rolls, essayTitle } = argv;
 
-  const result = await createPostFromRolls(rolls.split(","), postTitle);
-  console.info(`✅ Post created at ${path.normalize(result)}`);
+  const result = await createEssayFromRolls(rolls.split(","), essayTitle);
+  console.info(`✅ Essay created at ${path.normalize(result)}`);
 } else {
   console.error("Invalid command");
 }

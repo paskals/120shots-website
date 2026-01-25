@@ -16,26 +16,23 @@ OR clone this repo.
 
 After creating your site with this template:
 
-- Delete all blog posts from [/src/content/posts](/src/content/posts)
-  - Create your own posts under this folder.
-- Delete all film rolls from [/src/content/posts](/src/content/rolls)
+- Delete all photo essays from [/src/content/photoessays](/src/content/photoessays)
+  - Create your own essays under this folder.
+- Delete all film rolls from [/src/content/rolls](/src/content/rolls)
 - Create your own author profile under [/src/content/authors](/src/content/authors) and delete mine.
 - Adjust the site URL in [astro.config.mjs](/astro.config.mjs).
 - Adjust site metadata, favicon in [/src/layouts/BaseLayout.astro](/src/layouts/BaseLayout.astro).
-- Create your own R2 CloudFlare bucket and create an `.env.` file.
+- Create your own R2 CloudFlare bucket and create an `.env` file.
 
 ## Introduction
 
-- Text content is "hosted" in the repo in the form of markdown files. Deployment is done (for free) with [CloudFlare pages](https://pages.cloudflare.com).
-- Photos are hosted separately and are only referenced via URLs in the markdown blog posts. There's a script to help you process and upload photos to a [CloudFlare R2 bucket](https://developers.cloudflare.com/r2/) - see [Utility Scripts](#utility-scripts).
+- Content is "hosted" in the repo in the form of YAML files (photo essays) and MDX files (author profiles). Deployment is done (for free) with [CloudFlare pages](https://pages.cloudflare.com).
+- Photos are hosted separately and are only referenced via URLs in the content files. There's a script to help you process and upload photos to a [CloudFlare R2 bucket](https://developers.cloudflare.com/r2/) - see [Utility Scripts](#utility-scripts).
 
 ## Content Types
 
-### Blog Posts (MDX)
-Traditional blog posts in `/src/content/posts/` using MDX format. These support rich content with text, photos, and custom components like Masonry galleries and FilmStrip displays.
-
-### Photo Essays (YAML) - *New*
-A minimal, photography-focused content type in `/src/content/photoessays/`. Photo essays are designed as visual stories with full-screen images and minimal text captions, similar to a photo magazine or gallery experience.
+### Photo Essays (YAML)
+The primary content format in `/src/content/photoessays/`. Photo essays are designed as visual stories with full-screen images and minimal text captions, similar to a photo magazine or gallery experience.
 
 **Key features:**
 - Full-viewport photo spreads with scroll-snap navigation
@@ -110,8 +107,6 @@ spreads:
     caption: "Right stack with left main"
 ```
 
-> **Note:** Photo essays are intended to eventually replace traditional blog posts as the primary content format, providing a more immersive photography-first experience.
-
 ## Install (to use this repo directly)
 
 ```sh
@@ -144,19 +139,19 @@ Build and deploy as a static page on [cloudflare pages](https://developers.cloud
 
 <h2 id="utility-scripts">Utility Scripts</h3>
 
-### Create a draft post from a folder with photos
+### Create a draft essay from a folder with photos
 
-This script creates a new post under `/src/content/posts`. By default the name of the file starts with today's date. The script uploads a folder of photos to a CloudFlare R2 bucket. The post will contain a randomly chosen header image and a masonry component with the URLs of all of the uploaded images.
-You can specify the max dimension fo the photos. The photos are converted to `.webp` format and then uploaded to the R2 bucket.
+This script creates a new photo essay under `/src/content/photoessays`. By default the name of the file starts with today's date. The script uploads a folder of photos to a CloudFlare R2 bucket. The essay will contain spreads with the URLs of all uploaded images.
+You can specify the max dimension of the photos. The photos are converted to `.webp` format and then uploaded to the R2 bucket.
 
 ```sh
-yarn create-post -p /dir/with/photos -d upload-sub-dir -t "Post Title" -m 2000 -r "File Name Prefix" --randomSuffix
+yarn create-essay -p /dir/with/photos -d upload-sub-dir -t "Essay Title" -m 2000 -r "File Name Prefix" --randomSuffix
 ```
 
 - `-p` - Photos source directory (not recursive).
 - `-d` - Name of sub-directory in the R2 bucket. This is where the files will be uploaded under the top-level directory of your R2 bucket.
-- `-t` - Post tile.
-- `-m` - Max dimension of photos. This will resize photos such that whatever the bigger dimmension is (width or height) it will not be bigger than this number (2000px is the default).
+- `-t` - Essay title.
+- `-m` - Max dimension of photos. This will resize photos such that whatever the bigger dimension is (width or height) it will not be bigger than this number (2000px is the default).
 - `--renameFiles` or `-r` - Renames files with the specified prefix, and adds a sequential numbering as a suffix (starting at "000").
 - `--randomSuffix` or `-s` - Adds a random suffix to all uploaded filenames to prevent overwriting files with the same original file name.
 
@@ -164,29 +159,33 @@ yarn create-post -p /dir/with/photos -d upload-sub-dir -t "Post Title" -m 2000 -
 
 This script creates a new roll under `/src/content/rolls`. The rolls content library is made of YAML files with information about each roll, including URLs to all images.
 
+**By default, this script uses Google Vision API to automatically generate meaningful alt text descriptions** for each photo, including landmark detection and visual element analysis. This requires `GOOGLE_API_KEY` in your `.env` file.
+
 ```sh
 yarn create-roll -p /dir/with/photos -n ROLL-NAME -f film-stock -c "Camera Used" -rs
 ```
 
 - `-p` - Photos source directory (not recursive).
-- `-n` - Name of the film roll. Will also be used as the sub-directory in the upload destination..
+- `-n` - Name of the film roll. Will also be used as the sub-directory in the upload destination.
 - `-f` - Film stock used. Must match an entry from the films content library.
-- `-m` - Max dimension of photos. This will resize photos such that whatever the bigger dimmension is (width or height) it will not be bigger than this number (2000px is the default).
+- `-c` - Camera used to shoot this roll.
+- `-m` - Max dimension of photos. This will resize photos such that whatever the bigger dimension is (width or height) it will not be bigger than this number (2000px is the default).
 - `--renameFiles` or `-r` - If not specified, the original file names will be kept. When specified, the roll name (n) will be used as the file name prefix, after which a numeric sequence number will be added. If a random suffix is also specified, it will be added after the sequence number.
 - `--randomSuffix` or `-s` - Adds a random suffix to all uploaded filenames to prevent overwriting files with the same original file name.
+- `--skipVision` - Skip automatic Vision API image description generation. Use this if you don't have a Google API key or want to add descriptions manually.
 
-This script assumes that photos have their exif date/time information updated. Dates will be taken from the exif and stored in the film roll YAML data file.
+This script assumes that photos have their EXIF date/time information. Dates will be taken from the EXIF and stored in the film roll YAML data file.
 
-### Create a draft post from existing film rolls
+### Create a draft essay from existing film rolls
 
-This script takes film rolls from the rolls content library and creates a draft post containing all photos in one masonry component per roll.
+This script takes film rolls from the rolls content library and creates a draft photo essay with spreads containing all photos from the specified rolls.
 
 ```sh
-yarn create-roll-post -r "ROLL-NAME1,ROLL-NAME2" -t "Post Title"
+yarn create-roll-essay -r "ROLL-NAME1,ROLL-NAME2" -t "Essay Title"
 ```
 
-- `-r` - Comma separated list of roll IDs to include in the post.
-- `-t` - Title of the created post.
+- `-r` - Comma separated list of roll IDs to include in the essay.
+- `-t` - Title of the created essay.
 
 ### Interactive Claude Command
 
@@ -198,17 +197,17 @@ For a more user-friendly experience, you can use the `/photo` Claude slash comma
 
 This command will:
 
-- Guide you through creating film rolls, blog posts, or posts from existing rolls
+- Guide you through creating film rolls, photo essays, or essays from existing rolls
 - Validate film types against your content library
 - Show available rolls from your R2 bucket
-- Offer to create blog posts after roll creation
+- Offer to create photo essays after roll creation
 - Use smart defaults (author, image dimensions, etc.)
 
 You can also skip directly to specific workflows:
 
 - `/photo roll` - Create a film roll
-- `/photo post` - Create a blog post from photos
-- `/photo rollpost` - Create a blog post from existing rolls
+- `/photo essay` - Create a photo essay from photos
+- `/photo rollessay` - Create a photo essay from existing rolls
 
 ### Generate image descriptions using Google Vision API
 

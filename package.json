@@ -10,9 +10,9 @@
     "lint": "prettier --write .",
     "astro": "astro",
     "postbuild": "pagefind --site dist",
-    "create-post": "tsx ./src/utils/photer.ts create-post",
+    "create-essay": "tsx ./src/utils/photer.ts create-essay",
     "create-roll": "tsx ./src/utils/photer.ts create-roll",
-    "create-roll-post": "tsx ./src/utils/photer.ts create-roll-post",
+    "create-roll-essay": "tsx ./src/utils/photer.ts create-roll-essay",
     "r2-stats": "tsx ./src/utils/r2-stats.ts",
     "describe-images": "tsx ./src/utils/vision-describer.ts describe",
     "update-roll-descriptions": "tsx ./src/utils/update-roll-descriptions.ts"

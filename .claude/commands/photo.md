@@ -1,6 +1,6 @@
 ---
-description: Interactive tool for managing film rolls and blog posts
-argument-hint: "[roll|post|rollpost] [additional-args...]"
+description: Interactive tool for managing film rolls and photo essays
+argument-hint: "[roll|essay|rollessay] [additional-args...]"
 allowed-tools:
   [
     "Bash",
@@ -16,17 +16,19 @@ allowed-tools:
 You are helping the user manage their film photography portfolio. This command provides an interactive interface for:
 
 1. **Creating a new film roll** from a folder with photos
-2. **Creating a new blog post** from a folder with photos
-3. **Creating a new blog post** from existing film rolls
+2. **Creating a new photo essay** from a folder with photos
+3. **Creating a new photo essay** from existing film rolls
 
 ## Available Commands and Scripts
 
 The project has these npm scripts:
 
-- `npm run create-post -- -p /path/to/photos -d upload-dir -t "Post Title" -m 2000`
-- `npm run create-roll -- -p /path/to/photos -n ROLL-NAME -f film-stock -c "Camera Used"`
-- `npm run create-roll-post -- -r "ROLL1,ROLL2" -t "Post Title"`
-- `npm run r2-stats -- -p prefix --detailed` (to check existing rolls in R2 bucket)
+- `yarn create-essay -p /path/to/photos -d upload-dir -t "Essay Title" -m 2000`
+- `yarn create-roll -p /path/to/photos -n ROLL-NAME -f film-stock -c "Camera Used"`
+- `yarn create-roll-essay -r "ROLL1,ROLL2" -t "Essay Title"`
+- `yarn r2-stats -p prefix --detailed` (to check existing rolls in R2 bucket)
+
+Note: `create-roll` uses Google Vision API by default to generate image descriptions. Use `--skipVision` to disable.
 
 ## Available Film Types
 
@@ -52,8 +54,8 @@ The author is always "paskal" (from `src/content/authors/paskal.mdx`), so don't 
 If no arguments provided, ask the user what they want to do:
 
 1. Create a new film roll from photos
-2. Create a blog post from photos
-3. Create a blog post from existing film rolls
+2. Create a photo essay from photos
+3. Create a photo essay from existing film rolls
 
 ### Step 2: Gather required information interactively
 
@@ -67,27 +69,28 @@ If no arguments provided, ask the user what they want to do:
 - Max dimension (optional, default 2000)
 - Whether to rename files (optional)
 - Whether to add random suffix (optional)
+- Whether to skip Vision API descriptions (optional, default: use Vision API)
 
-## For blog post from photos
+## For photo essay from photos
 
 - Photos source path (required)
 - Upload destination directory (required)
-- Post title (optional, will auto-generate)
+- Essay title (optional, will auto-generate)
 - Max dimension (optional, default 2000)
 - Whether to rename files (optional)
 - Whether to add random suffix (optional)
 
-## For blog post from existing rolls
+## For photo essay from existing rolls
 
-- Use `npm run r2-stats -- --detailed` to show available rolls
+- Use `yarn r2-stats --detailed` to show available rolls
 - Let user select which rolls to include
-- Post title (optional, will auto-generate)
+- Essay title (optional, will auto-generate)
 
-### Step 3: Execute the appropriate npm script
+### Step 3: Execute the appropriate yarn script
 
 ### Step 4: Post-creation workflow
 
-- If a roll was just created, ask if the user wants to create a blog post with it
+- If a roll was just created, ask if the user wants to create a photo essay with it
 - Provide success feedback and next steps
 
 ## Smart Defaults and Validation
@@ -102,8 +105,8 @@ If no arguments provided, ask the user what they want to do:
 Parse `$ARGUMENTS` to:
 
 - `roll` or `create-roll`: Skip to roll creation workflow
-- `post` or `create-post`: Skip to post creation workflow
-- `rollpost` or `roll-post`: Skip to post-from-rolls workflow
+- `essay` or `create-essay`: Skip to essay creation workflow
+- `rollessay` or `roll-essay`: Skip to essay-from-rolls workflow
 - Additional arguments can pre-populate values
 
 Start the interactive workflow now using the arguments: $ARGUMENTS
