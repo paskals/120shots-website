@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Enable class-based dark mode (adds .dark class to html element) */
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* Custom colors */
   --color-gray-dark: #273444;
