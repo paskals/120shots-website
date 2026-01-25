@@ -35,12 +35,12 @@ const displayPhotos = photos.slice(0, photoCount);
 // trio-r: photo 1 main on left, photos 2,3 stacked on right
 const isTrioVariant = layout === "trio-l" || layout === "trio-r";
 const stackPhotos = isTrioVariant
-  ? layout === "trio-l"
+  ? layout === "trio-r"
     ? displayPhotos.slice(0, 2)
     : displayPhotos.slice(1, 3)
   : [];
 const mainPhoto = isTrioVariant
-  ? layout === "trio-l"
+  ? layout === "trio-r"
     ? displayPhotos[2]
     : displayPhotos[0]
   : null;

@@ -201,7 +201,7 @@ body {
 }
 
 .site-header:not(.site-header--compact) .site-header__right {
-  margin-right: 3.4375rem;
+  /* margin-right: 3.4375rem; */
   margin-bottom: 0.3125rem;
 }
 

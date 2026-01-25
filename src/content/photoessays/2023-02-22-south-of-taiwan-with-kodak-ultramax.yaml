@@ -19,44 +19,47 @@ spreads:
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-001-07BE1F.webp
         alt: Street scene in southern Taiwan bathed in warm afternoon light
-    caption: First impressions of the south
+    caption: Red... One of my favourite shots with ultramax 400
 
-  - layout: duo
+  - layout: duo-r
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-000-6C532F.webp
         alt: Quiet alleyway with traditional Taiwanese architecture
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-002-75D6CB.webp
         alt: Local neighborhood with motorbikes parked along the street
 
-  - layout: trio
+  - layout: duo
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-003-0BEE26.webp
         alt: Weathered building facade with hanging laundry
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-004-84C4EC.webp
         alt: Temple entrance with ornate decorations
+    caption: Temples everywhere!
+  
+  - layout: single
+    photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-005-F52114.webp
         alt: Street vendor setting up shop in morning light
-    caption: Daily rhythms of Tainan
 
   - layout: single
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-006-F01759.webp
         alt: Historic district street with colonial-era buildings
 
-  - layout: duo
+  - layout: duo-l
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-007-1648B9.webp
         alt: Pedestrians crossing a busy intersection
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-008-5C78F2.webp
         alt: Local market stall with fresh produce
-    caption: Where old meets new
+    caption: Lovely Kaohsiung streets
 
   - layout: single
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-009-E5E477.webp
         alt: Narrow lane between traditional shophouses
 
-  - layout: trio
+  - layout: trio-l
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-010-1AE547.webp
         alt: Elderly resident sitting outside a corner shop
@@ -65,20 +68,20 @@ spreads:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-012-D2AABD.webp
         alt: Motorcycle traffic flowing through an intersection
 
-  - layout: duo
+  - layout: duo-r
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-013-2B513E.webp
         alt: Kaohsiung harbor view with industrial cranes
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-014-269643.webp
         alt: Waterfront promenade with palm trees
-    caption: Kaohsiung's harbor district
+    caption: Hsiziwan before it was renamed to Hamasen
 
   - layout: single
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-015-11FCC8.webp
         alt: Urban skyline reflected in the Love River
 
-  - layout: trio
+  - layout: trio-l
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-016-95A3C7.webp
         alt: Street food stall with steam rising
@@ -101,21 +104,25 @@ spreads:
         alt: Traditional temple with incense smoke swirling
     caption: Moments of stillness
 
-  - layout: duo
+  - layout: single
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-022-55A1D3.webp
         alt: Residential street with potted plants lining the sidewalk
+    caption: Sunset light hitting different
+
+  - layout: single
+    photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-024-3B214E.webp
         alt: Local cafe with outdoor seating
 
-  - layout: trio
+  - layout: trio-r
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-025-EB3F07.webp
         alt: Vintage shop window display
-      - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-026-7E607D.webp
-        alt: Children playing in a neighborhood plaza
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-027-7910C4.webp
         alt: Sunset casting long shadows on a quiet street
+      - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-026-7E607D.webp
+        alt: Children playing in a neighborhood plaza
 
   - layout: duo
     photos:
@@ -123,4 +130,4 @@ spreads:
         alt: Old railway tracks converted to pedestrian path
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-030-2737FF.webp
         alt: Final glimpse of southern Taiwan as evening approaches
-    caption: Until next time
+    caption: Shots from above
