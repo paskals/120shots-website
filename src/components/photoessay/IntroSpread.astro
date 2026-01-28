@@ -34,6 +34,15 @@ const formattedRolls = rollIds.map(id => id.split('/').pop() || id);
 
   <!-- Editorial content overlay -->
   <div class="intro-content">
+    <!-- Navigation breadcrumb -->
+    <a href="/essays" class="intro-back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      <span>Photo Essays</span>
+    </a>
+
     <!-- Film roll IDs -->
     {formattedRolls.length > 0 && (
       <div class="intro-film-rolls" aria-label="Film rolls used in this essay">
@@ -163,6 +172,35 @@ const formattedRolls = rollIds.map(id => id.split('/').pop() || id);
     padding: 4rem clamp(2rem, 8vw, 6rem);
     height: 100%;
     box-sizing: border-box;
+  }
+
+  /* Back link */
+  .intro-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5ch;
+    font-family: var(--font-overpass-mono, "Overpass Mono Variable", monospace);
+    font-size: clamp(0.65rem, 1.2vw, 0.75rem);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+    transition: color 0.3s ease;
+  }
+
+  .intro-back-link:hover {
+    color: var(--text-primary);
+  }
+
+  .intro-back-link svg {
+    transition: transform 0.3s ease;
+  }
+
+  .intro-back-link:hover svg {
+    transform: translateX(-3px);
   }
 
   /* Film roll IDs */
@@ -366,6 +404,7 @@ const formattedRolls = rollIds.map(id => id.split('/').pop() || id);
   @media (prefers-reduced-motion: reduce) {
     .intro-image,
     .intro-film-grain,
+    .intro-back-link,
     .intro-roll-id,
     .title-word,
     .intro-description-wrapper,
