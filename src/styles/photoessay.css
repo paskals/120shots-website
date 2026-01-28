@@ -50,7 +50,6 @@
 /* Photo container - adapts based on layout */
 .spread-photos {
   display: flex;
-  flex: 1;
   width: 100%;
   max-width: 1800px;
   gap: 1rem;
@@ -168,6 +167,49 @@
   flex: 1.5;
   height: calc(100dvh - 10rem);
   max-height: 80vh;
+}
+
+/* Reduced photo height when caption is present (~10% shorter) */
+.spread[data-has-caption] .photo-wrapper {
+  height: calc((100dvh - 10rem) * 0.9);
+}
+
+.spread[data-has-caption][data-layout="single"] .photo-wrapper {
+  height: calc((100dvh - 10rem) * 0.9);
+  max-height: 77vh;
+}
+
+.spread[data-has-caption][data-layout="duo"] .photo-wrapper,
+.spread[data-has-caption][data-layout="duo-l"] .photo-wrapper,
+.spread[data-has-caption][data-layout="duo-r"] .photo-wrapper {
+  height: calc((100dvh - 10rem) * 0.9);
+  max-height: 72vh;
+}
+
+.spread[data-has-caption][data-layout="duo-h"] .photo-wrapper {
+  height: 36vh;
+  max-height: 36vh;
+}
+
+.spread[data-has-caption][data-layout="duo-h"] .photo-wrapper img {
+  max-height: 36vh;
+}
+
+.spread[data-has-caption][data-layout="trio"] .photo-wrapper {
+  height: calc((100dvh - 10rem) * 0.9);
+  max-height: 68vh;
+}
+
+.spread[data-has-caption][data-layout="trio-l"] .photo-stack,
+.spread[data-has-caption][data-layout="trio-r"] .photo-stack {
+  height: calc((100dvh - 10rem) * 0.9);
+  max-height: 72vh;
+}
+
+.spread[data-has-caption][data-layout="trio-l"] .photo-main,
+.spread[data-has-caption][data-layout="trio-r"] .photo-main {
+  height: calc((100dvh - 10rem) * 0.9);
+  max-height: 72vh;
 }
 
 /* Photo wrapper and image */

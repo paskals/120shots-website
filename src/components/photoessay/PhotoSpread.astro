@@ -53,7 +53,7 @@ const leftPhoto = isDuoVariant ? displayPhotos[0] : null;
 const rightPhoto = isDuoVariant ? displayPhotos[1] : null;
 ---
 
-<section class="spread" data-layout={layout} data-index={index}>
+<section class="spread" data-layout={layout} data-index={index} data-has-caption={caption ? "true" : undefined}>
   {
     isTrioVariant ? (
       <div class="spread-photos">
