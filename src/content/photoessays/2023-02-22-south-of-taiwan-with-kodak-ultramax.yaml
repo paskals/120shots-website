@@ -19,7 +19,7 @@ spreads:
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-001-07BE1F.webp
         alt: Street scene in southern Taiwan bathed in warm afternoon light
-    caption: Red... One of my favourite shots with ultramax 400
+    caption: One of my favourite shots in my film photography journey. I like how the red truck was stopped in front of the Confucius temple in Tainan.
 
   - layout: duo-r
     photos:
@@ -27,6 +27,7 @@ spreads:
         alt: Quiet alleyway with traditional Taiwanese architecture
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-002-75D6CB.webp
         alt: Local neighborhood with motorbikes parked along the street
+    caption: Walking around Tainan and Kaohsiung, two of the biggest southern cities in Taiwan
 
   - layout: duo
     photos:
@@ -34,17 +35,18 @@ spreads:
         alt: Weathered building facade with hanging laundry
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-004-84C4EC.webp
         alt: Temple entrance with ornate decorations
-    caption: Temples everywhere!
   
   - layout: single
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-005-F52114.webp
         alt: Street vendor setting up shop in morning light
+    caption: Most of these shots were made with the 35-105mm zoom lens that came with the camera
 
   - layout: single
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-006-F01759.webp
         alt: Historic district street with colonial-era buildings
+    caption: ""
 
   - layout: duo-l
     photos:
@@ -52,12 +54,13 @@ spreads:
         alt: Pedestrians crossing a busy intersection
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-008-5C78F2.webp
         alt: Local market stall with fresh produce
-    caption: Lovely Kaohsiung streets
+    caption: In Kaohsiung I managed to find a 50mm f/1.4 lens which has become my favourite
 
   - layout: single
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-009-E5E477.webp
         alt: Narrow lane between traditional shophouses
+    caption: ""
 
   - layout: trio-l
     photos:
@@ -67,6 +70,7 @@ spreads:
         alt: Colorful signage along a commercial street
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-012-D2AABD.webp
         alt: Motorcycle traffic flowing through an intersection
+    caption: ""
 
   - layout: duo-r
     photos:
@@ -74,14 +78,15 @@ spreads:
         alt: Kaohsiung harbor view with industrial cranes
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-014-269643.webp
         alt: Waterfront promenade with palm trees
-    caption: Hsiziwan before it was renamed to Hamasen
+    caption: ""
 
   - layout: single
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-015-11FCC8.webp
         alt: Urban skyline reflected in the Love River
+    caption: After using the f/1.4 lens I did find a couple of shots with strange artefacts - a dark right side of the image. It seems my camera might have a sticky shutter at higher speeds.
 
-  - layout: trio-l
+  - layout: trio-r
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-016-95A3C7.webp
         alt: Street food stall with steam rising
@@ -89,7 +94,7 @@ spreads:
         alt: Night market entrance crowded with visitors
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-018-BAE711.webp
         alt: Neon signs illuminating an evening street
-    caption: As the sun sets
+    caption: ""
 
   - layout: duo
     photos:
@@ -97,25 +102,27 @@ spreads:
         alt: Modern MRT station with commuters
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-020-23601B.webp
         alt: City park with locals exercising
+    caption: ""
 
   - layout: single
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-021-7544D0.webp
         alt: Traditional temple with incense smoke swirling
-    caption: Moments of stillness
+    caption: ""
 
   - layout: single
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-022-55A1D3.webp
         alt: Residential street with potted plants lining the sidewalk
-    caption: Sunset light hitting different
+    caption: The last few shots are from Anping, a must see if you are in Taiwan. A great historical location with lots of food to try.
 
   - layout: single
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-024-3B214E.webp
         alt: Local cafe with outdoor seating
+    caption: The old market street and surroundings are amazing for street photography
 
-  - layout: trio-r
+  - layout: trio-l
     photos:
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-025-EB3F07.webp
         alt: Vintage shop window display
@@ -123,6 +130,7 @@ spreads:
         alt: Sunset casting long shadows on a quiet street
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-026-7E607D.webp
         alt: Children playing in a neighborhood plaza
+    caption: ""
 
   - layout: duo
     photos:
@@ -130,4 +138,4 @@ spreads:
         alt: Old railway tracks converted to pedestrian path
       - src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-030-2737FF.webp
         alt: Final glimpse of southern Taiwan as evening approaches
-    caption: Shots from above
+    caption: All shots were made around August-September 2021.

@@ -45,7 +45,7 @@ spreads:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0010.webp
         alt: Local Taiwanese cooking over open flames at a night market
 
-  - layout: trio
+  - layout: trio-r
     photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0011.webp
         alt: Colorful string lights illuminating a night scene
@@ -83,7 +83,7 @@ spreads:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0023.webp
         alt: Scenic coastal rocks with waves crashing against them
 
-  - layout: duo
+  - layout: duo-r
     photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0024.webp
         alt: Brilliant blue water contrasting with dark volcanic rock
@@ -91,7 +91,7 @@ spreads:
         alt: Busy urban intersection with buses and motorcycles
     caption: From island to city
 
-  - layout: trio
+  - layout: trio-l
     photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0026.webp
         alt: Pedestrians crossing a busy Taiwan street
@@ -100,7 +100,7 @@ spreads:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0029.webp
         alt: Familiar glow of a 7-Eleven convenience store at night
 
-  - layout: duo
+  - layout: duo-r
     photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0030.webp
         alt: Narrow alley between old buildings in Taiwan
@@ -113,7 +113,7 @@ spreads:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0032.webp
         alt: Urban nightscape with illuminated signs and buildings
 
-  - layout: trio
+  - layout: trio-l
     photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0033.webp
         alt: Motorcycle parked under warm street lights at night

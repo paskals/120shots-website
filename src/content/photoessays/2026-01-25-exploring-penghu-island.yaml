@@ -17,20 +17,12 @@ tags:
   - travel
   - island
 cover:
-  src: https://cdn.120shots.com/images/PT-05/R1-06362-000A.webp
+  src: https://cdn.120shots.com/images/PT-05/R1-06362-014A.webp
   alt: Film photo of plantation, agriculture, palm trees, crop, evening, farm.
 spreads:
   - layout: single
-    caption: Evening light over palm plantations, where agriculture meets the subtropical climate of the archipelago.
-    photos:
-      - src: https://cdn.120shots.com/images/PT-05/R1-06362-000A.webp
-        alt: Film photo of plantation, agriculture, palm trees, crop, evening, farm.
-
-  - layout: duo-l
     caption: The rural landscape, shaped by wind and cultivation.
     photos:
-      - src: https://cdn.120shots.com/images/PT-05/R1-06362-000A_0001.webp
-        alt: Film photo of agriculture, plain, field, plantation, crop, farm.
       - src: https://cdn.120shots.com/images/PT-05/R1-06362-001A.webp
         alt: Film photo of woody plant, palm trees, california palm, coconut, royal palms, wind.
 
