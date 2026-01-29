@@ -1,0 +1,13 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<p class="spread-caption">{text}</p>
+
+<style>
+  /* Caption styles are in photoessay.css but can be enhanced here if needed */
+</style>

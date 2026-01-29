@@ -4,29 +4,39 @@ import { getImage } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import GetRandomImage from "../components/GetRandomImage.astro";
 
-const allContent: CollectionEntry<"posts">[] = await getCollection(
+const allContent: CollectionEntry<"photoessays">[] = await getCollection(
   Astro.props.directory,
 );
 const tags: string[] = [];
-// const images = allContent.map((post) => post.data.image?.src);
 const imagesByTag = {};
 const altsByTag = {};
 
-for (const post of allContent) {
-  for (const tag of post.data.tags) {
+for (const essay of allContent) {
+  // Tags are optional in essays, so skip if not present
+  if (!essay.data.tags) continue;
+
+  for (const tag of essay.data.tags) {
     if (!imagesByTag[tag]) {
       imagesByTag[tag] = [];
       altsByTag[tag] = [];
       tags.push(tag);
     }
-    if (post.data.image?.src) {
+
+    const coverImage =
+      essay.data.cover?.src || essay.data.spreads[0]?.photos[0]?.src;
+    const coverAlt =
+      essay.data.cover?.alt ||
+      essay.data.spreads[0]?.photos[0]?.alt ||
+      essay.data.title;
+
+    if (coverImage) {
       const imageAsset = await getImage({
-        src: post.data.image?.src,
-        alt: post.data.image?.alt,
+        src: coverImage,
+        alt: coverAlt,
         inferSize: true,
       });
       imagesByTag[tag].push(imageAsset ? imageAsset.src : null);
-      altsByTag[tag].push(post.data.image?.alt);
+      altsByTag[tag].push(coverAlt);
     }
   }
 }

@@ -1,0 +1,435 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  title: string;
+  description: string;
+  coverImage: string;
+  coverAlt: string;
+  rollIds?: string[];
+}
+
+const { title, description, coverImage, coverAlt, rollIds = [] } = Astro.props;
+
+// Format roll IDs by removing year prefix (e.g., "2021/TPE-01" -> "TPE-01")
+const formattedRolls = rollIds.map(id => id.split('/').pop() || id);
+---
+
+<section class="intro-spread spread" data-layout="intro">
+  <!-- Background image with atmospheric treatment -->
+  <div class="intro-image-container">
+    <div class="intro-image-wrapper">
+      <Image
+        src={coverImage}
+        alt={coverAlt}
+        inferSize
+        loading="eager"
+        decoding="sync"
+        class="intro-image"
+      />
+      <div class="intro-image-gradient"></div>
+      <div class="intro-film-grain"></div>
+    </div>
+  </div>
+
+  <!-- Editorial content overlay -->
+  <div class="intro-content">
+    <!-- Navigation breadcrumb -->
+    <a href="/essays" class="intro-back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      <span>Photo Essays</span>
+    </a>
+
+    <!-- Film roll IDs -->
+    {formattedRolls.length > 0 && (
+      <div class="intro-film-rolls" aria-label="Film rolls used in this essay">
+        {formattedRolls.map((rollId, index) => (
+          <span class="intro-roll-id" style={`--roll-index: ${index}`}>
+            <span class="roll-bracket">[</span>
+            <span class="roll-id">{rollId}</span>
+            <span class="roll-bracket">]</span>
+          </span>
+        ))}
+      </div>
+    )}
+
+    <!-- Title with dramatic typography -->
+    <h1 class="intro-title">
+      {title.split(' ').map((word, index) => (
+        <span
+          class="title-word"
+          style={`--word-index: ${index}`}
+        >
+          {word}
+        </span>
+      ))}
+    </h1>
+
+    <!-- Description with refined presentation -->
+    <div class="intro-description-wrapper">
+      <div class="intro-description-ornament" aria-hidden="true"></div>
+      <p class="intro-description">{description}</p>
+    </div>
+
+    <!-- Subtle scroll prompt -->
+    <div class="intro-scroll-hint" aria-label="Scroll to continue">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="7 13 12 18 17 13"></polyline>
+        <polyline points="7 6 12 11 17 6"></polyline>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Intro spread container */
+  .intro-spread {
+    position: relative;
+    overflow: hidden;
+    background: var(--essay-cover-middle);
+    height: 100vh;
+    max-height: 100vh;
+  }
+
+  /* Image container - full bleed with artistic treatment */
+  .intro-image-container {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .intro-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .intro-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation: intro-image-reveal 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform-origin: center;
+  }
+
+  @keyframes intro-image-reveal {
+    from {
+      opacity: 0;
+      transform: scale(1.15);
+      filter: brightness(0.3) contrast(1.4) saturate(0);
+    }
+    to {
+      opacity: 0.35;
+      transform: scale(1.05);
+      filter: brightness(0.4) contrast(1.2) saturate(0.7);
+    }
+  }
+
+  /* Atmospheric gradient overlay */
+  .intro-image-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse 120% 80% at 50% 60%,
+      transparent 0%,
+      transparent 30%,
+      var(--essay-cover-outer) 100%
+    );
+    z-index: 2;
+  }
+
+  /* Film grain texture */
+  .intro-film-grain {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+    opacity: 0;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 3;
+    animation: grain-fade-in 2s ease-in 0.5s forwards;
+  }
+
+  @keyframes grain-fade-in {
+    to { opacity: 1; }
+  }
+
+  /* Content overlay */
+  .intro-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem clamp(2rem, 8vw, 6rem);
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Back link */
+  .intro-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5ch;
+    font-family: var(--font-overpass-mono, "Overpass Mono Variable", monospace);
+    font-size: clamp(0.65rem, 1.2vw, 0.75rem);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+    transition: color 0.3s ease;
+  }
+
+  .intro-back-link:hover {
+    color: var(--text-primary);
+  }
+
+  .intro-back-link svg {
+    transition: transform 0.3s ease;
+  }
+
+  .intro-back-link:hover svg {
+    transform: translateX(-3px);
+  }
+
+  /* Film roll IDs */
+  .intro-film-rolls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+  }
+
+  .intro-roll-id {
+    font-family: var(--font-overpass-mono, "Overpass Mono Variable", monospace);
+    font-size: clamp(0.65rem, 1.2vw, 0.75rem);
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    opacity: 0;
+    animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(0.6s + var(--roll-index) * 0.1s);
+  }
+
+  .roll-bracket {
+    opacity: 0.4;
+  }
+
+  .roll-id {
+    margin: 0 0.5ch;
+    font-weight: 600;
+  }
+
+  /* Title with dramatic typography */
+  .intro-title {
+    font-family: var(--font-inconsolata, "Inconsolata Variable", monospace);
+    font-size: clamp(2.5rem, 8vw, 6.5rem);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin: 0 0 2.5rem 0;
+    max-width: 18ch;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3ch 0.5ch;
+  }
+
+  .title-word {
+    display: inline-block;
+    opacity: 0;
+    animation: title-word-reveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(0.8s + var(--word-index) * 0.08s);
+  }
+
+  @keyframes title-word-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(30px) rotateX(20deg);
+      filter: blur(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) rotateX(0);
+      filter: blur(0);
+    }
+  }
+
+  /* Description styling */
+  .intro-description-wrapper {
+    position: relative;
+    max-width: 45ch;
+    opacity: 0;
+    animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) 1.4s forwards;
+  }
+
+  .intro-description-ornament {
+    width: 48px;
+    height: 2px;
+    background: var(--text-primary);
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .intro-description-ornament::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: -3px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid var(--text-primary);
+    border-radius: 50%;
+  }
+
+  .intro-description {
+    font-family: var(--font-inconsolata, "Inconsolata Variable", monospace);
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    color: var(--text-primary);
+    font-weight: 400;
+    margin: 0;
+  }
+
+  /* Scroll hint */
+  .intro-scroll-hint {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-muted);
+    opacity: 0;
+    animation:
+      fade-in 1s ease 2.5s forwards,
+      float 2.5s ease-in-out 3s infinite;
+  }
+
+  .intro-scroll-hint svg {
+    display: block;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    to { opacity: 1; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* Tablet adjustments */
+  @media (max-width: 1024px) {
+    .intro-content {
+      padding: 3rem clamp(1.5rem, 6vw, 4rem);
+    }
+
+    .intro-title {
+      max-width: 16ch;
+    }
+
+    .intro-description-wrapper {
+      max-width: 42ch;
+    }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .intro-content {
+      padding: 3rem 1.5rem;
+      justify-content: flex-end;
+      padding-bottom: 6rem;
+    }
+
+    .intro-film-rolls {
+      margin-bottom: 2rem;
+      gap: 0.5rem;
+    }
+
+    .intro-title {
+      font-size: clamp(2rem, 12vw, 3.5rem);
+      margin-bottom: 2rem;
+      max-width: 100%;
+    }
+
+    .intro-description-wrapper {
+      max-width: 100%;
+    }
+
+    .intro-description {
+      font-size: clamp(0.9rem, 4vw, 1.05rem);
+      line-height: 1.6;
+    }
+
+    .intro-scroll-hint {
+      bottom: 2rem;
+    }
+
+    @keyframes intro-image-reveal {
+      from {
+        opacity: 0;
+        transform: scale(1.1);
+        filter: brightness(0.3) contrast(1.4) saturate(0);
+      }
+      to {
+        opacity: 0.25;
+        transform: scale(1.02);
+        filter: brightness(0.35) contrast(1.2) saturate(0.6);
+      }
+    }
+  }
+
+  /* Reduce motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .intro-image,
+    .intro-film-grain,
+    .intro-back-link,
+    .intro-roll-id,
+    .title-word,
+    .intro-description-wrapper,
+    .intro-scroll-hint {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+    }
+
+    .intro-image {
+      opacity: 0.35;
+      filter: brightness(0.4) contrast(1.2) saturate(0.7);
+    }
+
+    .intro-scroll-hint {
+      opacity: 0.6;
+    }
+  }
+
+  /* High-end displays */
+  @media (min-width: 1920px) {
+    .intro-content {
+      max-width: 1400px;
+      padding-left: clamp(6rem, 10vw, 8rem);
+    }
+  }
+</style>

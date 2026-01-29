@@ -1,0 +1,66 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import PhotoEssayLayout from "../../layouts/PhotoEssayLayout.astro";
+import IntroSpread from "../../components/photoessay/IntroSpread.astro";
+import PhotoSpread from "../../components/photoessay/PhotoSpread.astro";
+import { getRollSlug } from "../../components/rolls";
+import type { CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const essays = await getCollection("photoessays");
+  return essays.map((essay) => ({
+    params: { slug: essay.id },
+    props: { essay },
+  }));
+}
+
+const { essay } = Astro.props;
+const { title, description, pubDate, updatedDate, cover, spreads, author, rolls } = essay.data;
+
+const coverImage = cover?.src || spreads[0]?.photos[0]?.src;
+const coverAlt = cover?.alt || spreads[0]?.photos[0]?.alt || title;
+
+// Fetch author data
+const authorObject = await getEntry(author);
+const authorFullName = authorObject?.data.name || "Unknown";
+const authorSlug = authorObject?.id || "";
+
+// Prepare rolls data
+const rollSlugs = rolls?.map((roll) => getRollSlug(roll.id)) || [];
+
+// Extract captions for search indexing
+const captions = spreads
+  .filter((spread) => spread.caption)
+  .map((spread) => spread.caption as string);
+---
+
+<PhotoEssayLayout
+  title={title}
+  description={description}
+  image={coverImage}
+  pubDate={pubDate}
+  updatedDate={updatedDate}
+  spreadCount={spreads.length + 1}
+  authorName={authorFullName}
+  authorSlug={authorSlug}
+  rolls={rollSlugs}
+  captions={captions}
+>
+  <IntroSpread
+    title={title}
+    description={description}
+    coverImage={coverImage}
+    coverAlt={coverAlt}
+    rollIds={rollSlugs}
+  />
+  {
+    spreads.map((spread, index) => (
+      <PhotoSpread
+        layout={spread.layout}
+        photos={spread.photos}
+        caption={spread.caption}
+        index={index + 1}
+      />
+    ))
+  }
+</PhotoEssayLayout>

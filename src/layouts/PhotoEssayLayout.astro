@@ -1,0 +1,238 @@
+---
+import { ClientRouter } from "astro:transitions";
+import Header from "../components/Header.astro";
+import IconPill from "../components/IconPill.astro";
+import "@fontsource-variable/overpass-mono";
+import "@fontsource-variable/inconsolata";
+import "../styles/global.css";
+import "../styles/photoessay.css";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  pubDate?: Date;
+  updatedDate?: Date;
+  spreadCount: number;
+  authorName?: string;
+  authorSlug?: string;
+  rolls?: string[];
+  captions?: string[];
+}
+
+const { title, description, image, pubDate, updatedDate, spreadCount, authorName, authorSlug, rolls, captions } =
+  Astro.props;
+
+const publishedDate = pubDate?.toDateString().split(" ").slice(1).join(" ");
+const updatedDateStr = updatedDate?.toDateString().split(" ").slice(1).join(" ");
+
+const baseUrl = new URL(Astro.request.url).origin;
+const siteName = "120 Shots";
+const pageTitle = title.concat(" › ", siteName);
+---
+
+<html class="" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/webp" href="/120Shots_icon_background.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="og:title" content={pageTitle} />
+    <meta name="og:description" content={description} />
+    <meta name="description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content={siteName} />
+    {image && <meta name="og:image" content={image} />}
+    <meta name="article:published_time" content={pubDate?.toISOString()} />
+    {updatedDate && <meta name="article:modified_time" content={updatedDate.toISOString()} />}
+    <meta name="og:url" content={Astro.url} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{pageTitle}</title>
+    <ClientRouter />
+  </head>
+  <body class="essay-body">
+    <!-- Search indexing content (visually hidden) -->
+    <div
+      data-pagefind-body
+      class="absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0"
+      style="clip: rect(0, 0, 0, 0);"
+      aria-hidden="true"
+    >
+      <h1 data-pagefind-meta="title">{title}</h1>
+      {image && <img data-pagefind-meta="image" src={image} alt="" />}
+      <p>{description}</p>
+      {captions && captions.length > 0 && (
+        <div>
+          {captions.map((caption) => <p>{caption}</p>)}
+        </div>
+      )}
+    </div>
+
+    <!-- Modal portal for search (escapes backdrop-filter containing block) -->
+    <div id="modal-portal"></div>
+
+    <!-- Unified header in compact mode (no title since it's in intro spread) -->
+    <Header compact={true} />
+
+    <!-- Main essay container with scroll snap -->
+    <main class="essay-container" id="essay-container" data-spread-count={spreadCount}>
+      <slot />
+      
+      <!-- Essay footer with author and rolls -->
+      <footer class="essay-footer spread">
+        <div class="essay-footer-content">
+          {authorName && authorSlug && (
+            <div class="essay-author">
+              <span class="essay-author-prefix">—</span>
+              <a href={`/authors/${authorSlug}`} class="essay-author-link">
+                {authorName}
+              </a>
+            </div>
+          )}
+          
+          {rolls && rolls.length > 0 && (
+            <div class="essay-rolls">
+              <span class="essay-rolls-label">Film Rolls</span>
+              <div class="essay-rolls-list">
+                {rolls.map((rollSlug) => (
+                  <IconPill icon="mdi:film" url={`/rolls/${rollSlug}`}>
+                    {rollSlug}
+                  </IconPill>
+                ))}
+              </div>
+            </div>
+          )}
+          
+          <div class="essay-dates">
+            {publishedDate && <span>Published: {publishedDate}</span>}
+            {updatedDateStr && <span>Updated: {updatedDateStr}</span>}
+          </div>
+
+          <a href="/essays" class="essay-footer-all-link">
+            <span>Browse All Photo Essays</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Progress indicator -->
+    <div class="essay-progress" id="essay-progress" aria-label="Spread progress">
+      <svg class="progress-ring" viewBox="0 0 36 36">
+        <circle
+          class="progress-ring-bg"
+          cx="18"
+          cy="18"
+          r="16"
+          fill="none"
+          stroke-width="2"
+        />
+        <circle
+          class="progress-ring-fill"
+          cx="18"
+          cy="18"
+          r="16"
+          fill="none"
+          stroke-width="2"
+          stroke-dasharray="100.53"
+          stroke-dashoffset="100.53"
+        />
+      </svg>
+      <span class="progress-text">
+        <span class="progress-current">1</span>
+        <span class="progress-separator">/</span>
+        <span class="progress-total">{spreadCount}</span>
+      </span>
+    </div>
+
+    <script>
+      function initEssayNav() {
+        const container = document.getElementById("essay-container");
+        const spreads = document.querySelectorAll(".spread");
+        const progressRing = document.querySelector(".progress-ring-fill") as SVGCircleElement;
+        const progressCurrent = document.querySelector(".progress-current");
+
+        if (!container || !spreads.length) return;
+
+        const totalSpreads = spreads.length;
+        const circumference = 2 * Math.PI * 16; // r=16
+        let currentIndex = 0;
+
+        // Update progress indicator
+        function updateProgress(index: number) {
+          currentIndex = index;
+          const progress = (index + 1) / totalSpreads;
+          const offset = circumference * (1 - progress);
+
+          if (progressRing) {
+            progressRing.style.strokeDashoffset = String(offset);
+          }
+          if (progressCurrent) {
+            progressCurrent.textContent = String(index + 1);
+          }
+        }
+
+        // Observe spreads for scroll position
+        const observerOptions = {
+          root: container,
+          threshold: 0.5,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const index = Array.from(spreads).indexOf(entry.target as Element);
+              updateProgress(index);
+            }
+          });
+        }, observerOptions);
+
+        spreads.forEach((spread) => observer.observe(spread));
+
+        // Keyboard navigation
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowDown" || e.key === "ArrowRight" || e.key === "j") {
+            e.preventDefault();
+            const nextIndex = Math.min(currentIndex + 1, spreads.length - 1);
+            spreads[nextIndex]?.scrollIntoView({ behavior: "smooth" });
+          } else if (e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "k") {
+            e.preventDefault();
+            const prevIndex = Math.max(currentIndex - 1, 0);
+            spreads[prevIndex]?.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+
+        // Click on progress to go to next spread
+        const progressEl = document.getElementById("essay-progress");
+        if (progressEl) {
+          progressEl.addEventListener("click", () => {
+            const nextIndex = (currentIndex + 1) % totalSpreads;
+            spreads[nextIndex]?.scrollIntoView({ behavior: "smooth" });
+          });
+        }
+
+        // Initialize first spread
+        updateProgress(0);
+      }
+
+      // Move search modal to portal (escapes backdrop-filter containing block)
+      function moveModalToPortal() {
+        const modal = document.getElementById("myModal");
+        const portal = document.getElementById("modal-portal");
+        if (modal && portal && modal.parentElement !== portal) {
+          portal.appendChild(modal);
+        }
+      }
+
+      // Initialize on page load and after view transitions
+      document.addEventListener("astro:page-load", () => {
+        initEssayNav();
+        moveModalToPortal();
+      });
+    </script>
+  </body>
+</html>

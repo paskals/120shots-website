@@ -1,63 +1,62 @@
 ---
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 import Hamburger from "./Hamburger.astro";
 import Navigation from "./Navigation.astro";
 import ThemeIcon from "./ThemeIcon.astro";
-import { getImage } from "astro:assets";
-const { is404Page = false } = Astro.props; // Get the prop from Astro.props
+
+interface Props {
+  is404Page?: boolean;
+  compact?: boolean;
+  essayTitle?: string;
+}
+
+const { is404Page = false, compact = false, essayTitle } = Astro.props;
 
 const favicon_avif = {
   src: "/120Shots_icon_nobackground.png",
   alt: "favicon",
-  // inferSize: true,
   width: "512",
   height: "512",
 };
 ---
 
-<header
-  class="mb-[30px] dark:bg-[rgb(34,33,37)] bg-[#f2f2f2] h-16 w-screen px-4 flex justify-center"
->
-  <nav
-    class="flex items-center justify-between w-full h-full relative align-center max-w-7xl"
-  >
-    {
-      !is404Page && (
-        <div class="w-auto h-auto">
-          <a href="/" class=" min-w-fit min-h-fit">
-            <Image
-              class="favicon absolute left-0 dark:invert -mt-[25px]"
-              src={favicon_avif.src}
-              alt="Home"
-              width={50}
-              height={50}
-              loading={"eager"}
-            />
-          </a>
-        </div>
-      )
-    }
-    {
-      !is404Page && (
-        <div class="absolute right-[55px] -mb-[5px]">
+<header class={compact ? "site-header site-header--compact" : "site-header"}>
+  <nav class="site-header__nav">
+    {!is404Page && (
+      <div class="site-header__left">
+        <a href="/" class="site-header__logo">
+          <Image
+            class="dark:invert"
+            src={favicon_avif.src}
+            alt="Home"
+            width={compact ? 32 : 50}
+            height={compact ? 32 : 50}
+            loading="eager"
+            transition:name="site-logo"
+          />
+        </a>
+        {compact && essayTitle && (
+          <span class="site-header__title" transition:name="essay-title">
+            {essayTitle}
+          </span>
+        )}
+      </div>
+    )}
+    {!is404Page && (
+      <div class="site-header__right">
+        <div class="site-header__theme" transition:name="site-theme-toggle">
           <ThemeIcon />
         </div>
-      )
-    }
-    {
-      !is404Page && (
-        <div class="-mt-[3px]">
+        <div class="site-header__hamburger" transition:name="site-hamburger">
           <Hamburger />
         </div>
-      )
-    }
-    {
-      !is404Page && (
-        <div class="absolute right-0">
-          <Navigation />
-        </div>
-      )
-    }
+      </div>
+    )}
+    {!is404Page && (
+      <div class="site-header__navigation">
+        <Navigation />
+      </div>
+    )}
   </nav>
   <slot />
 </header>

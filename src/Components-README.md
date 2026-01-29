@@ -2,28 +2,32 @@
 
 ### Refer to [Astro docs on Components](https://docs.astro.build/en/basics/astro-components/)
 
-## TODO: Update
+## Key Components
 
-> Explain FilmStrip.astro
+### Photo Essay Components
 
-For pages such as [short form](https://www.erfianugrah.com/short_form/), [long form](https://www.erfianugrah.com/long_form/), any [tag](https://www.erfianugrah.com/long_form/tags/gleichgesinnte/) pages the file that's being used to structure the layout is [BlogPost.astro](layouts/BlogPost.astro)
+- **EssaySpread.astro** - Renders individual spreads within a photo essay with various layouts (single, duo, trio, trio-l, trio-r)
+- **EssayProgress.astro** - Circular progress indicator showing current position in essay
 
-The [Footer.astro](components/Footer.astro) will reference [astro-icon](../package.json) for the social media icons
+### Gallery Components
 
-[getRandomImage.astro](components/getRandomImage.astro) is used in [TagLayout.astro](layouts/TagLayout.astro) to randomise the images chosen from the [Content Collections](content/)
+- **FilmStrip.astro** - Displays film roll thumbnails in a horizontal strip
+- **Masonry.astro** - Image gallery layout using CSS masonry grid, references [masonry.css](styles/MasonryLayout.css) and [glightbox.js](scripts/lightbox.js) for lightbox functionality
 
-[Pagefind.astro](components/Pagefind.astro) is used in [Navigation.astro](components/Navigation.astro) and is using the [Pagefind](https://pagefind.app/) integration
+### Layout Components
 
-[ThemeIcon.astro](components/ThemeIcon.astro) is referencing [themetoggle.js](scripts/themetoggle.js) for light/dark mode switch.
+- **Header.astro** - Site header containing [Hamburger.astro](components/Hamburger.astro), [ThemeIcon.astro](components/ThemeIcon.astro), [Navigation.astro](components/Navigation.astro), and [Pagefind.astro](components/Pagefind.astro)
+- **Footer.astro** - Site footer with social media icons via [astro-icon](../package.json)
+- **Homepage.astro** - Used in [index.astro](pages/index.astro), references [homepage.js](scripts/homePage.js) for randomized image display
 
-[Hamburger.astro](components/Hamburger.astro), [ThemeIcon.astro](components/ThemeIcon.astro), [Navigation.astro](components/Navigation.astro) and [Pagefind.astro](components/Pagefind.astro) are used in [Header.astro](components/Header.astro)
+### Utility Components
 
-[Masonry.astro](components/Masonry.astro) is used in [MarkdownPostLayout.astro](layouts/MarkdownPostLayout.astro) for the rendering of the images that's referenced in the [Content Collections](content/) for specific posts. [Masonry.astro](components/Masonry.astro) is referencing [masonry.css](styles/MasonryLayout.css) and [glightbox.js](scripts/lightbox.js)
+- **Pagefind.astro** - Search functionality using [Pagefind](https://pagefind.app/) integration
+- **ThemeIcon.astro** - Light/dark mode toggle, references [themetoggle.js](scripts/themetoggle.js)
+- **getRandomImage.astro** - Randomizes images from [Content Collections](content/)
+- **sortbydate.jsx** - Orders content by date for listing pages
 
-[sortbydate.jsx](components/sortbydate.jsx) is used in [Pages](pages/) to order the posts that are being rendered by [BlogPost.astro](layouts/BlogPost.astro).
+### Typography Components
 
-[Homepage.astro](components/Homepage.astro) is used in [index.astro](pages/index.astro) and is referencing [homepage.js](scripts/homePage.js), this functions the same as [getRandomImage.astro](components/getRandomImage.astro) to randomise the pictures shown, but structures are different in terms of the props being passed
-
-[Prose.astro](components/Prose.astro) is a [TailwindCSS](../tailwind.config.mjs) layout and is being used throughout the site for formmatting. [Prose_cv.astro](components/Prose_cv.astro) is only for the [cv](content/cv) collection. [Prose_headings.astro](components/Prose_headings.astro) as the name mentions, formats headings.
-
-The other files are remnants during the development process and can be ignored.
+- **Prose.astro** - [TailwindCSS](../tailwind.config.mjs) typography layout used throughout the site
+- **Prose_headings.astro** - Heading formatting

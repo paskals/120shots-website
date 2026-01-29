@@ -3,8 +3,7 @@ import sanitize from "sanitize-filename";
 import path from "path";
 import sharp, { type OutputInfo } from "sharp";
 import exif from "exif-reader";
-import PrettyYAML from "json-to-pretty-yaml";
-import { parse } from "yaml";
+import { parse, stringify } from "yaml";
 
 export const TEMP_FOLDER = "./tmp";
 
@@ -148,55 +147,114 @@ export const deleteTempFiles = (newFiles: string[]) => {
   });
 };
 
-export const createNewPost = (
+/**
+ * Adds blank lines between top-level items in specified YAML arrays
+ */
+function addBlankLinesBetweenArrayItems(
+  yamlString: string,
+  arrayNames: string[]
+): string {
+  const lines = yamlString.split('\n');
+  const result: string[] = [];
+  let currentArray: string | null = null;
+  let firstItemInArray = true;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    let justEnteredArray = false;
+
+    // Check if entering a target array
+    for (const arrayName of arrayNames) {
+      if (line === `${arrayName}:`) {
+        currentArray = arrayName;
+        firstItemInArray = true;
+        justEnteredArray = true;
+        break;
+      }
+    }
+
+    // Check if exited array (dedent to root) - but not on the line we just entered
+    if (currentArray && !justEnteredArray && line.length > 0 && !line.startsWith(' ')) {
+      currentArray = null;
+    }
+
+    // Add blank line before array items (except first)
+    if (currentArray && line.match(/^  - /)) {
+      if (!firstItemInArray) {
+        result.push('');
+      }
+      firstItemInArray = false;
+    }
+
+    result.push(line);
+  }
+
+  return result.join('\n');
+}
+
+/**
+ * Converts object to YAML with custom formatting and spacing
+ */
+export function formatYamlWithSpacing(
+  obj: any,
+  arrayNamesToSpace: string[] = []
+): string {
+  let yamlString = stringify(obj, {
+    indent: 2,
+    lineWidth: 0,
+    minContentWidth: 0,
+    defaultStringType: 'PLAIN',
+    defaultKeyType: 'PLAIN',
+  });
+
+  if (arrayNamesToSpace.length > 0) {
+    yamlString = addBlankLinesBetweenArrayItems(yamlString, arrayNamesToSpace);
+  }
+
+  return yamlString;
+}
+
+export const createNewEssay = (
   imageURLs: string[],
-  postTitle?: string,
-  frontMatterParameters?: {},
+  essayTitle?: string,
+  options?: { rolls?: string[]; filmStocks?: string[]; tags?: string[] },
 ) => {
   const now = new Date();
-  const title = postTitle || "Draft post";
-  const fileName =
-    slugify(now.toISOString().split("T")[0] + "-" + title) + ".mdx";
-  const filePath = path.normalize("./src/content/posts/") + fileName;
+  const title = essayTitle || "Draft essay";
+  const dateStr = now.toISOString().split("T")[0];
+  const fileName = slugify(dateStr + "-" + title) + ".yaml";
+  const filePath = path.normalize("./src/content/photoessays/") + fileName;
 
-  const textContent = `---
-title: ${title}
-slug: ${slugify(title)}
-pubDate: ${now.toISOString()}
-updatedDate: ${now.toISOString()}
-tags: []
-author: paskal
-image:
-  {
-    src: ${imageURLs[Math.floor(Math.random() * imageURLs.length)]},
-    alt: "${title}",
-    positionx: 50%,
-    positiony: 50%,
-  }
-description: ""
-${
-  frontMatterParameters
-    ? Object.entries(frontMatterParameters).map(
-        ([key, value]) => `${key}: ${JSON.stringify(value)}\n`,
-      )
-    : ""
-}
----
-import Masonry from "../../components/Masonry.astro";
-import FilmStrip from "../../components/FilmStrip.astro";
+  // Build spreads - one single-layout spread per image
+  const spreads = imageURLs.map((url, index) => ({
+    layout: "single",
+    photos: [
+      {
+        src: url,
+        alt: `${title} ${index + 1}`,
+      },
+    ],
+  }));
 
-> Post content goes here
+  // Build essay object
+  const essay = {
+    title,
+    description: "",
+    pubDate: dateStr,
+    author: "paskal",
+    ...(options?.rolls && options.rolls.length > 0 && { rolls: options.rolls }),
+    ...(options?.filmStocks &&
+      options.filmStocks.length > 0 && { filmStocks: options.filmStocks }),
+    tags: options?.tags || [],
+    cover: {
+      src: imageURLs[0],
+      alt: `${title} cover`,
+    },
+    spreads,
+  };
 
-<Masonry
-  columns='3'
-  images={
-    [
-      ${imageURLs.map((url, index) => `{ src: "${url}", alt: "${title} ${index}" }`).join(`,\n      `)}
-    ]
-  }
-/>`;
-
-  return saveFile(filePath, textContent);
+  const yamlContent = formatYamlWithSpacing(essay, ['spreads']);
+  return saveFile(filePath, yamlContent);
 };
 
 interface FilmRollObject {
@@ -216,6 +274,8 @@ interface FilmRollObject {
       alt: string;
       positionx?: string;
       positiony?: string;
+      labels?: string[];
+      location?: string;
     };
   }[];
 }
@@ -230,8 +290,10 @@ export const createNewRoll = async (options: {
   camera: string;
   format: string;
   description?: string;
+  useVisionAPI?: boolean;
 }) => {
-  const { shots, rollName, film, camera, format, description } = options;
+  const { shots, rollName, film, camera, format, description, useVisionAPI } =
+    options;
 
   let roll: FilmRollObject = {
     manualId: slugify(rollName).toUpperCase(),
@@ -263,6 +325,21 @@ export const createNewRoll = async (options: {
     });
   }
 
+  // Enrich with Vision API if requested
+  if (useVisionAPI) {
+    try {
+      console.log("🔍 Enriching roll with Vision API descriptions...");
+      const { RollDescriptionUpdater } = await import(
+        "./update-roll-descriptions.js"
+      );
+      const updater = new RollDescriptionUpdater(false); // No backups needed for new rolls
+      roll = await updater.enrichRollWithVisionData(roll);
+    } catch (error: any) {
+      console.warn(`⚠️  Vision API enrichment failed: ${error.message}`);
+      console.log("📝 Continuing with basic alt text descriptions...");
+    }
+  }
+
   const firstDate = roll.shots[0].date
     ? new Date(roll.shots[0].date)
     : new Date();
@@ -271,7 +348,7 @@ export const createNewRoll = async (options: {
   const fileName = slugify(rollName).toUpperCase() + ".yaml";
   roll.manualId = `${firstYear}/${roll.manualId}`;
   const filePath = `${path.normalize("./src/content/rolls/" + firstYear)}/${fileName}`;
-  const yamlContent = PrettyYAML.stringify(roll);
+  const yamlContent = formatYamlWithSpacing(roll, ['shots']);
 
   return saveFile(filePath, yamlContent);
 };
@@ -293,10 +370,10 @@ const getRollData = async (rollName: string) => {
     : undefined;
 };
 
-export const createPostFromRolls = async (
+export const createEssayFromRolls = async (
   rolls: string[],
-  postTitle?: string,
-  frontMatterParameters?: {},
+  essayTitle?: string,
+  options?: { tags?: string[] },
 ) => {
   // Get rolls data from content library
   const rollsData: FilmRollObject[] = [];
@@ -314,63 +391,127 @@ export const createPostFromRolls = async (
 
   const now = new Date();
   const title =
-    postTitle ||
-    `Draft post: ${rollsData.map((roll) => roll.manualId).join(", ")}`;
+    essayTitle ||
+    `Draft essay: ${rollsData.map((roll) => roll.manualId).join(", ")}`;
+  const dateStr = now.toISOString().split("T")[0];
+  const fileName = slugify(dateStr + "-" + title) + ".yaml";
+  const filePath = path.normalize("./src/content/photoessays/") + fileName;
 
-  const fileName =
-    slugify(now.toISOString().split("T")[0] + "-" + title) + ".mdx";
-  const filePath = path.normalize("./src/content/posts/") + fileName;
+  // Extract film stocks from rolls (unique values)
+  const filmStocks = [...new Set(rollsData.map((roll) => roll.film))];
 
-  const randomShot =
-    rollsData[0].shots[Math.floor(Math.random() * rollsData[0].shots.length)];
+  // Extract roll IDs
+  const rollIds = rollsData.map((roll) => roll.manualId);
 
-  const textContent = `---
-title: "${title}"
-slug: ${slugify(title)}
-pubDate: ${now.toISOString()}
-updatedDate: ${now.toISOString()}
-tags: []
-rolls: \n  ${rollsData.map((roll) => `- ${roll.manualId}`).join("\n  ")}
-author: paskal
-image:
-  {
-    src: ${randomShot.image.src},  
-    alt: "${title}",
-    positionx: ${randomShot.image.positionx},
-    positiony: ${randomShot.image.positiony},
+  // Collect all visible shots from all rolls
+  const allShots: { src: string; alt: string }[] = [];
+  for (const roll of rollsData) {
+    for (const shot of roll.shots) {
+      if (!shot.hidden) {
+        allShots.push({
+          src: shot.image.src,
+          alt: shot.image.alt,
+        });
+      }
+    }
   }
-description: ""
-${
-  frontMatterParameters
-    ? Object.entries(frontMatterParameters).map(
-        ([key, value]) => `${key}: ${JSON.stringify(value)}\n`,
-      )
-    : ""
-}
----
-import Masonry from "../../components/Masonry.astro";
-import FilmStrip from "../../components/FilmStrip.astro";
 
-> Post content goes here
+  // Build spreads with varied layouts for visual interest
+  // Pattern: single → duo → trio → repeat
+  const spreads: {
+    layout: string;
+    photos: { src: string; alt: string }[];
+  }[] = [];
+  const layoutPattern = ["single", "duo", "trio"];
+  let patternIndex = 0;
+  let shotIndex = 0;
 
-${rollsData
-  .map((roll) => {
-    // Make a new section per roll with a masonry element
-    return `## ${roll.manualId.toUpperCase()}
+  while (shotIndex < allShots.length) {
+    const layout = layoutPattern[patternIndex % layoutPattern.length];
+    const photosNeeded = layout === "single" ? 1 : layout === "duo" ? 2 : 3;
+    const photosAvailable = allShots.length - shotIndex;
 
-  <Masonry
-  columns='3'
-  images = {
-    [
-      ${roll.shots
-        .filter((shot) => !shot.hidden)
-        .map((shot) => `{ src: "${shot.image.src}", alt: "${shot.image.alt}" }`)
-        .join(`,\n      `)}
-    ]
+    // If we don't have enough photos for this layout, use what's left
+    const photosToUse = Math.min(photosNeeded, photosAvailable);
+    const actualLayout =
+      photosToUse === 1 ? "single" : photosToUse === 2 ? "duo" : "trio";
+
+    const photos = allShots.slice(shotIndex, shotIndex + photosToUse);
+    spreads.push({
+      layout: actualLayout,
+      photos,
+    });
+
+    shotIndex += photosToUse;
+    patternIndex++;
   }
-/>`;
-  })
-  .join("\n\n")}`;
 
-  return saveFile(filePath, textContent);
+  // Use first visible shot as cover
+  const cover =
+    allShots.length > 0
+      ? { src: allShots[0].src, alt: allShots[0].alt }
+      : { src: "", alt: title };
+
+  // Build essay object
+  const essay = {
+    title,
+    description: "",
+    pubDate: dateStr,
+    author: "paskal",
+    rolls: rollIds,
+    filmStocks,
+    tags: options?.tags || [],
+    cover,
+    spreads,
+  };
+
+  const yamlContent = formatYamlWithSpacing(essay, ['spreads']);
+  return saveFile(filePath, yamlContent);
+};
+
+/**
+ * Reformats an existing YAML file (roll or essay) with consistent formatting
+ * @param filePath - Path to the YAML file to reformat
+ * @param createBackup - Whether to create a backup of the original file
+ * @returns Promise that resolves with the file path when complete
+ */
+export const reformatYamlFile = async (
+  filePath: string,
+  createBackup: boolean = true,
+) => {
+  // Check if file exists
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`File not found: ${filePath}`);
+  }
+
+  // Read and parse the YAML file
+  const yamlContent = fs.readFileSync(filePath, "utf8");
+  const data = parse(yamlContent);
+
+  // Create backup if requested
+  if (createBackup) {
+    const backupPath = filePath + ".bak";
+    fs.writeFileSync(backupPath, yamlContent);
+    console.log(`📦 Backup created: ${backupPath}`);
+  }
+
+  // Determine file type and appropriate array names to space
+  let arrayNames: string[] = [];
+  if (data.spreads) {
+    arrayNames = ['spreads'];
+    console.log("📄 Detected: Photo essay");
+  } else if (data.shots) {
+    arrayNames = ['shots'];
+    console.log("📄 Detected: Film roll");
+  } else {
+    throw new Error("Unknown YAML format (no 'spreads' or 'shots' found)");
+  }
+
+  // Reformat with spacing
+  const reformattedYaml = formatYamlWithSpacing(data, arrayNames);
+
+  // Write back to file
+  fs.writeFileSync(filePath, reformattedYaml, "utf8");
+
+  return filePath;
 };

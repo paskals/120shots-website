@@ -12,38 +12,45 @@ const imagesByFilm = {};
 const altsByFilm = {};
 
 const films: CollectionEntry<"films">[] = [];
-const allPosts = await getCollection("posts");
+const allEssays = await getCollection("photoessays");
 const allFilms = await getCollection("films");
 
 for (const film of allFilms) {
-  // Filter all posts to only include those that contain the film stock
-  const filteredPosts = allPosts.filter((post) => {
-    if (post.data.filmStocks === undefined) {
+  // Filter all essays to only include those that contain the film stock
+  const filteredEssays = allEssays.filter((essay) => {
+    if (essay.data.filmStocks === undefined) {
       return false;
     } else {
-      return post.data.filmStocks
+      return essay.data.filmStocks
         .map((filmStock) => filmStock.id)
         .includes(film.id);
     }
   });
 
-  // If there are any posts that contain the film stock, iterate over them to get the images
-  if (filteredPosts.length > 0) {
+  // If there are any essays that contain the film stock, iterate over them to get the images
+  if (filteredEssays.length > 0) {
     if (!imagesByFilm[film.id]) {
       imagesByFilm[film.id] = [];
       altsByFilm[film.id] = [];
       films.push(await getEntry("films", film.id));
     }
 
-    for (const post of filteredPosts) {
-      if (post.data.image?.src) {
+    for (const essay of filteredEssays) {
+      const coverImage =
+        essay.data.cover?.src || essay.data.spreads[0]?.photos[0]?.src;
+      const coverAlt =
+        essay.data.cover?.alt ||
+        essay.data.spreads[0]?.photos[0]?.alt ||
+        essay.data.title;
+
+      if (coverImage) {
         const imageAsset = await getImage({
-          src: post.data.image?.src,
-          alt: post.data.image?.alt,
+          src: coverImage,
+          alt: coverAlt,
           inferSize: true,
         });
         imagesByFilm[film.id].push(imageAsset ? imageAsset.src : null);
-        altsByFilm[film.id].push(post.data.image?.alt);
+        altsByFilm[film.id].push(coverAlt);
       }
     }
   }

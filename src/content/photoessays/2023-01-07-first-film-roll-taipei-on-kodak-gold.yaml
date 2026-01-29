@@ -1,0 +1,120 @@
+title: First Film Roll – Taipei On Kodak Gold
+description: My first film photography journey begins in Taipei, exploring the streets with a Nikon F3 and Kodak Gold 200
+pubDate: 2023-01-07
+author: paskal
+rolls:
+  - 2021/TPE-01
+filmStocks:
+  - gold-200
+tags:
+  - taiwan
+  - first roll
+  - nikon F3
+cover:
+  src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-014-EDC50E.webp
+  alt: First glimpse of Taipei through film
+spreads:
+  - layout: duo-l
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-006-883778.webp
+        alt: Taipei neighborhood view through a window
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-002-C81A0C.webp
+        alt: Taipei street with pedestrians and urban architecture
+      # - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-003-7B5DAD.webp
+      #   alt: High-rise buildings against the Taipei sky
+    caption: Hello, world! My first roll of film in Taipei
+
+  - layout: trio-r
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-013-7CBD3D.webp
+        alt: Urban street scene with local atmosphere
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-005-0B57AE.webp
+        alt: Shopping mall interior with warm lighting
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-007-66FFED.webp
+        alt: Traditional architecture amid modern buildings
+    caption: Layers of the city
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-008-2483BC.webp
+        alt: Taipei city street with vehicles and signage
+
+  - layout: trio-r
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-009-A505B4.webp
+        alt: Street corner with everyday Taipei life
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-012-45F258.webp
+        alt: Local shopfront with Taiwanese signage
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-010-B2032B.webp
+        alt: Bicycle on a bridge with highway in background
+    caption: Strange walkways
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-011-BF2C9B.webp
+        alt: Taipei city skyline
+
+  - layout: single
+    photos:  
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-014-EDC50E.webp
+        alt: Traditional asian architecture
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-015-E52BF1.webp
+        alt: Golden afternoon light on Taipei street
+    caption: Kodak Gold living up to its name
+
+  - layout: duo-r
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-016-6BE1F7.webp
+        alt: Urban intersection with pedestrians
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-017-CD1F3C.webp
+        alt: Taipei cityscape with mixed architecture
+
+  - layout: duo-l
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-018-3F50A2.webp
+        alt: Street vendor or local market scene
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-020-60E2B7.webp
+        alt: Quiet moment in a Taipei neighborhood
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-019-A6F8A2.webp
+        alt: Evening light on Taipei buildings
+
+  - layout: duo-l
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-022-37DE75.webp
+        alt: Taipei main station scene with characteristic warm tones
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-024-9B73B6.webp
+        alt: Local neighborhood with residential buildings
+    caption: Taipei station looking busy as always
+
+  - layout: duo
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-023-AF426C.webp
+        alt: Urban landscape with Taipei architecture
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-026-9306EC.webp
+        alt: Busy Taipei street with shops and signs
+
+  - layout: duo
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-027-F9DFB0.webp
+        alt: Late afternoon scene in urban Taipei
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-028-93C1AD.webp
+        alt: Street corner with local character
+    caption: Down south
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-029-588BEA.webp
+        alt: Taipei neighborhood in warm film tones
+    caption: Tainan sunset
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-031-ABC772.webp
+        alt: Final frame of the first roll in Taipei
+    caption: The last frame – hooked on film

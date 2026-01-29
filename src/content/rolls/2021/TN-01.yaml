@@ -1,294 +1,637 @@
-manualId: "2021/TN-01"
-film: "ultramax-400"
-camera: "Nikon F3"
-format: "35mm"
-description: "First fim roll."
+manualId: 2021/TN-01
+film: ultramax-400
+camera: Nikon F3
+format: 35mm
+description: First fim roll.
 shots:
   - sequence: "000"
-    date: "2021-08-26T08:57:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-26T08:57:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-000-6C532F.webp"
-      alt: "TN-01 000"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-000-6C532F.webp
+      alt: Film photo of motorcycle, scooter, automotive wheel system, fender, spoke, retail.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Motorcycle
+        - Scooter
+        - Automotive Wheel System
+        - Fender
+        - Spoke
+        - Retail
+        - Parking
+        - Bicycle wheel
+        - Moped
+        - Customer
+
   - sequence: "001"
-    date: "2021-08-26T09:02:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-26T09:02:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-001-07BE1F.webp"
-      alt: "TN-01 001"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-001-07BE1F.webp
+      alt: "Film photo of red, chinese architecture, japanese architecture. Location: Kongmiao Shopping District."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Red
+        - Chinese architecture
+        - Japanese architecture
+      location: Kongmiao Shopping District
+
   - sequence: "002"
-    date: "2021-08-26T09:07:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-26T09:07:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-002-75D6CB.webp"
-      alt: "TN-01 002"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-002-75D6CB.webp
+      alt: Film photo of flowerpot, chinese architecture, japanese architecture, houseplant, temple, shrine.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Flowerpot
+        - Chinese architecture
+        - Japanese architecture
+        - Houseplant
+        - Temple
+        - Shrine
+        - Hacienda
+        - Courtyard
+        - Stock photography
+
   - sequence: "003"
-    date: "2021-08-26T09:12:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-26T09:12:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-003-0BEE26.webp"
-      alt: "TN-01 003"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-003-0BEE26.webp
+      alt: Film photo of statue, sculpture, temple, shrub, art, spring.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Statue
+        - Sculpture
+        - Temple
+        - Shrub
+        - Art
+        - Spring
+        - Lawn ornament
+        - Monument
+        - Garden
+        - Stone carving
+
   - sequence: "004"
-    date: "2021-08-26T09:17:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-26T09:17:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-004-84C4EC.webp"
-      alt: "TN-01 004"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-004-84C4EC.webp
+      alt: Film photo of chinese architecture, architecture, flowerpot, column, japanese architecture, place of worship.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Chinese architecture
+        - Architecture
+        - Flowerpot
+        - Column
+        - Japanese architecture
+        - Place of worship
+        - Temple
+        - Shrine
+        - Shade
+        - Houseplant
+
   - sequence: "005"
-    date: "2021-08-26T09:22:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-26T09:22:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-005-F52114.webp"
-      alt: "TN-01 005"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-005-F52114.webp
+      alt: Film photo of flowerpot, houseplant, hawker, bicycle wheel, produce, peddler.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Flowerpot
+        - Houseplant
+        - Hawker
+        - Bicycle wheel
+        - Produce
+        - Peddler
+        - Shopkeeper
+        - Orange
+        - Fruit
+        - Food
+
   - sequence: "006"
-    date: "2021-08-26T09:27:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-26T09:27:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-006-F01759.webp"
-      alt: "TN-01 006"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-006-F01759.webp
+      alt: Film photo of town, street, alley, market.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Town
+        - Street
+        - Alley
+        - Market
+
   - sequence: "007"
-    date: "2021-08-26T09:32:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-26T09:32:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-007-1648B9.webp"
-      alt: "TN-01 007"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-007-1648B9.webp
+      alt: Film photo of land vehicle, vehicle, mode of transport, wheel, transport, tire.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Land vehicle
+        - Vehicle
+        - Mode of transport
+        - Wheel
+        - Transport
+        - Tire
+        - Motor vehicle
+        - Motorcycle
+        - Automotive lighting
+        - Road
+
   - sequence: "008"
-    date: "2021-08-27T10:12:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-27T10:12:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-008-5C78F2.webp"
-      alt: "TN-01 008"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-008-5C78F2.webp
+      alt: Film photo of mode of transport, urban area, road, city, street, automotive lighting.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Mode of transport
+        - Urban area
+        - Road
+        - City
+        - Street
+        - Automotive lighting
+        - Asphalt
+        - Metropolitan area
+        - Lane
+        - Thoroughfare
+
   - sequence: "009"
-    date: "2021-08-27T10:17:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-27T10:17:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-009-E5E477.webp"
-      alt: "TN-01 009"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-009-E5E477.webp
+      alt: Film photo of land vehicle, motorcycle, mode of transport, vehicle, wheel, tire.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Land vehicle
+        - Motorcycle
+        - Mode of transport
+        - Vehicle
+        - Wheel
+        - Tire
+        - Transport
+        - Scooter
+        - Motor vehicle
+        - Automotive lighting
+
   - sequence: "010"
-    date: "2021-08-27T10:22:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-27T10:22:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-010-1AE547.webp"
-      alt: "TN-01 010"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-010-1AE547.webp
+      alt: Film photo of train station, track, metal, iron, transport hub, rail transport.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Train station
+        - Track
+        - Metal
+        - Iron
+        - Transport hub
+        - Rail transport
+        - Electricity
+        - Metro station
+        - Engineering
+        - Steel
+
   - sequence: "011"
-    date: "2021-08-28T10:12:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-28T10:12:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-011-468549.webp"
-      alt: "TN-01 011"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-011-468549.webp
+      alt: Film photo of wheel, tire, motorcycle, scooter, street, road.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Wheel
+        - Tire
+        - Motorcycle
+        - Scooter
+        - Street
+        - Road
+        - Neighbourhood
+        - Alley
+        - Town
+        - Automotive Tire
+
   - sequence: "012"
-    date: "2021-08-28T10:17:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-28T10:17:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-012-D2AABD.webp"
-      alt: "TN-01 012"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-012-D2AABD.webp
+      alt: Film photo of .
+      positionx: 50%
+      positiony: 50%
+      labels: []
+
   - sequence: "013"
-    date: "2021-08-28T10:22:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-28T10:22:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-013-2B513E.webp"
-      alt: "TN-01 013"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-013-2B513E.webp
+      alt: Film photo of road, street, road surface, city, town, pedestrian.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Road
+        - Street
+        - Road surface
+        - City
+        - Town
+        - Pedestrian
+        - Asphalt
+        - Thoroughfare
+        - Sidewalk
+        - Lane
+
   - sequence: "014"
-    date: "2021-08-28T10:27:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-28T10:27:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-014-269643.webp"
-      alt: "TN-01 014"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-014-269643.webp
+      alt: Film photo of tree, branch, public space, trunk, shade, woody plant.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Tree
+        - Branch
+        - Public space
+        - Trunk
+        - Shade
+        - Woody plant
+        - Spring
+        - Garden
+        - Walkway
+        - Landscaping
+
   - sequence: "015"
-    date: "2021-09-02T12:00:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-09-02T12:00:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-015-11FCC8.webp"
-      alt: "TN-01 015"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-015-11FCC8.webp
+      alt: Film photo of awning, restaurant.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Awning
+        - Restaurant
+
   - sequence: "016"
-    date: "2021-09-02T12:05:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-09-02T12:05:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-016-95A3C7.webp"
-      alt: "TN-01 016"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-016-95A3C7.webp
+      alt: Film photo of houseplant, flowerpot.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Houseplant
+        - Flowerpot
+
   - sequence: "017"
-    date: "2021-09-02T12:10:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-09-02T12:10:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-017-16E2E3.webp"
-      alt: "TN-01 017"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-017-16E2E3.webp
+      alt: Film photo of green, trunk, spring, garden, brick, walkway.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Green
+        - Trunk
+        - Spring
+        - Garden
+        - Brick
+        - Walkway
+        - Botanical garden
+
   - sequence: "018"
-    date: "2021-09-02T12:15:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-09-02T12:15:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-018-BAE711.webp"
-      alt: "TN-01 018"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-018-BAE711.webp
+      alt: Film photo of furniture, wood, interior design, table, lighting, flooring.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Furniture
+        - Wood
+        - Interior design
+        - Table
+        - Lighting
+        - Flooring
+        - Desk
+        - Chair
+        - Room
+        - Wood stain
+
   - sequence: "019"
-    date: "2021-09-02T12:20:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-09-02T12:20:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-019-95CDEE.webp"
-      alt: "TN-01 019"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-019-95CDEE.webp
+      alt: Film photo of wall, door, composite material, concrete, brick, home door.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Wall
+        - Door
+        - Composite material
+        - Concrete
+        - Brick
+        - Home Door
+        - Building material
+        - Daylighting
+        - Courtyard
+        - Backyard
+
   - sequence: "020"
-    date: "2021-09-02T12:25:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-09-02T12:25:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-020-23601B.webp"
-      alt: "TN-01 020"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-020-23601B.webp
+      alt: Film photo of wall, street, town, road, visual arts, mural.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Wall
+        - Street
+        - Town
+        - Road
+        - Visual arts
+        - Mural
+        - Sidewalk
+        - Graffiti
+        - Alley
+        - Street art
+
   - sequence: "021"
-    date: "2021-09-02T12:30:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-09-02T12:30:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-021-7544D0.webp"
-      alt: "TN-01 021"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-021-7544D0.webp
+      alt: "Film photo of wall, brick, brickwork, alley, flowerpot, sidewalk. Location: Anping Old Street."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Wall
+        - Brick
+        - Brickwork
+        - Alley
+        - Flowerpot
+        - Sidewalk
+        - Building material
+        - Houseplant
+        - Walkway
+        - Cobblestone
+      location: Anping Old Street
+
   - sequence: "022"
-    date: "2021-09-02T12:35:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-09-02T12:35:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-022-55A1D3.webp"
-      alt: "TN-01 022"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-022-55A1D3.webp
+      alt: "Film photo of chinese architecture, japanese architecture, architecture, reflection, orange, morning. Location: Tainan Park."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Chinese architecture
+        - Japanese architecture
+        - Architecture
+        - Reflection
+        - Orange
+        - Morning
+        - Tourist attraction
+        - Temple
+        - Pagoda
+        - Evening
+      location: Tainan Park
+
   - sequence: "023"
-    date: "2021-09-02T12:40:00.000Z"
-    offsetTime: "+08:00"
+    date: 2021-09-02T12:40:00.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-023-EBCE65.webp"
-      alt: "TN-01 023"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-023-EBCE65.webp
+      alt: Film photo of chinese architecture, japanese architecture, column, shade, tourist attraction, temple.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Chinese architecture
+        - Japanese architecture
+        - Column
+        - Shade
+        - Tourist attraction
+        - Temple
+        - Shinto shrine
+        - Shrine
+        - Outdoor Structure
+        - Stairs
+
   - sequence: "024"
-    date: "2021-09-03T20:06:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-09-03T20:06:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-024-3B214E.webp"
-      alt: "TN-01 024"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-024-3B214E.webp
+      alt: Film photo of train station, electricity, transport hub, metro station, night, electronic signage.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Train station
+        - Electricity
+        - Transport hub
+        - Metro station
+        - Night
+        - Electronic signage
+        - Passenger
+        - Cleanliness
+        - Rail transport
+        - Track
+
   - sequence: "025"
-    date: "2021-09-03T20:11:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-09-03T20:11:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-025-EB3F07.webp"
-      alt: "TN-01 025"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-025-EB3F07.webp
+      alt: Film photo of urban area, night, lighting, metropolitan area, electricity, street.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - Night
+        - Lighting
+        - Metropolitan area
+        - Electricity
+        - Street
+        - Metropolis
+        - Thoroughfare
+        - Midnight
+        - Traffic
+
   - sequence: "026"
-    date: "2021-09-03T20:16:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-09-03T20:16:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-026-7E607D.webp"
-      alt: "TN-01 026"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-026-7E607D.webp
+      alt: Film photo of mode of transport, urban area, metropolitan area, street, automotive lighting, lighting.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Mode of transport
+        - Urban area
+        - Metropolitan area
+        - Street
+        - Automotive lighting
+        - Lighting
+        - Electricity
+        - Electronic signage
+        - Metropolis
+        - Commercial building
+
   - sequence: "027"
-    date: "2021-09-03T20:21:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-09-03T20:21:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-027-7910C4.webp"
-      alt: "TN-01 027"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-027-7910C4.webp
+      alt: Film photo of plants, lighting, orange, light fixture, flowerpot, lantern.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Plants
+        - Lighting
+        - Orange
+        - Light fixture
+        - Flowerpot
+        - Lantern
+        - Houseplant
+        - Night
+        - Decoration
+        - Landscape lighting
+
   - sequence: "028"
-    date: "2021-09-03T20:26:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-09-03T20:26:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-028-989966.webp"
-      alt: "TN-01 028"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-028-989966.webp
+      alt: Film photo of urban area, city, night, metropolitan area, residential area, metropolis.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - City
+        - Night
+        - Metropolitan area
+        - Residential area
+        - Metropolis
+        - Neighbourhood
+        - Landmark
+        - High-rise building
+        - Bird's-eye view
+
   - sequence: "029"
-    date: "2021-09-03T20:31:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-09-03T20:31:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-029-99C206.webp"
-      alt: "TN-01 029"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-029-99C206.webp
+      alt: Film photo of furniture, interior design, table, desk, chair, lighting.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Furniture
+        - Interior design
+        - Table
+        - Desk
+        - Chair
+        - Lighting
+        - Writing desk
+        - Floor
+        - Electronic device
+        - Office Equipment
+
   - sequence: "030"
-    date: "2021-09-03T20:36:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-09-03T20:36:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-030-2737FF.webp"
-      alt: "TN-01 030"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-030-2737FF.webp
+      alt: Film photo of urban area, daytime, building, city, metropolitan area, high-rise building.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - Daytime
+        - Building
+        - City
+        - Metropolitan area
+        - High-rise building
+        - Beauty
+        - Residential area
+        - Apartment
+        - Skyscraper
+
   - sequence: "031"
-    date: "2021-09-09T05:10:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-09-09T05:10:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-031-2AA182.webp"
-      alt: "TN-01 031"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TN-01/TN-01-Kodak-Ultramax-400-031-2AA182.webp
+      alt: Film photo of urban area, city, metropolitan area, night, electricity, landmark.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - City
+        - Metropolitan area
+        - Night
+        - Electricity
+        - Landmark
+        - Metropolis
+        - Street
+        - Urban design
+        - High-rise building

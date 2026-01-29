@@ -1,11 +1,10 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-import BlogPost from "../components/BlogPostCard.astro";
-import "../styles/glightbox.css";
+import EssayCard from "../components/EssayCard.astro";
 import Prose from "../components/Prose.astro";
 import Tag from "../components/TagPill.astro";
 
-import { getImage, Image } from "astro:assets";
+import { Image } from "astro:assets";
 import { getEntry, type CollectionEntry, getCollection } from "astro:content";
 import {
   getDatesRange,
@@ -22,8 +21,8 @@ type Props = {
 
 const { roll } = Astro.props;
 const data = roll.data;
-const posts = await getCollection(
-  "posts",
+const essays = await getCollection(
+  "photoessays",
   ({ data }) => data.rolls?.map((e) => e.id)?.includes(roll.id) || false,
 );
 
@@ -73,19 +72,19 @@ const coverImage = getCoverImage(roll);
         <li>Dates: {dates}</li>
       </ul>
 
-      <h2 class="text-2xl">Blog Posts</h2>
+      <h2 class="text-2xl">Essays</h2>
       {
-        posts.length > 0
-          ? posts.map((post) => (
-              <BlogPost
+        essays.length > 0
+          ? essays.map((essay) => (
+              <EssayCard
                 class:list={["not-prose"]}
-                post={post}
-                url={`/posts/${post.slug}`}
+                essay={essay}
+                url={`/essays/${essay.id}`}
               />
             ))
           : "None"
       }
-      <h2 class="text-2xl">Shots</h2>
+      <!-- <h2 class="text-2xl">Shots</h2>
       <div
         class="image-container caption-bottom w-full flex flex-row flex-wrap gap-2 mx-auto justify-evenly"
         id="gallery"
@@ -142,7 +141,7 @@ const coverImage = getCoverImage(roll);
           </div>
         </div>
       </div>
-      <script src="../scripts/lightbox.js"></script>
+      <script src="../scripts/lightbox.js"></script> -->
     </Prose>
   </div>
 </BaseLayout>

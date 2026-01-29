@@ -1,5 +1,5 @@
 function handlePageLoad() {
-  const collections = ["/posts/"];
+  const collections = ["/essays/"];
   const currentPath = window.location.pathname;
   if (collections.includes(currentPath)) {
     const rssLink = document.getElementById("rss-link");
