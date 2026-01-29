@@ -351,14 +351,22 @@
     flex: none;
   }
 
-  .spread[data-layout="duo"] .photo-wrapper img,
-  .spread[data-layout="duo-h"] .photo-wrapper img,
-  .spread[data-layout="duo-l"] .photo-wrapper img,
-  .spread[data-layout="duo-r"] .photo-wrapper img,
-  .spread[data-layout="trio"] .photo-wrapper img,
-  .spread[data-layout="trio-l"] .photo-wrapper img,
-  .spread[data-layout="trio-r"] .photo-wrapper img {
-    max-height: 35vh;
+  /* Override captioned variants (higher specificity needed to beat desktop rules) */
+  .spread[data-has-caption][data-layout="duo"] .photo-wrapper,
+  .spread[data-has-caption][data-layout="duo-h"] .photo-wrapper,
+  .spread[data-has-caption][data-layout="duo-l"] .photo-wrapper,
+  .spread[data-has-caption][data-layout="duo-r"] .photo-wrapper,
+  .spread[data-has-caption][data-layout="trio"] .photo-wrapper,
+  .spread[data-has-caption][data-layout="trio-l"] .photo-wrapper,
+  .spread[data-has-caption][data-layout="trio-r"] .photo-wrapper {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    flex: none;
+  }
+
+  .spread[data-has-caption][data-layout="duo-h"] .photo-wrapper img {
+    max-height: none;
   }
 
   /* Stack vertically on mobile for trio-l and trio-r */
@@ -368,19 +376,32 @@
   }
 
   .spread[data-layout="trio-l"] .photo-stack,
-  .spread[data-layout="trio-r"] .photo-stack {
+  .spread[data-layout="trio-r"] .photo-stack,
+  .spread[data-has-caption][data-layout="trio-l"] .photo-stack,
+  .spread[data-has-caption][data-layout="trio-r"] .photo-stack {
     flex-direction: column;
     height: auto;
     max-height: none;
+    flex: none;
+  }
+
+  .spread[data-layout="trio-l"] .photo-stack .photo-wrapper,
+  .spread[data-layout="trio-r"] .photo-stack .photo-wrapper {
+    flex: none;
+    min-height: auto;
   }
 
   .spread[data-layout="trio-l"] .photo-main,
-  .spread[data-layout="trio-r"] .photo-main {
+  .spread[data-layout="trio-r"] .photo-main,
+  .spread[data-has-caption][data-layout="trio-l"] .photo-main,
+  .spread[data-has-caption][data-layout="trio-r"] .photo-main {
     height: auto;
     max-height: none;
+    flex: none;
   }
 
-  .spread[data-layout="single"] .photo-wrapper {
+  .spread[data-layout="single"] .photo-wrapper,
+  .spread[data-has-caption][data-layout="single"] .photo-wrapper {
     height: auto;
     max-height: none;
   }
