@@ -23,7 +23,7 @@ const coverAlt = cover?.alt || spreads[0]?.photos[0]?.alt || title;
 // Fetch author data
 const authorObject = await getEntry(author);
 const authorFullName = authorObject?.data.name || "Unknown";
-const authorSlug = authorObject?.slug || "";
+const authorSlug = authorObject?.id || "";
 
 // Prepare rolls data
 const rollSlugs = rolls?.map((roll) => getRollSlug(roll.id)) || [];

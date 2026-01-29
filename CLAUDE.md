@@ -52,7 +52,15 @@ All collections are defined in `src/content/config.ts` with Zod schemas for type
 
 ### Key Components
 
-- **EssaySpread.astro** - Renders photo essay spreads with various layouts (single, duo, trio, trio-l, trio-r)
+- **PhotoSpread.astro** - Renders photo essay spreads with various layouts:
+  - `single`: one photo
+  - `duo`: two photos side by side (equal width)
+  - `duo-h`: two photos side by side (equal width, alternate name)
+  - `duo-l`: two photos with left emphasized (wider)
+  - `duo-r`: two photos with right emphasized (wider)
+  - `trio`: three photos in a row
+  - `trio-l`: photo 1 main on left, photos 2,3 stacked on right
+  - `trio-r`: photos 1,2 stacked on left, photo 3 main on right
 - **Masonry.astro** - Image gallery layout using CSS masonry
 - **FilmStrip.astro** - Displays film roll thumbnails
 - **Header.astro/Footer.astro** - Site navigation and layout
