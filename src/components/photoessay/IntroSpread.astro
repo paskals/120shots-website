@@ -15,7 +15,7 @@ const { title, description, coverImage, coverAlt, rollIds = [] } = Astro.props;
 const formattedRolls = rollIds.map(id => id.split('/').pop() || id);
 ---
 
-<section class="intro-spread spread" data-layout="intro">
+<section id="intro" class="intro-spread spread" data-layout="intro" data-spread-index="0">
   <!-- Background image with atmospheric treatment -->
   <div class="intro-image-container">
     <div class="intro-image-wrapper">
