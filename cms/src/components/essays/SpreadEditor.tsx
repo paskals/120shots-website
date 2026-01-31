@@ -34,8 +34,10 @@ export default function SpreadEditor({
   onDelete,
 }: Props) {
   const [showLayoutPicker, setShowLayoutPicker] = useState(false);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const slotCount = SLOTS_PER_LAYOUT[spread.layout];
   const isSingle = spread.layout === "single";
+  const hasPhotos = spread.photos.some((p) => p.src);
 
   const {
     attributes,
@@ -107,12 +109,50 @@ export default function SpreadEditor({
           )}
         </div>
         <div className="flex-1" />
-        <button
-          onClick={onDelete}
-          className="text-xs text-zinc-400 hover:text-red-500 transition-colors"
-        >
-          Delete
-        </button>
+        <div className="relative">
+          <button
+            onClick={() => {
+              if (hasPhotos) {
+                setShowDeleteConfirm(true);
+              } else {
+                onDelete();
+              }
+            }}
+            className="text-xs text-zinc-400 hover:text-red-500 transition-colors"
+          >
+            Delete
+          </button>
+          {showDeleteConfirm && (
+            <>
+              <div
+                className="fixed inset-0 z-10"
+                onClick={() => setShowDeleteConfirm(false)}
+              />
+              <div className="absolute right-0 top-full mt-1 z-20 bg-white border border-zinc-200 rounded-lg p-3 shadow-lg w-56">
+                <p className="text-xs text-zinc-600 mb-2">
+                  This spread has photos. Delete it?
+                </p>
+                <div className="flex justify-end gap-2">
+                  <button
+                    onClick={() => setShowDeleteConfirm(false)}
+                    className="px-2.5 py-1 text-xs text-zinc-500 hover:text-zinc-700 rounded transition-colors"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={() => {
+                      setShowDeleteConfirm(false);
+                      onDelete();
+                    }}
+                    className="px-2.5 py-1 text-xs bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
       </div>
 
       {/* Photo slots */}

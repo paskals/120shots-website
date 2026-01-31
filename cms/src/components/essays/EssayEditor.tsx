@@ -25,6 +25,7 @@ export default function EssayEditor() {
     saving,
     save,
     updateSpread,
+    changeLayout,
     removeSpread,
     addSpread,
     removePhoto,
@@ -151,7 +152,7 @@ export default function EssayEditor() {
                     spread={spread}
                     index={i}
                     onUpdateLayout={(layout) =>
-                      updateSpread(i, { layout })
+                      changeLayout(i, layout)
                     }
                     onUpdateCaption={(caption) =>
                       updateSpread(i, { caption: caption || undefined })

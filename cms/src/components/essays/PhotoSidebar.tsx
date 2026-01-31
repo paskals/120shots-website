@@ -3,7 +3,7 @@ import { useDraggable } from "@dnd-kit/core";
 import type { Photo, Essay } from "../../types";
 
 interface DraggablePhotoProps {
-  photo: { src: string; alt: string; rollName?: string };
+  photo: { src: string; alt: string; rollName?: string; sequence?: string };
   usageCount: number;
 }
 
@@ -42,9 +42,9 @@ function DraggablePhoto({ photo, usageCount }: DraggablePhotoProps) {
         />
       </div>
       {photo.rollName && (
-        <div className="absolute bottom-0 left-0 right-0 bg-black/50 px-1.5 py-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="absolute bottom-0 left-0 right-0 bg-black/50 px-1.5 py-0.5">
           <p className="text-[10px] text-white truncate">
-            {photo.rollName}
+            {photo.rollName}{photo.sequence ? ` #${photo.sequence}` : ""}
           </p>
         </div>
       )}
@@ -132,7 +132,7 @@ export default function PhotoSidebar({ essay }: Props) {
           {filtered.map((photo) => (
             <DraggablePhoto
               key={photo.src}
-              photo={photo}
+              photo={{ src: photo.src, alt: photo.alt, rollName: photo.rollName, sequence: photo.sequence }}
               usageCount={usage[photo.src]?.length || 0}
             />
           ))}

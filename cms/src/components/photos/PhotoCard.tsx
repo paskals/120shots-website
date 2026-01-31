@@ -54,7 +54,7 @@ export default function PhotoCard({
       {/* Roll badge */}
       <div className="absolute top-1.5 left-1.5">
         <span className="px-1.5 py-0.5 text-[10px] font-medium bg-black/50 text-white rounded">
-          {photo.rollName}
+          {photo.rollName} #{photo.sequence}
         </span>
       </div>
       {/* Usage indicator */}

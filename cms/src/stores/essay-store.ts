@@ -20,6 +20,7 @@ interface EssayStore {
   addSpread: (layout?: SpreadLayout) => void;
   removeSpread: (index: number) => void;
   updateSpread: (index: number, spread: Partial<Spread>) => void;
+  changeLayout: (index: number, layout: SpreadLayout) => void;
   reorderSpreads: (fromIndex: number, toIndex: number) => void;
 
   // Photo slot operations
@@ -102,6 +103,39 @@ export const useEssayStore = create<EssayStore>((set, get) => ({
     if (!current) return;
     const spreads = [...current.spreads];
     spreads[index] = { ...spreads[index], ...partial };
+    set({ current: { ...current, spreads }, dirty: true });
+  },
+
+  changeLayout: (index, layout) => {
+    const { current } = get();
+    if (!current) return;
+
+    const slotsPerLayout: Record<string, number> = {
+      single: 1, duo: 2, "duo-h": 2, "duo-l": 2, "duo-r": 2,
+      trio: 3, "trio-l": 3, "trio-r": 3,
+    };
+
+    const spreads = [...current.spreads];
+    const oldSpread = spreads[index];
+    const newSlotCount = slotsPerLayout[layout] || 1;
+    const existingPhotos = oldSpread.photos.filter((p) => p.src);
+
+    // Photos that fit in the new layout
+    const kept = existingPhotos.slice(0, newSlotCount);
+    // Overflow photos that no longer fit
+    const overflow = existingPhotos.slice(newSlotCount);
+
+    spreads[index] = { ...oldSpread, layout, photos: kept };
+
+    // Insert overflow photos as single spreads right after
+    if (overflow.length > 0) {
+      const newSpreads: Spread[] = overflow.map((photo) => ({
+        layout: "single" as SpreadLayout,
+        photos: [photo],
+      }));
+      spreads.splice(index + 1, 0, ...newSpreads);
+    }
+
     set({ current: { ...current, spreads }, dirty: true });
   },
 
