@@ -17,12 +17,12 @@ export default function EssayEditorPage() {
     const handler = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "s") {
         e.preventDefault();
-        if (dirty && !saving) save();
+        if (dirty && !saving && current?.title.trim()) save();
       }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [dirty, saving, save]);
+  }, [dirty, saving, save, current]);
 
   // Unsaved changes warning
   useEffect(() => {

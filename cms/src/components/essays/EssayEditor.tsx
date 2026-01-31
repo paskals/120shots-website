@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import {
   DndContext,
   DragOverlay,
@@ -17,6 +17,7 @@ import { useEssayStore } from "../../stores/essay-store";
 import SpreadEditor from "./SpreadEditor";
 import PhotoSidebar from "./PhotoSidebar";
 import EssayMetaEditor from "./EssayMetaEditor";
+import type { Photo } from "../../types";
 
 export default function EssayEditor() {
   const {
@@ -36,6 +37,19 @@ export default function EssayEditor() {
 
   const [activeData, setActiveData] = useState<any>(null);
   const [showMeta, setShowMeta] = useState(false);
+  const [allPhotos, setAllPhotos] = useState<Photo[]>([]);
+
+  useEffect(() => {
+    fetch("/api/photos").then((r) => r.json()).then(setAllPhotos);
+  }, []);
+
+  const photoInfoMap = useMemo(() => {
+    const map: Record<string, { rollName: string; sequence: string }> = {};
+    for (const p of allPhotos) {
+      map[p.src] = { rollName: p.rollName, sequence: p.sequence };
+    }
+    return map;
+  }, [allPhotos]);
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } })
@@ -115,14 +129,14 @@ export default function EssayEditor() {
           </button>
           <button
             onClick={() => save()}
-            disabled={!dirty || saving}
+            disabled={!dirty || saving || !current.title.trim()}
             className={`px-4 py-1.5 text-sm font-medium rounded-lg transition-colors ${
-              dirty
+              dirty && current.title.trim()
                 ? "bg-blue-500 hover:bg-blue-600 text-white"
                 : "bg-zinc-100 text-zinc-400"
             }`}
           >
-            {saving ? "Saving..." : dirty ? "Save" : "Saved"}
+            {saving ? "Saving..." : !current.title.trim() ? "Title required" : dirty ? "Save" : "Saved"}
           </button>
         </div>
 
@@ -151,6 +165,7 @@ export default function EssayEditor() {
                     key={`spread-${i}`}
                     spread={spread}
                     index={i}
+                    photoInfoMap={photoInfoMap}
                     onUpdateLayout={(layout) =>
                       changeLayout(i, layout)
                     }

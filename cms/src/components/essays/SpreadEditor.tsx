@@ -8,6 +8,7 @@ import LayoutPicker from "./LayoutPicker";
 interface Props {
   spread: Spread;
   index: number;
+  photoInfoMap: Record<string, { rollName: string; sequence: string }>;
   onUpdateLayout: (layout: SpreadLayout) => void;
   onUpdateCaption: (caption: string) => void;
   onRemovePhoto: (slotIndex: number) => void;
@@ -28,6 +29,7 @@ const SLOTS_PER_LAYOUT: Record<SpreadLayout, number> = {
 export default function SpreadEditor({
   spread,
   index,
+  photoInfoMap,
   onUpdateLayout,
   onUpdateCaption,
   onRemovePhoto,
@@ -59,6 +61,8 @@ export default function SpreadEditor({
   const getSlotEmphasis = (slotIdx: number): boolean => {
     if (spread.layout === "duo-l" && slotIdx === 0) return true;
     if (spread.layout === "duo-r" && slotIdx === 1) return true;
+    if (spread.layout === "trio-l" && slotIdx === 0) return true;
+    if (spread.layout === "trio-r" && slotIdx === 2) return true;
     return false;
   };
 
@@ -163,6 +167,7 @@ export default function SpreadEditor({
             spreadIndex={index}
             slotIndex={slotIdx}
             photo={spread.photos[slotIdx]}
+            photoInfo={spread.photos[slotIdx]?.src ? photoInfoMap[spread.photos[slotIdx].src] : undefined}
             onRemove={() => onRemovePhoto(slotIdx)}
             emphasized={getSlotEmphasis(slotIdx)}
             isSingleLayout={isSingle}

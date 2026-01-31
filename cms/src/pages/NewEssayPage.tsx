@@ -11,7 +11,9 @@ export default function NewEssayPage() {
     usePhotoStore();
   const { createEssay } = useEssayStore();
   const navigate = useNavigate();
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState(
+    `Draft ${new Date().toISOString().split("T")[0]}`
+  );
 
   useEffect(() => {
     fetchMeta();
@@ -56,7 +58,7 @@ export default function NewEssayPage() {
       : undefined;
 
     const id = await createEssay({
-      title: title || "Draft essay",
+      title: title.trim(),
       description: "",
       pubDate: new Date().toISOString().split("T")[0],
       author: "paskal",
@@ -85,7 +87,7 @@ export default function NewEssayPage() {
           />
           <button
             onClick={handleCreate}
-            disabled={selectedPhotos.size === 0}
+            disabled={selectedPhotos.size === 0 || !title.trim()}
             className="px-4 py-2 bg-blue-500 hover:bg-blue-600 disabled:bg-zinc-200 disabled:text-zinc-400 text-white text-sm font-medium rounded-lg transition-colors"
           >
             Create Essay ({selectedPhotos.size} photos)

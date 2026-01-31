@@ -1,8 +1,14 @@
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useEssayStore } from "../../stores/essay-store";
 
 export default function EssayList() {
   const { essays, loading } = useEssayStore();
+
+  const sorted = useMemo(
+    () => [...essays].sort((a, b) => b.pubDate.localeCompare(a.pubDate)),
+    [essays]
+  );
 
   if (loading && essays.length === 0) {
     return <div className="text-zinc-400 text-sm">Loading essays...</div>;
@@ -14,7 +20,7 @@ export default function EssayList() {
 
   return (
     <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-4">
-      {essays.map((essay) => (
+      {sorted.map((essay) => (
         <Link
           key={essay.id}
           to={`/essays/${essay.id}`}

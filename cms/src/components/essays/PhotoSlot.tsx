@@ -6,6 +6,7 @@ interface Props {
   spreadIndex: number;
   slotIndex: number;
   photo: SpreadPhoto | undefined;
+  photoInfo?: { rollName: string; sequence: string };
   onRemove: () => void;
   emphasized?: boolean;
   isSingleLayout?: boolean;
@@ -15,6 +16,7 @@ export default function PhotoSlot({
   spreadIndex,
   slotIndex,
   photo,
+  photoInfo,
   onRemove,
   emphasized = false,
   isSingleLayout = false,
@@ -77,6 +79,13 @@ export default function PhotoSlot({
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
+          {photoInfo && (
+            <div className="absolute bottom-1.5 left-1.5">
+              <span className="px-1.5 py-0.5 text-[10px] font-medium bg-black/50 text-white rounded">
+                {photoInfo.rollName} #{photoInfo.sequence}
+              </span>
+            </div>
+          )}
         </div>
       ) : (
         <div className="aspect-[4/3] bg-zinc-50 border-2 border-dashed border-zinc-300 rounded-lg flex items-center justify-center">
