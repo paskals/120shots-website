@@ -80,7 +80,7 @@ const pageTitle = title.concat(" › ", siteName);
       <slot />
       
       <!-- Essay footer with author and rolls -->
-      <footer class="essay-footer spread">
+      <footer id="footer" class="essay-footer spread" data-spread-index={spreadCount - 1}>
         <div class="essay-footer-content">
           {authorName && authorSlug && (
             <div class="essay-author">
@@ -161,9 +161,38 @@ const pageTitle = title.concat(" › ", siteName);
         const totalSpreads = spreads.length;
         const circumference = 2 * Math.PI * 16; // r=16
         let currentIndex = 0;
+        let isScrollingProgrammatically = false;
 
-        // Update progress indicator
-        function updateProgress(index: number) {
+        // Helper: Scroll to a specific spread
+        function scrollToSpread(index: number, updateHash = true, smooth = true) {
+          if (index < 0 || index >= spreads.length) return;
+
+          isScrollingProgrammatically = true;
+          spreads[index]?.scrollIntoView({ behavior: smooth ? "smooth" : "auto" });
+
+          if (updateHash) {
+            updateHashForSpread(index);
+          }
+
+          // Reset flag after scroll completes
+          setTimeout(() => {
+            isScrollingProgrammatically = false;
+          }, 100);
+        }
+
+        // Helper: Update URL hash for a spread (without creating history entry)
+        function updateHashForSpread(index: number) {
+          const spread = spreads[index] as HTMLElement;
+          const id = spread?.id;
+
+          if (id) {
+            const newUrl = `${window.location.pathname}${window.location.search}#${id}`;
+            history.replaceState(null, '', newUrl);
+          }
+        }
+
+        // Update progress indicator and hash
+        function updateProgress(index: number, shouldUpdateHash = true) {
           currentIndex = index;
           const progress = (index + 1) / totalSpreads;
           const offset = circumference * (1 - progress);
@@ -173,6 +202,32 @@ const pageTitle = title.concat(" › ", siteName);
           }
           if (progressCurrent) {
             progressCurrent.textContent = String(index + 1);
+          }
+
+          // Update hash during natural scrolling (not programmatic)
+          if (shouldUpdateHash && !isScrollingProgrammatically) {
+            updateHashForSpread(index);
+          }
+        }
+
+        // Handle initial hash on page load
+        function handleInitialHash() {
+          const hash = window.location.hash.slice(1); // Remove '#'
+          if (!hash) return;
+
+          // Find spread by ID
+          let targetIndex = -1;
+
+          spreads.forEach((spread, index) => {
+            const spreadEl = spread as HTMLElement;
+            if (spreadEl.id === hash) {
+              targetIndex = index;
+            }
+          });
+
+          // Scroll to spread if found (instant, no smooth scroll on load)
+          if (targetIndex >= 0) {
+            scrollToSpread(targetIndex, false, false);
           }
         }
 
@@ -186,7 +241,7 @@ const pageTitle = title.concat(" › ", siteName);
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               const index = Array.from(spreads).indexOf(entry.target as Element);
-              updateProgress(index);
+              updateProgress(index, true); // Update hash during natural scrolling
             }
           });
         }, observerOptions);
@@ -198,11 +253,11 @@ const pageTitle = title.concat(" › ", siteName);
           if (e.key === "ArrowDown" || e.key === "ArrowRight" || e.key === "j") {
             e.preventDefault();
             const nextIndex = Math.min(currentIndex + 1, spreads.length - 1);
-            spreads[nextIndex]?.scrollIntoView({ behavior: "smooth" });
+            scrollToSpread(nextIndex, true, true);
           } else if (e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "k") {
             e.preventDefault();
             const prevIndex = Math.max(currentIndex - 1, 0);
-            spreads[prevIndex]?.scrollIntoView({ behavior: "smooth" });
+            scrollToSpread(prevIndex, true, true);
           }
         });
 
@@ -211,12 +266,15 @@ const pageTitle = title.concat(" › ", siteName);
         if (progressEl) {
           progressEl.addEventListener("click", () => {
             const nextIndex = (currentIndex + 1) % totalSpreads;
-            spreads[nextIndex]?.scrollIntoView({ behavior: "smooth" });
+            scrollToSpread(nextIndex, true, true);
           });
         }
 
-        // Initialize first spread
-        updateProgress(0);
+        // Handle initial hash or initialize first spread
+        handleInitialHash();
+        if (!window.location.hash) {
+          updateProgress(0, false);
+        }
       }
 
       // Move search modal to portal (escapes backdrop-filter containing block)
