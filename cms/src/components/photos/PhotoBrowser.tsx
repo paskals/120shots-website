@@ -63,7 +63,7 @@ export default function PhotoBrowser({ selectable = false }: Props) {
 
   return (
     <>
-      <p className="text-xs text-zinc-400 mb-4">{photos.length} photos</p>
+      <p className="text-xs text-zinc-400 mb-4 pt-4">{photos.length} photos</p>
       {groups.map((group) => (
         <div key={group.label} className="mb-6">
           <h3 className="text-sm font-semibold text-zinc-500 mb-2 sticky top-0 bg-white py-1 z-10">

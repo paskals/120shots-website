@@ -17,7 +17,7 @@ export default function PhotoBrowserPage() {
         <h2 className="text-xl font-semibold mb-3">Photos</h2>
         <PhotoFilters />
       </div>
-      <div className="flex-1 overflow-auto p-4">
+      <div className="flex-1 overflow-auto px-3 pb-4">
         <PhotoBrowser />
       </div>
     </div>
