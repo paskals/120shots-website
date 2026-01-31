@@ -25,11 +25,11 @@ function DraggablePhoto({ photo, usageCount }: DraggablePhotoProps) {
         isDragging ? "opacity-40" : ""
       }`}
     >
-      <div className="aspect-square bg-zinc-900">
+      <div className="aspect-square bg-zinc-100 flex items-center justify-center">
         <img
           src={photo.src}
           alt={photo.alt}
-          className="w-full h-full object-cover"
+          className="max-w-full max-h-full object-contain"
           loading="lazy"
           draggable={false}
         />
@@ -42,8 +42,8 @@ function DraggablePhoto({ photo, usageCount }: DraggablePhotoProps) {
         />
       </div>
       {photo.rollName && (
-        <div className="absolute bottom-0 left-0 right-0 bg-black/60 px-1.5 py-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
-          <p className="text-[10px] text-zinc-400 truncate">
+        <div className="absolute bottom-0 left-0 right-0 bg-black/50 px-1.5 py-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-[10px] text-white truncate">
             {photo.rollName}
           </p>
         </div>
@@ -64,7 +64,6 @@ export default function PhotoSidebar({ essay }: Props) {
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    // Fetch photos from essay's rolls
     const rollIds = essay.rolls || [];
     const fetchRollPhotos = async () => {
       const res = await fetch("/api/photos");
@@ -97,14 +96,14 @@ export default function PhotoSidebar({ essay }: Props) {
 
   return (
     <div className="flex flex-col h-full">
-      <div className="p-3 border-b border-zinc-800 space-y-2">
+      <div className="p-3 border-b border-zinc-200 space-y-2">
         <div className="flex items-center gap-2">
           <button
             onClick={() => setShowAll(false)}
             className={`text-xs px-2 py-1 rounded ${
               !showAll
-                ? "bg-zinc-700 text-zinc-200"
-                : "text-zinc-500 hover:text-zinc-300"
+                ? "bg-zinc-200 text-zinc-800"
+                : "text-zinc-500 hover:text-zinc-700"
             }`}
           >
             Roll photos
@@ -113,8 +112,8 @@ export default function PhotoSidebar({ essay }: Props) {
             onClick={() => setShowAll(true)}
             className={`text-xs px-2 py-1 rounded ${
               showAll
-                ? "bg-zinc-700 text-zinc-200"
-                : "text-zinc-500 hover:text-zinc-300"
+                ? "bg-zinc-200 text-zinc-800"
+                : "text-zinc-500 hover:text-zinc-700"
             }`}
           >
             All photos
@@ -125,7 +124,7 @@ export default function PhotoSidebar({ essay }: Props) {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search..."
-          className="w-full bg-zinc-900 border border-zinc-700 rounded px-2 py-1 text-xs text-zinc-300 placeholder:text-zinc-600 focus:outline-none focus:border-zinc-500"
+          className="w-full bg-white border border-zinc-300 rounded px-2 py-1 text-xs text-zinc-700 placeholder:text-zinc-400 focus:outline-none focus:border-blue-400"
         />
       </div>
       <div className="flex-1 overflow-auto p-2">
@@ -139,7 +138,7 @@ export default function PhotoSidebar({ essay }: Props) {
           ))}
         </div>
         {filtered.length === 0 && (
-          <p className="text-xs text-zinc-600 text-center mt-4">
+          <p className="text-xs text-zinc-400 text-center mt-4">
             No photos found
           </p>
         )}

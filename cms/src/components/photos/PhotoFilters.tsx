@@ -9,7 +9,7 @@ export default function PhotoFilters() {
       <select
         value={filters.roll}
         onChange={(e) => setFilter("roll", e.target.value)}
-        className="bg-zinc-900 border border-zinc-700 rounded-lg px-2.5 py-1.5 text-sm text-zinc-300 focus:outline-none focus:border-zinc-500"
+        className="bg-white border border-zinc-300 rounded-lg px-2.5 py-1.5 text-sm text-zinc-700 focus:outline-none focus:border-blue-400"
       >
         <option value="">All rolls</option>
         {rolls.map((r) => (
@@ -22,7 +22,7 @@ export default function PhotoFilters() {
       <select
         value={filters.film}
         onChange={(e) => setFilter("film", e.target.value)}
-        className="bg-zinc-900 border border-zinc-700 rounded-lg px-2.5 py-1.5 text-sm text-zinc-300 focus:outline-none focus:border-zinc-500"
+        className="bg-white border border-zinc-300 rounded-lg px-2.5 py-1.5 text-sm text-zinc-700 focus:outline-none focus:border-blue-400"
       >
         <option value="">All films</option>
         {films.map((f) => (
@@ -35,7 +35,7 @@ export default function PhotoFilters() {
       <select
         value={filters.camera}
         onChange={(e) => setFilter("camera", e.target.value)}
-        className="bg-zinc-900 border border-zinc-700 rounded-lg px-2.5 py-1.5 text-sm text-zinc-300 focus:outline-none focus:border-zinc-500"
+        className="bg-white border border-zinc-300 rounded-lg px-2.5 py-1.5 text-sm text-zinc-700 focus:outline-none focus:border-blue-400"
       >
         <option value="">All cameras</option>
         {cameras.map((c) => (
@@ -45,12 +45,12 @@ export default function PhotoFilters() {
         ))}
       </select>
 
-      <label className="flex items-center gap-1.5 text-sm text-zinc-400 cursor-pointer select-none">
+      <label className="flex items-center gap-1.5 text-sm text-zinc-600 cursor-pointer select-none">
         <input
           type="checkbox"
           checked={filters.unused}
           onChange={(e) => setFilter("unused", e.target.checked)}
-          className="rounded border-zinc-600 bg-zinc-900 text-blue-500 focus:ring-blue-500/30"
+          className="rounded border-zinc-300 text-blue-500 focus:ring-blue-400/30"
         />
         Unused only
       </label>
@@ -60,7 +60,7 @@ export default function PhotoFilters() {
         value={filters.search}
         onChange={(e) => setFilter("search", e.target.value)}
         placeholder="Search alt text, labels..."
-        className="bg-zinc-900 border border-zinc-700 rounded-lg px-2.5 py-1.5 text-sm text-zinc-300 placeholder:text-zinc-600 focus:outline-none focus:border-zinc-500 w-52"
+        className="bg-white border border-zinc-300 rounded-lg px-2.5 py-1.5 text-sm text-zinc-700 placeholder:text-zinc-400 focus:outline-none focus:border-blue-400 w-52"
       />
 
       {(filters.roll ||
@@ -70,7 +70,7 @@ export default function PhotoFilters() {
         filters.search) && (
         <button
           onClick={clearFilters}
-          className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
+          className="text-xs text-zinc-500 hover:text-zinc-700 transition-colors"
         >
           Clear
         </button>

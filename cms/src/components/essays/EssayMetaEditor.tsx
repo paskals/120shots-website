@@ -12,7 +12,7 @@ export default function EssayMetaEditor() {
           type="text"
           value={current.title}
           onChange={(e) => updateMeta({ title: e.target.value })}
-          className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-zinc-100 focus:outline-none focus:border-zinc-500"
+          className="w-full bg-white border border-zinc-300 rounded-lg px-3 py-2 text-sm text-zinc-800 focus:outline-none focus:border-blue-400"
         />
       </div>
       <div>
@@ -21,7 +21,7 @@ export default function EssayMetaEditor() {
           value={current.description}
           onChange={(e) => updateMeta({ description: e.target.value })}
           rows={2}
-          className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-zinc-100 focus:outline-none focus:border-zinc-500 resize-none"
+          className="w-full bg-white border border-zinc-300 rounded-lg px-3 py-2 text-sm text-zinc-800 focus:outline-none focus:border-blue-400 resize-none"
         />
       </div>
       <div className="grid grid-cols-2 gap-3">
@@ -33,7 +33,7 @@ export default function EssayMetaEditor() {
             type="date"
             value={current.pubDate}
             onChange={(e) => updateMeta({ pubDate: e.target.value })}
-            className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-zinc-100 focus:outline-none focus:border-zinc-500"
+            className="w-full bg-white border border-zinc-300 rounded-lg px-3 py-2 text-sm text-zinc-800 focus:outline-none focus:border-blue-400"
           />
         </div>
         <div>
@@ -42,7 +42,7 @@ export default function EssayMetaEditor() {
             type="text"
             value={current.author}
             onChange={(e) => updateMeta({ author: e.target.value })}
-            className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-zinc-100 focus:outline-none focus:border-zinc-500"
+            className="w-full bg-white border border-zinc-300 rounded-lg px-3 py-2 text-sm text-zinc-800 focus:outline-none focus:border-blue-400"
           />
         </div>
       </div>
@@ -61,7 +61,7 @@ export default function EssayMetaEditor() {
                 .filter(Boolean),
             })
           }
-          className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-zinc-100 focus:outline-none focus:border-zinc-500"
+          className="w-full bg-white border border-zinc-300 rounded-lg px-3 py-2 text-sm text-zinc-800 focus:outline-none focus:border-blue-400"
         />
       </div>
       <div>
@@ -79,7 +79,7 @@ export default function EssayMetaEditor() {
                 .filter(Boolean),
             })
           }
-          className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-zinc-100 focus:outline-none focus:border-zinc-500"
+          className="w-full bg-white border border-zinc-300 rounded-lg px-3 py-2 text-sm text-zinc-800 focus:outline-none focus:border-blue-400"
         />
       </div>
       <div>
@@ -97,7 +97,7 @@ export default function EssayMetaEditor() {
                 .filter(Boolean),
             })
           }
-          className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-zinc-100 focus:outline-none focus:border-zinc-500"
+          className="w-full bg-white border border-zinc-300 rounded-lg px-3 py-2 text-sm text-zinc-800 focus:outline-none focus:border-blue-400"
         />
       </div>
     </div>

@@ -8,6 +8,7 @@ interface Props {
   photo: SpreadPhoto | undefined;
   onRemove: () => void;
   emphasized?: boolean;
+  isSingleLayout?: boolean;
 }
 
 export default function PhotoSlot({
@@ -16,6 +17,7 @@ export default function PhotoSlot({
   photo,
   onRemove,
   emphasized = false,
+  isSingleLayout = false,
 }: Props) {
   const droppableId = `slot-${spreadIndex}-${slotIndex}`;
 
@@ -49,14 +51,18 @@ export default function PhotoSlot({
           ref={setDragRef}
           {...attributes}
           {...listeners}
-          className={`aspect-[4/3] bg-zinc-900 cursor-grab active:cursor-grabbing ${
-            isDragging ? "opacity-40" : ""
-          }`}
+          className={`bg-zinc-100 cursor-grab active:cursor-grabbing flex items-center justify-center ${
+            isSingleLayout ? "max-h-80" : "aspect-[4/3]"
+          } ${isDragging ? "opacity-40" : ""}`}
         >
           <img
             src={photo.src}
             alt={photo.alt}
-            className="w-full h-full object-cover rounded-lg"
+            className={`rounded-lg object-contain ${
+              isSingleLayout
+                ? "max-h-80 max-w-full"
+                : "max-w-full max-h-full"
+            }`}
             loading="lazy"
             draggable={false}
           />
@@ -65,7 +71,7 @@ export default function PhotoSlot({
               e.stopPropagation();
               onRemove();
             }}
-            className="absolute top-1.5 right-1.5 w-6 h-6 flex items-center justify-center rounded-full bg-black/70 text-white/80 hover:text-white hover:bg-red-600 transition-colors"
+            className="absolute top-1.5 right-1.5 w-6 h-6 flex items-center justify-center rounded-full bg-black/40 text-white hover:bg-red-600 transition-colors"
           >
             <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -73,8 +79,8 @@ export default function PhotoSlot({
           </button>
         </div>
       ) : (
-        <div className="aspect-[4/3] bg-zinc-900/50 border-2 border-dashed border-zinc-700 rounded-lg flex items-center justify-center">
-          <span className="text-xs text-zinc-600">Drop photo</span>
+        <div className="aspect-[4/3] bg-zinc-50 border-2 border-dashed border-zinc-300 rounded-lg flex items-center justify-center">
+          <span className="text-xs text-zinc-400">Drop photo</span>
         </div>
       )}
     </div>

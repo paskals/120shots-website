@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useEssayStore } from "../stores/essay-store";
 import EssayEditor from "../components/essays/EssayEditor";
@@ -37,7 +37,7 @@ export default function EssayEditorPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full text-zinc-500">
+      <div className="flex items-center justify-center h-full text-zinc-400">
         Loading...
       </div>
     );
@@ -45,7 +45,7 @@ export default function EssayEditorPage() {
 
   if (!current) {
     return (
-      <div className="flex items-center justify-center h-full text-zinc-500">
+      <div className="flex items-center justify-center h-full text-zinc-400">
         Essay not found
       </div>
     );

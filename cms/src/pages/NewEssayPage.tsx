@@ -22,10 +22,8 @@ export default function NewEssayPage() {
   const handleCreate = async () => {
     if (selectedPhotos.size === 0) return;
 
-    // Get selected photos in their original order
     const selected = photos.filter((p) => selectedPhotos.has(p.src));
 
-    // Auto-arrange into spreads: single -> duo -> trio cycle
     const spreads: Spread[] = [];
     const layoutPattern: SpreadLayout[] = ["single", "duo", "trio"];
     let patternIndex = 0;
@@ -51,7 +49,6 @@ export default function NewEssayPage() {
       patternIndex++;
     }
 
-    // Gather roll and film info
     const rolls = [...new Set(selected.map((p) => p.rollId))];
     const filmStocks = [...new Set(selected.map((p) => p.filmId))];
     const cover = selected[0]
@@ -76,7 +73,7 @@ export default function NewEssayPage() {
 
   return (
     <div className="flex flex-col flex-1 min-h-0">
-      <div className="border-b border-zinc-800 p-4">
+      <div className="border-b border-zinc-200 p-4">
         <h2 className="text-xl font-semibold mb-3">New Essay</h2>
         <div className="flex items-center gap-3 mb-3">
           <input
@@ -84,12 +81,12 @@ export default function NewEssayPage() {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Essay title..."
-            className="flex-1 bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-zinc-100 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-500"
+            className="flex-1 bg-white border border-zinc-300 rounded-lg px-3 py-2 text-sm text-zinc-800 placeholder:text-zinc-400 focus:outline-none focus:border-blue-400"
           />
           <button
             onClick={handleCreate}
             disabled={selectedPhotos.size === 0}
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-500 disabled:bg-zinc-700 disabled:text-zinc-500 text-white text-sm font-medium rounded-lg transition-colors"
+            className="px-4 py-2 bg-blue-500 hover:bg-blue-600 disabled:bg-zinc-200 disabled:text-zinc-400 text-white text-sm font-medium rounded-lg transition-colors"
           >
             Create Essay ({selectedPhotos.size} photos)
           </button>

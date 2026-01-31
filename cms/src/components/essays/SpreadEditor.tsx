@@ -35,6 +35,7 @@ export default function SpreadEditor({
 }: Props) {
   const [showLayoutPicker, setShowLayoutPicker] = useState(false);
   const slotCount = SLOTS_PER_LAYOUT[spread.layout];
+  const isSingle = spread.layout === "single";
 
   const {
     attributes,
@@ -53,7 +54,6 @@ export default function SpreadEditor({
     transition,
   };
 
-  // Determine which slots get emphasis for duo-l/duo-r layouts
   const getSlotEmphasis = (slotIdx: number): boolean => {
     if (spread.layout === "duo-l" && slotIdx === 0) return true;
     if (spread.layout === "duo-r" && slotIdx === 1) return true;
@@ -64,7 +64,7 @@ export default function SpreadEditor({
     <div
       ref={setNodeRef}
       style={style}
-      className={`bg-zinc-900/50 border border-zinc-800 rounded-xl p-4 transition-opacity ${
+      className={`bg-white border border-zinc-200 rounded-xl p-4 shadow-sm transition-opacity ${
         isDragging ? "opacity-50" : ""
       }`}
     >
@@ -73,18 +73,18 @@ export default function SpreadEditor({
         <button
           {...attributes}
           {...listeners}
-          className="cursor-grab active:cursor-grabbing text-zinc-600 hover:text-zinc-400 transition-colors"
+          className="cursor-grab active:cursor-grabbing text-zinc-400 hover:text-zinc-600 transition-colors"
           title="Drag to reorder"
         >
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
             <path d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z" />
           </svg>
         </button>
-        <span className="text-xs text-zinc-500">#{index + 1}</span>
+        <span className="text-xs text-zinc-400">#{index + 1}</span>
         <div className="relative">
           <button
             onClick={() => setShowLayoutPicker(!showLayoutPicker)}
-            className="px-2 py-1 text-xs font-mono bg-zinc-800 text-zinc-400 rounded hover:bg-zinc-700 hover:text-zinc-300 transition-colors"
+            className="px-2 py-1 text-xs font-mono bg-zinc-100 text-zinc-600 rounded hover:bg-zinc-200 hover:text-zinc-800 transition-colors"
           >
             {spread.layout}
           </button>
@@ -94,7 +94,7 @@ export default function SpreadEditor({
                 className="fixed inset-0 z-10"
                 onClick={() => setShowLayoutPicker(false)}
               />
-              <div className="absolute top-full left-0 mt-1 z-20 bg-zinc-800 border border-zinc-700 rounded-lg p-2 shadow-xl">
+              <div className="absolute top-full left-0 mt-1 z-20 bg-white border border-zinc-200 rounded-lg p-2 shadow-lg">
                 <LayoutPicker
                   value={spread.layout}
                   onChange={(layout) => {
@@ -109,7 +109,7 @@ export default function SpreadEditor({
         <div className="flex-1" />
         <button
           onClick={onDelete}
-          className="text-xs text-zinc-600 hover:text-red-400 transition-colors"
+          className="text-xs text-zinc-400 hover:text-red-500 transition-colors"
         >
           Delete
         </button>
@@ -125,6 +125,7 @@ export default function SpreadEditor({
             photo={spread.photos[slotIdx]}
             onRemove={() => onRemovePhoto(slotIdx)}
             emphasized={getSlotEmphasis(slotIdx)}
+            isSingleLayout={isSingle}
           />
         ))}
       </div>
@@ -135,7 +136,7 @@ export default function SpreadEditor({
         value={spread.caption || ""}
         onChange={(e) => onUpdateCaption(e.target.value)}
         placeholder="Caption (optional)"
-        className="mt-3 w-full bg-transparent border-b border-zinc-800 focus:border-zinc-600 px-1 py-1 text-sm text-zinc-400 placeholder:text-zinc-700 focus:outline-none"
+        className="mt-3 w-full bg-transparent border-b border-zinc-200 focus:border-zinc-400 px-1 py-1 text-sm text-zinc-600 placeholder:text-zinc-300 focus:outline-none"
       />
     </div>
   );

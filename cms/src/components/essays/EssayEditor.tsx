@@ -91,14 +91,14 @@ export default function EssayEditor() {
   return (
     <div className="flex flex-1 min-h-0">
       {/* Photo Sidebar */}
-      <div className="w-72 flex-shrink-0 border-r border-zinc-800 bg-zinc-950">
+      <div className="w-72 flex-shrink-0 border-r border-zinc-200 bg-zinc-50">
         <PhotoSidebar essay={current} />
       </div>
 
       {/* Main Editor Area */}
       <div className="flex-1 flex flex-col min-h-0">
         {/* Header */}
-        <div className="border-b border-zinc-800 p-4 flex items-center gap-3">
+        <div className="border-b border-zinc-200 p-4 flex items-center gap-3">
           <h2 className="text-lg font-semibold truncate flex-1">
             {current.title}
           </h2>
@@ -106,8 +106,8 @@ export default function EssayEditor() {
             onClick={() => setShowMeta(!showMeta)}
             className={`px-3 py-1.5 text-xs rounded-lg transition-colors ${
               showMeta
-                ? "bg-zinc-700 text-zinc-200"
-                : "text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800"
+                ? "bg-zinc-200 text-zinc-800"
+                : "text-zinc-500 hover:text-zinc-700 hover:bg-zinc-100"
             }`}
           >
             Metadata
@@ -117,8 +117,8 @@ export default function EssayEditor() {
             disabled={!dirty || saving}
             className={`px-4 py-1.5 text-sm font-medium rounded-lg transition-colors ${
               dirty
-                ? "bg-blue-600 hover:bg-blue-500 text-white"
-                : "bg-zinc-800 text-zinc-600"
+                ? "bg-blue-500 hover:bg-blue-600 text-white"
+                : "bg-zinc-100 text-zinc-400"
             }`}
           >
             {saving ? "Saving..." : dirty ? "Save" : "Saved"}
@@ -127,13 +127,13 @@ export default function EssayEditor() {
 
         {/* Meta panel */}
         {showMeta && (
-          <div className="border-b border-zinc-800 p-4 bg-zinc-900/30">
+          <div className="border-b border-zinc-200 p-4 bg-zinc-50">
             <EssayMetaEditor />
           </div>
         )}
 
         {/* Spreads */}
-        <div className="flex-1 overflow-auto p-4">
+        <div className="flex-1 overflow-auto p-4 bg-zinc-50">
           <DndContext
             sensors={sensors}
             collisionDetection={closestCenter}
@@ -182,7 +182,7 @@ export default function EssayEditor() {
           <div className="max-w-4xl mx-auto mt-4">
             <button
               onClick={() => addSpread()}
-              className="w-full py-3 border-2 border-dashed border-zinc-800 rounded-xl text-sm text-zinc-600 hover:text-zinc-400 hover:border-zinc-600 transition-colors"
+              className="w-full py-3 border-2 border-dashed border-zinc-300 rounded-xl text-sm text-zinc-400 hover:text-zinc-600 hover:border-zinc-400 transition-colors"
             >
               + Add Spread
             </button>

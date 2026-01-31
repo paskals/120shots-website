@@ -6,30 +6,30 @@ interface Props {
 }
 
 const LAYOUTS: { value: SpreadLayout; label: string; diagram: string }[] = [
-  { value: "single", label: "Single", diagram: "[ ════════ ]" },
-  { value: "duo", label: "Duo", diagram: "[ ════ | ════ ]" },
-  { value: "duo-l", label: "Duo L", diagram: "[ ══════ | ════ ]" },
-  { value: "duo-r", label: "Duo R", diagram: "[ ════ | ══════ ]" },
-  { value: "trio", label: "Trio", diagram: "[ ═══ | ═══ | ═══ ]" },
-  { value: "trio-l", label: "Trio L", diagram: "[ ══════ | ═:═ ]" },
-  { value: "trio-r", label: "Trio R", diagram: "[ ═:═ | ══════ ]" },
+  { value: "single", label: "Single", diagram: "[ ======== ]" },
+  { value: "duo", label: "Duo", diagram: "[ ==== | ==== ]" },
+  { value: "duo-l", label: "Duo L", diagram: "[ ====== | ==== ]" },
+  { value: "duo-r", label: "Duo R", diagram: "[ ==== | ====== ]" },
+  { value: "trio", label: "Trio", diagram: "[ === | === | === ]" },
+  { value: "trio-l", label: "Trio L", diagram: "[ ====== | =:= ]" },
+  { value: "trio-r", label: "Trio R", diagram: "[ =:= | ====== ]" },
 ];
 
 export default function LayoutPicker({ value, onChange }: Props) {
   return (
-    <div className="grid grid-cols-4 gap-1.5">
+    <div className="flex flex-col gap-1 w-48">
       {LAYOUTS.map((l) => (
         <button
           key={l.value}
           onClick={() => onChange(l.value)}
-          className={`px-2 py-1.5 rounded text-[10px] font-mono text-center transition-colors ${
+          className={`px-3 py-1.5 rounded text-xs text-left transition-colors flex items-center gap-2 ${
             value === l.value
-              ? "bg-blue-600 text-white"
-              : "bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-300"
+              ? "bg-blue-500 text-white"
+              : "bg-zinc-50 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-800"
           }`}
-          title={l.diagram}
         >
-          {l.label}
+          <span className="font-medium w-12">{l.label}</span>
+          <span className="font-mono text-[10px] opacity-70">{l.diagram}</span>
         </button>
       ))}
     </div>
