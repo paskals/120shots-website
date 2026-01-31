@@ -1,0 +1,198 @@
+import { create } from "zustand";
+import type { Essay, EssaySummary, Spread, SpreadLayout } from "../types";
+
+interface EssayStore {
+  essays: EssaySummary[];
+  current: Essay | null;
+  dirty: boolean;
+  loading: boolean;
+  saving: boolean;
+
+  fetchEssays: () => Promise<void>;
+  fetchEssay: (id: string) => Promise<void>;
+  setCurrent: (essay: Essay | null) => void;
+  markDirty: () => void;
+
+  // Essay metadata
+  updateMeta: (fields: Partial<Essay>) => void;
+
+  // Spread operations
+  addSpread: (layout?: SpreadLayout) => void;
+  removeSpread: (index: number) => void;
+  updateSpread: (index: number, spread: Partial<Spread>) => void;
+  reorderSpreads: (fromIndex: number, toIndex: number) => void;
+
+  // Photo slot operations
+  setPhoto: (
+    spreadIndex: number,
+    slotIndex: number,
+    photo: { src: string; alt: string }
+  ) => void;
+  removePhoto: (spreadIndex: number, slotIndex: number) => void;
+  movePhoto: (
+    fromSpread: number,
+    fromSlot: number,
+    toSpread: number,
+    toSlot: number
+  ) => void;
+
+  // Persistence
+  save: () => Promise<void>;
+  createEssay: (essay: Omit<Essay, "id">) => Promise<string>;
+}
+
+export const useEssayStore = create<EssayStore>((set, get) => ({
+  essays: [],
+  current: null,
+  dirty: false,
+  loading: false,
+  saving: false,
+
+  fetchEssays: async () => {
+    set({ loading: true });
+    try {
+      const res = await fetch("/api/essays");
+      const essays = await res.json();
+      set({ essays, loading: false });
+    } catch {
+      set({ loading: false });
+    }
+  },
+
+  fetchEssay: async (id: string) => {
+    set({ loading: true, dirty: false });
+    try {
+      const res = await fetch(`/api/essays/${id}`);
+      if (!res.ok) throw new Error("Not found");
+      const essay = await res.json();
+      set({ current: essay, loading: false });
+    } catch {
+      set({ current: null, loading: false });
+    }
+  },
+
+  setCurrent: (essay) => set({ current: essay, dirty: false }),
+  markDirty: () => set({ dirty: true }),
+
+  updateMeta: (fields) => {
+    const { current } = get();
+    if (!current) return;
+    set({ current: { ...current, ...fields }, dirty: true });
+  },
+
+  addSpread: (layout = "single") => {
+    const { current } = get();
+    if (!current) return;
+    const newSpread: Spread = { layout, photos: [] };
+    set({
+      current: { ...current, spreads: [...current.spreads, newSpread] },
+      dirty: true,
+    });
+  },
+
+  removeSpread: (index) => {
+    const { current } = get();
+    if (!current) return;
+    const spreads = current.spreads.filter((_, i) => i !== index);
+    set({ current: { ...current, spreads }, dirty: true });
+  },
+
+  updateSpread: (index, partial) => {
+    const { current } = get();
+    if (!current) return;
+    const spreads = [...current.spreads];
+    spreads[index] = { ...spreads[index], ...partial };
+    set({ current: { ...current, spreads }, dirty: true });
+  },
+
+  reorderSpreads: (fromIndex, toIndex) => {
+    const { current } = get();
+    if (!current) return;
+    const spreads = [...current.spreads];
+    const [moved] = spreads.splice(fromIndex, 1);
+    spreads.splice(toIndex, 0, moved);
+    set({ current: { ...current, spreads }, dirty: true });
+  },
+
+  setPhoto: (spreadIndex, slotIndex, photo) => {
+    const { current } = get();
+    if (!current) return;
+    const spreads = [...current.spreads];
+    const spread = { ...spreads[spreadIndex] };
+    const photos = [...spread.photos];
+    // Extend array if needed
+    while (photos.length <= slotIndex) {
+      photos.push({ src: "", alt: "" });
+    }
+    photos[slotIndex] = { src: photo.src, alt: photo.alt };
+    spread.photos = photos;
+    spreads[spreadIndex] = spread;
+    set({ current: { ...current, spreads }, dirty: true });
+  },
+
+  removePhoto: (spreadIndex, slotIndex) => {
+    const { current } = get();
+    if (!current) return;
+    const spreads = [...current.spreads];
+    const spread = { ...spreads[spreadIndex] };
+    const photos = [...spread.photos];
+    photos.splice(slotIndex, 1);
+    spread.photos = photos;
+    spreads[spreadIndex] = spread;
+    set({ current: { ...current, spreads }, dirty: true });
+  },
+
+  movePhoto: (fromSpread, fromSlot, toSpread, toSlot) => {
+    const { current } = get();
+    if (!current) return;
+    const spreads = current.spreads.map((s) => ({
+      ...s,
+      photos: [...s.photos],
+    }));
+
+    const photo = spreads[fromSpread].photos[fromSlot];
+    if (!photo) return;
+
+    // If target slot has a photo, swap
+    const targetPhoto = spreads[toSpread].photos[toSlot];
+    if (targetPhoto?.src) {
+      spreads[fromSpread].photos[fromSlot] = targetPhoto;
+    } else {
+      spreads[fromSpread].photos.splice(fromSlot, 1);
+    }
+
+    // Extend target array if needed
+    while (spreads[toSpread].photos.length <= toSlot) {
+      spreads[toSpread].photos.push({ src: "", alt: "" });
+    }
+    spreads[toSpread].photos[toSlot] = photo;
+
+    set({ current: { ...current, spreads }, dirty: true });
+  },
+
+  save: async () => {
+    const { current } = get();
+    if (!current) return;
+    set({ saving: true });
+    try {
+      await fetch(`/api/essays/${current.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(current),
+      });
+      set({ saving: false, dirty: false });
+    } catch {
+      set({ saving: false });
+    }
+  },
+
+  createEssay: async (essay) => {
+    const res = await fetch("/api/essays", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(essay),
+    });
+    const { id } = await res.json();
+    return id;
+  },
+}));
