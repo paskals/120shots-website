@@ -34,12 +34,13 @@ spreads:
         alt: Red and yellow leaves reflected in a canal
       - src: https://cdn.120shots.com/images/GEL-01/GEL-01-008-132956.webp
         alt: Old brick building framed by autumn branches
-    caption: Walk around the NL-BE-DE tri-point - the greens and reds look amazing, orange shades of fallen leaves seem a bit exaggerated
+    caption: Walk around the NL-BE-DE tri-point - the greens and reds look amazing
 
   - layout: single
     photos:
       - src: https://cdn.120shots.com/images/GEL-01/GEL-01-009-BAF1A5.webp
         alt: Golden sunlight breaking through autumn canopy
+    caption: Den Bosch
 
   - layout: duo
     photos:
@@ -53,17 +54,21 @@ spreads:
       - src: https://cdn.120shots.com/images/GEL-01/GEL-01-012-EA4BE2.webp
         alt: Wide view of autumn landscape with distant church spire
 
-  - layout: trio-r
+  - layout: duo-r
     photos:
       - src: https://cdn.120shots.com/images/GEL-01/GEL-01-013-73737D.webp
         alt: Close-up of amber leaves on wet pavement
       - src: https://cdn.120shots.com/images/GEL-01/GEL-01-014-7AB7AC.webp
         alt: Row of trees showing gradient of seasonal change
+    caption: Lomo 800 is just made for autumn and red bricks
+
+  - layout: single
+    photos:
       - src: https://cdn.120shots.com/images/GEL-01/GEL-01-016-660FAC.webp
         alt: Old Dutch windmill surrounded by autumn colors
-    caption: Den Bosch - one of my favourite film stocks when colors need some extra "pop"
+    caption: Brussels!
 
-  - layout: duo
+  - layout: duo-r
     photos:
       - src: https://cdn.120shots.com/images/GEL-01/GEL-01-017-17CE16.webp
         alt: Moody Belgian street scene in late afternoon
@@ -75,25 +80,28 @@ spreads:
       - src: https://cdn.120shots.com/images/GEL-01/GEL-01-022-A0AAE1.webp
         alt: Dramatic clouds over autumn countryside
 
-  - layout: trio-l
+  - layout: duo
     photos:
-      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-023-D6659D.webp
-        alt: Bridge over still water reflecting autumn trees
-      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-024-FBD7E1.webp
-        alt: Person walking dog through carpet of leaves
       - src: https://cdn.120shots.com/images/GEL-01/GEL-01-025-84C527.webp
         alt: Traditional Dutch house with garden in peak autumn
-    caption: Brussels - an amazing city with lots of street photography inspiration
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-024-FBD7E1.webp
+        alt: Person walking dog through carpet of leaves
 
   - layout: single
     photos:
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-023-D6659D.webp
+        alt: Bridge over still water reflecting autumn trees
+
+  - layout: duo-l
+    photos:
       - src: https://cdn.120shots.com/images/GEL-01/GEL-01-026-2A24C3.webp
         alt: Lone tree with vibrant red foliage against open field
-
-  - layout: duo
-    photos:
       - src: https://cdn.120shots.com/images/GEL-01/GEL-01-027-25949A.webp
         alt: Foggy path through birch forest
+    caption: Back to Eindhoven
+
+  - layout: single
+    photos:
       - src: https://cdn.120shots.com/images/GEL-01/GEL-01-028-F871A6.webp
         alt: Canal boats moored beneath colorful trees
 
@@ -115,11 +123,10 @@ spreads:
     photos:
       - src: https://cdn.120shots.com/images/GEL-01/GEL-01-034-17D776.webp
         alt: Rain droplets on window overlooking autumn garden
-      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-035-280516.webp
-        alt: Park pathway covered in golden leaves with tall trees
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-036-E9FD80.webp
+        alt: Last light of autumn day over Dutch horizon
 
   - layout: single
     photos:
-      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-036-E9FD80.webp
-        alt: Last light of autumn day over Dutch horizon
-    caption: Eindhoven - the orange leaves look almost red, and the halations around bright spots add to the autumn color palette
+      - src: https://cdn.120shots.com/images/GEL-01/GEL-01-035-280516.webp
+        alt: Park pathway covered in golden leaves with tall trees

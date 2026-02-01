@@ -76,6 +76,7 @@ export async function handleApiRequest(
 
     // GET /api/essays
     if (method === "GET" && apiPath === "essays") {
+      loader.reload();
       json(res, loader.getEssays());
       return true;
     }
@@ -98,6 +99,16 @@ export async function handleApiRequest(
       const id = writer.createEssay(body);
       loader.reload();
       json(res, { id }, 201);
+      return true;
+    }
+
+    // POST /api/essays/:id/rename
+    if (method === "POST" && apiPath.match(/^essays\/[^/]+\/rename$/)) {
+      const id = apiPath.replace("essays/", "").replace("/rename", "");
+      const body = await parseBody(req);
+      writer.renameEssay(id, body.newId);
+      loader.reload();
+      json(res, { oldId: id, newId: body.newId, renamed: true });
       return true;
     }
 

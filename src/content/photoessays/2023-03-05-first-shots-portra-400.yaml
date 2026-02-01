@@ -20,6 +20,7 @@ spreads:
     photos:
       - src: https://cdn.120shots.com/images/EHV-01/EHV-01-Kodak-Portra-400-022-FA4C36.webp
         alt: Street scene in Eindhoven with warm afternoon light
+    caption: The warm embrace of Portra 400 colors
 
   - layout: duo
     photos:
@@ -75,6 +76,7 @@ spreads:
     photos:
       - src: https://cdn.120shots.com/images/EHV-01/EHV-01-Kodak-Portra-400-037-756878.webp
         alt: Wide urban view with balanced exposure
+    caption: Red
 
   - layout: duo
     photos:
@@ -93,17 +95,14 @@ spreads:
         alt: Urban detail with warm color palette
     caption: Portraits on Portra are, obviously, great!
 
-  - layout: single
-    photos:
-      - src: https://cdn.120shots.com/images/EHV-01/EHV-01-Kodak-Portra-400-006-AC6AC1.webp
-        alt: Street perspective with beautiful bokeh
-
-  - layout: duo-r
+  - layout: trio
     photos:
       - src: https://cdn.120shots.com/images/EHV-01/EHV-01-Kodak-Portra-400-007-2C0BEA.webp
         alt: Architectural shot with warm highlights
       - src: https://cdn.120shots.com/images/EHV-01/EHV-01-Kodak-Portra-400-008-1D2A94.webp
         alt: City corner with pastel tones
+      - src: https://cdn.120shots.com/images/EHV-01/EHV-01-Kodak-Portra-400-006-AC6AC1.webp
+        alt: Street perspective with beautiful bokeh
 
   - layout: single
     photos:
@@ -111,7 +110,7 @@ spreads:
         alt: Wide street view with characteristic warmth
     caption: Forest and park areas from Geldrop and Heeze
 
-  - layout: trio-r
+  - layout: trio
     photos:
       - src: https://cdn.120shots.com/images/EHV-01/EHV-01-Kodak-Portra-400-013-A5402D.webp
         alt: Urban scene with golden tones
@@ -127,7 +126,7 @@ spreads:
       - src: https://cdn.120shots.com/images/EHV-01/EHV-01-Kodak-Portra-400-031-C70DA4.webp
         alt: Urban view with subtle highlights
 
-  - layout: trio-l
+  - layout: trio-r
     photos:
       - src: https://cdn.120shots.com/images/EHV-01/EHV-01-Kodak-Portra-400-002-942F84.webp
         alt: City walk with natural light
@@ -137,17 +136,13 @@ spreads:
         alt: Pedestrian area with soft afternoon glow
     caption: There's something warm and inviting in the red tones
 
-  - layout: single
-    photos:
-      - src: https://cdn.120shots.com/images/EHV-01/EHV-01-Kodak-Portra-400-011-437A1D.webp
-        alt: Wide street perspective with warm undertones
-
   - layout: duo-l
     photos:
       - src: https://cdn.120shots.com/images/EHV-01/EHV-01-Kodak-Portra-400-016-C5D9DB.webp
         alt: Urban architecture with pastel sky
       - src: https://cdn.120shots.com/images/EHV-01/EHV-01-Kodak-Portra-400-020-3536AB.webp
         alt: Street view with characteristic Portra look
+    caption: Look up
 
   - layout: single
     photos:
@@ -171,11 +166,13 @@ spreads:
         alt: Historic street with warm stone buildings
       - src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-007-C10FDB.webp
         alt: European architecture with pastel morning tones
+    caption: Portra 400 🤝 Luxembourg
 
   - layout: single
     photos:
       - src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-009-7EB047.webp
         alt: Wide Luxembourg cityscape with subtle warmth
+    caption: Dreamy castles and old architecture
 
   - layout: duo-r
     photos:
@@ -183,13 +180,12 @@ spreads:
         alt: Historic building facade with golden highlights
       - src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-011-819F6A.webp
         alt: Street corner with European charm
+    caption: I always feel like I'm in a fairytale when I'm in Luxembourg
 
   - layout: duo-l
     photos:
       - src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-012-1F5946.webp
         alt: Architectural detail with warm stone texture
-      # - src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-013-FD0567.webp
-      #   alt: City view with soft color gradation
       - src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-014-B23F65.webp
         alt: Street scene with balanced exposure
 
@@ -201,12 +197,12 @@ spreads:
         alt: Historic street with morning shadows
       - src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-017-966466.webp
         alt: European architecture with warm undertones
+    caption: "Back to Taiwan: Quarantine shots. Had to stay in the hotel room for 14 days, but I had great views"
 
   - layout: single
     photos:
       - src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-018-B8CB22.webp
         alt: Wide street view with beautiful natural light
-    caption: So many layers of buildings – like a fairy tale
 
   - layout: duo-l
     photos:
@@ -214,26 +210,22 @@ spreads:
         alt: City corner with soft pastel colors
       - src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-025-C95991.webp
         alt: Luxembourg street with warm afternoon glow
+    caption: Every angle explored
 
   - layout: duo-l
-    photos:
-      - src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-027-C4E8B4.webp
-        alt: Architectural shot with golden hour warmth
-      - src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-029-27D4CB.webp
-        alt: Historic building with subtle highlights
-
-  - layout: single
     photos:
       - src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-031-5038DD.webp
         alt: Wide Luxembourg view with balanced tones
       - src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-030-F17276.webp
         alt: Street scene with characteristic color palette
-    caption: The warmth that made me fall in love with this film
+    caption: Finally free and back to Tainan!
 
-  - layout: duo-r
+  - layout: trio-r
     photos:
       - src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-032-0740C1.webp
         alt: European street with warm stone facades
+      - src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-029-27D4CB.webp
+        alt: Historic building with subtle highlights
       - src: https://cdn.120shots.com/images/LUX-01/LUX-01-Kodak-Portra-400-033-D63FE2.webp
         alt: Final frame with beautiful Portra rendering
-    caption: Portra 400 really shines in daylight
+    caption: Closing off another adventure

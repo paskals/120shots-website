@@ -25,8 +25,18 @@ const authorObject = await getEntry(author);
 const authorFullName = authorObject?.data.name || "Unknown";
 const authorSlug = authorObject?.id || "";
 
-// Prepare rolls data
+// Prepare rolls data with film stock names
 const rollSlugs = rolls?.map((roll) => getRollSlug(roll.id)) || [];
+const rollEntries = rolls ? await Promise.all(rolls.map((roll) => getEntry(roll))) : [];
+const rollFilmPairs = await Promise.all(
+  rollEntries.map(async (entry, i) => {
+    const filmEntry = entry?.data?.film ? await getEntry(entry.data.film) : null;
+    return {
+      id: (rollSlugs[i] || entry?.id || "").split("/").pop() || "",
+      film: filmEntry?.data?.name || "",
+    };
+  })
+);
 
 // Extract captions for search indexing
 const captions = spreads
@@ -51,7 +61,7 @@ const captions = spreads
     description={description}
     coverImage={coverImage}
     coverAlt={coverAlt}
-    rollIds={rollSlugs}
+    rolls={rollFilmPairs}
   />
   {
     spreads.map((spread, index) => (

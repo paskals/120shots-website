@@ -6,7 +6,7 @@ interface Props {
   spreadIndex: number;
   slotIndex: number;
   photo: SpreadPhoto | undefined;
-  photoInfo?: { rollName: string; sequence: string };
+  photoInfo?: { rollName: string; sequence: string; date?: string };
   onRemove: () => void;
   emphasized?: boolean;
   isSingleLayout?: boolean;
@@ -80,15 +80,22 @@ export default function PhotoSlot({
             </svg>
           </button>
           {photoInfo && (
-            <div className="absolute bottom-1.5 left-1.5">
+            <div className="absolute bottom-1.5 left-1.5 flex items-center gap-1">
               <span className="px-1.5 py-0.5 text-[10px] font-medium bg-black/50 text-white rounded">
                 {photoInfo.rollName} #{photoInfo.sequence}
               </span>
+              {photoInfo.date && (
+                <span className="px-1.5 py-0.5 text-[10px] font-medium bg-black/50 text-white rounded">
+                  {new Date(photoInfo.date).toLocaleDateString("en-GB")}
+                </span>
+              )}
             </div>
           )}
         </div>
       ) : (
-        <div className="aspect-[4/3] bg-zinc-50 border-2 border-dashed border-zinc-300 rounded-lg flex items-center justify-center">
+        <div className={`bg-zinc-50 border-2 border-dashed border-zinc-300 rounded-lg flex items-center justify-center ${
+          isSingleLayout ? "h-80" : "aspect-[4/3]"
+        }`}>
           <span className="text-xs text-zinc-400">Drop photo</span>
         </div>
       )}

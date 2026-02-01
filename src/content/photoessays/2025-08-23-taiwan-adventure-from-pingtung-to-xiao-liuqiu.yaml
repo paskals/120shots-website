@@ -15,50 +15,54 @@ cover:
   src: https://cdn.120shots.com/images/TN-02/R1-01825-0033.webp
   alt: Motorcycle parked on a night street in Taiwan with warm lights
 spreads:
-  - layout: duo
+  - layout: single
     photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0001.webp
         alt: Scooter parked along a sunny coastal road in Taiwan
+    caption: On the way to breakfast in Pingtung
+
+  - layout: duo-r
+    photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0002.webp
         alt: Rocky coastline with turquoise waters on Xiao Liuqiu
-    caption: The island awaits
-
-  - layout: single
-    photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0003.webp
         alt: Dramatic rock formation under bright summer sun on Xiao Liuqiu
+    caption: Arriving at the island
 
-  - layout: trio-l
+  - layout: duo
     photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0006.webp
         alt: Fishing boat floating on calm turquoise sea
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0007.webp
         alt: Weathered coral rock formation along the island coast
-      - src: https://cdn.120shots.com/images/TN-02/R1-01825-0008.webp
-        alt: Winding coastal road perfect for motorcycle exploration
     caption: Circling the island
 
-  - layout: duo
+  - layout: duo-r
     photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0009.webp
         alt: Lush tropical vegetation lining a narrow island road
+      - src: https://cdn.120shots.com/images/TN-02/R1-01825-0008.webp
+        alt: Winding coastal road perfect for motorcycle exploration
+
+  - layout: single
+    photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0010.webp
         alt: Local Taiwanese cooking over open flames at a night market
+    caption: Best burgers you've ever had
 
-  - layout: trio-r
+  - layout: duo
     photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0011.webp
         alt: Colorful string lights illuminating a night scene
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0012.webp
         alt: Old theater facade glowing in the evening darkness
-      - src: https://cdn.120shots.com/images/TN-02/R1-01825-0015.webp
-        alt: Crystal clear waters lapping against the sandy beach
-    caption: Day turns to night
 
-  - layout: single
+  - layout: duo-l
     photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0016.webp
         alt: Motorcycle parked overlooking the stunning Xiao Liuqiu coastline
+      - src: https://cdn.120shots.com/images/TN-02/R1-01825-0015.webp
+        alt: Crystal clear waters lapping against the sandy beach
     caption: Freedom on two wheels
 
   - layout: duo
@@ -68,37 +72,33 @@ spreads:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0018.webp
         alt: Expansive blue sky meeting the calm ocean waters
 
-  - layout: trio-r
+  - layout: duo
     photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0019.webp
         alt: Summer vacation scene with clear skies and tropical atmosphere
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0021.webp
         alt: Portrait of a traveler enjoying the island adventure
-      - src: https://cdn.120shots.com/images/TN-02/R1-01825-0022.webp
-        alt: Jagged coral rocks meeting the turquoise sea
-    caption: Island life
-
-  - layout: single
-    photos:
-      - src: https://cdn.120shots.com/images/TN-02/R1-01825-0023.webp
-        alt: Scenic coastal rocks with waves crashing against them
 
   - layout: duo-r
     photos:
+      - src: https://cdn.120shots.com/images/TN-02/R1-01825-0022.webp
+        alt: Jagged coral rocks meeting the turquoise sea
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0024.webp
         alt: Brilliant blue water contrasting with dark volcanic rock
+
+  - layout: single
+    photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0025.webp
         alt: Busy urban intersection with buses and motorcycles
     caption: From island to city
 
-  - layout: trio-l
+  - layout: duo-r
     photos:
-      - src: https://cdn.120shots.com/images/TN-02/R1-01825-0026.webp
-        alt: Pedestrians crossing a busy Taiwan street
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0028.webp
         alt: Traditional red lanterns hanging in a narrow alleyway
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0029.webp
         alt: Familiar glow of a 7-Eleven convenience store at night
+    caption: Back to Tainan
 
   - layout: duo-r
     photos:
@@ -106,23 +106,21 @@ spreads:
         alt: Narrow alley between old buildings in Taiwan
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0031.webp
         alt: Neon signs lighting up a quiet night street
-    caption: Nocturnal wandering
 
   - layout: single
     photos:
-      - src: https://cdn.120shots.com/images/TN-02/R1-01825-0032.webp
-        alt: Urban nightscape with illuminated signs and buildings
-
-  - layout: trio-l
-    photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0033.webp
         alt: Motorcycle parked under warm street lights at night
+    caption: Classic 7/11 night view in Taiwan
+
+  - layout: duo-r
+    photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0034.webp
         alt: High-rise apartment building against the urban skyline
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0035.webp
         alt: Modernist building facade in daytime light
 
-  - layout: duo
+  - layout: duo-l
     photos:
       - src: https://cdn.120shots.com/images/TN-02/R1-01825-0036.webp
         alt: Towering skyscraper reaching into the Taiwan sky
