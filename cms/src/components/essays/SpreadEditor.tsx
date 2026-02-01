@@ -8,7 +8,7 @@ import LayoutPicker from "./LayoutPicker";
 interface Props {
   spread: Spread;
   index: number;
-  photoInfoMap: Record<string, { rollName: string; sequence: string }>;
+  photoInfoMap: Record<string, { rollName: string; sequence: string; date?: string }>;
   onUpdateLayout: (layout: SpreadLayout) => void;
   onUpdateCaption: (caption: string) => void;
   onRemovePhoto: (slotIndex: number) => void;

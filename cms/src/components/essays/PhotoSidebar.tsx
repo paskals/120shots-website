@@ -3,7 +3,7 @@ import { useDraggable } from "@dnd-kit/core";
 import type { Photo, Essay } from "../../types";
 
 interface DraggablePhotoProps {
-  photo: { src: string; alt: string; rollName?: string; sequence?: string };
+  photo: { src: string; alt: string; rollName?: string; sequence?: string; date?: string };
   usageCount: number;
 }
 
@@ -21,6 +21,7 @@ function DraggablePhoto({ photo, usageCount }: DraggablePhotoProps) {
       ref={setNodeRef}
       {...attributes}
       {...listeners}
+      title={photo.date ? new Date(photo.date).toLocaleDateString() : undefined}
       className={`relative rounded-lg overflow-hidden cursor-grab active:cursor-grabbing group ${
         isDragging ? "opacity-40" : ""
       }`}
@@ -132,7 +133,7 @@ export default function PhotoSidebar({ essay }: Props) {
           {filtered.map((photo) => (
             <DraggablePhoto
               key={photo.src}
-              photo={{ src: photo.src, alt: photo.alt, rollName: photo.rollName, sequence: photo.sequence }}
+              photo={{ src: photo.src, alt: photo.alt, rollName: photo.rollName, sequence: photo.sequence, date: photo.date }}
               usageCount={usage[photo.src]?.length || 0}
             />
           ))}
