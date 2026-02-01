@@ -129,6 +129,34 @@ export class ContentWriter {
   }
 
   /**
+   * Rename an essay file on disk. Creates a .bak backup of the old file first.
+   * No-op if oldId === newId.
+   */
+  renameEssay(oldId: string, newId: string): void {
+    if (oldId === newId) return;
+
+    if (!newId || !newId.trim()) {
+      throw new Error("New essay ID cannot be empty");
+    }
+
+    const essaysDir = path.join(CONTENT_DIR, "photoessays");
+    const oldPath = path.join(essaysDir, `${oldId}.yaml`);
+    const newPath = path.join(essaysDir, `${newId}.yaml`);
+
+    if (!fs.existsSync(oldPath)) {
+      throw new Error(`Essay not found: ${oldId}.yaml`);
+    }
+
+    if (fs.existsSync(newPath)) {
+      throw new Error(`Essay already exists: ${newId}.yaml`);
+    }
+
+    // Create backup before rename
+    fs.copyFileSync(oldPath, oldPath + ".bak");
+    fs.renameSync(oldPath, newPath);
+  }
+
+  /**
    * Create a new essay file. Returns the essay ID (filename without .yaml).
    */
   createEssay(essay: Omit<Essay, "id">, customId?: string): string {

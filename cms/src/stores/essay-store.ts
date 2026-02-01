@@ -48,6 +48,7 @@ interface EssayStore {
   // Persistence
   save: () => Promise<void>;
   createEssay: (essay: Omit<Essay, "id">) => Promise<string>;
+  renameEssay: (newId: string) => Promise<string>;
 }
 
 export const useEssayStore = create<EssayStore>((set, get) => {
@@ -281,6 +282,20 @@ export const useEssayStore = create<EssayStore>((set, get) => {
       });
       const { id } = await res.json();
       return id;
+    },
+
+    renameEssay: async (newId: string) => {
+      const { current } = get();
+      if (!current) throw new Error("No essay loaded");
+      const res = await fetch(`/api/essays/${current.id}/rename`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ newId }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Rename failed");
+      set({ current: { ...current, id: newId }, dirty: false });
+      return newId;
     },
   };
 });

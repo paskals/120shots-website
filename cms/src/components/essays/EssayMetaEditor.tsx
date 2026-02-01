@@ -1,9 +1,48 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useEssayStore } from "../../stores/essay-store";
 
+function slugify(value: string): string {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 export default function EssayMetaEditor() {
-  const { current, updateMeta } = useEssayStore();
+  const { current, dirty, updateMeta, renameEssay } = useEssayStore();
+  const navigate = useNavigate();
+  const [slug, setSlug] = useState("");
+  const [slugInitialized, setSlugInitialized] = useState<string | null>(null);
+  const [renaming, setRenaming] = useState(false);
+  const [renameError, setRenameError] = useState<string | null>(null);
+
   if (!current) return null;
+
+  // Reset slug state when essay changes
+  if (slugInitialized !== current.id) {
+    setSlug(current.id);
+    setSlugInitialized(current.id);
+    setRenameError(null);
+  }
+
+  const slugUnchanged = slug === current.id;
+  const slugEmpty = slug.trim() === "";
+  const renameDisabled = slugUnchanged || slugEmpty || dirty || renaming;
+
+  const handleRename = async () => {
+    setRenaming(true);
+    setRenameError(null);
+    try {
+      const newId = await renameEssay(slug);
+      navigate(`/essays/${newId}`, { replace: true });
+    } catch (err: any) {
+      setRenameError(err.message || "Rename failed");
+    } finally {
+      setRenaming(false);
+    }
+  };
 
   const spreadPhotos = useMemo(() => {
     const photos: { src: string; alt: string }[] = [];
@@ -19,6 +58,35 @@ export default function EssayMetaEditor() {
 
   return (
     <div className="space-y-3">
+      {/* Slug / filename editor */}
+      <div>
+        <label className="block text-xs text-zinc-500 mb-1">Slug (filename)</label>
+        <div className="flex gap-2">
+          <input
+            type="text"
+            value={slug}
+            onChange={(e) => {
+              setSlug(slugify(e.target.value));
+              setRenameError(null);
+            }}
+            className="flex-1 bg-white border border-zinc-300 rounded-lg px-3 py-2 text-sm text-zinc-800 font-mono focus:outline-none focus:border-blue-400"
+          />
+          <button
+            onClick={handleRename}
+            disabled={renameDisabled}
+            className="px-3 py-2 text-sm rounded-lg font-medium transition-colors bg-amber-500 text-white hover:bg-amber-600 disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            {renaming ? "Renaming..." : "Rename"}
+          </button>
+        </div>
+        {dirty && !slugUnchanged && (
+          <p className="text-xs text-amber-600 mt-1">Save your changes before renaming</p>
+        )}
+        {renameError && (
+          <p className="text-xs text-red-600 mt-1">{renameError}</p>
+        )}
+      </div>
+
       {/* Cover photo picker */}
       <div>
         <label className="block text-xs text-zinc-500 mb-1">Cover Photo</label>
