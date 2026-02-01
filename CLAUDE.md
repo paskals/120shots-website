@@ -16,6 +16,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `yarn preview` - Preview built site locally
 - `yarn lint` - Format code with Prettier
 
+### CMS
+
+- `yarn cms` - Start the photo essay CMS at localhost:4444 (Vite + React app in `cms/`)
+
 ### Content Creation Scripts
 
 - `yarn create-essay -p /path/to/photos -d upload-dir -t "Essay Title" -m 2000` - Create new essay from photo folder
@@ -55,7 +59,7 @@ All collections are defined in `src/content/config.ts` with Zod schemas for type
 - **PhotoSpread.astro** - Renders photo essay spreads with various layouts:
   - `single`: one photo
   - `duo`: two photos side by side (equal width)
-  - `duo-h`: two photos side by side (equal width, alternate name)
+  - `duo-h`: two photos stacked vertically (experimental, still in development)
   - `duo-l`: two photos with left emphasized (wider)
   - `duo-r`: two photos with right emphasized (wider)
   - `trio`: three photos in a row
@@ -92,6 +96,19 @@ GOOGLE_API_KEY=  # Optional: for Vision API image descriptions
 ### Build Process
 
 Always run `yarn build && yarn postbuild` for full production build. The postbuild step generates the search index required for Pagefind functionality.
+
+### Photo Essay CMS (`cms/`)
+
+A separate Vite + React SPA for visual essay editing. Runs on port 4444 with API middleware (no separate backend). Key details:
+
+- **Stack**: Vite 6, React 19, TailwindCSS 4, @dnd-kit, Zustand 5, React Router 7
+- **API**: Runs as Vite middleware plugin in `cms/src/api/`. ContentLoader reads all YAML into memory, ContentWriter produces format-matching YAML with `.bak` backups.
+- **State**: Zustand stores in `cms/src/stores/` — `photo-store.ts` (photos, filters, selection) and `essay-store.ts` (essay CRUD, spread/photo operations)
+- **Pages**: PhotoBrowser, EssayList, EssayEditor (two-panel DnD), NewEssay (multi-select + auto-arrange)
+- **DnD**: Three types in one DndContext — sidebar-photo-to-slot, slot-to-slot swap, spread reorder
+- **YAML fidelity**: Ports `formatYamlWithSpacing()` from `src/utils/utils.ts` to match existing content format exactly
+- Has zero impact on Astro build (separate `package.json`, not referenced by Astro)
+- Can only be used for creating and editing Essays, not for uploading photos (creating rolls)
 
 ### Content Workflows
 

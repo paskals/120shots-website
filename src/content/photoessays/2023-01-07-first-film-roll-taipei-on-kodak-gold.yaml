@@ -20,24 +20,20 @@ spreads:
         alt: Taipei neighborhood view through a window
       - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-002-C81A0C.webp
         alt: Taipei street with pedestrians and urban architecture
-      # - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-003-7B5DAD.webp
-      #   alt: High-rise buildings against the Taipei sky
     caption: Hello, world! My first roll of film in Taipei
 
-  - layout: trio-r
-    photos:
-      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-013-7CBD3D.webp
-        alt: Urban street scene with local atmosphere
-      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-005-0B57AE.webp
-        alt: Shopping mall interior with warm lighting
-      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-007-66FFED.webp
-        alt: Traditional architecture amid modern buildings
-    caption: Layers of the city
-
-  - layout: single
+  - layout: duo-l
     photos:
       - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-008-2483BC.webp
         alt: Taipei city street with vehicles and signage
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-007-66FFED.webp
+        alt: Traditional architecture amid modern buildings
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-013-7CBD3D.webp
+        alt: Urban street scene with local atmosphere
+    caption: Layers of the city
 
   - layout: trio-r
     photos:
@@ -55,7 +51,7 @@ spreads:
         alt: Taipei city skyline
 
   - layout: single
-    photos:  
+    photos:
       - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-014-EDC50E.webp
         alt: Traditional asian architecture
 
@@ -83,6 +79,7 @@ spreads:
     photos:
       - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-019-A6F8A2.webp
         alt: Evening light on Taipei buildings
+    caption: Monumental
 
   - layout: duo-l
     photos:
@@ -98,6 +95,7 @@ spreads:
         alt: Urban landscape with Taipei architecture
       - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-026-9306EC.webp
         alt: Busy Taipei street with shops and signs
+    caption: From Taipei to Tainan
 
   - layout: duo
     photos:
@@ -105,7 +103,7 @@ spreads:
         alt: Late afternoon scene in urban Taipei
       - src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-028-93C1AD.webp
         alt: Street corner with local character
-    caption: Down south
+    caption: Sidewalks of Tainan are full of interesting finds
 
   - layout: single
     photos:

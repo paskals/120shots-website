@@ -17,7 +17,8 @@
     "reformat": "tsx ./src/utils/photer.ts reformat",
     "r2-stats": "tsx ./src/utils/r2-stats.ts",
     "describe-images": "tsx ./src/utils/vision-describer.ts describe",
-    "update-roll-descriptions": "tsx ./src/utils/update-roll-descriptions.ts"
+    "update-roll-descriptions": "tsx ./src/utils/update-roll-descriptions.ts",
+    "cms": "cd cms && yarn dev"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
