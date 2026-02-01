@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { Essay, EssaySummary, Spread, SpreadLayout } from "../types";
+import type { Essay, EssaySummary, Photo, Spread, SpreadLayout } from "../types";
 
 const MAX_HISTORY = 50;
 
@@ -44,6 +44,9 @@ interface EssayStore {
     toSpread: number,
     toSlot: number
   ) => void;
+
+  // Derived metadata sync
+  syncRollsAndFilms: (allPhotos: Photo[]) => void;
 
   // Persistence
   save: () => Promise<void>;
@@ -256,6 +259,38 @@ export const useEssayStore = create<EssayStore>((set, get) => {
       spreads[toSpread].photos[toSlot] = photo;
 
       set({ current: { ...current, spreads }, dirty: true });
+    },
+
+    syncRollsAndFilms: (allPhotos: Photo[]) => {
+      const { current } = get();
+      if (!current || allPhotos.length === 0) return;
+
+      const photoMap = new Map(allPhotos.map((p) => [p.src, p]));
+      const rollSet = new Set<string>();
+      const filmSet = new Set<string>();
+
+      for (const spread of current.spreads) {
+        for (const p of spread.photos) {
+          if (!p.src) continue;
+          const info = photoMap.get(p.src);
+          if (info) {
+            rollSet.add(info.rollId);
+            filmSet.add(info.filmId);
+          }
+        }
+      }
+
+      const newRolls = [...rollSet].sort();
+      const newFilms = [...filmSet].sort();
+      const curRolls = [...(current.rolls || [])].sort();
+      const curFilms = [...(current.filmStocks || [])].sort();
+
+      if (
+        JSON.stringify(newRolls) !== JSON.stringify(curRolls) ||
+        JSON.stringify(newFilms) !== JSON.stringify(curFilms)
+      ) {
+        set({ current: { ...current, rolls: newRolls, filmStocks: newFilms } });
+      }
     },
 
     save: async () => {

@@ -54,6 +54,7 @@ export default function EssayEditor() {
     setPhoto,
     movePhoto,
     reorderSpreads,
+    syncRollsAndFilms,
     undo,
     redo,
     history,
@@ -82,6 +83,11 @@ export default function EssayEditor() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [undo, redo]);
+
+  // Auto-sync rolls and filmStocks metadata from spread photos
+  useEffect(() => {
+    syncRollsAndFilms(allPhotos);
+  }, [current?.spreads, allPhotos, syncRollsAndFilms]);
 
   const photoInfoMap = useMemo(() => {
     const map: Record<string, { rollName: string; sequence: string; date?: string }> = {};
