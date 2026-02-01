@@ -126,6 +126,7 @@ YAML files defining visual stories with photo spreads. Each spread has a layout 
 |--------|--------|-------------|
 | `single` | 1 | One photo, full width |
 | `duo` | 2 | Two photos side by side |
+| `duo-h` | 2 | Two photos stacked vertically (experimental) |
 | `duo-l` | 2 | Left photo emphasized (wider) |
 | `duo-r` | 2 | Right photo emphasized (wider) |
 | `trio` | 3 | Three photos in a row |

@@ -59,7 +59,7 @@ All collections are defined in `src/content/config.ts` with Zod schemas for type
 - **PhotoSpread.astro** - Renders photo essay spreads with various layouts:
   - `single`: one photo
   - `duo`: two photos side by side (equal width)
-  - `duo-h`: two photos side by side (equal width, alternate name)
+  - `duo-h`: two photos stacked vertically (experimental, still in development)
   - `duo-l`: two photos with left emphasized (wider)
   - `duo-r`: two photos with right emphasized (wider)
   - `trio`: three photos in a row
