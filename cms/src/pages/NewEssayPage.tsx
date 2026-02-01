@@ -95,7 +95,7 @@ export default function NewEssayPage() {
         </div>
         <PhotoFilters />
       </div>
-      <div className="flex-1 overflow-auto p-4">
+      <div className="flex-1 overflow-auto pt-0 px-4 pb-4">
         <p className="text-sm text-zinc-500 mb-3">
           Click photos to select them for the new essay.
         </p>
