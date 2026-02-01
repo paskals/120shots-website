@@ -63,6 +63,7 @@ export default function PhotoSidebar({ essay }: Props) {
   const [usage, setUsage] = useState<Record<string, string[]>>({});
   const [search, setSearch] = useState("");
   const [showAll, setShowAll] = useState(false);
+  const [unusedOnly, setUnusedOnly] = useState(false);
 
   useEffect(() => {
     const rollIds = essay.rolls || [];
@@ -84,16 +85,24 @@ export default function PhotoSidebar({ essay }: Props) {
   }, [essay.rolls]);
 
   const displayPhotos = showAll ? allPhotos : photos;
-  const filtered = search
-    ? displayPhotos.filter(
-        (p) =>
-          p.alt.toLowerCase().includes(search.toLowerCase()) ||
-          p.labels?.some((l) =>
-            l.toLowerCase().includes(search.toLowerCase())
-          ) ||
-          p.rollName.toLowerCase().includes(search.toLowerCase())
-      )
+  let filtered = unusedOnly
+    ? displayPhotos.filter((p) => !usage[p.src]?.length)
     : displayPhotos;
+  if (search) {
+    const q = search.toLowerCase();
+    filtered = filtered.filter(
+      (p) =>
+        p.alt.toLowerCase().includes(q) ||
+        p.labels?.some((l) => l.toLowerCase().includes(q)) ||
+        p.rollName.toLowerCase().includes(q)
+    );
+  }
+  filtered = [...filtered].sort((a, b) => {
+    if (!a.date && !b.date) return 0;
+    if (!a.date) return -1;
+    if (!b.date) return 1;
+    return new Date(a.date).getTime() - new Date(b.date).getTime();
+  });
 
   return (
     <div className="flex flex-col h-full">
@@ -120,13 +129,24 @@ export default function PhotoSidebar({ essay }: Props) {
             All photos
           </button>
         </div>
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search..."
-          className="w-full bg-white border border-zinc-300 rounded px-2 py-1 text-xs text-zinc-700 placeholder:text-zinc-400 focus:outline-none focus:border-blue-400"
-        />
+        <div className="flex items-center gap-2">
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search..."
+            className="flex-1 bg-white border border-zinc-300 rounded px-2 py-1 text-xs text-zinc-700 placeholder:text-zinc-400 focus:outline-none focus:border-blue-400"
+          />
+          <label className="flex items-center gap-1 text-xs text-zinc-500 whitespace-nowrap cursor-pointer">
+            <input
+              type="checkbox"
+              checked={unusedOnly}
+              onChange={(e) => setUnusedOnly(e.target.checked)}
+              className="rounded border-zinc-300"
+            />
+            Unused
+          </label>
+        </div>
       </div>
       <div className="flex-1 overflow-auto p-2">
         <div className="grid grid-cols-3 gap-1.5">
