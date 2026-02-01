@@ -223,24 +223,35 @@ export default function EssayEditor() {
               items={spreadIds}
               strategy={verticalListSortingStrategy}
             >
-              <div className="flex flex-col gap-4 max-w-4xl mx-auto">
+              <div className="flex flex-col max-w-4xl mx-auto">
                 {current.spreads.map((spread, i) => (
-                  <SpreadEditor
-                    key={`spread-${i}`}
-                    spread={spread}
-                    index={i}
-                    photoInfoMap={photoInfoMap}
-                    onUpdateLayout={(layout) =>
-                      changeLayout(i, layout)
-                    }
-                    onUpdateCaption={(caption) =>
-                      updateSpread(i, { caption: caption || undefined })
-                    }
-                    onRemovePhoto={(slotIndex) =>
-                      removePhoto(i, slotIndex)
-                    }
-                    onDelete={() => removeSpread(i)}
-                  />
+                  <div key={`spread-${i}`}>
+                    {i > 0 && (
+                      <div className="flex justify-center py-1 group">
+                        <button
+                          onClick={() => addSpread("single", i)}
+                          className="px-3 py-0.5 text-xs text-zinc-300 hover:text-zinc-500 hover:bg-zinc-100 rounded-full transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100"
+                        >
+                          + Insert
+                        </button>
+                      </div>
+                    )}
+                    <SpreadEditor
+                      spread={spread}
+                      index={i}
+                      photoInfoMap={photoInfoMap}
+                      onUpdateLayout={(layout) =>
+                        changeLayout(i, layout)
+                      }
+                      onUpdateCaption={(caption) =>
+                        updateSpread(i, { caption: caption || undefined })
+                      }
+                      onRemovePhoto={(slotIndex) =>
+                        removePhoto(i, slotIndex)
+                      }
+                      onDelete={() => removeSpread(i)}
+                    />
+                  </div>
                 ))}
               </div>
             </SortableContext>

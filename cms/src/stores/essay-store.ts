@@ -25,7 +25,7 @@ interface EssayStore {
   updateMeta: (fields: Partial<Essay>) => void;
 
   // Spread operations
-  addSpread: (layout?: SpreadLayout) => void;
+  addSpread: (layout?: SpreadLayout, atIndex?: number) => void;
   removeSpread: (index: number) => void;
   updateSpread: (index: number, spread: Partial<Spread>) => void;
   changeLayout: (index: number, layout: SpreadLayout) => void;
@@ -130,13 +130,19 @@ export const useEssayStore = create<EssayStore>((set, get) => {
       set({ current: { ...current, ...fields }, dirty: true });
     },
 
-    addSpread: (layout = "single") => {
+    addSpread: (layout = "single", atIndex?: number) => {
       const { current } = get();
       if (!current) return;
       pushHistory();
       const newSpread: Spread = { layout, photos: [] };
+      const spreads = [...current.spreads];
+      if (atIndex !== undefined && atIndex >= 0 && atIndex <= spreads.length) {
+        spreads.splice(atIndex, 0, newSpread);
+      } else {
+        spreads.push(newSpread);
+      }
       set({
-        current: { ...current, spreads: [...current.spreads, newSpread] },
+        current: { ...current, spreads },
         dirty: true,
       });
     },
