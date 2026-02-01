@@ -1,0 +1,246 @@
+manualId: 2022/GEL-07
+film: gold-200
+camera: Bronica SQ-Ai
+format: 6x6
+cover: "001"
+shots:
+  - sequence: "000"
+    date: 2022-08-16T14:05:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-07/PascalS428_001.webp
+      alt: "Film photo of architecture, reflection, palace, dome, classical architecture, estate. Location: Kunstsammlung."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Architecture
+        - Reflection
+        - Palace
+        - Dome
+        - Classical architecture
+        - Estate
+        - Dome
+        - Mansion
+        - Official residence
+        - Pond
+      location: Kunstsammlung
+
+  - sequence: "001"
+    date: 2022-08-16T14:07:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-07/PascalS428_002.webp
+      alt: "Film photo of architecture, palace, reflection, estate, classical architecture, dome. Location: Kunstsammlung."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Architecture
+        - Palace
+        - Reflection
+        - Estate
+        - Classical architecture
+        - Dome
+        - Mansion
+        - Official residence
+        - Reservoir
+        - Dome
+      location: Kunstsammlung
+
+  - sequence: "002"
+    date: 2022-08-16T14:09:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-07/PascalS428_003.webp
+      alt: Film photo of eyewear, happiness, smile, glasses, vision care, beauty.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Eyewear
+        - Happiness
+        - Smile
+        - Glasses
+        - Vision Care
+        - Beauty
+        - Neck
+        - Summer
+        - Facial expression
+        - Leisure
+
+  - sequence: "003"
+    date: 2022-08-16T14:11:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-07/PascalS428_004.webp
+      alt: Film photo of photograph, shoulder, beauty, fashion, summer, thigh.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Photograph
+        - Shoulder
+        - Beauty
+        - Fashion
+        - Summer
+        - Thigh
+        - Black hair
+        - Dress
+        - Waist
+        - One-piece garment
+
+  - sequence: "004"
+    date: 2022-08-08T12:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-07/PascalS428_005.webp
+      alt: Film photo of door, brick, brickwork, driveway.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Door
+        - Brick
+        - Brickwork
+        - Driveway
+
+  - sequence: "005"
+    date: 2022-08-08T12:02:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-07/PascalS428_006.webp
+      alt: Film photo of land vehicle, car, motor vehicle, automotive exterior, car door, hatchback.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Land vehicle
+        - Car
+        - Motor vehicle
+        - Automotive Exterior
+        - Car door
+        - Hatchback
+        - Bumper
+        - Hubcap
+        - Alloy wheel
+        - Fender
+
+  - sequence: "006"
+    date: 2022-08-16T14:13:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-07/PascalS428_007.webp
+      alt: Film photo of people in nature, spring, shade, leisure, vacation, foot.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - People in nature
+        - Spring
+        - Shade
+        - Leisure
+        - Vacation
+        - Foot
+        - Walking
+
+  - sequence: "007"
+    date: 2022-08-16T14:17:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-07/PascalS428_008.webp
+      alt: Film photo of bridge, cable-stayed bridge, extradosed bridge, bridge–tunnel, suspension bridge, list of nonbuilding structure types.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Bridge
+        - Cable-stayed bridge
+        - Extradosed bridge
+        - Bridge–tunnel
+        - Suspension bridge
+        - List of nonbuilding structure types
+        - Engineering
+        - Steel
+        - Concrete bridge
+        - Box girder bridge
+
+  - sequence: "008"
+    date: 2022-08-16T14:19:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-07/PascalS428_009.webp
+      alt: "Film photo of daytime, tower, observation tower, pole, finial, spire. Location: Rhine Tower."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Daytime
+        - Tower
+        - Observation tower
+        - pole
+        - Finial
+        - Spire
+        - Street light
+      location: Rhine Tower
+
+  - sequence: "009"
+    date: 2022-08-16T14:15:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-07/PascalS428_010.webp
+      alt: Film photo of spring, people in nature, waist, shade, model, shadow.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Spring
+        - People in nature
+        - Waist
+        - Shade
+        - Model
+        - Shadow
+        - Foot
+        - Walking
+
+  - sequence: "010"
+    date: 2022-08-20T14:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-07/PascalS428_011.webp
+      alt: Film photo of shoe, shorts, leg, fashion, summer, knee.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Shoe
+        - Shorts
+        - Leg
+        - Fashion
+        - Summer
+        - Knee
+        - Bermuda shorts
+        - Waist
+        - Sneakers
+        - Leisure
+
+  - sequence: "011"
+    date: 2022-08-20T14:02:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-07/PascalS428_012.webp
+      alt: Film photo of eyewear, chin, glasses, vision care, sleeve, shoulder.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Eyewear
+        - Chin
+        - Glasses
+        - Vision Care
+        - Sleeve
+        - Shoulder
+        - Temple
+        - Neck
+        - Black hair
+        - Ear

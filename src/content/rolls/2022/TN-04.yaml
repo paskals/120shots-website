@@ -1,0 +1,237 @@
+manualId: 2022/TN-04
+film: ektar-100
+camera: Bronica SQ-Ai
+format: 6x6
+cover: "001"
+shots:
+  - sequence: "000"
+    date: 2022-10-25T14:05:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-04/PascalS602_001.webp
+      alt: Film photo of leaf, branch, nature, tree, yellow, vegetation.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Leaf
+        - Branch
+        - Nature
+        - Tree
+        - Yellow
+        - Vegetation
+        - Road
+        - Landscape
+        - Brown
+        - Autumn
+
+  - sequence: "001"
+    date: 2022-10-22T17:45:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-04/PascalS602_002.webp
+      alt: Film photo of branch, leaf, grass, daytime, tree, nature.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Branch
+        - Leaf
+        - Grass
+        - Daytime
+        - Tree
+        - Nature
+        - Natural environment
+        - Twig
+        - Plain
+        - Landscape
+
+  - sequence: "002"
+    date: 2022-10-22T17:50:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-04/PascalS602_003.webp
+      alt: Film photo of branch, leaf, daytime, tree, grass, nature.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Branch
+        - Leaf
+        - Daytime
+        - Tree
+        - Grass
+        - Nature
+        - Natural environment
+        - Vegetation
+        - Twig
+        - Landscape
+
+  - sequence: "003"
+    date: 2022-10-25T14:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-04/PascalS602_004.webp
+      alt: Film photo of leaf, tree, branch, shrub, trail, trunk.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Leaf
+        - Tree
+        - Branch
+        - Shrub
+        - Trail
+        - Trunk
+        - Spring
+        - Woodland
+        - Recreation
+        - Walkway
+
+  - sequence: "004"
+    date: 2022-10-25T14:10:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-04/PascalS602_005.webp
+      alt: Film photo of daytime, building, city, urban area, metropolitan area, apartment.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Daytime
+        - Building
+        - City
+        - Urban area
+        - Metropolitan area
+        - Apartment
+        - Architecture
+        - Neighbourhood
+        - High-rise building
+        - Residential area
+
+  - sequence: "005"
+    date: 2022-10-02T17:00:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-04/PascalS602_006.webp
+      alt: Film photo of automotive exterior, asphalt, automotive lighting, street, automotive parking light, lane.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Automotive Exterior
+        - Asphalt
+        - Automotive lighting
+        - Street
+        - Automotive Parking Light
+        - Lane
+        - Thoroughfare
+        - Zebra crossing
+        - signaling device
+        - Windshield
+
+  - sequence: "006"
+    date: 2022-10-02T17:05:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-04/PascalS602_007.webp
+      alt: Film photo of building, urban area, neighbourhood, town, architecture, residential area.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Building
+        - Urban area
+        - Neighbourhood
+        - Town
+        - Architecture
+        - Residential area
+        - Electricity
+        - Urban design
+        - Track
+        - Iron
+
+  - sequence: "007"
+    date: 2022-10-02T17:10:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-04/PascalS602_008.webp
+      alt: Film photo of electricity, iron, public utility, electrical network, electrical cable, overhead power line.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Electricity
+        - Iron
+        - Public utility
+        - Electrical network
+        - Electrical cable
+        - Overhead power line
+        - Electrical Supply
+        - Track
+        - Rail transport
+        - Rolling stock
+
+  - sequence: "008"
+    date: 2022-10-02T17:15:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-04/PascalS602_009.webp
+      alt: Film photo of mode of transport, urban area, road surface, road, asphalt, town.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Mode of transport
+        - Urban area
+        - Road surface
+        - Road
+        - Asphalt
+        - Town
+        - Street
+        - Neighbourhood
+        - Metropolitan area
+        - Thoroughfare
+
+  - sequence: "009"
+    date: 2022-10-02T17:20:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-04/PascalS602_010.webp
+      alt: Film photo of mode of transport, urban area, road surface, town, road, street.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Mode of transport
+        - Urban area
+        - Road surface
+        - Town
+        - Road
+        - Street
+        - Asphalt
+        - Neighbourhood
+        - Metropolitan area
+        - Thoroughfare
+
+  - sequence: "010"
+    date: 2022-10-02T17:25:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-04/PascalS602_011.webp
+      alt: "Film photo of water, reflection, chinese architecture, gazebo, tourist attraction, lake. Location: Tainan Park."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Water
+        - Reflection
+        - Chinese architecture
+        - Gazebo
+        - Tourist attraction
+        - Lake
+        - Pavilion
+        - Column
+        - Japanese architecture
+        - Outdoor Structure
+      location: Tainan Park

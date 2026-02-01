@@ -1,0 +1,228 @@
+manualId: 2022/GEL-02
+film: npc-160
+camera: Bronica SQ-Ai
+format: 6x6
+cover: "001"
+shots:
+  - sequence: "000"
+    date: 2022-04-09T18:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-02/PaskalS330_001.webp
+      alt: Film photo of grass, branch, natural landscape, ditch, waterway, plain.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Grass
+        - Branch
+        - Natural landscape
+        - Ditch
+        - Waterway
+        - Plain
+        - Stream
+        - Canal
+        - Field
+        - Wetland
+
+  - sequence: "001"
+    date: 2022-04-10T14:39:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-02/PaskalS330_002.webp
+      alt: Film photo of grass, plants, house, roof, cottage, home.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Grass
+        - Plants
+        - House
+        - Roof
+        - Cottage
+        - Home
+        - Shrub
+        - Land lot
+        - Rural area
+        - Siding
+
+  - sequence: "002"
+    date: 2022-04-10T14:05:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-02/PaskalS330_003.webp
+      alt: Film photo of tree, road surface, road, asphalt, bicycle, recreation.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Tree
+        - Road surface
+        - Road
+        - Asphalt
+        - Bicycle
+        - Recreation
+        - Public space
+        - Thoroughfare
+        - Lane
+        - Cycling
+
+  - sequence: "003"
+    date: 2022-04-10T14:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-02/PaskalS330_004.webp
+      alt: Film photo of road surface, road, shrub, residential area, asphalt, house.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Road surface
+        - Road
+        - Shrub
+        - Residential area
+        - Asphalt
+        - House
+        - Home
+        - Lane
+        - Human settlement
+        - Thoroughfare
+
+  - sequence: "004"
+    date: 2022-04-10T16:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-02/PaskalS330_005.webp
+      alt: Film photo of clothing, jacket, outerwear, fashion, denim, winter.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Clothing
+        - Jacket
+        - Outerwear
+        - Fashion
+        - Denim
+        - Winter
+        - People in nature
+        - Leisure
+        - Knee
+        - Grey
+
+  - sequence: "005"
+    date: 2022-04-10T16:01:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-02/PaskalS330_006.webp
+      alt: Film photo of wheel, bicycle, bicycle wheel, bicycle tire, tire, spoke.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Wheel
+        - Bicycle
+        - Bicycle wheel
+        - Bicycle tire
+        - Tire
+        - Spoke
+        - Bicycle frame
+        - Bicycle Wheel Rim
+        - Bicycle handlebar
+        - Bicycles--Equipment and supplies
+
+  - sequence: "006"
+    date: 2022-04-11T19:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-02/PaskalS330_007.webp
+      alt: Film photo of horizon, overhead power line, ecoregion, grassland, transmission tower, landscape.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Horizon
+        - Overhead power line
+        - Ecoregion
+        - Grassland
+        - Transmission tower
+        - Landscape
+        - Plain
+        - Land lot
+        - Rural area
+        - Electricity
+
+  - sequence: "007"
+    date: 2022-04-11T19:10:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-02/PaskalS330_008.webp
+      alt: Film photo of cloud, sky, blue, daytime, nature, grass.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Cloud
+        - Sky
+        - Blue
+        - Daytime
+        - Nature
+        - Grass
+        - Natural environment
+        - Cumulus
+        - Horizon
+        - Vegetation
+
+  - sequence: "008"
+    date: 2022-04-14T16:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-02/PaskalS330_009.webp
+      alt: Film photo of denim, jacket, people in nature, winter, woolen, wool.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Denim
+        - Jacket
+        - People in nature
+        - Winter
+        - Woolen
+        - Wool
+        - Knit cap
+        - Digital camera
+        - Hood
+
+  - sequence: "009"
+    date: 2022-04-14T16:05:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-02/PaskalS330_010.webp
+      alt: Film photo of brown hair, long hair, happiness, layered hair, hood, woolen.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Brown hair
+        - Long hair
+        - Happiness
+        - Layered hair
+        - Hood
+        - Woolen
+
+  - sequence: "010"
+    date: 2022-04-14T16:06:12.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-02/PaskalS330_011.webp
+      alt: Film photo of beauty, people in nature, brown hair, happiness, layered hair, portrait photography.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Beauty
+        - People in nature
+        - Brown hair
+        - Happiness
+        - Layered hair
+        - Portrait photography
+        - Wind
