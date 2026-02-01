@@ -53,6 +53,24 @@ export default function PhotoBrowser({ selectable = false }: Props) {
 
   const groups = useMemo(() => groupPhotosByMonth(photos), [photos]);
 
+  // Flat ordered list for keyboard navigation in the detail modal
+  const flatPhotos = useMemo(
+    () => groups.flatMap((g) => g.photos),
+    [groups]
+  );
+
+  const detailIndex = detailPhoto
+    ? flatPhotos.findIndex((p) => p.src === detailPhoto.src)
+    : -1;
+
+  const handlePrev = detailIndex > 0
+    ? () => setDetailPhoto(flatPhotos[detailIndex - 1])
+    : undefined;
+
+  const handleNext = detailIndex >= 0 && detailIndex < flatPhotos.length - 1
+    ? () => setDetailPhoto(flatPhotos[detailIndex + 1])
+    : undefined;
+
   if (loading && photos.length === 0) {
     return <div className="text-zinc-400 text-sm">Loading photos...</div>;
   }
@@ -90,6 +108,8 @@ export default function PhotoBrowser({ selectable = false }: Props) {
           photo={detailPhoto}
           usageEssays={usage[detailPhoto.src] || []}
           onClose={() => setDetailPhoto(null)}
+          onPrev={handlePrev}
+          onNext={handleNext}
         />
       )}
     </>

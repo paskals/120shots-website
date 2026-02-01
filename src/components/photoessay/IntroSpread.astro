@@ -1,18 +1,20 @@
 ---
 import { Image } from "astro:assets";
 
+interface RollInfo {
+  id: string;
+  film: string;
+}
+
 interface Props {
   title: string;
   description: string;
   coverImage: string;
   coverAlt: string;
-  rollIds?: string[];
+  rolls?: RollInfo[];
 }
 
-const { title, description, coverImage, coverAlt, rollIds = [] } = Astro.props;
-
-// Format roll IDs by removing year prefix (e.g., "2021/TPE-01" -> "TPE-01")
-const formattedRolls = rollIds.map(id => id.split('/').pop() || id);
+const { title, description, coverImage, coverAlt, rolls = [] } = Astro.props;
 ---
 
 <section id="intro" class="intro-spread spread" data-layout="intro" data-spread-index="0">
@@ -43,13 +45,19 @@ const formattedRolls = rollIds.map(id => id.split('/').pop() || id);
       <span>Photo Essays</span>
     </a>
 
-    <!-- Film roll IDs -->
-    {formattedRolls.length > 0 && (
+    <!-- Film rolls -->
+    {rolls.length > 0 && (
       <div class="intro-film-rolls" aria-label="Film rolls used in this essay">
-        {formattedRolls.map((rollId, index) => (
-          <span class="intro-roll-id" style={`--roll-index: ${index}`}>
+        {rolls.map((roll, index) => (
+          <span class="intro-roll-tag" style={`--roll-index: ${index}`}>
             <span class="roll-bracket">[</span>
-            <span class="roll-id">{rollId}</span>
+            <span class="roll-id">{roll.id}</span>
+            {roll.film && (
+              <Fragment>
+                <span class="roll-sep">·</span>
+                <span class="roll-film">{roll.film}</span>
+              </Fragment>
+            )}
             <span class="roll-bracket">]</span>
           </span>
         ))}
@@ -203,7 +211,7 @@ const formattedRolls = rollIds.map(id => id.split('/').pop() || id);
     transform: translateX(-3px);
   }
 
-  /* Film roll IDs */
+  /* Film rolls */
   .intro-film-rolls {
     display: flex;
     flex-wrap: wrap;
@@ -211,10 +219,10 @@ const formattedRolls = rollIds.map(id => id.split('/').pop() || id);
     margin-bottom: 3rem;
   }
 
-  .intro-roll-id {
+  .intro-roll-tag {
     font-family: var(--font-overpass-mono, "Overpass Mono Variable", monospace);
     font-size: clamp(0.65rem, 1.2vw, 0.75rem);
-    letter-spacing: 0.2em;
+    letter-spacing: 0.15em;
     color: var(--text-muted);
     opacity: 0;
     animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -228,6 +236,16 @@ const formattedRolls = rollIds.map(id => id.split('/').pop() || id);
   .roll-id {
     margin: 0 0.5ch;
     font-weight: 600;
+  }
+
+  .roll-sep {
+    margin: 0 0.25ch;
+    opacity: 0.35;
+  }
+
+  .roll-film {
+    margin: 0 0.5ch;
+    letter-spacing: 0.08em;
   }
 
   /* Title with dramatic typography */
@@ -405,7 +423,7 @@ const formattedRolls = rollIds.map(id => id.split('/').pop() || id);
     .intro-image,
     .intro-film-grain,
     .intro-back-link,
-    .intro-roll-id,
+    .intro-roll-tag,
     .title-word,
     .intro-description-wrapper,
     .intro-scroll-hint {

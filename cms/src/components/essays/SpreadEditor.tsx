@@ -3,12 +3,39 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import type { Spread, SpreadLayout } from "../../types";
 import PhotoSlot from "./PhotoSlot";
-import LayoutPicker from "./LayoutPicker";
+
+function LayoutIcon({ layout, className = "" }: { layout: SpreadLayout; className?: string }) {
+  const c = `w-5 h-3.5 ${className}`;
+  const fill = "currentColor";
+  const r = 0.5;
+  switch (layout) {
+    case "single":
+      return <svg className={c} viewBox="0 0 20 14"><rect x={0} y={0} width={20} height={14} rx={r} fill={fill} /></svg>;
+    case "duo":
+      return <svg className={c} viewBox="0 0 20 14"><rect x={0} y={0} width={9.5} height={14} rx={r} fill={fill} /><rect x={10.5} y={0} width={9.5} height={14} rx={r} fill={fill} /></svg>;
+    case "duo-l":
+      return <svg className={c} viewBox="0 0 20 14"><rect x={0} y={0} width={12.5} height={14} rx={r} fill={fill} /><rect x={13.5} y={0} width={6.5} height={14} rx={r} fill={fill} /></svg>;
+    case "duo-r":
+      return <svg className={c} viewBox="0 0 20 14"><rect x={0} y={0} width={6.5} height={14} rx={r} fill={fill} /><rect x={7.5} y={0} width={12.5} height={14} rx={r} fill={fill} /></svg>;
+    case "trio":
+      return <svg className={c} viewBox="0 0 20 14"><rect x={0} y={0} width={6} height={14} rx={r} fill={fill} /><rect x={7} y={0} width={6} height={14} rx={r} fill={fill} /><rect x={14} y={0} width={6} height={14} rx={r} fill={fill} /></svg>;
+    case "trio-l":
+      return <svg className={c} viewBox="0 0 20 14"><rect x={0} y={0} width={12.5} height={14} rx={r} fill={fill} /><rect x={13.5} y={0} width={6.5} height={6.5} rx={r} fill={fill} /><rect x={13.5} y={7.5} width={6.5} height={6.5} rx={r} fill={fill} /></svg>;
+    case "trio-r":
+      return <svg className={c} viewBox="0 0 20 14"><rect x={0} y={0} width={6.5} height={6.5} rx={r} fill={fill} /><rect x={0} y={7.5} width={6.5} height={6.5} rx={r} fill={fill} /><rect x={7.5} y={0} width={12.5} height={14} rx={r} fill={fill} /></svg>;
+    default:
+      return null;
+  }
+}
+
+const LAYOUTS: SpreadLayout[] = [
+  "single", "duo", "duo-l", "duo-r", "trio", "trio-l", "trio-r",
+];
 
 interface Props {
   spread: Spread;
   index: number;
-  photoInfoMap: Record<string, { rollName: string; sequence: string }>;
+  photoInfoMap: Record<string, { rollName: string; sequence: string; date?: string }>;
   onUpdateLayout: (layout: SpreadLayout) => void;
   onUpdateCaption: (caption: string) => void;
   onRemovePhoto: (slotIndex: number) => void;
@@ -35,7 +62,6 @@ export default function SpreadEditor({
   onRemovePhoto,
   onDelete,
 }: Props) {
-  const [showLayoutPicker, setShowLayoutPicker] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const slotCount = SLOTS_PER_LAYOUT[spread.layout];
   const isSingle = spread.layout === "single";
@@ -87,30 +113,21 @@ export default function SpreadEditor({
           </svg>
         </button>
         <span className="text-xs text-zinc-400">#{index + 1}</span>
-        <div className="relative">
-          <button
-            onClick={() => setShowLayoutPicker(!showLayoutPicker)}
-            className="px-2 py-1 text-xs font-mono bg-zinc-100 text-zinc-600 rounded hover:bg-zinc-200 hover:text-zinc-800 transition-colors"
-          >
-            {spread.layout}
-          </button>
-          {showLayoutPicker && (
-            <>
-              <div
-                className="fixed inset-0 z-10"
-                onClick={() => setShowLayoutPicker(false)}
-              />
-              <div className="absolute top-full left-0 mt-1 z-20 bg-white border border-zinc-200 rounded-lg p-2 shadow-lg">
-                <LayoutPicker
-                  value={spread.layout}
-                  onChange={(layout) => {
-                    onUpdateLayout(layout);
-                    setShowLayoutPicker(false);
-                  }}
-                />
-              </div>
-            </>
-          )}
+        <div className="flex gap-1">
+          {LAYOUTS.map((l) => (
+            <button
+              key={l}
+              onClick={() => onUpdateLayout(l)}
+              title={l}
+              className={`p-1 rounded transition-colors ${
+                spread.layout === l
+                  ? "bg-blue-500 text-white"
+                  : "bg-zinc-100 text-zinc-400 hover:bg-zinc-200 hover:text-zinc-600"
+              }`}
+            >
+              <LayoutIcon layout={l} />
+            </button>
+          ))}
         </div>
         <div className="flex-1" />
         <div className="relative">
