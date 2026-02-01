@@ -1,0 +1,259 @@
+manualId: 2022/GEL-05
+film: ektachrome-100
+camera: Bronica SQ-Ai
+format: 6x6
+cover: "001"
+shots:
+  - sequence: "000"
+    date: 2022-06-17T11:30:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-05/PaskalS417_001.webp
+      alt: Film photo of tree, branch, cottage, roof, house, land lot.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Tree
+        - Branch
+        - Cottage
+        - Roof
+        - House
+        - Land lot
+        - Home
+        - Spring
+        - Shade
+        - Twig
+
+  - sequence: "001"
+    date: 2022-06-17T11:35:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-05/PaskalS417_002.webp
+      alt: Film photo of leaf, green, nature, natural environment, branch, wood.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Leaf
+        - Green
+        - Nature
+        - Natural environment
+        - Branch
+        - Wood
+        - Vegetation
+        - Forest
+        - Ecoregion
+        - Plant community
+
+  - sequence: "002"
+    date: 2022-06-17T11:40:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-05/PaskalS417_003.webp
+      alt: Film photo of water, body of water, nature, waterway, watercourse, bank.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Water
+        - Body of water
+        - Nature
+        - Waterway
+        - Watercourse
+        - Bank
+        - Canal
+        - Estate
+        - Reflection
+        - Garden
+
+  - sequence: "003"
+    date: 2022-06-17T11:45:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-05/PaskalS417_004.webp
+      alt: "Film photo of window, house, home, estate, sash window, canal. Location: Heeze Castle."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Window
+        - House
+        - Home
+        - Estate
+        - Sash window
+        - Canal
+        - Channel
+        - Reflection
+        - Garden
+        - Pond
+      location: Heeze Castle
+
+  - sequence: "004"
+    date: 2022-06-17T11:50:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-05/PaskalS417_005.webp
+      alt: "Film photo of plants, shrub, home, estate, garden, lawn. Location: Heeze Castle."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Plants
+        - Shrub
+        - Home
+        - Estate
+        - Garden
+        - Lawn
+        - Mansion
+        - Landscaping
+        - Yard
+        - Farmhouse
+      location: Heeze Castle
+
+  - sequence: "005"
+    date: 2022-06-17T11:55:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-05/PaskalS417_006.webp
+      alt: Film photo of grass, natural environment, green, grassland, pasture, field.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Grass
+        - Natural environment
+        - Green
+        - Grassland
+        - Pasture
+        - Field
+        - Rural area
+        - Fence
+        - Landscape
+        - Bovinae
+
+  - sequence: "006"
+    date: 2022-06-20T20:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-05/PaskalS417_007.webp
+      alt: Film photo of leaf, branch, nature, trunk, twig, woody plant.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Leaf
+        - Branch
+        - Nature
+        - Trunk
+        - Twig
+        - Woody plant
+        - Sunlight
+        - Public utility
+        - Woodland
+        - Evening
+
+  - sequence: "007"
+    date: 2022-06-20T20:05:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-05/PaskalS417_008.webp
+      alt: Film photo of sky, daytime, horizon, afterglow, nature, sunset.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sky
+        - Daytime
+        - Horizon
+        - Afterglow
+        - Nature
+        - Sunset
+        - Dusk
+        - Yellow
+        - Orange
+        - Natural landscape
+
+  - sequence: "008"
+    date: 2022-06-20T20:10:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-05/PaskalS417_009.webp
+      alt: Film photo of sky, blue, daytime, horizon, nature, dusk.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sky
+        - Blue
+        - Daytime
+        - Horizon
+        - Nature
+        - Dusk
+        - Afterglow
+        - Natural landscape
+        - Sunset
+        - Ecoregion
+
+  - sequence: "009"
+    date: 2022-06-20T20:15:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-05/PaskalS417_010.webp
+      alt: Film photo of sky, daytime, nature, afterglow, horizon, branch.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sky
+        - Daytime
+        - Nature
+        - Afterglow
+        - Horizon
+        - Branch
+        - Sunset
+        - Dusk
+        - Beauty
+        - Orange
+
+  - sequence: "010"
+    date: 2022-06-20T20:20:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-05/PaskalS417_011.webp
+      alt: Film photo of sky, daytime, afterglow, sunset, nature, horizon.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sky
+        - Daytime
+        - Afterglow
+        - Sunset
+        - Nature
+        - Horizon
+        - Dusk
+        - Branch
+        - Sunrise
+        - Evening
+
+  - sequence: "011"
+    date: 2022-06-20T20:25:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/GEL-05/PaskalS417_012.webp
+      alt: Film photo of sky, afterglow, daytime, sunset, nature, horizon.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sky
+        - Afterglow
+        - Daytime
+        - Sunset
+        - Nature
+        - Horizon
+        - Dusk
+        - Branch
+        - Sunrise
+        - Natural landscape

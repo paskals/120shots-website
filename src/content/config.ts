@@ -34,7 +34,7 @@ const films = defineCollection({
       "black-and-white-negative",
       "special-negative",
     ]),
-    iso: z.string(),
+    iso: z.coerce.number(),
     description: z.string().optional(),
   }),
 });

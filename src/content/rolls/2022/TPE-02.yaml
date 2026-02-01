@@ -1,0 +1,751 @@
+manualId: 2022/TPE-02
+film: superia-xtra-400
+camera: Nikon F3
+format: 35mm
+cover: "001"
+shots:
+  - sequence: "000"
+    date: 2022-03-12T12:01:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-000A.webp
+      alt: Film photo of urban area, daytime, building, city, metropolitan area, skyscraper.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - Daytime
+        - Building
+        - City
+        - Metropolitan area
+        - Skyscraper
+        - High-rise building
+        - Metropolis
+        - Tower
+        - Landmark
+
+  - sequence: "001"
+    date: 2022-03-12T12:06:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-001A.webp
+      alt: Film photo of urban area, daytime, skyscraper, city, building, metropolitan area.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - Daytime
+        - Skyscraper
+        - City
+        - Building
+        - Metropolitan area
+        - High-rise building
+        - Metropolis
+        - Tower
+        - Neighbourhood
+
+  - sequence: "002"
+    date: 2022-03-12T12:11:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-002A.webp
+      alt: Film photo of urban area, city, residential area, bird's-eye view, aerial photography, metropolitan area.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - City
+        - Residential area
+        - Bird's-eye view
+        - Aerial photography
+        - Metropolitan area
+        - Landscape
+        - Neighbourhood
+        - Apartment
+        - Urban design
+
+  - sequence: "003"
+    date: 2022-03-12T12:16:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-003A.webp
+      alt: "Film photo of daytime, skyscraper, high-rise building, urban area, city, metropolitan area. Location: Din Tai Fung 101."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Daytime
+        - Skyscraper
+        - High-rise building
+        - Urban area
+        - City
+        - Metropolitan area
+        - Tower
+        - Commercial building
+        - Landmark
+        - Metropolis
+      location: Din Tai Fung 101
+
+  - sequence: "004"
+    date: 2022-03-12T12:21:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-004A.webp
+      alt: Film photo of city, urban area, public space, pedestrian, metropolitan area, street.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - City
+        - Urban area
+        - Public space
+        - Pedestrian
+        - Metropolitan area
+        - Street
+        - Leisure
+        - Metropolis
+        - Crowd
+        - High-rise building
+
+  - sequence: "005"
+    date: 2022-03-12T12:26:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-005A.webp
+      alt: "Film photo of daytime, building, skyscraper, urban area, high-rise building, city. Location: Taipei 101 Observatory."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Daytime
+        - Building
+        - Skyscraper
+        - Urban area
+        - High-rise building
+        - City
+        - Tower
+        - Metropolitan area
+        - Commercial building
+        - Landmark
+      location: Taipei 101 Observatory
+
+  - sequence: "006"
+    date: 2022-03-13T12:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-006A.webp
+      alt: Film photo of alley, pedestrian, bazaar, town, public space, lighting.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Alley
+        - Pedestrian
+        - Bazaar
+        - Town
+        - Public space
+        - Lighting
+        - Customer
+        - Market
+        - Street
+        - Retail
+
+  - sequence: "007"
+    date: 2022-03-13T12:05:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-007A.webp
+      alt: Film photo of neighbourhood, town, balcony, residential area, apartment, urban design.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Neighbourhood
+        - Town
+        - Balcony
+        - Residential area
+        - Apartment
+        - Urban design
+        - Mixed-use
+        - Handrail
+
+  - sequence: "008"
+    date: 2022-03-13T12:10:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-008A.webp
+      alt: Film photo of town, alley, stairs, lantern, mid-autumn festival, stock photography.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Town
+        - Alley
+        - Stairs
+        - Lantern
+        - Mid-Autumn Festival
+        - Stock photography
+
+  - sequence: "009"
+    date: 2022-03-13T12:15:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-009A.webp
+      alt: "Film photo of town, alley, architecture, stairs, flowerpot, balcony. Location: Jiufen Old Street."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Town
+        - Alley
+        - Architecture
+        - Stairs
+        - Flowerpot
+        - Balcony
+        - Houseplant
+        - Stock photography
+      location: Jiufen Old Street
+
+  - sequence: "010"
+    date: 2022-03-13T12:20:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-010A.webp
+      alt: Film photo of chinese architecture, japanese architecture, architecture, roof, temple, place of worship.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Chinese architecture
+        - Japanese architecture
+        - Architecture
+        - Roof
+        - Temple
+        - Place of worship
+        - Holy places
+        - Tourist attraction
+        - Shrine
+        - Pagoda
+
+  - sequence: "011"
+    date: 2022-03-13T12:25:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-011A.webp
+      alt: Film photo of mode of transport, land vehicle, vehicle, motor vehicle, car, transport.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Mode of transport
+        - Land vehicle
+        - Vehicle
+        - Motor vehicle
+        - Car
+        - Transport
+        - Yellow
+        - Road
+        - Urban area
+        - City
+
+  - sequence: "012"
+    date: 2022-03-13T12:30:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-012A.webp
+      alt: Film photo of customer, apron, food, cook, cooking, retail.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Customer
+        - Apron
+        - Food
+        - Cook
+        - Cooking
+        - Retail
+        - Street food
+        - Dai pai dong
+        - Market
+        - Cookware and bakeware
+
+  - sequence: "013"
+    date: 2022-03-13T12:35:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-013A.webp
+      alt: Film photo of furniture, customer, human body, shirt, table, restaurant.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Furniture
+        - Customer
+        - Human body
+        - Shirt
+        - Table
+        - Restaurant
+        - Fast food restaurant
+        - Lighting
+        - Chair
+        - Food court
+
+  - sequence: "014"
+    date: 2022-03-13T12:40:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-014A.webp
+      alt: Film photo of food, retail, bazaar, customer, market, shirt.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Food
+        - Retail
+        - Bazaar
+        - Customer
+        - Market
+        - Shirt
+        - City
+        - Public space
+        - Produce
+        - Shopkeeper
+
+  - sequence: "015"
+    date: 2022-03-13T12:45:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-015A.webp
+      alt: Film photo of food, retail, bazaar, customer, market, shopkeeper.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Food
+        - Retail
+        - Bazaar
+        - Customer
+        - Market
+        - Shopkeeper
+        - Street food
+        - Hawker
+        - Delicacy
+        - Produce
+
+  - sequence: "016"
+    date: 2022-03-13T12:50:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-016A.webp
+      alt: Film photo of track, train station, electricity, iron, electrical network, rail transport.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Track
+        - Train station
+        - Electricity
+        - Iron
+        - Electrical network
+        - Rail transport
+        - Engineering
+        - Transport hub
+        - Electrical Supply
+        - Steel
+
+  - sequence: "017"
+    date: 2022-03-19T12:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-017A.webp
+      alt: Film photo of land vehicle, mode of transport, tire, wheel, motor vehicle, automotive lighting.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Land vehicle
+        - Mode of transport
+        - Tire
+        - Wheel
+        - Motor vehicle
+        - Automotive lighting
+        - Motorcycle
+        - Automotive Tire
+        - Scooter
+        - Street
+
+  - sequence: "018"
+    date: 2022-03-19T12:05:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-018A.webp
+      alt: Film photo of motorcycle, land vehicle, mode of transport, vehicle, wheel, tire.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Motorcycle
+        - Land vehicle
+        - Mode of transport
+        - Vehicle
+        - Wheel
+        - Tire
+        - Scooter
+        - Motor vehicle
+        - Transport
+        - Automotive Tire
+
+  - sequence: "019"
+    date: 2022-03-19T12:10:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-019A.webp
+      alt: Film photo of fluid, coast, shore, coastal and oceanic landforms, sea, wetland.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Fluid
+        - Coast
+        - Shore
+        - Coastal and oceanic landforms
+        - Sea
+        - Wetland
+        - Beach
+        - Ocean
+        - Sand
+        - Mudflat
+
+  - sequence: "020"
+    date: 2022-03-19T12:15:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-020A.webp
+      alt: Film photo of water, fluid, horizon, kite sports, sea, liquid.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Water
+        - Fluid
+        - Horizon
+        - Kite sports
+        - Sea
+        - Liquid
+        - Beach
+        - Ocean
+        - Coastal and oceanic landforms
+        - Coast
+
+  - sequence: "021"
+    date: 2022-03-19T12:20:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-021A.webp
+      alt: Film photo of sky, natural environment, fluid, beach, horizon, sea.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sky
+        - Natural environment
+        - Fluid
+        - Beach
+        - Horizon
+        - Sea
+        - Coast
+        - Liquid
+        - Ecoregion
+        - Shore
+
+  - sequence: "022"
+    date: 2022-03-19T12:25:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-022A.webp
+      alt: Film photo of sand, beach, soil, heart, environmental art.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sand
+        - Beach
+        - Soil
+        - Heart
+        - Environmental art
+
+  - sequence: "023"
+    date: 2022-03-19T12:30:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-023A.webp
+      alt: Film photo of blue, boat, watercraft, marina, boats and boating--equipment and supplies, dock.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Blue
+        - Boat
+        - Watercraft
+        - Marina
+        - Boats and boating--Equipment and supplies
+        - Dock
+        - Port
+        - Naval architecture
+        - Harbor
+        - Transport hub
+
+  - sequence: "024"
+    date: 2022-03-19T12:35:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-024A.webp
+      alt: Film photo of boat, watercraft, waterway, boats and boating--equipment and supplies, naval architecture, harbor.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Boat
+        - Watercraft
+        - Waterway
+        - Boats and boating--Equipment and supplies
+        - Naval architecture
+        - Harbor
+        - Port
+        - Rope
+        - Marina
+        - Dock
+
+  - sequence: "025"
+    date: 2022-03-19T12:40:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-025A.webp
+      alt: Film photo of retail, customer, bazaar, market, convenience store, shopping.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Retail
+        - Customer
+        - Bazaar
+        - Market
+        - Convenience store
+        - Shopping
+
+  - sequence: "026"
+    date: 2022-03-19T12:45:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-026A.webp
+      alt: Film photo of clothing, bazaar, trousers, temple, human body, customer.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Clothing
+        - Bazaar
+        - Trousers
+        - Temple
+        - Human body
+        - Customer
+        - Retail
+        - Bag
+        - Market
+        - Standing
+
+  - sequence: "027"
+    date: 2022-03-19T12:50:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-027A.webp
+      alt: Film photo of .
+      positionx: 50%
+      positiony: 50%
+      labels: []
+
+  - sequence: "028"
+    date: 2022-03-19T12:55:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-028A.webp
+      alt: Film photo of customer, market, food, night, fast food, fast food restaurant.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Customer
+        - Market
+        - Food
+        - Night
+        - Fast food
+        - Fast food restaurant
+        - Bazaar
+        - Shopkeeper
+        - Street food
+        - Retail
+
+  - sequence: "029"
+    date: 2022-03-19T13:00:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-029A.webp
+      alt: Film photo of customer, retail, bazaar, food, logo, shopkeeper.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Customer
+        - Retail
+        - Bazaar
+        - Food
+        - Logo
+        - Shopkeeper
+        - Market
+        - Shopping
+        - Fast food restaurant
+        - Comfort food
+
+  - sequence: "030"
+    date: 2022-03-19T13:05:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-030A.webp
+      alt: Film photo of mode of transport, land vehicle, tire, wheel, scooter, motorcycle.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Mode of transport
+        - Land vehicle
+        - Tire
+        - Wheel
+        - Scooter
+        - Motorcycle
+        - Road
+        - Street
+        - Urban area
+        - Pedestrian
+
+  - sequence: "031"
+    date: 2022-03-19T13:10:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-031A.webp
+      alt: Film photo of night, lighting, street, electricity, midnight, electronic signage.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Night
+        - Lighting
+        - Street
+        - Electricity
+        - Midnight
+        - Electronic signage
+        - Neon
+        - Restaurant
+        - Motorcycle
+        - Fast food restaurant
+
+  - sequence: "032"
+    date: 2022-03-20T12:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-032A.webp
+      alt: Film photo of land vehicle, mode of transport, vehicle, building, transport, city.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Land vehicle
+        - Mode of transport
+        - Vehicle
+        - Building
+        - Transport
+        - City
+        - Motor vehicle
+        - Urban area
+        - Car
+        - Road
+
+  - sequence: "033"
+    date: 2022-03-20T12:05:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-033A.webp
+      alt: Film photo of road, wall, road surface, street, alley, city.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Road
+        - Wall
+        - Road surface
+        - Street
+        - Alley
+        - City
+        - Sidewalk
+        - Town
+        - Urban area
+        - Neighbourhood
+
+  - sequence: "034"
+    date: 2022-03-20T12:10:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-034A.webp
+      alt: Film photo of land vehicle, mode of transport, vehicle, building, city, road.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Land vehicle
+        - Mode of transport
+        - Vehicle
+        - Building
+        - City
+        - Road
+        - Transport
+        - Motor vehicle
+        - Urban area
+        - Car
+
+  - sequence: "035"
+    date: 2022-03-20T12:15:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-035A.webp
+      alt: Film photo of public space, pedestrian, street, luggage & bags, market, bazaar.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Public space
+        - Pedestrian
+        - Street
+        - Luggage & bags
+        - Market
+        - Bazaar
+        - Customer
+        - Travel
+        - Bag
+        - Crowd
+
+  - sequence: "036"
+    date: 2022-03-20T12:20:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-02/R1-01827-036A.webp
+      alt: Film photo of yellow, temple, chinese architecture.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Yellow
+        - Temple
+        - Chinese architecture

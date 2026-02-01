@@ -1,0 +1,692 @@
+manualId: 2022/TPE-03
+film: portra-400
+camera: Nikon F3
+format: 35mm
+cover: "001"
+shots:
+  - sequence: "000"
+    date: 2022-03-12T14:35:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-000A_0001.webp
+      alt: Film photo of temple.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Temple
+
+  - sequence: "001"
+    date: 2022-03-12T14:40:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-001A.webp
+      alt: Film photo of customer, retail, food, market, street food, bazaar.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Customer
+        - Retail
+        - Food
+        - Market
+        - Street food
+        - Bazaar
+        - Shopkeeper
+        - Fast food
+        - Hawker
+        - Yatai
+
+  - sequence: "002"
+    date: 2022-03-12T14:45:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-002A.webp
+      alt: Film photo of mode of transport, road, automotive lighting, street, motorcycle, scooter.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Mode of transport
+        - Road
+        - Automotive lighting
+        - Street
+        - Motorcycle
+        - Scooter
+        - Automotive Tire
+        - Alley
+        - Pedestrian
+        - Market
+
+  - sequence: "003"
+    date: 2022-03-12T14:47:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-003A.webp
+      alt: Film photo of collection, retail, market, publication, stationery.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Collection
+        - Retail
+        - Market
+        - Publication
+        - Stationery
+
+  - sequence: "004"
+    date: 2022-03-12T15:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-004A.webp
+      alt: Film photo of wheel, tire, alley, automotive tire, road, automotive wheel system.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Wheel
+        - Tire
+        - Alley
+        - Automotive Tire
+        - Road
+        - Automotive Wheel System
+        - Street
+        - Motorcycle
+        - Spoke
+        - Automotive lighting
+
+  - sequence: "005"
+    date: 2022-03-12T15:05:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-005A.webp
+      alt: Film photo of green, architecture, residential area, shrub, neighbourhood, apartment.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Green
+        - Architecture
+        - Residential area
+        - Shrub
+        - Neighbourhood
+        - Apartment
+        - Urban design
+        - Condominium
+        - Balcony
+        - Garden
+
+  - sequence: "006"
+    date: 2022-03-12T15:10:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-006A.webp
+      alt: Film photo of road, road surface, street, urban area, city, town.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Road
+        - Road surface
+        - Street
+        - Urban area
+        - City
+        - Town
+        - Alley
+        - Neighbourhood
+        - Thoroughfare
+        - Sidewalk
+
+  - sequence: "007"
+    date: 2022-03-26T12:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-007A.webp
+      alt: Film photo of urban area, road surface, road, city, street, metropolitan area.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - Road surface
+        - Road
+        - City
+        - Street
+        - Metropolitan area
+        - Asphalt
+        - Pedestrian
+        - Thoroughfare
+        - Lane
+
+  - sequence: "008"
+    date: 2022-03-26T12:10:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-008A.webp
+      alt: Film photo of mode of transport, land vehicle, wheel, motor vehicle, tire, road.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Mode of transport
+        - Land vehicle
+        - Wheel
+        - Motor vehicle
+        - Tire
+        - Road
+        - Automotive lighting
+        - Street
+        - Road surface
+        - Urban area
+
+  - sequence: "009"
+    date: 2022-03-26T12:15:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-009A.webp
+      alt: Film photo of advertising, shopkeeper, customer, awning.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Advertising
+        - Shopkeeper
+        - Customer
+        - Awning
+
+  - sequence: "010"
+    date: 2022-03-26T12:20:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-010A.webp
+      alt: Film photo of metal, ceiling, night, shadow, alley.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Metal
+        - Ceiling
+        - Night
+        - Shadow
+        - Alley
+
+  - sequence: "011"
+    date: 2022-03-26T12:25:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-011A.webp
+      alt: Film photo of land vehicle, vehicle, mode of transport, wheel, motor vehicle, tire.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Land vehicle
+        - Vehicle
+        - Mode of transport
+        - Wheel
+        - Motor vehicle
+        - Tire
+        - Automotive Tire
+        - Scooter
+        - Automotive lighting
+        - Motorcycle
+
+  - sequence: "012"
+    date: 2022-03-26T12:40:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-012A.webp
+      alt: Film photo of mode of transport, motor vehicle, car, automotive exterior, automotive lighting, automotive parking light.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Mode of transport
+        - Motor vehicle
+        - Car
+        - Automotive Exterior
+        - Automotive lighting
+        - Automotive Parking Light
+        - Automotive Mirror
+        - Luxury vehicle
+        - Family car
+        - Vehicle registration plate
+
+  - sequence: "013"
+    date: 2022-03-26T12:45:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-013A.webp
+      alt: Film photo of building, daytime, city, urban area, road, road surface.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Building
+        - Daytime
+        - City
+        - Urban area
+        - Road
+        - Road surface
+        - Street
+        - Metropolitan area
+        - Neighbourhood
+        - Town
+
+  - sequence: "014"
+    date: 2022-03-26T12:50:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-014A.webp
+      alt: Film photo of road, urban area, road surface, street, city, town.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Road
+        - Urban area
+        - Road surface
+        - Street
+        - City
+        - Town
+        - Neighbourhood
+        - Asphalt
+        - Lane
+        - Thoroughfare
+
+  - sequence: "015"
+    date: 2022-04-16T14:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-015A.webp
+      alt: Film photo of daytime, building, window, urban area, city, facade.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Daytime
+        - Building
+        - Window
+        - Urban area
+        - City
+        - Facade
+        - Town
+        - Neighbourhood
+        - Residential area
+        - Apartment
+
+  - sequence: "016"
+    date: 2022-04-16T14:20:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-016A.webp
+      alt: Film photo of .
+      positionx: 50%
+      positiony: 50%
+      labels: []
+
+  - sequence: "017"
+    date: 2022-04-16T14:25:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-017A.webp
+      alt: Film photo of flower, branch, petal, blossom, twig, spring.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Flower
+        - Branch
+        - Petal
+        - Blossom
+        - Twig
+        - Spring
+        - Pink
+        - Trunk
+        - Flowering plant
+        - Garden
+
+  - sequence: "018"
+    date: 2022-04-16T14:30:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-018A.webp
+      alt: Film photo of flower, branch, petal, pink, twig, spring.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Flower
+        - Branch
+        - Petal
+        - Pink
+        - Twig
+        - Spring
+        - Blossom
+        - Cherry blossom
+        - Apples
+        - Prunus
+
+  - sequence: "019"
+    date: 2022-04-16T14:35:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-019A.webp
+      alt: Film photo of photograph, leaf, nature, beauty, fashion, spring.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Photograph
+        - Leaf
+        - Nature
+        - Beauty
+        - Fashion
+        - Spring
+        - Leisure
+        - Sitting
+        - People in nature
+        - Happiness
+
+  - sequence: "020"
+    date: 2022-04-16T14:36:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-020A.webp
+      alt: Film photo of branch, spring, twig, people in nature, leisure, blossom.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Branch
+        - Spring
+        - Twig
+        - People in nature
+        - Leisure
+        - Blossom
+        - Winter
+
+  - sequence: "021"
+    date: 2022-04-16T06:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-021A.webp
+      alt: Film photo of tower, observation tower, spire.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Tower
+        - Observation tower
+        - Spire
+
+  - sequence: "022"
+    date: 2022-05-05T16:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-022A.webp
+      alt: Film photo of sports venue, public space, skatepark, graffiti, park, street art.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sports venue
+        - Public space
+        - Skatepark
+        - Graffiti
+        - Park
+        - Street art
+        - Mural
+
+  - sequence: "023"
+    date: 2022-05-05T16:10:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-023A.webp
+      alt: Film photo of tree, leaf, branch, road surface, road, thoroughfare.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Tree
+        - Leaf
+        - Branch
+        - Road surface
+        - Road
+        - Thoroughfare
+        - Asphalt
+        - Street
+        - Trunk
+        - Lane
+
+  - sequence: "024"
+    date: 2022-05-05T16:15:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-024A.webp
+      alt: Film photo of green, leaf, branch, vegetation, shrub, spring.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Green
+        - Leaf
+        - Branch
+        - Vegetation
+        - Shrub
+        - Spring
+        - Garden
+        - Shade
+        - Landscaping
+        - Driveway
+
+  - sequence: "025"
+    date: 2022-05-05T16:20:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-025A.webp
+      alt: Film photo of house, home, shrub, roof, cottage, siding.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - House
+        - Home
+        - Shrub
+        - Roof
+        - Cottage
+        - Siding
+        - Estate
+        - Garden
+        - Driveway
+        - Shade
+
+  - sequence: "026"
+    date: 2022-05-05T16:30:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-026A.webp
+      alt: Film photo of branch, leaf, tree, nature, natural environment, road surface.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Branch
+        - Leaf
+        - Tree
+        - Nature
+        - Natural environment
+        - Road surface
+        - Road
+        - Landscape
+        - atmospheric phenomenon
+        - Trunk
+
+  - sequence: "027"
+    date: 2022-05-05T16:35:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-027A.webp
+      alt: Film photo of shrub, garden, driveway, landscaping, shade, walkway.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Shrub
+        - Garden
+        - Driveway
+        - Landscaping
+        - Shade
+        - Walkway
+        - Botanical garden
+        - Evergreen
+        - Hedge
+        - Path
+
+  - sequence: "028"
+    date: 2022-05-05T17:10:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-030A.webp
+      alt: Film photo of car, automotive exterior, car door, automotive parking light, subcompact car, hatchback.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Car
+        - Automotive Exterior
+        - Car door
+        - Automotive Parking Light
+        - Subcompact car
+        - Hatchback
+        - Automotive Side-View Mirror
+        - Automotive Mirror
+        - Vehicle registration plate
+        - City car
+
+  - sequence: "029"
+    date: 2022-05-27T14:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-031A.webp
+      alt: Film photo of flower, green, petal, red, plants, yellow.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Flower
+        - Green
+        - Petal
+        - Red
+        - Plants
+        - Yellow
+        - Garden
+        - Flowering plant
+        - Groundcover
+        - Spring
+
+  - sequence: "030"
+    date: 2022-05-27T14:01:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-032A.webp
+      alt: Film photo of flower, green, red, petal, plants, yellow.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Flower
+        - Green
+        - Red
+        - Petal
+        - Plants
+        - Yellow
+        - Garden
+        - Flowering plant
+        - Spring
+        - Wildflower
+
+  - sequence: "031"
+    date: 2022-05-27T16:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-033A.webp
+      alt: Film photo of sky, daytime, steeple, spire, facade, church.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sky
+        - Daytime
+        - Steeple
+        - Spire
+        - Facade
+        - Church
+        - Landmark
+        - Tower
+        - Place of worship
+        - Medieval architecture
+
+  - sequence: "032"
+    date: 2022-05-27T16:01:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-034A.webp
+      alt: Film photo of steeple, spire, landmark, church, tower, place of worship.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Steeple
+        - Spire
+        - Landmark
+        - Church
+        - Tower
+        - Place of worship
+        - Medieval architecture
+        - Finial
+        - Turret
+        - Chapel
+
+  - sequence: "033"
+    date: 2022-05-29T13:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-035A.webp
+      alt: Film photo of eyewear, sleeve, glasses, vision care, smile, denim.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Eyewear
+        - Sleeve
+        - Glasses
+        - Vision Care
+        - Smile
+        - Denim
+        - Outerwear
+        - Standing
+        - Jacket
+        - Luggage & bags
+
+  - sequence: "034"
+    date: 2022-05-29T13:01:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-03/R1-02384-036A.webp
+      alt: Film photo of eyewear, glasses, sleeve, vision care, collar, smile.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Eyewear
+        - Glasses
+        - Sleeve
+        - Vision Care
+        - Collar
+        - Smile
+        - Standing
+        - Jacket
+        - Denim
+        - Blazer

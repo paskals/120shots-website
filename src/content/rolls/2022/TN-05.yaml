@@ -1,0 +1,732 @@
+manualId: 2022/TN-05
+film: lomo-800
+camera: Nikon F3
+format: 35mm
+cover: "001"
+shots:
+  - sequence: "000"
+    date: 2022-10-01T17:47:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-000A.webp
+      alt: Film photo of sky, water, water resources, body of water, fluid, horizon.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sky
+        - Water
+        - Water resources
+        - Body of water
+        - Fluid
+        - Horizon
+        - Waterway
+        - Dusk
+        - Watercourse
+        - Bank
+
+  - sequence: "001"
+    date: 2022-10-01T17:55:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-001A.webp
+      alt: Film photo of bank, lake, channel, river, coast, watercraft.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Bank
+        - Lake
+        - Channel
+        - River
+        - Coast
+        - Watercraft
+        - Evening
+        - Reservoir
+        - Fluvial landforms of streams
+        - Dusk
+
+  - sequence: "002"
+    date: 2022-10-01T18:03:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-002A.webp
+      alt: Film photo of people, sky, horizon, landscape, crowd, beach.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - People
+        - Sky
+        - Horizon
+        - Landscape
+        - Crowd
+        - Beach
+        - People on beach
+        - Dusk
+        - Recreation
+        - Sunset
+
+  - sequence: "003"
+    date: 2022-10-01T18:11:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-003A.webp
+      alt: Film photo of water, body of water, horizon, beach, fluid, wave.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Water
+        - Body of water
+        - Horizon
+        - Beach
+        - Fluid
+        - Wave
+        - Sea
+        - Wind wave
+        - Liquid
+        - Ocean
+
+  - sequence: "004"
+    date: 2022-10-01T18:19:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-004A.webp
+      alt: Film photo of blue, water, water resources, body of water, horizon, beach.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Blue
+        - Water
+        - Water resources
+        - Body of water
+        - Horizon
+        - Beach
+        - Sea
+        - Fluid
+        - Wave
+        - Wind wave
+
+  - sequence: "005"
+    date: 2022-10-02T18:45:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-005A.webp
+      alt: Film photo of night, electronic signage, lighting, electricity, neon, metropolitan area.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Night
+        - Electronic signage
+        - Lighting
+        - Electricity
+        - Neon
+        - Metropolitan area
+        - Neon sign
+        - Advertising
+        - Midnight
+        - Darkness
+
+  - sequence: "006"
+    date: 2022-10-02T18:53:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-006A.webp
+      alt: Film photo of night, lighting, electronic signage, electricity, neon, metropolitan area.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Night
+        - Lighting
+        - Electronic signage
+        - Electricity
+        - Neon
+        - Metropolitan area
+        - Neon sign
+        - Midnight
+        - Darkness
+        - Metropolis
+
+  - sequence: "007"
+    date: 2022-10-02T19:01:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-007A.webp
+      alt: Film photo of advertising, electronic signage, restaurant, sign, fast food restaurant.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Advertising
+        - Electronic signage
+        - Restaurant
+        - Sign
+        - Fast food restaurant
+
+  - sequence: "008"
+    date: 2022-10-02T19:09:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-008A.webp
+      alt: Film photo of electronic signage, advertising, sign, neon.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Electronic signage
+        - Advertising
+        - Sign
+        - Neon
+
+  - sequence: "009"
+    date: 2022-10-02T19:17:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-009A.webp
+      alt: Film photo of night, electricity, lighting, automotive lighting, midnight, electrical supply.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Night
+        - Electricity
+        - Lighting
+        - Automotive lighting
+        - Midnight
+        - Electrical Supply
+        - Electronic signage
+        - Automotive Tail & Brake Light
+        - Security lighting
+        - Neon
+
+  - sequence: "010"
+    date: 2022-10-02T19:25:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-010A.webp
+      alt: Film photo of picture frame, shelf, desk, office equipment, collection, shelving.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Picture frame
+        - Shelf
+        - Desk
+        - Office Equipment
+        - Collection
+        - Shelving
+        - Publication
+        - Shopkeeper
+
+  - sequence: "011"
+    date: 2022-10-02T19:33:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-011A.webp
+      alt: Film photo of lighting, orange, advertising, light fixture, lantern, night.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Lighting
+        - Orange
+        - Advertising
+        - Light fixture
+        - Lantern
+        - Night
+        - Alley
+
+  - sequence: "012"
+    date: 2022-10-02T19:41:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-012A.webp
+      alt: Film photo of motorcycle, electronic signage, sign.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Motorcycle
+        - Electronic signage
+        - Sign
+
+  - sequence: "013"
+    date: 2022-10-22T20:01:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-013A.webp
+      alt: Film photo of neon.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Neon
+
+  - sequence: "014"
+    date: 2022-10-22T20:02:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-014A.webp
+      alt: Film photo of red, neon.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Red
+        - Neon
+
+  - sequence: "015"
+    date: 2022-12-24T17:45:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-015A.webp
+      alt: Film photo of jacket, fur clothing, fur, long hair, parka, winter.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Jacket
+        - Fur clothing
+        - Fur
+        - Long hair
+        - Parka
+        - Winter
+        - Hood
+        - Brown hair
+        - Natural material
+        - Happiness
+
+  - sequence: "016"
+    date: 2022-12-24T17:53:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-016A.webp
+      alt: Film photo of interior design, countertop, room, kitchen, kitchen appliance, drinkware.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Interior design
+        - Countertop
+        - Room
+        - Kitchen
+        - Kitchen Appliance
+        - Drinkware
+        - Cabinetry
+        - Happiness
+        - Kitchen Sink
+        - Small appliance
+
+  - sequence: "017"
+    date: 2022-12-24T18:01:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-017A.webp
+      alt: Film photo of countertop, interior design, kitchen, food, kitchen appliance, room.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Countertop
+        - Interior design
+        - Kitchen
+        - Food
+        - Kitchen Appliance
+        - Room
+        - Ceiling
+        - Beard
+        - Facial hair
+        - Light fixture
+
+  - sequence: "018"
+    date: 2022-12-24T18:09:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-018A.webp
+      alt: Film photo of furniture, tableware, drinkware, lampshade, table, lighting.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Furniture
+        - Tableware
+        - Drinkware
+        - Lampshade
+        - Table
+        - Lighting
+        - Interior design
+        - Serveware
+        - Food
+        - Dishware
+
+  - sequence: "019"
+    date: 2022-12-24T18:17:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-019A.webp
+      alt: Film photo of furniture, tableware, drinkware, table, shirt, food.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Furniture
+        - Tableware
+        - Drinkware
+        - Table
+        - Shirt
+        - Food
+        - Interior design
+        - Lighting
+        - Lampshade
+        - Dishware
+
+  - sequence: "020"
+    date: 2022-12-24T18:25:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-020A.webp
+      alt: Film photo of furniture, tableware, drinkware, shirt, table, interior design.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Furniture
+        - Tableware
+        - Drinkware
+        - Shirt
+        - Table
+        - Interior design
+        - Lampshade
+        - Lighting
+        - Smile
+        - Food
+
+  - sequence: "021"
+    date: 2022-12-26T16:00:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-021A.webp
+      alt: "Film photo of commercial building, headquarters, corporate headquarters. Location: Giornale."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Commercial building
+        - Headquarters
+        - Corporate headquarters
+      location: Giornale
+
+  - sequence: "022"
+    date: 2022-12-26T16:08:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-022A.webp
+      alt: Film photo of public transport, train, rolling stock, rapid transit, metro station, rail transport.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Public transport
+        - Train
+        - Rolling stock
+        - Rapid transit
+        - Metro station
+        - Rail transport
+        - Passenger car
+        - Cleanliness
+        - Train station
+        - Subway
+
+  - sequence: "023"
+    date: 2022-12-26T16:16:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-023A.webp
+      alt: Film photo of public transport, rolling stock, train, passenger car, rapid transit, railroad car.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Public transport
+        - Rolling stock
+        - Train
+        - Passenger car
+        - Rapid transit
+        - Railroad car
+        - Rail transport
+        - Night
+
+  - sequence: "024"
+    date: 2022-12-26T16:24:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-024A.webp
+      alt: Film photo of bicycle tire, bicycle, bicycle wheel, bicycle frame, bicycles--equipment and supplies, bicycle wheel rim.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Bicycle tire
+        - Bicycle
+        - Bicycle wheel
+        - Bicycle frame
+        - Bicycles--Equipment and supplies
+        - Bicycle Wheel Rim
+        - Concrete
+        - Bicycle handlebar
+        - Road bicycle
+        - Parking
+
+  - sequence: "025"
+    date: 2022-12-26T16:32:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-025A.webp
+      alt: Film photo of wall, architecture, composite material, concrete, brick, sidewalk.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Wall
+        - Architecture
+        - Composite material
+        - Concrete
+        - Brick
+        - Sidewalk
+        - Paint
+        - Graffiti
+        - Street art
+
+  - sequence: "026"
+    date: 2022-12-26T16:40:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-026A.webp
+      alt: Film photo of photograph, wall, road, architecture, brown, concrete.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Photograph
+        - Wall
+        - Road
+        - Architecture
+        - Brown
+        - Concrete
+        - Graffiti
+        - Alley
+        - Subway
+        - Composite material
+
+  - sequence: "027"
+    date: 2022-12-26T16:48:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-027A.webp
+      alt: Film photo of wall, road, architecture, alley, brown, concrete.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Wall
+        - Road
+        - Architecture
+        - Alley
+        - Brown
+        - Concrete
+        - Graffiti
+        - Composite material
+        - Walkway
+        - Visual arts
+
+  - sequence: "028"
+    date: 2022-12-26T16:56:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-028A.webp
+      alt: Film photo of urban area, metropolitan area, urban design, composite material, high-rise building, apartment.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - Metropolitan area
+        - Urban design
+        - Composite material
+        - High-rise building
+        - Apartment
+        - Mixed-use
+        - Metropolis
+        - Commercial building
+        - Condominium
+
+  - sequence: "029"
+    date: 2022-12-26T17:04:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-029A.webp
+      alt: "Film photo of daytime, building, city, facade, architecture, metropolitan area. Location: B2 Bistro + Bar."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Daytime
+        - Building
+        - City
+        - Facade
+        - Architecture
+        - Metropolitan area
+        - Commercial building
+        - High-rise building
+        - Urban design
+        - Apartment
+      location: B2 Bistro + Bar
+
+  - sequence: "030"
+    date: 2022-12-26T17:12:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-030A.webp
+      alt: Film photo of building, urban area, road surface, city, road, street.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Building
+        - Urban area
+        - Road surface
+        - City
+        - Road
+        - Street
+        - Town
+        - Metropolitan area
+        - Neighbourhood
+        - Asphalt
+
+  - sequence: "031"
+    date: 2022-12-26T17:20:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-031A.webp
+      alt: Film photo of alley, street, brickwork, brick, composite material, recycling bin.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Alley
+        - Street
+        - Brickwork
+        - Brick
+        - Composite material
+        - Recycling bin
+        - Waste container
+        - Waste Containment
+
+  - sequence: "032"
+    date: 2022-12-26T17:28:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-032A.webp
+      alt: Film photo of christmas decoration, branch, christmas tree, christmas day, christmas ornament, event.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Christmas decoration
+        - Branch
+        - Christmas tree
+        - Christmas Day
+        - Christmas ornament
+        - Event
+        - Holiday Ornament
+        - Christmas Eve
+        - Twig
+        - Woody plant
+
+  - sequence: "033"
+    date: 2022-12-26T17:36:00.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-033A.webp
+      alt: Film photo of night, lighting, public space, electricity, midnight, pole.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Night
+        - Lighting
+        - Public space
+        - Electricity
+        - Midnight
+        - pole
+        - Electrical Supply
+        - Street light
+        - Evening
+        - Security lighting
+
+  - sequence: "034"
+    date: 2022-12-27T11:47:28.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-034A.webp
+      alt: Film photo of grass, tree, branch, leaf, public space, plain.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Grass
+        - Tree
+        - Branch
+        - Leaf
+        - Public space
+        - Plain
+        - Land lot
+        - Trunk
+        - Twig
+        - Lawn
+
+  - sequence: "035"
+    date: 2022-12-27T11:55:28.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-035A.webp
+      alt: Film photo of jacket, fashion, winter, hood, brown hair, happiness.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Jacket
+        - Fashion
+        - Winter
+        - Hood
+        - Brown hair
+        - Happiness
+        - Knit cap
+        - Parka
+        - Portrait photography
+        - Beanie
+
+  - sequence: "036"
+    date: 2022-12-27T12:03:28.000Z
+    offsetTime: +01:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TN-05/R1-05076-036A.webp
+      alt: Film photo of eyewear, vision care, outerwear, beauty, fashion, winter.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Eyewear
+        - Vision Care
+        - Outerwear
+        - Beauty
+        - Fashion
+        - Winter
+        - Textile
+        - Jacket
+        - Knit cap
+        - Fur

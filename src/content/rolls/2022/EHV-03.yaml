@@ -1,0 +1,257 @@
+manualId: 2022/EHV-03
+film: gold-200
+camera: Bronica SQ-Ai
+format: 6x6
+cover: "001"
+shots:
+  - sequence: "000"
+    date: 2022-06-11T13:30:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/EHV-03/PaskalS418_004.webp
+      alt: Film photo of daytime, architecture, composite material, urban design, commercial building, shade.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Daytime
+        - Architecture
+        - Composite material
+        - Urban design
+        - Commercial building
+        - Shade
+        - Headquarters
+        - Engineering
+        - Concrete
+        - Column
+
+  - sequence: "001"
+    date: 2022-06-11T13:40:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/EHV-03/PaskalS418_005.webp
+      alt: Film photo of daytime, architecture, composite material, urban design, commercial building, headquarters.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Daytime
+        - Architecture
+        - Composite material
+        - Urban design
+        - Commercial building
+        - Headquarters
+        - Shade
+        - Engineering
+        - Concrete
+        - Brutalist architecture
+
+  - sequence: "002"
+    date: 2022-06-11T13:50:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/EHV-03/PaskalS418_006.webp
+      alt: Film photo of sky, daytime, cloud, composite material, tower, chimney.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sky
+        - Daytime
+        - Cloud
+        - Composite material
+        - Tower
+        - Chimney
+        - Cumulus
+        - Sunlight
+        - Brickwork
+        - Meteorological phenomenon
+
+  - sequence: "003"
+    date: 2022-06-11T14:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/EHV-03/PaskalS418_007.webp
+      alt: Film photo of architecture, public space, metropolitan area, commercial building, urban design, composite material.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Architecture
+        - Public space
+        - Metropolitan area
+        - Commercial building
+        - Urban design
+        - Composite material
+        - High-rise building
+        - Condominium
+        - Headquarters
+        - Glass
+
+  - sequence: "004"
+    date: 2022-06-11T14:10:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/EHV-03/PaskalS418_008.webp
+      alt: Film photo of wall, art, visual arts, street art, graffiti, drawing.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Wall
+        - Art
+        - Visual arts
+        - Street art
+        - Graffiti
+        - Drawing
+        - Mural
+        - Painting
+        - Paint
+        - Illustration
+
+  - sequence: "005"
+    date: 2022-06-11T14:20:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/EHV-03/PaskalS418_009.webp
+      alt: Film photo of flower, petal, plants, pink, flowering plant, spring.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Flower
+        - Petal
+        - Plants
+        - Pink
+        - Flowering plant
+        - Spring
+        - Woody plant
+        - Plant stem
+        - Wildflower
+        - Perennial plant
+
+  - sequence: "006"
+    date: 2022-06-11T14:30:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/EHV-03/PaskalS418_010.webp
+      alt: Film photo of flower, plants, pink, petal, shrub, flowering plant.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Flower
+        - Plants
+        - Pink
+        - Petal
+        - Shrub
+        - Flowering plant
+        - Spring
+        - Woody plant
+        - Garden
+        - Perennial plant
+
+  - sequence: "007"
+    date: 2022-06-11T14:40:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/EHV-03/PaskalS418_011.webp
+      alt: Film photo of bird, canada goose, ducks, water bird, beak, goose.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Bird
+        - Canada goose
+        - Ducks
+        - Water bird
+        - Beak
+        - Goose
+        - Wildlife
+        - Duck
+        - Animal migration
+        - Flock
+
+  - sequence: "008"
+    date: 2022-06-11T14:50:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/EHV-03/PaskalS418_012.webp
+      alt: Film photo of tree, grass, leaf, public space, plain, trunk.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Tree
+        - Grass
+        - Leaf
+        - Public space
+        - Plain
+        - Trunk
+        - Grasses
+        - Recreation
+        - Meadow
+        - Park
+
+  - sequence: "009"
+    date: 2022-06-11T15:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/EHV-03/PaskalS418_013.webp
+      alt: Film photo of bicycle, bicycle wheel, bicycle tire, bicycle frame, bicycle handlebar, bicycle wheel rim.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Bicycle
+        - Bicycle wheel
+        - Bicycle tire
+        - Bicycle frame
+        - Bicycle handlebar
+        - Bicycle Wheel Rim
+        - Bicycles--Equipment and supplies
+        - Bicycle fork
+        - Bicycle saddle
+        - Crankset
+
+  - sequence: "010"
+    date: 2022-06-11T15:10:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/EHV-03/PaskalS418_014.webp
+      alt: Film photo of bicycle, bicycle wheel, bicycle frame, bicycle tire, bicycle handlebar, bicycle wheel rim.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Bicycle
+        - Bicycle wheel
+        - Bicycle frame
+        - Bicycle tire
+        - Bicycle handlebar
+        - Bicycle Wheel Rim
+        - Bicycles--Equipment and supplies
+        - Bicycle fork
+        - Bicycle saddle
+        - Crankset
+
+  - sequence: "011"
+    date: 2022-06-11T15:20:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/EHV-03/PaskalS418_015.webp
+      alt: Film photo of daytime, architecture, public space, commercial building, composite material, urban design.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Daytime
+        - Architecture
+        - Public space
+        - Commercial building
+        - Composite material
+        - Urban design
+        - Shade
+        - Concrete
+        - Engineering
+        - Headquarters
