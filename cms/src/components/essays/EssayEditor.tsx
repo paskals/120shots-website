@@ -54,6 +54,10 @@ export default function EssayEditor() {
     setPhoto,
     movePhoto,
     reorderSpreads,
+    undo,
+    redo,
+    history,
+    future,
   } = useEssayStore();
 
   const [activeData, setActiveData] = useState<any>(null);
@@ -63,6 +67,21 @@ export default function EssayEditor() {
   useEffect(() => {
     fetch("/api/photos").then((r) => r.json()).then(setAllPhotos);
   }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const mod = e.metaKey || e.ctrlKey;
+      if (mod && e.key === "z" && !e.shiftKey) {
+        e.preventDefault();
+        undo();
+      } else if (mod && e.key === "z" && e.shiftKey) {
+        e.preventDefault();
+        redo();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [undo, redo]);
 
   const photoInfoMap = useMemo(() => {
     const map: Record<string, { rollName: string; sequence: string; date?: string }> = {};
@@ -144,6 +163,24 @@ export default function EssayEditor() {
             <h2 className="text-lg font-semibold truncate flex-1">
               {current.title}
             </h2>
+            <div className="flex items-center gap-1">
+              <button
+                onClick={undo}
+                disabled={history.length === 0}
+                title="Undo (Cmd+Z)"
+                className="px-2 py-1.5 text-xs rounded-lg transition-colors text-zinc-500 hover:text-zinc-700 hover:bg-zinc-100 disabled:opacity-30 disabled:pointer-events-none"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+              </button>
+              <button
+                onClick={redo}
+                disabled={future.length === 0}
+                title="Redo (Cmd+Shift+Z)"
+                className="px-2 py-1.5 text-xs rounded-lg transition-colors text-zinc-500 hover:text-zinc-700 hover:bg-zinc-100 disabled:opacity-30 disabled:pointer-events-none"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.13-9.36L23 10"/></svg>
+              </button>
+            </div>
             <button
               onClick={() => setShowMeta(!showMeta)}
               className={`px-3 py-1.5 text-xs rounded-lg transition-colors ${
