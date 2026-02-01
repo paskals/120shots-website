@@ -115,6 +115,13 @@ export class ContentWriter {
     const essaysDir = path.join(CONTENT_DIR, "photoessays");
     const filePath = path.join(essaysDir, `${essay.id}.yaml`);
 
+    // Validate path to prevent directory traversal
+    const resolvedPath = path.resolve(filePath);
+    const resolvedEssaysDir = path.resolve(essaysDir);
+    if (!resolvedPath.startsWith(resolvedEssaysDir + path.sep) && resolvedPath !== resolvedEssaysDir) {
+      throw new Error("Invalid essay ID: path traversal detected");
+    }
+
     // Create backup if file exists
     if (fs.existsSync(filePath)) {
       const backup = filePath + ".bak";
@@ -142,6 +149,19 @@ export class ContentWriter {
     const essaysDir = path.join(CONTENT_DIR, "photoessays");
     const oldPath = path.join(essaysDir, `${oldId}.yaml`);
     const newPath = path.join(essaysDir, `${newId}.yaml`);
+
+    // Validate both paths to prevent directory traversal
+    const resolvedOldPath = path.resolve(oldPath);
+    const resolvedNewPath = path.resolve(newPath);
+    const resolvedEssaysDir = path.resolve(essaysDir);
+
+    if (!resolvedOldPath.startsWith(resolvedEssaysDir + path.sep) && resolvedOldPath !== resolvedEssaysDir) {
+      throw new Error("Invalid old essay ID: path traversal detected");
+    }
+
+    if (!resolvedNewPath.startsWith(resolvedEssaysDir + path.sep) && resolvedNewPath !== resolvedEssaysDir) {
+      throw new Error("Invalid new essay ID: path traversal detected");
+    }
 
     if (!fs.existsSync(oldPath)) {
       throw new Error(`Essay not found: ${oldId}.yaml`);
@@ -171,6 +191,13 @@ export class ContentWriter {
 
     const essaysDir = path.join(CONTENT_DIR, "photoessays");
     const filePath = path.join(essaysDir, `${id}.yaml`);
+
+    // Validate path to prevent directory traversal
+    const resolvedPath = path.resolve(filePath);
+    const resolvedEssaysDir = path.resolve(essaysDir);
+    if (!resolvedPath.startsWith(resolvedEssaysDir + path.sep) && resolvedPath !== resolvedEssaysDir) {
+      throw new Error("Invalid essay ID: path traversal detected");
+    }
 
     if (fs.existsSync(filePath)) {
       throw new Error(`Essay file already exists: ${id}.yaml`);
