@@ -1,0 +1,294 @@
+manualId: 2022/TPE-01
+film: gold-200
+camera: Nikon F3
+format: 35mm
+description: First roll.
+shots:
+  - sequence: "000"
+    date: "2021-08-21T09:10:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-000-73586B.webp"
+      alt: "TPE-01 000"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "001"
+    date: "2021-08-21T09:15:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-001-3C390E.webp"
+      alt: "TPE-01 001"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "002"
+    date: "2021-08-21T09:20:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-002-C81A0C.webp"
+      alt: "TPE-01 002"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "003"
+    date: "2021-08-21T09:25:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-003-7B5DAD.webp"
+      alt: "TPE-01 003"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "004"
+    date: "2021-08-21T09:30:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-004-8DBD02.webp"
+      alt: "TPE-01 004"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "005"
+    date: "2021-08-21T09:35:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-005-0B57AE.webp"
+      alt: "TPE-01 005"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "006"
+    date: "2021-08-21T09:40:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-006-883778.webp"
+      alt: "TPE-01 006"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "007"
+    date: "2021-08-21T09:45:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-007-66FFED.webp"
+      alt: "TPE-01 007"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "008"
+    date: "2021-08-21T09:50:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-008-2483BC.webp"
+      alt: "TPE-01 008"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "009"
+    date: "2021-08-21T09:55:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-009-A505B4.webp"
+      alt: "TPE-01 009"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "010"
+    date: "2021-08-21T10:00:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-010-B2032B.webp"
+      alt: "TPE-01 010"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "011"
+    date: "2021-08-21T10:05:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-011-BF2C9B.webp"
+      alt: "TPE-01 011"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "012"
+    date: "2021-08-21T10:10:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-012-45F258.webp"
+      alt: "TPE-01 012"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "013"
+    date: "2021-08-21T10:15:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-013-7CBD3D.webp"
+      alt: "TPE-01 013"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "014"
+    date: "2021-08-21T10:20:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-014-EDC50E.webp"
+      alt: "TPE-01 014"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "015"
+    date: "2021-08-21T10:25:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-015-E52BF1.webp"
+      alt: "TPE-01 015"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "016"
+    date: "2021-08-21T10:30:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-016-6BE1F7.webp"
+      alt: "TPE-01 016"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "017"
+    date: "2021-08-21T10:35:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-017-CD1F3C.webp"
+      alt: "TPE-01 017"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "018"
+    date: "2021-08-21T10:40:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-018-3F50A2.webp"
+      alt: "TPE-01 018"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "019"
+    date: "2021-08-21T10:45:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-019-A6F8A2.webp"
+      alt: "TPE-01 019"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "020"
+    date: "2021-08-21T10:50:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-020-60E2B7.webp"
+      alt: "TPE-01 020"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "021"
+    date: "2021-08-21T10:55:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-021-6DC80F.webp"
+      alt: "TPE-01 021"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "022"
+    date: "2021-08-23T09:09:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-022-37DE75.webp"
+      alt: "TPE-01 022"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "023"
+    date: "2021-08-23T09:14:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-023-AF426C.webp"
+      alt: "TPE-01 023"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "024"
+    date: "2021-08-23T09:19:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-024-9B73B6.webp"
+      alt: "TPE-01 024"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "025"
+    date: "2021-08-23T03:24:24.000Z"
+    offsetTime: "+02:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-025-612652.webp"
+      alt: "TPE-01 025"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "026"
+    date: "2021-08-24T18:00:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-026-9306EC.webp"
+      alt: "TPE-01 026"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "027"
+    date: "2021-08-24T18:05:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-027-F9DFB0.webp"
+      alt: "TPE-01 027"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "028"
+    date: "2021-08-24T18:10:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-028-93C1AD.webp"
+      alt: "TPE-01 028"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "029"
+    date: "2021-08-24T18:15:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-029-588BEA.webp"
+      alt: "TPE-01 029"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "030"
+    date: "2021-08-24T18:20:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-030-1BB3D1.webp"
+      alt: "TPE-01 030"
+      positionx: "50%"
+      positiony: "50%"
+  - sequence: "031"
+    date: "2021-08-24T18:25:24.000Z"
+    offsetTime: "+08:00"
+    hidden: false
+    image:
+      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-031-ABC772.webp"
+      alt: "TPE-01 031"
+      positionx: "50%"
+      positiony: "50%"

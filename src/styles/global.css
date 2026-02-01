@@ -1,33 +1,95 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Enable class-based dark mode (adds .dark class to html element) */
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Custom colors */
+  --color-gray-dark: #273444;
+  --color-gray-light: #d3dce6;
+  --color-dark-background: rgb(34, 33, 37);
+
+  /* Custom fonts */
+  --font-overpass-mono: "Overpass Mono Variable", sans-serif;
+  --font-inconsolata: "Inconsolata Variable", sans-serif;
+
+  /* Custom breakpoints (replacing defaults) */
+  --breakpoint-xs: 440px;
+  --breakpoint-sm: 800px;
+  --breakpoint-md: 1200px;
+  --breakpoint-lg: 1900px;
+  --breakpoint-xl: 2500px;
+  --breakpoint-2xl: 3800px;
+}
+
+/* Custom utilities for object-position */
+@utility object-top-33 {
+  object-position: center top 33.33%;
+}
+
+@utility object-top-50 {
+  object-position: center top 50%;
+}
+
+@utility bg-center-33 {
+  background-position: center 33.33%;
+}
+
+@utility bg-size-66 {
+  background-size: 100% 66.67%;
+}
+
+/* Typography plugin customization - remove quotes from blockquotes */
+@layer base {
+  .prose blockquote p:first-of-type::before {
+    content: none !important;
+  }
+  .prose blockquote p:last-of-type::after {
+    content: none !important;
+  }
+}
 
 /* TODO:ensure no other colors override these, or define better in tailwind config */
 
+/* Theme color variables */
+:root {
+  --bg-primary: #f2f2f2;
+  --text-primary: #1a1a1a;
+  --text-muted: rgba(26, 26, 26, 0.5);
+  --header-bg: rgba(242, 242, 242, 0.9);
+  --header-normal-bg: #f2f2f2;
+  --border-color: rgba(26, 26, 26, 0.25);
+  --essay-cover-middle: white;
+  --essay-cover-outer: rgba(26, 26, 26, 0.5);
+}
+
+.dark {
+  --bg-primary: rgb(34, 33, 37);
+  --text-primary: #fff;
+  --text-muted: rgba(255, 255, 255, 0.5);
+  --header-bg: rgba(34, 33, 37, 0.9);
+  --header-normal-bg: rgb(34, 33, 37);
+  --border-color: rgba(255, 255, 255, 0.25);
+  --essay-cover-middle: rgb(34, 33, 37);
+  --essay-cover-outer: rgb(34, 33, 37);
+}
+
 html {
-  background-color: #f2f2f2;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: sans-serif;
   height: 100%;
 }
 
 html.dark {
-  background-color: rgb(34, 33, 37);
-  color: #fff;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .dark .nav-links a {
   color: #fff;
 }
-
-/* body {
-  margin: 0 auto;
-  width: 100vw;
-  padding: 2rem 2rem 2rem 2rem;
-  line-height: 1.5;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-} */
 
 * {
   box-sizing: border-box;
@@ -41,3 +103,169 @@ h1 {
 body {
   transition: all 0.3s ease-out;
 }
+
+/* ===================================
+   SITE HEADER - UNIFIED LAYOUT
+   =================================== */
+
+/* Base header */
+.site-header {
+  width: 100%;
+  background: var(--header-normal-bg);
+  z-index: 50;
+}
+
+/* Normal mode */
+.site-header:not(.site-header--compact) {
+  height: 4rem;
+  margin-bottom: 1.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+/* Compact mode */
+.site-header--compact {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--header-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Nav container - unified */
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.site-header:not(.site-header--compact) .site-header__nav {
+  max-width: 80rem;
+}
+
+.site-header--compact .site-header__nav {
+  padding: 0.75rem 1.5rem;
+  max-width: 2200px;
+  margin: 0 auto;
+}
+
+/* Left section */
+.site-header__left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Logo is vertically centered by flexbox in normal mode */
+
+/* Optional title */
+.site-header__title {
+  font-family: var(--font-inconsolata, "Inconsolata Variable", monospace);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  text-align: center;
+  min-width: 0;
+}
+
+/* Right section - FIXES ALIGNMENT */
+.site-header__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.site-header:not(.site-header--compact) .site-header__right {
+  /* margin-right: 3.4375rem; */
+  margin-bottom: 0.3125rem;
+}
+
+.site-header__theme {
+  display: flex;
+  align-items: center;
+}
+
+.site-header__hamburger {
+  display: flex;
+  align-items: center;
+}
+
+.site-header:not(.site-header--compact) .site-header__hamburger {
+  margin-top: -0.1875rem;
+}
+
+/* Navigation */
+.site-header__navigation {
+  position: absolute;
+  right: 0;
+}
+
+.site-header--compact .site-header__navigation {
+  right: 1.5rem;
+}
+
+/* Compact mode scaling */
+.site-header--compact .site-header__theme #themeToggle svg {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.site-header--compact .site-header__hamburger .hamburger {
+  transform: scale(0.75);
+}
+
+/* ViewTransition animations for header */
+::view-transition-old(site-header),
+::view-transition-new(site-header) {
+  animation-duration: 0.3s;
+}
+
+::view-transition-group(site-theme-toggle),
+::view-transition-group(site-hamburger),
+::view-transition-group(site-logo) {
+  animation-duration: 0.3s;
+}
+
+::view-transition-old(site-theme-toggle),
+::view-transition-new(site-theme-toggle),
+::view-transition-old(site-hamburger),
+::view-transition-new(site-hamburger) {
+  animation-duration: 0.3s;
+}
+
+::view-transition-old(site-logo),
+::view-transition-new(site-logo) {
+  animation-duration: 0.3s;
+}
+
+::view-transition-old(essay-title),
+::view-transition-new(essay-title) {
+  animation-duration: 0.3s;
+}
+

@@ -1,0 +1,43 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import FilmRollCard from "../../components/FilmRollCard.astro";
+import ProseHeadings from "../../components/ProseHeadings.astro";
+import Pagination from "../../components/Pagination.astro";
+import { sortRollsByDate } from "../../components/rolls.jsx";
+import { getRollSlug } from "../../components/rolls";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allRolls = await getCollection("rolls");
+  const sortedRolls = allRolls.sort(sortRollsByDate).reverse();
+  return paginate(sortedRolls, { pageSize: 10 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const pageTitle = "Film Rolls";
+---
+
+<BaseLayout title={pageTitle} is404Page={false}>
+  <div
+    class="flex flex-col px-4 xs:px-4 sm:px-8 max-w-7xl justify-start mx-auto w-full"
+  >
+    <ProseHeadings>
+      <p class="md:space-x-14 md:mb-20 mb-10 text-4xl font-bold capitalize">
+        {pageTitle}
+      </p>
+    </ProseHeadings>
+    {
+      page.data.map((roll) => (
+        <FilmRollCard roll={roll} url={`/rolls/${getRollSlug(roll.id)}`} />
+      ))
+    }
+    <Pagination
+      currentPage={page.currentPage}
+      lastPage={page.lastPage}
+      prevUrl={page.url.prev}
+      nextUrl={page.url.next}
+      baseUrl="/rolls/"
+    />
+  </div>
+</BaseLayout>

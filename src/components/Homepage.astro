@@ -7,16 +7,24 @@ import { getImage } from "astro:assets"; // Add all your collections here
 import IconPill from "./IconPill.astro";
 let allData: { imageSrc: string | null; alt: string; url: string }[] = [];
 
-const allContent = await getCollection("posts");
-const postsWithImages = allContent.filter(
-  (post) => post.data.image?.src && post.data.image?.alt
-);
+const allContent = await getCollection("photoessays");
+const essaysWithImages = allContent.filter((essay) => {
+  const coverImage =
+    essay.data.cover?.src || essay.data.spreads[0]?.photos[0]?.src;
+  return !!coverImage;
+});
 
-const imagePromises = postsWithImages.map(async (post) => {
+const imagePromises = essaysWithImages.map(async (essay) => {
+  const coverImage =
+    essay.data.cover?.src || essay.data.spreads[0]?.photos[0]?.src;
+  const coverAlt =
+    essay.data.cover?.alt ||
+    essay.data.spreads[0]?.photos[0]?.alt ||
+    essay.data.title;
+
   const imageAsset = await getImage({
-    src: post.data.image.src,
-    alt: post.data.image.alt,
-    //  inferSize: true,
+    src: coverImage,
+    alt: coverAlt,
     width: "1920",
     height: "1080",
     quality: "65",
@@ -24,8 +32,8 @@ const imagePromises = postsWithImages.map(async (post) => {
 
   return {
     imageSrc: imageAsset ? imageAsset.src : null,
-    alt: post.data.image.alt,
-    url: `/${"posts"}/${post.slug}`,
+    alt: coverAlt,
+    url: `/essays/${essay.id}`,
   };
 });
 
@@ -37,7 +45,7 @@ allData.push(
       alt: result.alt,
       url: result.url,
     };
-  })
+  }),
 );
 ---
 
@@ -69,7 +77,7 @@ allData.push(
     id="homepageButtons"
     class="my-4 mx-2 flex justify-center items-center flex-col sm:gap-4 gap-2 no-underline uppercase xs:flex-row"
   >
-    <IconPill icon="mdi:text-box" url="/posts">Blog Posts</IconPill>
+    <IconPill icon="mdi:text-box" url="/essays">Essays</IconPill>
     <IconPill icon="mdi:film" url="/rolls">Film Rolls</IconPill>
     <IconPill icon="mdi:filmstrip-box-multiple" url="/films"
       >Film Stocks</IconPill
@@ -80,7 +88,7 @@ allData.push(
 <style>
   #randomHomePageImage {
     opacity: 0;
-    animation: fade 1s ease-in-out 0.5s 1 forwards ;
+    animation: fade 1s ease-in-out 0.5s 1 forwards;
   }
 
   #homepageButtons {

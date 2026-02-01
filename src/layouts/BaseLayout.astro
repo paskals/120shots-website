@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "@fontsource-variable/overpass-mono";
@@ -71,7 +71,7 @@ const metaImageSrc = image ? image : metaImage?.src;
       content=`film photography, street photography, landscape photography, travel photography, film stocks, film cameras, film gear${keywords ? ", " + keywords : ""}`
     />
     <title>{pageTitle}</title>
-    {transitions ? <ViewTransitions /> : null}
+    {transitions ? <ClientRouter /> : null}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NFB47EN0Z"
     ></script><script>
       window.dataLayer = window.dataLayer || [];

@@ -1,0 +1,587 @@
+/* Photo Essay Styles - "Aperture" Design System */
+
+/* Body reset for essay mode */
+.essay-body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+}
+
+/* Main scroll container */
+.essay-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100vh;
+  height: 100dvh;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar but keep functionality */
+.essay-container::-webkit-scrollbar {
+  display: none;
+}
+
+.essay-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Individual spread */
+.spread {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1.5rem 2rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Photo container - adapts based on layout */
+.spread-photos {
+  display: flex;
+  width: 100%;
+  max-width: 1800px;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Single layout */
+.spread[data-layout="single"] .spread-photos {
+  max-width: 1400px;
+}
+
+.spread[data-layout="single"] .photo-wrapper {
+  width: 100%;
+  height: calc(100dvh - 10rem);
+  max-height: 85vh;
+}
+
+/* Duo layout */
+.spread[data-layout="duo"] .spread-photos {
+  gap: 1.5rem;
+}
+
+.spread[data-layout="duo"] .photo-wrapper {
+  flex: 1;
+  height: calc(100dvh - 10rem);
+  max-height: 80vh;
+}
+
+/* Duo-H layout: vertical stack on desktop */
+.spread[data-layout="duo-h"] .spread-photos {
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 1400px;
+}
+
+.spread[data-layout="duo-h"] .photo-wrapper {
+  width: 100%;
+  height: 40vh;
+  max-height: 40vh;
+}
+
+.spread[data-layout="duo-h"] .photo-wrapper img {
+  width: auto;
+  height: auto;
+  max-height: 40vh;
+  max-width: 100%;
+}
+
+/* Duo-L and Duo-R layouts: emphasized side */
+.spread[data-layout="duo-l"] .spread-photos,
+.spread[data-layout="duo-r"] .spread-photos {
+  gap: 1.5rem;
+}
+
+.spread[data-layout="duo-l"] .photo-wrapper,
+.spread[data-layout="duo-r"] .photo-wrapper {
+  flex: 1;
+  height: calc(100dvh - 10rem);
+  max-height: 80vh;
+}
+
+/* Emphasize left side in duo-l */
+.spread[data-layout="duo-l"] .photo-wrapper.photo-emphasized {
+  flex: 1.5;
+}
+
+/* Emphasize right side in duo-r */
+.spread[data-layout="duo-r"] .photo-wrapper.photo-emphasized {
+  flex: 1.5;
+}
+
+/* Trio layout */
+.spread[data-layout="trio"] .spread-photos {
+  gap: 1rem;
+}
+
+.spread[data-layout="trio"] .photo-wrapper {
+  flex: 1;
+  height: calc(100dvh - 10rem);
+  max-height: 75vh;
+}
+
+.spread[data-layout="trio"] .photo-wrapper:nth-child(2) {
+  flex: 1.5;
+}
+
+/* Trio-L layout: stack on left, main on right */
+.spread[data-layout="trio-l"] .spread-photos,
+.spread[data-layout="trio-r"] .spread-photos {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.spread[data-layout="trio-l"] .photo-stack,
+.spread[data-layout="trio-r"] .photo-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+  height: calc(100dvh - 10rem);
+  max-height: 80vh;
+}
+
+.spread[data-layout="trio-l"] .photo-stack .photo-wrapper,
+.spread[data-layout="trio-r"] .photo-stack .photo-wrapper {
+  flex: 1;
+  min-height: 0;
+}
+
+.spread[data-layout="trio-l"] .photo-main,
+.spread[data-layout="trio-r"] .photo-main {
+  flex: 1.5;
+  height: calc(100dvh - 10rem);
+  max-height: 80vh;
+}
+
+/* Reduced photo height when caption is present (~10% shorter) */
+.spread[data-has-caption] .photo-wrapper {
+  height: calc((100dvh - 10rem) * 0.9);
+}
+
+.spread[data-has-caption][data-layout="single"] .photo-wrapper {
+  height: calc((100dvh - 10rem) * 0.9);
+  max-height: 77vh;
+}
+
+.spread[data-has-caption][data-layout="duo"] .photo-wrapper,
+.spread[data-has-caption][data-layout="duo-l"] .photo-wrapper,
+.spread[data-has-caption][data-layout="duo-r"] .photo-wrapper {
+  height: calc((100dvh - 10rem) * 0.9);
+  max-height: 72vh;
+}
+
+.spread[data-has-caption][data-layout="duo-h"] .photo-wrapper {
+  height: 36vh;
+  max-height: 36vh;
+}
+
+.spread[data-has-caption][data-layout="duo-h"] .photo-wrapper img {
+  max-height: 36vh;
+}
+
+.spread[data-has-caption][data-layout="trio"] .photo-wrapper {
+  height: calc((100dvh - 10rem) * 0.9);
+  max-height: 68vh;
+}
+
+.spread[data-has-caption][data-layout="trio-l"] .photo-stack,
+.spread[data-has-caption][data-layout="trio-r"] .photo-stack {
+  height: calc((100dvh - 10rem) * 0.9);
+  max-height: 72vh;
+}
+
+.spread[data-has-caption][data-layout="trio-l"] .photo-main,
+.spread[data-has-caption][data-layout="trio-r"] .photo-main {
+  height: calc((100dvh - 10rem) * 0.9);
+  max-height: 72vh;
+}
+
+/* Photo wrapper and image */
+.photo-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Matte border effect - always white like gallery framing */
+  background-color: #ffffff;
+  padding: clamp(0.5rem, 2vw, 1.5rem);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.photo-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Caption */
+.spread-caption {
+  font-family: var(--font-inconsolata), monospace;
+  font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0));
+  max-width: 600px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: caption-reveal 0.6s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.spread-caption::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--border-color);
+  margin: 0 auto 1rem;
+}
+
+@keyframes caption-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Progress indicator */
+.essay-progress {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  bottom: calc(1.5rem + env(safe-area-inset-bottom, 0));
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 90;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.essay-progress:hover {
+  transform: scale(1.1);
+}
+
+.progress-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+  stroke: var(--border-color);
+}
+
+.progress-ring-fill {
+  stroke: var(--text-primary);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.4s ease;
+}
+
+.progress-text {
+  font-family: var(--font-inconsolata), monospace;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: baseline;
+  gap: 0.1rem;
+}
+
+.progress-current {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.progress-separator {
+  opacity: 0.5;
+}
+
+.progress-total {
+  font-size: 0.6rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 800px) {
+  .spread {
+    padding: 4rem 1rem 1.5rem;
+  }
+
+  .spread-photos {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .spread[data-layout="duo"] .photo-wrapper,
+  .spread[data-layout="duo-h"] .photo-wrapper,
+  .spread[data-layout="duo-l"] .photo-wrapper,
+  .spread[data-layout="duo-r"] .photo-wrapper,
+  .spread[data-layout="trio"] .photo-wrapper,
+  .spread[data-layout="trio-l"] .photo-wrapper,
+  .spread[data-layout="trio-r"] .photo-wrapper {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    flex: none;
+  }
+
+  /* Override captioned variants (higher specificity needed to beat desktop rules) */
+  .spread[data-has-caption][data-layout="duo"] .photo-wrapper,
+  .spread[data-has-caption][data-layout="duo-h"] .photo-wrapper,
+  .spread[data-has-caption][data-layout="duo-l"] .photo-wrapper,
+  .spread[data-has-caption][data-layout="duo-r"] .photo-wrapper,
+  .spread[data-has-caption][data-layout="trio"] .photo-wrapper,
+  .spread[data-has-caption][data-layout="trio-l"] .photo-wrapper,
+  .spread[data-has-caption][data-layout="trio-r"] .photo-wrapper {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    flex: none;
+  }
+
+  .spread[data-has-caption][data-layout="duo-h"] .photo-wrapper img {
+    max-height: none;
+  }
+
+  /* Stack vertically on mobile for trio-l and trio-r */
+  .spread[data-layout="trio-l"] .spread-photos,
+  .spread[data-layout="trio-r"] .spread-photos {
+    flex-direction: column;
+  }
+
+  .spread[data-layout="trio-l"] .photo-stack,
+  .spread[data-layout="trio-r"] .photo-stack,
+  .spread[data-has-caption][data-layout="trio-l"] .photo-stack,
+  .spread[data-has-caption][data-layout="trio-r"] .photo-stack {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+    flex: none;
+  }
+
+  .spread[data-layout="trio-l"] .photo-stack .photo-wrapper,
+  .spread[data-layout="trio-r"] .photo-stack .photo-wrapper {
+    flex: none;
+    min-height: auto;
+  }
+
+  .spread[data-layout="trio-l"] .photo-main,
+  .spread[data-layout="trio-r"] .photo-main,
+  .spread[data-has-caption][data-layout="trio-l"] .photo-main,
+  .spread[data-has-caption][data-layout="trio-r"] .photo-main {
+    height: auto;
+    max-height: none;
+    flex: none;
+  }
+
+  .spread[data-layout="single"] .photo-wrapper,
+  .spread[data-has-caption][data-layout="single"] .photo-wrapper {
+    height: auto;
+    max-height: none;
+  }
+
+  .spread[data-layout="single"] .photo-wrapper img {
+    max-height: calc(100dvh - 12rem);
+  }
+
+  .essay-progress {
+    right: 1rem;
+    bottom: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .progress-text {
+    font-size: 0.6rem;
+  }
+
+  .progress-total {
+    font-size: 0.5rem;
+  }
+
+  .spread-caption {
+    font-size: 0.65rem;
+    padding: 1rem 0.5rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0));
+  }
+
+  .spread-caption::before {
+    width: 30px;
+    margin-bottom: 0.75rem;
+  }
+}
+
+/*     max-width: 2200px;
+    width: 100%; */
+
+/* Large screens */
+@media (min-width: 1900px) {
+  .spread-photos {
+    max-width: 2200px;
+  }
+
+  .spread[data-layout="single"] .spread-photos {
+    max-width: 1800px;
+  }
+
+  .essay-progress {
+    right: 2.5rem;
+    bottom: 2.5rem;
+  }
+}
+
+/* Essay footer */
+.essay-footer {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: var(--bg-primary);
+}
+
+.essay-footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 600px;
+  text-align: center;
+}
+
+.essay-author {
+  font-family: var(--font-inconsolata), monospace;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.essay-author-prefix {
+  color: var(--text-muted);
+}
+
+.essay-author-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.essay-author-link:hover {
+  opacity: 0.7;
+}
+
+.essay-rolls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.essay-rolls-label {
+  font-family: var(--font-inconsolata), monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.essay-rolls-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.essay-dates {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-family: var(--font-inconsolata), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+/* Footer "all essays" link */
+.essay-footer-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6ch;
+  font-family: var(--font-overpass-mono, "Overpass Mono Variable", monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.essay-footer-all-link:hover {
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.essay-footer-all-link svg {
+  transition: transform 0.3s ease;
+}
+
+.essay-footer-all-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* Mobile adjustments for footer */
+@media (max-width: 800px) {
+  .essay-footer {
+    padding: 3rem 1.5rem;
+  }
+
+  .essay-author {
+    font-size: 1.1rem;
+  }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .essay-container {
+    scroll-behavior: auto;
+  }
+
+  .spread-caption {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

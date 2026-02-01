@@ -1,0 +1,133 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProseHeadings from "../../components/ProseHeadings.astro";
+import Pagination from "../../components/Pagination.astro";
+import { Image } from "astro:assets";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const essays = await getCollection("photoessays");
+  // Sort by publication date, newest first
+  const sortedEssays = essays.sort(
+    (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+  );
+  return paginate(sortedEssays, { pageSize: 10 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const pageTitle = "Photo Essays";
+
+const formatDate = (date: Date) => {
+  const d = date.toDateString().split(" ").slice(1).join(" ");
+  return d;
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description="Visual stories told through photography"
+>
+  <div class="flex flex-col px-4 xs:px-4 sm:px-8 max-w-7xl justify-start mx-auto w-full">
+    <ProseHeadings>
+      <p class="md:space-x-14 md:mb-20 mb-10 text-4xl font-bold capitalize">
+        {pageTitle}
+      </p>
+    </ProseHeadings>
+
+    {
+      page.data.length === 0 ? (
+        <p class="font-inconsolata text-gray-500 dark:text-gray-400 italic">
+          No photo essays yet. Check back soon.
+        </p>
+      ) : (
+        page.data.map((essay) => {
+          const coverImage =
+            essay.data.cover?.src || essay.data.spreads[0]?.photos[0]?.src;
+          const coverAlt =
+            essay.data.cover?.alt ||
+            essay.data.spreads[0]?.photos[0]?.alt ||
+            essay.data.title;
+          const url = `/essays/${essay.id}`;
+
+          return (
+            <div class="flex flex-col sm:flex-row md:space-x-14 md:mb-20 sm:mb-14 gap-4 sm:justify-center md:mx-24 mb-4 not-prose">
+              {coverImage && (
+                <div class="flex aspect-square md:h-[360px] h-[360px] fade-image">
+                  <a href={url}>
+                    <Image
+                      src={coverImage}
+                      alt={coverAlt}
+                      inferSize
+                      width={1280}
+                      height={720}
+                      loading="lazy"
+                      class="h-full object-cover object-center"
+                    />
+                  </a>
+                </div>
+              )}
+              <div class="sm:w-2/3 flex flex-col justify-start sm:space-y-4 space-y-2 mb-6 md:mt-10">
+                <ul class="flex-row">
+                  <a href={url}>
+                    <h2 class="font-overpass-mono font-bold text-xl lg:text-2xl xl:text-4xl capitalize">
+                      {essay.data.title}
+                    </h2>
+                  </a>
+                  <p class="font-inconsolata text-sm">
+                    Published on {formatDate(essay.data.pubDate)}
+                  </p>
+                </ul>
+                {essay.data.description && (
+                  <a href={url}>
+                    <p class="font-inconsolata normal-case line-clamp-3 sm:text-base text-sm">
+                      {essay.data.description}
+                    </p>
+                  </a>
+                )}
+                <a
+                  href={url}
+                  class="dark:prose-invert max-w-max max-h-max flex flex-row items-center flex-shrink-0 hover:opacity-70 transition-opacity mt-1"
+                >
+                  <span class="font-inconsolata mt-2 mb-2">View essay</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 mt-2 mb-2 pt-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          );
+        })
+      )
+    }
+    <Pagination
+      currentPage={page.currentPage}
+      lastPage={page.lastPage}
+      prevUrl={page.url.prev}
+      nextUrl={page.url.next}
+      baseUrl="/essays/"
+    />
+  </div>
+</BaseLayout>
+
+<style>
+  .fade-image {
+    transition: opacity 0.25s ease-in;
+    opacity: 1;
+  }
+
+  .fade-image:hover {
+    opacity: 0.7;
+  }
+</style>

@@ -1,5 +1,5 @@
 ---
-import { Image, getImage, imageConfig } from "astro:assets";
+import { Image } from "astro:assets";
 const { images, columns } = Astro.props;
 
 const masonryColumnCount = columns ? columns : 4;
@@ -40,23 +40,16 @@ const masonryColumnCount = columns ? columns : 4;
     images.map((image) =>
       image ? (
         <div class="image-container" id="gallery">
-          <a
-            href={image.src}
-            class="image-link glightbox"
-            data-astro-prefetch="false"
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              loading="lazy"
-              class="image"
-              inferSize
-              decoding={"async"}
-            />
-          </a>
+          <Image
+            src={image.src}
+            alt={image.alt}
+            loading="lazy"
+            class="image"
+            inferSize
+            decoding={"async"}
+          />
         </div>
       ) : null,
     )
   }
 </div>
-<script src="../scripts/lightbox.js"></script>

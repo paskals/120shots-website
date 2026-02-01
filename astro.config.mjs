@@ -2,7 +2,7 @@ import { defineConfig, passthroughImageService } from "astro/config";
 import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import markdoc from "@astrojs/markdoc";
 import remarkGfm from "remark-gfm";
 import { remarkReadingTime } from "./src/scripts/remark-reading-time.mjs";
@@ -14,6 +14,9 @@ export default defineConfig({
   redirects: {
     "/about": "/authors/paskal",
   },
+  vite: {
+    plugins: [tailwindcss()],
+  },
   integrations: [
     sitemap(),
     mdx({
@@ -23,7 +26,6 @@ export default defineConfig({
       },
       gfm: false,
     }),
-    tailwind(),
     markdoc(),
     icon({
       include: {

@@ -1,294 +1,664 @@
-manualId: 2022/TPE-01
+manualId: 2021/TPE-01
 film: gold-200
 camera: Nikon F3
 format: 35mm
 description: First roll.
 shots:
   - sequence: "000"
-    date: "2021-08-21T09:10:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T09:10:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-000-73586B.webp"
-      alt: "TPE-01 000"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-000-73586B.webp
+      alt: Film photo of skyscraper, building, daytime, urban area, city, high-rise building.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Skyscraper
+        - Building
+        - Daytime
+        - Urban area
+        - City
+        - High-rise building
+        - atmospheric phenomenon
+        - Metropolitan area
+        - Commercial building
+        - Metropolis
+
   - sequence: "001"
-    date: "2021-08-21T09:15:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T09:15:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-001-3C390E.webp"
-      alt: "TPE-01 001"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-001-3C390E.webp
+      alt: Film photo of mode of transport, urban area, building, city, street, road.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Mode of transport
+        - Urban area
+        - Building
+        - City
+        - Street
+        - Road
+        - Town
+        - Metropolitan area
+        - Neighbourhood
+        - Public space
+
   - sequence: "002"
-    date: "2021-08-21T09:20:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T09:20:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-002-C81A0C.webp"
-      alt: "TPE-01 002"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-002-C81A0C.webp
+      alt: Film photo of mode of transport, building, urban area, city, street, road.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Mode of transport
+        - Building
+        - Urban area
+        - City
+        - Street
+        - Road
+        - Town
+        - Metropolitan area
+        - Neighbourhood
+        - Public space
+
   - sequence: "003"
-    date: "2021-08-21T09:25:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T09:25:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-003-7B5DAD.webp"
-      alt: "TPE-01 003"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-003-7B5DAD.webp
+      alt: Film photo of building, daytime, urban area, city, metropolitan area, high-rise building.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Building
+        - Daytime
+        - Urban area
+        - City
+        - Metropolitan area
+        - High-rise building
+        - Commercial building
+        - Public space
+        - Metropolis
+        - Condominium
+
   - sequence: "004"
-    date: "2021-08-21T09:30:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T09:30:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-004-8DBD02.webp"
-      alt: "TPE-01 004"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-004-8DBD02.webp
+      alt: Film photo of flooring, ceiling, pedestrian, lighting, floor, interior design.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Flooring
+        - Ceiling
+        - Pedestrian
+        - Lighting
+        - Floor
+        - Interior design
+        - Public space
+        - Customer
+        - Shopping mall
+        - Lobby
+
   - sequence: "005"
-    date: "2021-08-21T09:35:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T09:35:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-005-0B57AE.webp"
-      alt: "TPE-01 005"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-005-0B57AE.webp
+      alt: Film photo of flooring, ceiling, floor, lighting, pedestrian, interior design.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Flooring
+        - Ceiling
+        - Floor
+        - Lighting
+        - Pedestrian
+        - Interior design
+        - Customer
+        - Lobby
+        - Commercial building
+        - Electricity
+
   - sequence: "006"
-    date: "2021-08-21T09:40:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T09:40:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-006-883778.webp"
-      alt: "TPE-01 006"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-006-883778.webp
+      alt: Film photo of window, urban area, neighbourhood, town, street, apartment.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Window
+        - Urban area
+        - Neighbourhood
+        - Town
+        - Street
+        - Apartment
+        - Asphalt
+        - Urban design
+        - Metropolitan area
+        - Thoroughfare
+
   - sequence: "007"
-    date: "2021-08-21T09:45:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T09:45:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-007-66FFED.webp"
-      alt: "TPE-01 007"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-007-66FFED.webp
+      alt: Film photo of chinese architecture, condominium, high-rise building, chinese restaurant, restaurant.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Chinese architecture
+        - Condominium
+        - High-rise building
+        - Chinese restaurant
+        - Restaurant
+
   - sequence: "008"
-    date: "2021-08-21T09:50:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T09:50:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-008-2483BC.webp"
-      alt: "TPE-01 008"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-008-2483BC.webp
+      alt: Film photo of mode of transport, road, transport, urban area, road surface, motor vehicle.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Mode of transport
+        - Road
+        - Transport
+        - Urban area
+        - Road surface
+        - Motor vehicle
+        - City
+        - Street
+        - Thoroughfare
+        - Asphalt
+
   - sequence: "009"
-    date: "2021-08-21T09:55:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T09:55:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-009-A505B4.webp"
-      alt: "TPE-01 009"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-009-A505B4.webp
+      alt: Film photo of column, walkway.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Column
+        - Walkway
+
   - sequence: "010"
-    date: "2021-08-21T10:00:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T10:00:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-010-B2032B.webp"
-      alt: "TPE-01 010"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-010-B2032B.webp
+      alt: Film photo of road, bicycle, bridge, lane, bicycle frame, recreation.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Road
+        - Bicycle
+        - Bridge
+        - Lane
+        - Bicycle frame
+        - Recreation
+        - Bicycles--Equipment and supplies
+        - Thoroughfare
+        - Bicycle handlebar
+        - Highway
+
   - sequence: "011"
-    date: "2021-08-21T10:05:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T10:05:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-011-BF2C9B.webp"
-      alt: "TPE-01 011"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-011-BF2C9B.webp
+      alt: "Film photo of sky, mountainous landforms, water, mountain, city, hill. Location: Yanping Riverside Park."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sky
+        - Mountainous landforms
+        - Water
+        - Mountain
+        - City
+        - Hill
+        - Metropolitan area
+        - Horizon
+        - High-rise building
+        - Bridge
+      location: Yanping Riverside Park
+
   - sequence: "012"
-    date: "2021-08-21T10:10:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T10:10:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-012-45F258.webp"
-      alt: "TPE-01 012"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-012-45F258.webp
+      alt: "Film photo of bridge, city, urban area, metropolitan area, high-rise building, metropolis. Location: Yuquan Park."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Bridge
+        - City
+        - Urban area
+        - Metropolitan area
+        - High-rise building
+        - Metropolis
+        - Composite material
+        - Condominium
+        - Overpass
+        - Skyscraper
+      location: Yuquan Park
+
   - sequence: "013"
-    date: "2021-08-21T10:15:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T10:15:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-013-7CBD3D.webp"
-      alt: "TPE-01 013"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-013-7CBD3D.webp
+      alt: Film photo of skyscraper, building, city, urban area, daytime, metropolitan area.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Skyscraper
+        - Building
+        - City
+        - Urban area
+        - Daytime
+        - Metropolitan area
+        - High-rise building
+        - Road
+        - Metropolis
+        - Neighbourhood
+
   - sequence: "014"
-    date: "2021-08-21T10:20:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T10:20:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-014-EDC50E.webp"
-      alt: "TPE-01 014"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-014-EDC50E.webp
+      alt: Film photo of chinese architecture, red, japanese architecture, roof, architecture, pagoda.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Chinese architecture
+        - Red
+        - Japanese architecture
+        - Roof
+        - Architecture
+        - Pagoda
+        - Temple
+        - Place of worship
+        - Holy places
+        - Shrine
+
   - sequence: "015"
-    date: "2021-08-21T10:25:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T10:25:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-015-E52BF1.webp"
-      alt: "TPE-01 015"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-015-E52BF1.webp
+      alt: Film photo of chinese architecture, landmark, japanese architecture, tourist attraction, pagoda, finial.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Chinese architecture
+        - Landmark
+        - Japanese architecture
+        - Tourist attraction
+        - Pagoda
+        - Finial
+        - Temple
+        - Historic site
+        - Travel
+        - Monument
+
   - sequence: "016"
-    date: "2021-08-21T10:30:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T10:30:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-016-6BE1F7.webp"
-      alt: "TPE-01 016"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-016-6BE1F7.webp
+      alt: "Film photo of chinese architecture, japanese architecture, landmark, tourist attraction, temple, pagoda. Location: Liberty Square."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Chinese architecture
+        - Japanese architecture
+        - Landmark
+        - Tourist attraction
+        - Temple
+        - Pagoda
+        - Historic site
+        - Finial
+        - Holy places
+        - Shrine
+      location: Liberty Square
+
   - sequence: "017"
-    date: "2021-08-21T10:35:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T10:35:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-017-CD1F3C.webp"
-      alt: "TPE-01 017"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-017-CD1F3C.webp
+      alt: "Film photo of chinese architecture, japanese architecture, architecture, public space, landmark, roof. Location: National Concert Hall."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Chinese architecture
+        - Japanese architecture
+        - Architecture
+        - Public space
+        - Landmark
+        - Roof
+        - Tourist attraction
+        - Spring
+        - Morning
+        - Pagoda
+      location: National Concert Hall
+
   - sequence: "018"
-    date: "2021-08-21T10:40:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T10:40:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-018-3F50A2.webp"
-      alt: "TPE-01 018"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-018-3F50A2.webp
+      alt: "Film photo of chinese architecture, japanese architecture, architecture, landmark, spring, tourist attraction. Location: Liberty Square."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Chinese architecture
+        - Japanese architecture
+        - Architecture
+        - Landmark
+        - Spring
+        - Tourist attraction
+        - Leisure
+        - Temple
+        - Shade
+        - Pagoda
+      location: Liberty Square
+
   - sequence: "019"
-    date: "2021-08-21T10:45:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T10:45:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-019-A6F8A2.webp"
-      alt: "TPE-01 019"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-019-A6F8A2.webp
+      alt: Film photo of composite material, high-rise building, tower, concrete, skyscraper, headquarters.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Composite material
+        - High-rise building
+        - Tower
+        - Concrete
+        - Skyscraper
+        - Headquarters
+        - Corporate headquarters
+        - Walking
+
   - sequence: "020"
-    date: "2021-08-21T10:50:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T10:50:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-020-60E2B7.webp"
-      alt: "TPE-01 020"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-020-60E2B7.webp
+      alt: Film photo of chinese architecture, japanese architecture, temple, leisure, landmark, temple.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Chinese architecture
+        - Japanese architecture
+        - Temple
+        - Leisure
+        - Landmark
+        - Temple
+        - Pedestrian
+        - Pagoda
+        - Place of worship
+        - Spring
+
   - sequence: "021"
-    date: "2021-08-21T10:55:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-21T10:55:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-021-6DC80F.webp"
-      alt: "TPE-01 021"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-021-6DC80F.webp
+      alt: Film photo of building, urban area, city, metropolitan area, night, high-rise building.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Building
+        - Urban area
+        - City
+        - Metropolitan area
+        - Night
+        - High-rise building
+        - Metropolis
+        - Architecture
+        - Commercial building
+        - Landmark
+
   - sequence: "022"
-    date: "2021-08-23T09:09:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-23T09:09:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-022-37DE75.webp"
-      alt: "TPE-01 022"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-022-37DE75.webp
+      alt: Film photo of public space, metropolitan area, pedestrian, public transport, mixed-use, travel.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Public space
+        - Metropolitan area
+        - Pedestrian
+        - Public transport
+        - Mixed-use
+        - Travel
+        - Bus
+        - Overpass
+        - Condominium
+        - Traffic
+
   - sequence: "023"
-    date: "2021-08-23T09:14:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-23T09:14:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-023-AF426C.webp"
-      alt: "TPE-01 023"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-023-AF426C.webp
+      alt: Film photo of mode of transport, motor vehicle, road, motorcycle, street, asphalt.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Mode of transport
+        - Motor vehicle
+        - Road
+        - Motorcycle
+        - Street
+        - Asphalt
+        - Metropolitan area
+        - Thoroughfare
+        - Lane
+        - Motorcycling
+
   - sequence: "024"
-    date: "2021-08-23T09:19:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-23T09:19:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-024-9B73B6.webp"
-      alt: "TPE-01 024"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-024-9B73B6.webp
+      alt: "Film photo of metropolitan area, commercial building, mixed-use, metropolis, headquarters, high-rise building. Location: Du Xiao Yue Danzi Noodle."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Metropolitan area
+        - Commercial building
+        - Mixed-use
+        - Metropolis
+        - Headquarters
+        - High-rise building
+        - Brutalist architecture
+        - Corporate headquarters
+        - Walking
+      location: Du Xiao Yue Danzi Noodle
+
   - sequence: "025"
-    date: "2021-08-23T03:24:24.000Z"
-    offsetTime: "+02:00"
+    date: 2021-08-23T03:24:24.000Z
+    offsetTime: +02:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-025-612652.webp"
-      alt: "TPE-01 025"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-025-612652.webp
+      alt: Film photo of photograph, daytime, urban area, city, metropolitan area, cloud.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Photograph
+        - Daytime
+        - Urban area
+        - City
+        - Metropolitan area
+        - Cloud
+        - Horizon
+        - Residential area
+        - Metropolis
+        - Urban design
+
   - sequence: "026"
-    date: "2021-08-24T18:00:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-24T18:00:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-026-9306EC.webp"
-      alt: "TPE-01 026"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-026-9306EC.webp
+      alt: Film photo of land vehicle, mode of transport, urban area, motor vehicle, transport, road.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Land vehicle
+        - Mode of transport
+        - Urban area
+        - Motor vehicle
+        - Transport
+        - Road
+        - City
+        - Street
+        - Metropolitan area
+        - Car
+
   - sequence: "027"
-    date: "2021-08-24T18:05:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-24T18:05:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-027-F9DFB0.webp"
-      alt: "TPE-01 027"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-027-F9DFB0.webp
+      alt: Film photo of shelf, retail, shelving, bookcase, book, publication.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Shelf
+        - Retail
+        - Shelving
+        - Bookcase
+        - Book
+        - Publication
+        - Bookselling
+        - Aisle
+        - Library
+        - Book cover
+
   - sequence: "028"
-    date: "2021-08-24T18:10:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-24T18:10:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-028-93C1AD.webp"
-      alt: "TPE-01 028"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-028-93C1AD.webp
+      alt: Film photo of shelf, shelving, publication, book, retail, bookcase.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Shelf
+        - Shelving
+        - Publication
+        - Book
+        - Retail
+        - Bookcase
+        - Bookselling
+        - Collection
+
   - sequence: "029"
-    date: "2021-08-24T18:15:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-24T18:15:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-029-588BEA.webp"
-      alt: "TPE-01 029"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-029-588BEA.webp
+      alt: Film photo of sky, building, urban area, city, daytime, metropolitan area.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sky
+        - Building
+        - Urban area
+        - City
+        - Daytime
+        - Metropolitan area
+        - High-rise building
+        - Architecture
+        - Town
+        - Commercial building
+
   - sequence: "030"
-    date: "2021-08-24T18:20:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-24T18:20:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-030-1BB3D1.webp"
-      alt: "TPE-01 030"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-030-1BB3D1.webp
+      alt: Film photo of building, daytime, urban area, city, metropolitan area, high-rise building.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Building
+        - Daytime
+        - Urban area
+        - City
+        - Metropolitan area
+        - High-rise building
+        - Architecture
+        - Town
+        - Skyscraper
+        - Metropolis
+
   - sequence: "031"
-    date: "2021-08-24T18:25:24.000Z"
-    offsetTime: "+08:00"
+    date: 2021-08-24T18:25:24.000Z
+    offsetTime: +08:00
     hidden: false
     image:
-      src: "https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-031-ABC772.webp"
-      alt: "TPE-01 031"
-      positionx: "50%"
-      positiony: "50%"
+      src: https://cdn.120shots.com/images/TPE-01/TPE-01-Kodak-Gold-200-031-ABC772.webp
+      alt: Film photo of wall, architecture, apartment, composite material, urban design, balcony.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Wall
+        - Architecture
+        - Apartment
+        - Composite material
+        - Urban design
+        - Balcony
+        - Condominium
+        - High-rise building
+        - Daylighting
