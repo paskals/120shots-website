@@ -1,12 +1,25 @@
 ---
-const { images } = Astro.props;
+const { images, format = "35mm" } = Astro.props;
+const mediumFormats = ["645", "6x6", "6x7", "6x8", "6x9"];
+const isMediumFormat = mediumFormats.includes(format);
 ---
 
 <div
-  class="film-strip md:h-64 sm:h-56 xs:h-52 overflow-x-auto overflow-y-hidden"
+  class:list={[
+    "film-strip overflow-x-auto overflow-y-hidden",
+    isMediumFormat
+      ? "md:h-[460px] sm:h-[400px] h-[360px]"
+      : "md:h-64 sm:h-56 xs:h-52",
+  ]}
+  data-format={format}
 >
   <div
-    class="film-scroll-container h-full m-0 px-2 py-8 w-max flex justify-center align-middle"
+    class:list={[
+      "h-full m-0 px-2 w-max flex justify-center align-middle",
+      isMediumFormat
+        ? "film-scroll-container-medium py-3"
+        : "film-scroll-container py-8",
+    ]}
   >
     {
       images.map((image) =>
@@ -21,7 +34,12 @@ const { images } = Astro.props;
                 alt={image.alt}
                 loading="lazy"
                 decoding="async"
-                class="film-image md:h-44 sm:h-36 h-32 w-auto"
+                class:list={[
+                  "film-image w-auto",
+                  isMediumFormat
+                    ? "md:h-[420px] sm:h-[370px] h-[330px]"
+                    : "md:h-44 sm:h-36 h-32",
+                ]}
                 data-film-image
               />
             </a>
@@ -40,9 +58,9 @@ const { images } = Astro.props;
     flex-shrink: 0;
   }
 
-  .film-frame.portrait .film-image {
+  .film-frame.portrait .film-image,
+  .film-frame.landscape-rotated .film-image {
     transform: rotate(90deg);
-    /* Override height constraint, use width constraint instead */
     height: auto !important;
     max-height: none !important;
   }
@@ -92,46 +110,76 @@ const { images } = Astro.props;
       0 var(--size);
     box-sizing: border-box;
   }
+
+  .film-scroll-container-medium {
+    --background: #393939;
+    align-items: center;
+    background-color: var(--background);
+  }
 </style>
 
 <script>
-  function handleFilmImage(img: HTMLImageElement) {
-    const applyRotation = () => {
-      const { naturalWidth, naturalHeight, offsetHeight } = img;
-      if (!naturalWidth || !naturalHeight) return;
+  function handleFilmStrips() {
+    document.querySelectorAll<HTMLElement>(".film-strip").forEach((strip) => {
+      const format = strip.dataset.format || "35mm";
+      const is645 = format === "645";
+      const mediumFormats = ["645", "6x6", "6x7", "6x8", "6x9"];
+      const isMedium = mediumFormats.includes(format);
 
-      // Check if portrait
-      if (naturalHeight > naturalWidth) {
-        const frame = img.closest(".film-frame") as HTMLElement;
-        if (!frame) return;
+      strip
+        .querySelectorAll<HTMLImageElement>("[data-film-image]")
+        .forEach((img) => {
+          const applyRotation = () => {
+            const { naturalWidth, naturalHeight, offsetHeight } = img;
+            if (!naturalWidth || !naturalHeight) return;
 
-        // For portrait images, we want the rotated visual height to match
-        // landscape image heights. So set image width = current offsetHeight
-        // (what landscape images use for height), then height scales by aspect ratio.
-        const targetWidth = offsetHeight; // e.g., 176px
-        const aspectRatio = naturalHeight / naturalWidth;
-        const targetHeight = targetWidth * aspectRatio;
+            const isPortrait = naturalHeight > naturalWidth * 1.05;
+            const isLandscape = naturalWidth > naturalHeight * 1.05;
 
-        // Set image dimensions: width fixed, height by aspect ratio
-        img.style.width = `${targetWidth}px`;
-        img.style.height = `${targetHeight}px`;
+            if (is645 && isLandscape) {
+              // 645: rotate landscape images to portrait
+              const frame = img.closest(".film-frame") as HTMLElement;
+              if (!frame) return;
 
-        // Frame width = rotated visual width = image height
-        // Frame height = rotated visual height = image width (same as landscape img height)
-        frame.style.width = `${targetHeight}px`;
-        frame.style.height = `${targetWidth}px`;
-        frame.classList.add("portrait");
-      }
-    };
+              const targetWidth = offsetHeight;
+              const aspectRatio = naturalHeight / naturalWidth;
+              const targetHeight = targetWidth * aspectRatio;
 
-    if (img.complete && img.naturalWidth) {
-      requestAnimationFrame(applyRotation);
-    } else {
-      img.addEventListener("load", () => requestAnimationFrame(applyRotation));
-    }
+              img.style.width = `${targetWidth}px`;
+              img.style.height = `${targetHeight}px`;
+
+              frame.style.width = `${targetHeight}px`;
+              frame.style.height = `${targetWidth}px`;
+              frame.classList.add("landscape-rotated");
+            } else if (!isMedium && isPortrait) {
+              // 35mm/half-frame/4x5: rotate portrait images to landscape
+              const frame = img.closest(".film-frame") as HTMLElement;
+              if (!frame) return;
+
+              const targetWidth = offsetHeight;
+              const aspectRatio = naturalHeight / naturalWidth;
+              const targetHeight = targetWidth * aspectRatio;
+
+              img.style.width = `${targetWidth}px`;
+              img.style.height = `${targetHeight}px`;
+
+              frame.style.width = `${targetHeight}px`;
+              frame.style.height = `${targetWidth}px`;
+              frame.classList.add("portrait");
+            }
+            // Medium formats (non-645): no rotation needed
+          };
+
+          if (img.complete && img.naturalWidth) {
+            requestAnimationFrame(applyRotation);
+          } else {
+            img.addEventListener("load", () =>
+              requestAnimationFrame(applyRotation),
+            );
+          }
+        });
+    });
   }
 
-  document
-    .querySelectorAll<HTMLImageElement>("[data-film-image]")
-    .forEach(handleFilmImage);
+  document.addEventListener("astro:page-load", handleFilmStrips);
 </script>
