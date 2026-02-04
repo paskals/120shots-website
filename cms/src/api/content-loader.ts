@@ -4,7 +4,6 @@ import { parse } from "yaml";
 import type {
   Film,
   Roll,
-  Shot,
   Essay,
   EssaySummary,
   Photo,
@@ -117,7 +116,6 @@ export class ContentLoader {
     this.allPhotos = [];
     const seenUrls = new Set<string>();
     for (const [rollId, roll] of this.rolls) {
-      const film = this.films.get(roll.film);
       for (const shot of roll.shots) {
         // Deduplicate by URL - skip if we've already seen this photo
         if (seenUrls.has(shot.image.src)) {

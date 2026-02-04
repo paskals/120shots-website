@@ -1,5 +1,6 @@
 import { usePhotoStore } from "../../stores/photo-store";
 import type { Photo } from "../../types";
+import LazyImage from "../shared/LazyImage";
 
 interface Props {
   photo: Photo;
@@ -35,10 +36,9 @@ export default function PhotoCard({
       }`}
     >
       <div className="aspect-[4/3] bg-zinc-100 flex items-center justify-center">
-        <img
+        <LazyImage
           src={photo.src}
           alt={photo.alt}
-          loading="lazy"
           className="max-w-full max-h-full object-contain"
         />
       </div>

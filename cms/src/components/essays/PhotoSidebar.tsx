@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDraggable } from "@dnd-kit/core";
 import type { Photo, Essay } from "../../types";
+import LazyImage from "../shared/LazyImage";
 
 interface DraggablePhotoProps {
   photo: { src: string; alt: string; rollName?: string; sequence?: string; date?: string };
@@ -27,12 +28,10 @@ function DraggablePhoto({ photo, usageCount }: DraggablePhotoProps) {
       }`}
     >
       <div className="aspect-square bg-zinc-100 flex items-center justify-center">
-        <img
+        <LazyImage
           src={photo.src}
           alt={photo.alt}
-          className="max-w-full max-h-full object-contain"
-          loading="lazy"
-          draggable={false}
+          className="max-w-full max-h-full object-contain pointer-events-none"
         />
       </div>
       <div className="absolute top-1 right-1">
