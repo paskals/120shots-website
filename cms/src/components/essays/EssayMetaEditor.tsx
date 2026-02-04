@@ -10,6 +10,15 @@ function slugify(value: string): string {
     .replace(/^-|-$/g, "");
 }
 
+// Less aggressive version for live editing - allows trailing hyphens while typing
+function sanitizeSlug(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9-]+/g, "-")
+    .replace(/^-+/, "")
+    .replace(/-+/g, "-");
+}
+
 export default function EssayMetaEditor() {
   const { current, dirty, updateMeta, renameEssay } = useEssayStore();
   const navigate = useNavigate();
@@ -32,10 +41,15 @@ export default function EssayMetaEditor() {
   const renameDisabled = slugUnchanged || slugEmpty || dirty || renaming;
 
   const handleRename = async () => {
+    const finalSlug = slugify(slug);
+    if (!finalSlug) {
+      setRenameError("Slug cannot be empty");
+      return;
+    }
     setRenaming(true);
     setRenameError(null);
     try {
-      const newId = await renameEssay(slug);
+      const newId = await renameEssay(finalSlug);
       navigate(`/essays/${newId}`, { replace: true });
     } catch (err: any) {
       setRenameError(err.message || "Rename failed");
@@ -66,7 +80,7 @@ export default function EssayMetaEditor() {
             type="text"
             value={slug}
             onChange={(e) => {
-              setSlug(slugify(e.target.value));
+              setSlug(sanitizeSlug(e.target.value));
               setRenameError(null);
             }}
             className="flex-1 bg-white border border-zinc-300 rounded-lg px-3 py-2 text-sm text-zinc-800 font-mono focus:outline-none focus:border-blue-400"

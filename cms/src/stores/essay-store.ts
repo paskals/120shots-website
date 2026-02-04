@@ -48,6 +48,12 @@ interface EssayStore {
   // Derived metadata sync
   syncRollsAndFilms: (allPhotos: Photo[]) => void;
 
+  // Sorting
+  sortSpreads: (
+    direction: "asc" | "desc",
+    photoInfoMap: Record<string, { date?: string }>
+  ) => void;
+
   // Persistence
   save: () => Promise<void>;
   createEssay: (essay: Omit<Essay, "id">) => Promise<string>;
@@ -297,6 +303,29 @@ export const useEssayStore = create<EssayStore>((set, get) => {
       ) {
         set({ current: { ...current, rolls: newRolls, filmStocks: newFilms } });
       }
+    },
+
+    sortSpreads: (direction, photoInfoMap) => {
+      const { current } = get();
+      if (!current || current.spreads.length < 2) return;
+      pushHistory();
+
+      const spreads = [...current.spreads];
+      spreads.sort((a, b) => {
+        // Get date from first photo in each spread
+        const dateA = a.photos[0]?.src ? photoInfoMap[a.photos[0].src]?.date : undefined;
+        const dateB = b.photos[0]?.src ? photoInfoMap[b.photos[0].src]?.date : undefined;
+
+        // Spreads without dates go to the end
+        if (!dateA && !dateB) return 0;
+        if (!dateA) return 1;
+        if (!dateB) return -1;
+
+        const cmp = dateA.localeCompare(dateB);
+        return direction === "asc" ? cmp : -cmp;
+      });
+
+      set({ current: { ...current, spreads }, dirty: true });
     },
 
     save: async () => {
