@@ -54,16 +54,22 @@ function extractObjectKey(photoUrl: string): string | null {
 export async function deletePhotoFromR2(photoUrl: string): Promise<boolean> {
   const objectKey = extractObjectKey(photoUrl);
 
+  console.log("[R2 Delete] Photo URL:", photoUrl);
+  console.log("[R2 Delete] Public URL config:", publicURL);
+  console.log("[R2 Delete] Extracted object key:", objectKey);
+
   if (!objectKey) {
     throw new Error(
-      `Could not extract object key from URL: ${photoUrl}. Check BUCKET_PUBLIC_URL configuration.`
+      `Could not extract object key from URL: ${photoUrl}. Check BUCKET_PUBLIC_URL configuration (current: ${publicURL || "not set"}).`
     );
   }
 
   try {
-    await bucket.deleteObject(objectKey);
+    const result = await bucket.deleteObject(objectKey);
+    console.log("[R2 Delete] Delete result:", result);
     return true;
   } catch (err: any) {
+    console.error("[R2 Delete] Error:", err);
     throw new Error(`Failed to delete object from R2: ${err.message}`);
   }
 }
