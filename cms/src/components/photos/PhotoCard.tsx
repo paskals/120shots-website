@@ -1,5 +1,6 @@
 import { usePhotoStore } from "../../stores/photo-store";
 import type { Photo } from "../../types";
+import LazyImage from "../shared/LazyImage";
 
 interface Props {
   photo: Photo;
@@ -35,13 +36,19 @@ export default function PhotoCard({
       }`}
     >
       <div className="aspect-[4/3] bg-zinc-100 flex items-center justify-center">
-        <img
+        <LazyImage
           src={photo.src}
           alt={photo.alt}
-          loading="lazy"
           className="max-w-full max-h-full object-contain"
         />
       </div>
+      {photo.hidden && (
+        <div className="absolute inset-0 bg-amber-500/30 flex items-center justify-center pointer-events-none">
+          <span className="px-2 py-1 bg-amber-500 text-white text-xs font-medium rounded">
+            Hidden
+          </span>
+        </div>
+      )}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       <div className="absolute bottom-0 left-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
         <p className="text-xs text-white truncate">{photo.rollName}</p>

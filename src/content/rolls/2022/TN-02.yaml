@@ -92,28 +92,6 @@ shots:
         - Holiday
       location: Xiao Liuqiu island, Taiwan
 
-  - sequence: "004"
-    date: 2022-02-27T12:30:00.000Z
-    offsetTime: +02:00
-    hidden: true
-    image:
-      src: https://cdn.120shots.com/images/TN-02/R1-01825-0005.webp
-      alt: Film photo of fluid, sea, liquid, coastal and oceanic landforms, ocean, coast.
-      positionx: 50%
-      positiony: 50%
-      labels:
-        - Fluid
-        - Sea
-        - Liquid
-        - Coastal and oceanic landforms
-        - Ocean
-        - Coast
-        - Shore
-        - Wave
-        - Wind wave
-        - Sound
-      location: Xiao Liuqiu island, Taiwan
-
   - sequence: "005"
     date: 2022-02-27T13:00:00.000Z
     offsetTime: +02:00
