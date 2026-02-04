@@ -80,6 +80,12 @@ export async function handleApiRequest(
         json(res, { error: "Missing rollId, sequence, or src" }, 400);
         return true;
       }
+      // Check if photo is used in essays
+      const usage = loader.getUsage();
+      if (usage[src]?.length > 0) {
+        json(res, { error: "Cannot delete photo: used in essays", essays: usage[src] }, 400);
+        return true;
+      }
       // Delete from R2 first - if this fails, YAML remains unchanged
       await deletePhotoFromR2(src);
       // Remove from YAML
