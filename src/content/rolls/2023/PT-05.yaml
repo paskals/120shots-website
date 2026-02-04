@@ -188,27 +188,6 @@ shots:
         - Hardwood
         - Still life photography
 
-  - sequence: "010"
-    date: 2023-03-01T14:20:00.000Z
-    offsetTime: +08:00
-    hidden: false
-    image:
-      src: https://cdn.120shots.com/images/PT-05/R1-06362-008A.webp
-      alt: Film photo of arch, walkway, shadow, alley, tunnel, walking.
-      positionx: 50%
-      positiony: 50%
-      labels:
-        - Arch
-        - Walkway
-        - Shadow
-        - Alley
-        - Tunnel
-        - Walking
-        - Vacation
-        - Trail
-        - Path
-        - Arch bridge
-
   - sequence: "011"
     date: 2023-03-01T14:15:00.000Z
     offsetTime: +08:00

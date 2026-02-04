@@ -1,0 +1,120 @@
+title: Streets of Taipei
+description: Walking around Taipei in 2022. Always finding something interesting
+pubDate: 2026-02-04
+author: paskal
+rolls:
+  - 2022/TPE-03
+  - 2022/TPE-02
+filmStocks:
+  - portra-400
+  - superia-xtra-400
+tags:
+  - taipei
+  - streets
+  - rain
+  - sun
+cover:
+  src: https://cdn.120shots.com/images/TPE-02/R1-01827-004A.webp
+  alt: Film photo of city, urban area, public space, pedestrian, metropolitan area, street.
+spreads:
+  - layout: duo-l
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-02/R1-01827-001A.webp
+        alt: Film photo of urban area, daytime, skyscraper, city, building, metropolitan area.
+      - src: https://cdn.120shots.com/images/TPE-02/R1-01827-002A.webp
+        alt: Film photo of urban area, city, residential area, bird's-eye view, aerial photography, metropolitan area.
+    caption: From up top
+
+  - layout: duo
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-02/R1-01827-003A.webp
+        alt: "Film photo of daytime, skyscraper, high-rise building, urban area, city, metropolitan area. Location: Din Tai Fung 101."
+      - src: https://cdn.120shots.com/images/TPE-02/R1-01827-005A.webp
+        alt: "Film photo of daytime, building, skyscraper, urban area, high-rise building, city. Location: Taipei 101 Observatory."
+    caption: From below
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-02/R1-01827-004A.webp
+        alt: Film photo of city, urban area, public space, pedestrian, metropolitan area, street.
+
+  - layout: trio-l
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-03/R1-02384-002A.webp
+        alt: Film photo of mode of transport, road, automotive lighting, street, motorcycle, scooter.
+      - src: https://cdn.120shots.com/images/TPE-03/R1-02384-004A.webp
+        alt: Film photo of wheel, tire, alley, automotive tire, road, automotive wheel system.
+      - src: https://cdn.120shots.com/images/TPE-03/R1-02384-001A.webp
+        alt: Film photo of customer, retail, food, market, street food, bazaar.
+    caption: The markets
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-03/R1-02384-005A.webp
+        alt: Film photo of green, architecture, residential area, shrub, neighbourhood, apartment.
+
+  - layout: trio-r
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-02/R1-01827-017A.webp
+        alt: Film photo of land vehicle, mode of transport, tire, wheel, motor vehicle, automotive lighting.
+      - src: https://cdn.120shots.com/images/TPE-03/R1-02384-006A.webp
+        alt: Film photo of road, road surface, street, urban area, city, town.
+      - src: https://cdn.120shots.com/images/TPE-02/R1-01827-011A.webp
+        alt: Film photo of mode of transport, land vehicle, vehicle, motor vehicle, car, transport.
+
+  - layout: duo
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-02/R1-01827-031A.webp
+        alt: Film photo of night, lighting, street, electricity, midnight, electronic signage.
+      - src: https://cdn.120shots.com/images/TPE-02/R1-01827-018A.webp
+        alt: Film photo of motorcycle, land vehicle, mode of transport, vehicle, wheel, tire.
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-02/R1-01827-032A.webp
+        alt: Film photo of land vehicle, mode of transport, vehicle, building, transport, city.
+
+  - layout: duo
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-02/R1-01827-033A.webp
+        alt: Film photo of road, wall, road surface, street, alley, city.
+      - src: https://cdn.120shots.com/images/TPE-02/R1-01827-035A.webp
+        alt: Film photo of public space, pedestrian, street, luggage & bags, market, bazaar.
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-02/R1-01827-034A.webp
+        alt: Film photo of land vehicle, mode of transport, vehicle, building, city, road.
+
+  - layout: duo
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-03/R1-02384-007A.webp
+        alt: Film photo of urban area, road surface, road, city, street, metropolitan area.
+      - src: https://cdn.120shots.com/images/TPE-03/R1-02384-008A.webp
+        alt: Film photo of mode of transport, land vehicle, wheel, motor vehicle, tire, road.
+    caption: And then it rains...
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-03/R1-02384-011A.webp
+        alt: Film photo of land vehicle, vehicle, mode of transport, wheel, motor vehicle, tire.
+
+  - layout: duo-r
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-03/R1-02384-010A.webp
+        alt: Film photo of metal, ceiling, night, shadow, alley.
+      - src: https://cdn.120shots.com/images/TPE-03/R1-02384-009A.webp
+        alt: Film photo of advertising, shopkeeper, customer, awning.
+
+  - layout: duo
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-03/R1-02384-013A.webp
+        alt: Film photo of building, daytime, city, urban area, road, road surface.
+      - src: https://cdn.120shots.com/images/TPE-03/R1-02384-012A.webp
+        alt: Film photo of mode of transport, motor vehicle, car, automotive exterior, automotive lighting, automotive parking light.
+
+  - layout: single
+    photos:
+      - src: https://cdn.120shots.com/images/TPE-03/R1-02384-014A.webp
+        alt: Film photo of road, urban area, road surface, street, city, town.
+    caption: 再見

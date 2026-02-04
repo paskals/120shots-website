@@ -26,6 +26,8 @@ export default function EssayMetaEditor() {
   const [slugInitialized, setSlugInitialized] = useState<string | null>(null);
   const [renaming, setRenaming] = useState(false);
   const [renameError, setRenameError] = useState<string | null>(null);
+  const [tagsInput, setTagsInput] = useState("");
+  const [tagsInitialized, setTagsInitialized] = useState<string | null>(null);
 
   if (!current) return null;
 
@@ -34,6 +36,12 @@ export default function EssayMetaEditor() {
     setSlug(current.id);
     setSlugInitialized(current.id);
     setRenameError(null);
+  }
+
+  // Reset tags state when essay changes
+  if (tagsInitialized !== current.id) {
+    setTagsInput(current.tags?.join(", ") || "");
+    setTagsInitialized(current.id);
   }
 
   const slugUnchanged = slug === current.id;
@@ -192,15 +200,16 @@ export default function EssayMetaEditor() {
         </label>
         <input
           type="text"
-          value={current.tags?.join(", ") || ""}
-          onChange={(e) =>
-            updateMeta({
-              tags: e.target.value
-                .split(",")
-                .map((t) => t.trim())
-                .filter(Boolean),
-            })
-          }
+          value={tagsInput}
+          onChange={(e) => setTagsInput(e.target.value)}
+          onBlur={() => {
+            const tags = tagsInput
+              .split(",")
+              .map((t) => t.trim())
+              .filter(Boolean);
+            updateMeta({ tags });
+            setTagsInput(tags.join(", "));
+          }}
           className="w-full bg-white border border-zinc-300 rounded-lg px-3 py-2 text-sm text-zinc-800 focus:outline-none focus:border-blue-400"
         />
       </div>
