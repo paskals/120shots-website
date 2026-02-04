@@ -24,7 +24,11 @@ export default function NewEssayPage() {
   const handleCreate = async () => {
     if (selectedPhotos.size === 0) return;
 
-    const selected = photos.filter((p) => selectedPhotos.has(p.src));
+    // Preserve click order by iterating over selectedPhotos (Set preserves insertion order)
+    const photoMap = new Map(photos.map((p) => [p.src, p]));
+    const selected = Array.from(selectedPhotos)
+      .map((src) => photoMap.get(src))
+      .filter((p): p is (typeof photos)[number] => p !== undefined);
 
     const spreads: Spread[] = [];
     const layoutPattern: SpreadLayout[] = ["single", "duo", "trio"];
