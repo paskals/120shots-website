@@ -17,6 +17,7 @@ import { useEssayStore } from "../../stores/essay-store";
 import SpreadEditor from "./SpreadEditor";
 import PhotoSidebar from "./PhotoSidebar";
 import EssayMetaEditor from "./EssayMetaEditor";
+import ConfirmDialog from "../shared/ConfirmDialog";
 import type { Modifier } from "@dnd-kit/core";
 import type { Photo } from "../../types";
 
@@ -65,10 +66,7 @@ export default function EssayEditor() {
   const [activeData, setActiveData] = useState<any>(null);
   const [showMeta, setShowMeta] = useState(false);
   const [allPhotos, setAllPhotos] = useState<Photo[]>([]);
-  const [sortConfirm, setSortConfirm] = useState<{
-    step: 1 | 2;
-    direction: "asc" | "desc";
-  } | null>(null);
+  const [sortConfirm, setSortConfirm] = useState<"asc" | "desc" | null>(null);
 
   useEffect(() => {
     fetch("/api/photos").then((r) => r.json()).then(setAllPhotos);
@@ -193,7 +191,7 @@ export default function EssayEditor() {
               </button>
               <div className="w-px h-4 bg-zinc-200 mx-1" />
               <button
-                onClick={() => setSortConfirm({ step: 1, direction: "asc" })}
+                onClick={() => setSortConfirm("asc")}
                 disabled={current.spreads.length < 2}
                 title="Sort spreads by date (oldest first)"
                 className="px-2 py-1.5 text-xs rounded-lg transition-colors text-zinc-500 hover:text-zinc-700 hover:bg-zinc-100 disabled:opacity-30 disabled:pointer-events-none"
@@ -201,7 +199,7 @@ export default function EssayEditor() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8L7 4L11 8"/><path d="M7 4V20"/><path d="M13 12H21"/><path d="M13 8H18"/><path d="M13 16H21"/><path d="M13 20H18"/></svg>
               </button>
               <button
-                onClick={() => setSortConfirm({ step: 1, direction: "desc" })}
+                onClick={() => setSortConfirm("desc")}
                 disabled={current.spreads.length < 2}
                 title="Sort spreads by date (newest first)"
                 className="px-2 py-1.5 text-xs rounded-lg transition-colors text-zinc-500 hover:text-zinc-700 hover:bg-zinc-100 disabled:opacity-30 disabled:pointer-events-none"
@@ -305,62 +303,18 @@ export default function EssayEditor() {
 
       {/* Sort confirmation modal */}
       {sortConfirm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl shadow-xl max-w-md w-full mx-4 p-6">
-            {sortConfirm.step === 1 ? (
-              <>
-                <h3 className="text-lg font-semibold text-zinc-800 mb-2">
-                  Sort spreads by date?
-                </h3>
-                <p className="text-sm text-zinc-600 mb-4">
-                  This will reorder all {current.spreads.length} spreads by the date of their first photo (
-                  {sortConfirm.direction === "asc" ? "oldest first" : "newest first"}).
-                  This may have unintended consequences on your carefully arranged layout.
-                </p>
-                <div className="flex gap-3 justify-end">
-                  <button
-                    onClick={() => setSortConfirm(null)}
-                    className="px-4 py-2 text-sm text-zinc-600 hover:text-zinc-800 transition-colors"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    onClick={() => setSortConfirm({ ...sortConfirm, step: 2 })}
-                    className="px-4 py-2 text-sm bg-amber-500 hover:bg-amber-600 text-white rounded-lg transition-colors"
-                  >
-                    Continue
-                  </button>
-                </div>
-              </>
-            ) : (
-              <>
-                <h3 className="text-lg font-semibold text-amber-600 mb-2">
-                  Are you sure?
-                </h3>
-                <p className="text-sm text-zinc-600 mb-4">
-                  This action will reorder all spreads. You can undo this with Cmd+Z, but please confirm you want to proceed.
-                </p>
-                <div className="flex gap-3 justify-end">
-                  <button
-                    onClick={() => setSortConfirm(null)}
-                    className="px-4 py-2 text-sm text-zinc-600 hover:text-zinc-800 transition-colors"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    onClick={() => {
-                      sortSpreads(sortConfirm.direction, photoInfoMap);
-                      setSortConfirm(null);
-                    }}
-                    className="px-4 py-2 text-sm bg-amber-500 hover:bg-amber-600 text-white rounded-lg transition-colors"
-                  >
-                    Sort {sortConfirm.direction === "asc" ? "Oldest First" : "Newest First"}
-                  </button>
-                </div>
-              </>
-            )}
-          </div>
-        </div>
+        <ConfirmDialog
+          title="Sort spreads by date?"
+          message={`This will reorder all ${current.spreads.length} spreads by the date of their first photo (${sortConfirm === "asc" ? "oldest first" : "newest first"}). This may have unintended consequences on your carefully arranged layout. You can undo with Cmd+Z.`}
+          confirmLabel={`Sort ${sortConfirm === "asc" ? "Oldest First" : "Newest First"}`}
+          confirmVariant="warning"
+          requireDoubleConfirm
+          onConfirm={() => {
+            sortSpreads(sortConfirm, photoInfoMap);
+            setSortConfirm(null);
+          }}
+          onCancel={() => setSortConfirm(null)}
+        />
       )}
     </DndContext>
   );
