@@ -1,6 +1,7 @@
 import type { IncomingMessage, ServerResponse } from "http";
 import { ContentLoader } from "./content-loader";
 import { ContentWriter } from "./content-writer";
+import { deletePhotoFromR2 } from "./r2-operations";
 import type { Essay } from "../types";
 
 const loader = new ContentLoader();
@@ -51,8 +52,40 @@ export async function handleApiRequest(
         camera: params.get("camera") || undefined,
         unused: params.get("unused") === "true",
         search: params.get("search") || undefined,
+        includeHidden: params.get("includeHidden") === "true",
       });
       json(res, photos);
+      return true;
+    }
+
+    // POST /api/photos/hide
+    if (method === "POST" && apiPath === "photos/hide") {
+      const body = await parseBody(req);
+      const { rollId, sequence, hidden } = body;
+      if (!rollId || !sequence || typeof hidden !== "boolean") {
+        json(res, { error: "Missing rollId, sequence, or hidden" }, 400);
+        return true;
+      }
+      writer.updateShotHidden(rollId, sequence, hidden);
+      loader.reload();
+      json(res, { rollId, sequence, hidden, updated: true });
+      return true;
+    }
+
+    // DELETE /api/photos
+    if (method === "DELETE" && apiPath === "photos") {
+      const body = await parseBody(req);
+      const { rollId, sequence, src } = body;
+      if (!rollId || !sequence || !src) {
+        json(res, { error: "Missing rollId, sequence, or src" }, 400);
+        return true;
+      }
+      // Delete from R2 first - if this fails, YAML remains unchanged
+      await deletePhotoFromR2(src);
+      // Remove from YAML
+      writer.removeShot(rollId, sequence);
+      loader.reload();
+      json(res, { rollId, sequence, deleted: true });
       return true;
     }
 

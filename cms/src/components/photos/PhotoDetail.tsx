@@ -1,5 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import type { Photo } from "../../types";
+import { usePhotoStore } from "../../stores/photo-store";
+import ConfirmDialog from "../shared/ConfirmDialog";
 
 interface Props {
   photo: Photo;
@@ -7,11 +9,28 @@ interface Props {
   onClose: () => void;
   onPrev?: () => void;
   onNext?: () => void;
+  onPhotoChanged?: () => void;
 }
 
-export default function PhotoDetail({ photo, usageEssays, onClose, onPrev, onNext }: Props) {
+export default function PhotoDetail({
+  photo,
+  usageEssays,
+  onClose,
+  onPrev,
+  onNext,
+  onPhotoChanged,
+}: Props) {
+  const { hidePhoto, deletePhoto } = usePhotoStore();
+  const [showHideConfirm, setShowHideConfirm] = useState(false);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const canDelete = usageEssays.length === 0;
+
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
+      if (showHideConfirm || showDeleteConfirm) return;
       if (e.key === "ArrowLeft" && onPrev) {
         e.preventDefault();
         onPrev();
@@ -25,7 +44,35 @@ export default function PhotoDetail({ photo, usageEssays, onClose, onPrev, onNex
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [onPrev, onNext, onClose]);
+  }, [onPrev, onNext, onClose, showHideConfirm, showDeleteConfirm]);
+
+  const handleHide = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      await hidePhoto(photo.rollId, photo.sequence, !photo.hidden);
+      setShowHideConfirm(false);
+      onPhotoChanged?.();
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleDelete = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      await deletePhoto(photo.rollId, photo.sequence, photo.src);
+      setShowDeleteConfirm(false);
+      onClose();
+      onPhotoChanged?.();
+    } catch (err: any) {
+      setError(err.message);
+      setLoading(false);
+    }
+  };
 
   return (
     <div
@@ -42,12 +89,29 @@ export default function PhotoDetail({ photo, usageEssays, onClose, onPrev, onNex
             alt={photo.alt}
             className="w-full max-h-[50vh] object-contain"
           />
+          {photo.hidden && (
+            <div className="absolute inset-0 bg-amber-500/20 flex items-center justify-center pointer-events-none">
+              <span className="px-3 py-1.5 bg-amber-500 text-white text-sm font-medium rounded-lg">
+                Hidden
+              </span>
+            </div>
+          )}
           <button
             onClick={onClose}
             className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors"
           >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           </button>
           {onPrev && (
@@ -55,8 +119,18 @@ export default function PhotoDetail({ photo, usageEssays, onClose, onPrev, onNex
               onClick={onPrev}
               className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors"
             >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15 19l-7-7 7-7"
+                />
               </svg>
             </button>
           )}
@@ -65,8 +139,18 @@ export default function PhotoDetail({ photo, usageEssays, onClose, onPrev, onNex
               onClick={onNext}
               className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors"
             >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </button>
           )}
@@ -145,8 +229,64 @@ export default function PhotoDetail({ photo, usageEssays, onClose, onPrev, onNex
           <div className="pt-2">
             <p className="text-xs text-zinc-400 break-all">{photo.src}</p>
           </div>
+
+          {error && (
+            <div className="p-3 bg-red-50 text-red-700 text-sm rounded-lg">
+              {error}
+            </div>
+          )}
+
+          <div className="flex gap-3 pt-3 border-t border-zinc-100">
+            <button
+              onClick={() => setShowHideConfirm(true)}
+              disabled={loading}
+              className="px-4 py-2 text-sm font-medium bg-amber-100 text-amber-700 hover:bg-amber-200 rounded-lg transition-colors disabled:opacity-50"
+            >
+              {photo.hidden ? "Unhide" : "Hide"}
+            </button>
+            <button
+              onClick={() => setShowDeleteConfirm(true)}
+              disabled={loading || !canDelete}
+              title={
+                !canDelete
+                  ? "Cannot delete: photo is used in essays"
+                  : undefined
+              }
+              className="px-4 py-2 text-sm font-medium bg-red-100 text-red-700 hover:bg-red-200 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Delete
+            </button>
+          </div>
         </div>
       </div>
+
+      {showHideConfirm && (
+        <ConfirmDialog
+          title={photo.hidden ? "Unhide Photo" : "Hide Photo"}
+          message={
+            photo.hidden
+              ? "This photo will be visible again in the photo browser."
+              : "This photo will be hidden from the photo browser by default. It will remain in the roll and can be shown again."
+          }
+          confirmLabel={photo.hidden ? "Unhide" : "Hide"}
+          confirmVariant="warning"
+          requireDoubleConfirm
+          onConfirm={handleHide}
+          onCancel={() => setShowHideConfirm(false)}
+        />
+      )}
+
+      {showDeleteConfirm && (
+        <ConfirmDialog
+          title="Delete Photo"
+          message="This will permanently delete the photo from the R2 bucket and remove it from the roll. This action cannot be undone."
+          confirmLabel="Delete"
+          confirmVariant="danger"
+          requireDoubleConfirm
+          onConfirm={handleDelete}
+          onCancel={() => setShowDeleteConfirm(false)}
+        />
+      )}
     </div>
   );
 }
