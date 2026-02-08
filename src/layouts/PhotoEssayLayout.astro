@@ -168,7 +168,7 @@ const pageTitle = title.concat(" › ", siteName);
           if (index < 0 || index >= spreads.length) return;
 
           isScrollingProgrammatically = true;
-          spreads[index]?.scrollIntoView({ behavior: smooth ? "smooth" : "auto" });
+          spreads[index]?.scrollIntoView({ behavior: smooth ? "smooth" : "instant" });
 
           if (updateHash) {
             updateHashForSpread(index);

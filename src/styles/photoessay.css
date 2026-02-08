@@ -351,7 +351,7 @@
   .spread[data-layout="trio-l"] .photo-wrapper,
   .spread[data-layout="trio-r"] .photo-wrapper {
     width: 100%;
-    height: auto;
+    /* height: auto; */
     max-height: 72vh;
     flex: none;
   }
@@ -365,7 +365,7 @@
   .spread[data-has-caption][data-layout="trio-l"] .photo-wrapper,
   .spread[data-has-caption][data-layout="trio-r"] .photo-wrapper {
     width: 100%;
-    height: auto;
+    /* height: auto; */
     max-height: 65vh;
     flex: none;
   }
