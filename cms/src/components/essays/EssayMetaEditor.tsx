@@ -10,6 +10,15 @@ function slugify(value: string): string {
     .replace(/^-|-$/g, "");
 }
 
+// Less aggressive version for live editing - allows trailing hyphens while typing
+function sanitizeSlug(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9-]+/g, "-")
+    .replace(/^-+/, "")
+    .replace(/-+/g, "-");
+}
+
 export default function EssayMetaEditor() {
   const { current, dirty, updateMeta, renameEssay } = useEssayStore();
   const navigate = useNavigate();
@@ -17,6 +26,8 @@ export default function EssayMetaEditor() {
   const [slugInitialized, setSlugInitialized] = useState<string | null>(null);
   const [renaming, setRenaming] = useState(false);
   const [renameError, setRenameError] = useState<string | null>(null);
+  const [tagsInput, setTagsInput] = useState("");
+  const [tagsInitialized, setTagsInitialized] = useState<string | null>(null);
 
   if (!current) return null;
 
@@ -27,15 +38,26 @@ export default function EssayMetaEditor() {
     setRenameError(null);
   }
 
+  // Reset tags state when essay changes
+  if (tagsInitialized !== current.id) {
+    setTagsInput(current.tags?.join(", ") || "");
+    setTagsInitialized(current.id);
+  }
+
   const slugUnchanged = slug === current.id;
   const slugEmpty = slug.trim() === "";
   const renameDisabled = slugUnchanged || slugEmpty || dirty || renaming;
 
   const handleRename = async () => {
+    const finalSlug = slugify(slug);
+    if (!finalSlug) {
+      setRenameError("Slug cannot be empty");
+      return;
+    }
     setRenaming(true);
     setRenameError(null);
     try {
-      const newId = await renameEssay(slug);
+      const newId = await renameEssay(finalSlug);
       navigate(`/essays/${newId}`, { replace: true });
     } catch (err: any) {
       setRenameError(err.message || "Rename failed");
@@ -66,7 +88,7 @@ export default function EssayMetaEditor() {
             type="text"
             value={slug}
             onChange={(e) => {
-              setSlug(slugify(e.target.value));
+              setSlug(sanitizeSlug(e.target.value));
               setRenameError(null);
             }}
             className="flex-1 bg-white border border-zinc-300 rounded-lg px-3 py-2 text-sm text-zinc-800 font-mono focus:outline-none focus:border-blue-400"
@@ -178,15 +200,16 @@ export default function EssayMetaEditor() {
         </label>
         <input
           type="text"
-          value={current.tags?.join(", ") || ""}
-          onChange={(e) =>
-            updateMeta({
-              tags: e.target.value
-                .split(",")
-                .map((t) => t.trim())
-                .filter(Boolean),
-            })
-          }
+          value={tagsInput}
+          onChange={(e) => setTagsInput(e.target.value)}
+          onBlur={() => {
+            const tags = tagsInput
+              .split(",")
+              .map((t) => t.trim())
+              .filter(Boolean);
+            updateMeta({ tags });
+            setTagsInput(tags.join(", "));
+          }}
           className="w-full bg-white border border-zinc-300 rounded-lg px-3 py-2 text-sm text-zinc-800 focus:outline-none focus:border-blue-400"
         />
       </div>

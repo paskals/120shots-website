@@ -1,0 +1,250 @@
+manualId: 2022/TPE-05
+film: gold-200
+camera: Bronica SQ-Ai
+format: 6x6
+cover: "001"
+shots:
+  - sequence: "000"
+    date: 2022-09-25T13:00:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-05/PascalS604_001.webp
+      alt: "Film photo of chinese architecture, japanese architecture, spring, column, shade, garden. Location: Kongmiao Shopping District."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Chinese architecture
+        - Japanese architecture
+        - Spring
+        - Column
+        - Shade
+        - Garden
+        - Temple
+        - Yard
+        - Shinto shrine
+        - Park
+      location: Kongmiao Shopping District
+
+  - sequence: "001"
+    date: 2022-09-25T13:05:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-05/PascalS604_002.webp
+      alt: Film photo of chinese architecture, plain, japanese architecture, lawn, spring, garden.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Chinese architecture
+        - Plain
+        - Japanese architecture
+        - Lawn
+        - Spring
+        - Garden
+        - Shade
+        - Yard
+        - Estate
+        - Hacienda
+
+  - sequence: "002"
+    date: 2022-09-25T13:10:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-05/PascalS604_003.webp
+      alt: Film photo of chinese architecture, japanese architecture, architecture, roof, column, spring.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Chinese architecture
+        - Japanese architecture
+        - Architecture
+        - Roof
+        - Column
+        - Spring
+        - Shade
+        - Garden
+        - Pagoda
+        - Temple
+
+  - sequence: "003"
+    date: 2022-09-25T13:15:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-05/PascalS604_004.webp
+      alt: Film photo of chinese architecture, japanese architecture, roof, column, spring, temple.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Chinese architecture
+        - Japanese architecture
+        - Roof
+        - Column
+        - Spring
+        - Temple
+        - Shade
+        - Shinto shrine
+        - Shrine
+        - Flowerpot
+
+  - sequence: "004"
+    date: 2022-09-25T13:20:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-05/PascalS604_005.webp
+      alt: Film photo of wood, chinese architecture, architecture, japanese architecture, door, column.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Wood
+        - Chinese architecture
+        - Architecture
+        - Japanese architecture
+        - Door
+        - Column
+        - Wood stain
+        - Shade
+        - Home Door
+        - Daylighting
+
+  - sequence: "005"
+    date: 2022-09-25T13:25:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-05/PascalS604_006.webp
+      alt: Film photo of red, lighting, ceiling, light fixture, lantern, shrine.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Red
+        - Lighting
+        - Ceiling
+        - Light fixture
+        - Lantern
+        - Shrine
+
+  - sequence: "006"
+    date: 2022-09-25T13:30:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-05/PascalS604_007.webp
+      alt: "Film photo of urban design, aerial photography, parking lot. Location: South Bass Island State Park."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban design
+        - Aerial photography
+        - Parking lot
+      location: South Bass Island State Park
+
+  - sequence: "007"
+    date: 2022-09-25T13:35:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-05/PascalS604_008.webp
+      alt: "Film photo of boat, marina, port, watercraft, harbor, dock. Location: Lin Mo-Niang Park."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Boat
+        - Marina
+        - Port
+        - Watercraft
+        - Harbor
+        - Dock
+        - Boats and boating--Equipment and supplies
+        - Naval architecture
+        - Mast
+        - Transport hub
+      location: Lin Mo-Niang Park
+
+  - sequence: "008"
+    date: 2022-09-25T13:40:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-05/PascalS604_009.webp
+      alt: Film photo of crane, waterway, machine, heavy equipment, channel, crane vessel.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Crane
+        - Waterway
+        - Machine
+        - Heavy equipment
+        - Channel
+        - Crane vessel
+        - Engineering
+        - Construction
+        - Port
+        - Boat
+
+  - sequence: "009"
+    date: 2022-08-29T17:30:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-05/PascalS604_010.webp
+      alt: Film photo of urban area, building, city, daytime, metropolitan area, skyscraper.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - Building
+        - City
+        - Daytime
+        - Metropolitan area
+        - Skyscraper
+        - High-rise building
+        - Residential area
+        - Beauty
+        - Town
+
+  - sequence: "010"
+    date: 2022-08-28T20:35:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-05/PascalS604_011.webp
+      alt: Film photo of photograph, skyscraper, urban area, building, city, metropolitan area.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Photograph
+        - Skyscraper
+        - Urban area
+        - Building
+        - City
+        - Metropolitan area
+        - High-rise building
+        - Night
+        - Metropolis
+        - Tower
+
+  - sequence: "011"
+    date: 2022-08-28T20:40:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-05/PascalS604_012.webp
+      alt: "Film photo of skyscraper, photograph, urban area, building, city, metropolitan area. Location: Yongchungang Park."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Skyscraper
+        - Photograph
+        - Urban area
+        - Building
+        - City
+        - Metropolitan area
+        - Night
+        - High-rise building
+        - Tower
+        - Metropolis
+      location: Yongchungang Park

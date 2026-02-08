@@ -1,0 +1,651 @@
+manualId: 2022/TPE-04
+film: eterna-500t
+camera: Nikon F3
+format: 35mm
+cover: "001"
+shots:
+  - sequence: "000"
+    date: 2022-08-28T14:00:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0000.webp
+      alt: Film photo of skyscraper, urban area, daytime, building, city, metropolitan area.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Skyscraper
+        - Urban area
+        - Daytime
+        - Building
+        - City
+        - Metropolitan area
+        - High-rise building
+        - Tower
+        - atmospheric phenomenon
+        - Metropolis
+
+  - sequence: "001"
+    date: 2022-08-28T14:10:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0001.webp
+      alt: Film photo of building, urban area, city, daytime, skyscraper, metropolitan area.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Building
+        - Urban area
+        - City
+        - Daytime
+        - Skyscraper
+        - Metropolitan area
+        - High-rise building
+        - Metropolis
+        - Architecture
+        - Residential area
+
+  - sequence: "002"
+    date: 2022-08-29T17:20:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0002.webp
+      alt: Film photo of skyscraper, urban area, city, building, daytime, metropolitan area.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Skyscraper
+        - Urban area
+        - City
+        - Building
+        - Daytime
+        - Metropolitan area
+        - High-rise building
+        - atmospheric phenomenon
+        - Tower
+        - Metropolis
+
+  - sequence: "003"
+    date: 2022-08-29T17:30:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0003.webp
+      alt: "Film photo of skyscraper, city, urban area, daytime, building, metropolitan area. Location: Hushan Trail."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Skyscraper
+        - City
+        - Urban area
+        - Daytime
+        - Building
+        - Metropolitan area
+        - High-rise building
+        - atmospheric phenomenon
+        - Tower
+        - Metropolis
+      location: Hushan Trail
+
+  - sequence: "004"
+    date: 2022-08-29T17:40:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0004.webp
+      alt: Film photo of skyscraper, photograph, night, building, urban area, city.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Skyscraper
+        - Photograph
+        - Night
+        - Building
+        - Urban area
+        - City
+        - Nature
+        - Metropolitan area
+        - High-rise building
+        - Tower
+
+  - sequence: "005"
+    date: 2022-08-29T17:50:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0005.webp
+      alt: Film photo of skyscraper, photograph, building, urban area, city, night.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Skyscraper
+        - Photograph
+        - Building
+        - Urban area
+        - City
+        - Night
+        - Metropolitan area
+        - High-rise building
+        - Tower
+        - Metropolis
+
+  - sequence: "006"
+    date: 2022-08-29T17:00:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0006.webp
+      alt: Film photo of daytime, building, urban area, city, mountainous landforms, metropolitan area.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Daytime
+        - Building
+        - Urban area
+        - City
+        - Mountainous landforms
+        - Metropolitan area
+        - Hill
+        - Cloud
+        - Mountain
+        - Beauty
+
+  - sequence: "007"
+    date: 2022-08-29T17:10:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0007.webp
+      alt: Film photo of building, urban area, city, daytime, skyscraper, metropolitan area.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Building
+        - Urban area
+        - City
+        - Daytime
+        - Skyscraper
+        - Metropolitan area
+        - High-rise building
+        - Metropolis
+        - Architecture
+        - Landscape
+
+  - sequence: "008"
+    date: 2022-09-10T11:00:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0008.webp
+      alt: "Film photo of sculpture, statue, art, metal. Location: National Museum Of Taiwan Literature."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sculpture
+        - Statue
+        - Art
+        - Metal
+      location: National Museum Of Taiwan Literature
+
+  - sequence: "009"
+    date: 2022-09-10T11:10:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0009.webp
+      alt: Film photo of neighbourhood, road, street, asphalt, sidewalk, pedestrian.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Neighbourhood
+        - Road
+        - Street
+        - Asphalt
+        - Sidewalk
+        - Pedestrian
+        - Motorcycle
+
+  - sequence: "010"
+    date: 2022-09-10T11:20:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0010.webp
+      alt: Film photo of retail, market.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Retail
+        - Market
+
+  - sequence: "011"
+    date: 2022-09-10T11:30:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0011.webp
+      alt: Film photo of land vehicle, mode of transport, vehicle, motorcycle, wheel, tire.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Land vehicle
+        - Mode of transport
+        - Vehicle
+        - Motorcycle
+        - Wheel
+        - Tire
+        - Transport
+        - Motor vehicle
+        - Automotive lighting
+        - Urban area
+
+  - sequence: "012"
+    date: 2022-09-10T11:40:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0012.webp
+      alt: Film photo of .
+      positionx: 50%
+      positiony: 50%
+      labels: []
+
+  - sequence: "013"
+    date: 2022-09-10T11:50:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0013.webp
+      alt: Film photo of motorcycle, scooter, moped, alley.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Motorcycle
+        - Scooter
+        - Moped
+        - Alley
+
+  - sequence: "014"
+    date: 2022-09-10T12:00:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0014.webp
+      alt: Film photo of shelf, shelving, retail, restaurant, cabinetry, bar.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Shelf
+        - Shelving
+        - Retail
+        - Restaurant
+        - Cabinetry
+        - Bar
+        - Customer
+        - Shopkeeper
+
+  - sequence: "015"
+    date: 2022-09-11T16:00:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0015.webp
+      alt: Film photo of composite material, brick, brickwork, building material, concrete, column.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Composite material
+        - Brick
+        - Brickwork
+        - Building material
+        - Concrete
+        - Column
+        - Daylighting
+
+  - sequence: "016"
+    date: 2022-09-11T16:10:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0016.webp
+      alt: Film photo of houseplant.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Houseplant
+
+  - sequence: "017"
+    date: 2022-09-11T16:20:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0017.webp
+      alt: Film photo of wall, architecture, composite material, door, concrete, brickwork.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Wall
+        - Architecture
+        - Composite material
+        - Door
+        - Concrete
+        - Brickwork
+        - Brick
+        - Building material
+        - Alley
+        - Courtyard
+
+  - sequence: "018"
+    date: 2022-09-11T16:30:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0018.webp
+      alt: Film photo of wall, town, neighbourhood, composite material, iron, concrete.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Wall
+        - Town
+        - Neighbourhood
+        - Composite material
+        - Iron
+        - Concrete
+        - Alley
+        - Paint
+        - Street art
+        - Balcony
+
+  - sequence: "019"
+    date: 2022-09-11T16:40:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0019.webp
+      alt: "Film photo of red, iron, concrete, paint, chinese architecture, gate. Location: Anping Old Street."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Red
+        - Iron
+        - Concrete
+        - Paint
+        - Chinese architecture
+        - Gate
+        - Home Door
+      location: Anping Old Street
+
+  - sequence: "020"
+    date: 2022-09-11T16:50:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0020.webp
+      alt: Film photo of flowerpot, houseplant, retail, shelf, wood stain, publication.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Flowerpot
+        - Houseplant
+        - Retail
+        - Shelf
+        - Wood stain
+        - Publication
+
+  - sequence: "021"
+    date: 2022-09-11T17:00:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0021.webp
+      alt: "Film photo of crane, liquid, heavy equipment, machine, boat, watercraft. Location: Casablanca Seafood Bar & Grill."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Crane
+        - Liquid
+        - Heavy equipment
+        - Machine
+        - Boat
+        - Watercraft
+        - Channel
+        - Crane vessel
+        - Evening
+        - Port
+      location: Casablanca Seafood Bar & Grill
+
+  - sequence: "022"
+    date: 2022-09-11T17:10:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0022.webp
+      alt: Film photo of .
+      positionx: 50%
+      positiony: 50%
+      labels: []
+
+  - sequence: "023"
+    date: 2022-09-11T17:20:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0023.webp
+      alt: Film photo of boat, watercraft, marina, port, boats and boating--equipment and supplies, mast.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Boat
+        - Watercraft
+        - Marina
+        - Port
+        - Boats and boating--Equipment and supplies
+        - Mast
+        - Harbor
+        - Dock
+        - Naval architecture
+        - Ship
+
+  - sequence: "024"
+    date: 2022-09-11T17:30:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0024.webp
+      alt: Film photo of sky, horizon, nature, ecoregion, atmospheric phenomenon, plain.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sky
+        - Horizon
+        - Nature
+        - Ecoregion
+        - atmospheric phenomenon
+        - Plain
+        - Landscape
+        - Dusk
+        - Land lot
+        - Evening
+
+  - sequence: "025"
+    date: 2022-09-11T17:40:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0025.webp
+      alt: Film photo of sky, nature, horizon, ecoregion, landscape, atmospheric phenomenon.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sky
+        - Nature
+        - Horizon
+        - Ecoregion
+        - Landscape
+        - atmospheric phenomenon
+        - Plain
+        - Dusk
+        - Land lot
+        - Evening
+
+  - sequence: "026"
+    date: 2022-09-11T17:50:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0026.webp
+      alt: Film photo of sky, natural environment, nature, horizon, grassland, ecoregion.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sky
+        - Natural environment
+        - Nature
+        - Horizon
+        - Grassland
+        - Ecoregion
+        - Plain
+        - Landscape
+        - Field
+        - Land lot
+
+  - sequence: "027"
+    date: 2022-09-11T18:00:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0027.webp
+      alt: Film photo of road surface, road, asphalt, street, thoroughfare, public utility.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Road surface
+        - Road
+        - Asphalt
+        - Street
+        - Thoroughfare
+        - Public utility
+        - pole
+        - Sidewalk
+        - Street light
+        - Suburb
+
+  - sequence: "028"
+    date: 2022-09-11T18:10:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0028.webp
+      alt: Film photo of sky, horizon, beach, cloud, summer, sea.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Sky
+        - Horizon
+        - Beach
+        - Cloud
+        - Summer
+        - Sea
+        - Coast
+        - Dusk
+        - Shore
+        - Sunset
+
+  - sequence: "029"
+    date: 2022-09-11T18:20:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0029.webp
+      alt: Film photo of water, horizon, dusk, fluid, sunset, beach.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Water
+        - Horizon
+        - Dusk
+        - Fluid
+        - Sunset
+        - Beach
+        - Sea
+        - Afterglow
+        - Liquid
+        - Orange
+
+  - sequence: "030"
+    date: 2022-09-11T18:30:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0030.webp
+      alt: Film photo of photograph, water, water resources, horizon, body of water, cloud.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Photograph
+        - Water
+        - Water resources
+        - Horizon
+        - Body of water
+        - Cloud
+        - Beach
+        - Fluid
+        - Dusk
+        - Sunset
+
+  - sequence: "031"
+    date: 2022-09-17T14:00:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0031.webp
+      alt: Film photo of bus, commercial vehicle, public transport, tour bus service, public utility, electrical supply.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Bus
+        - Commercial vehicle
+        - Public transport
+        - Tour bus service
+        - Public utility
+        - Electrical Supply
+
+  - sequence: "032"
+    date: 2022-09-17T14:10:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0032.webp
+      alt: Film photo of pedestrian, shade, walkway, walking, vacation, shadow.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Pedestrian
+        - Shade
+        - Walkway
+        - Walking
+        - Vacation
+        - Shadow
+
+  - sequence: "033"
+    date: 2022-09-17T14:20:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-04/R1-04444-0033.webp
+      alt: Film photo of urban area, metropolitan area, public space, pedestrian, commercial building, mixed-use.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - Metropolitan area
+        - Public space
+        - Pedestrian
+        - Commercial building
+        - Mixed-use
+        - Metropolis
+        - Travel
+        - Leisure
+        - Advertising

@@ -7,6 +7,7 @@ interface PhotoFilters {
   camera: string;
   unused: boolean;
   search: string;
+  showHidden: boolean;
 }
 
 interface PhotoStore {
@@ -26,6 +27,8 @@ interface PhotoStore {
   toggleSelect: (src: string) => void;
   clearSelection: () => void;
   selectAll: () => void;
+  hidePhoto: (rollId: string, sequence: string, hidden: boolean) => Promise<void>;
+  deletePhoto: (rollId: string, sequence: string, src: string) => Promise<void>;
 }
 
 const defaultFilters: PhotoFilters = {
@@ -34,6 +37,7 @@ const defaultFilters: PhotoFilters = {
   camera: "",
   unused: false,
   search: "",
+  showHidden: false,
 };
 
 export const usePhotoStore = create<PhotoStore>((set, get) => ({
@@ -65,6 +69,7 @@ export const usePhotoStore = create<PhotoStore>((set, get) => ({
     if (filters.camera) params.set("camera", filters.camera);
     if (filters.unused) params.set("unused", "true");
     if (filters.search) params.set("search", filters.search);
+    if (filters.showHidden) params.set("includeHidden", "true");
 
     try {
       const [photosRes, usageRes] = await Promise.all([
@@ -109,5 +114,31 @@ export const usePhotoStore = create<PhotoStore>((set, get) => ({
   selectAll: () => {
     const { photos } = get();
     set({ selectedPhotos: new Set(photos.map((p) => p.src)) });
+  },
+
+  hidePhoto: async (rollId, sequence, hidden) => {
+    const res = await fetch("/api/photos/hide", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ rollId, sequence, hidden }),
+    });
+    if (!res.ok) {
+      const data = await res.json();
+      throw new Error(data.error || "Failed to update photo");
+    }
+    await get().fetchPhotos();
+  },
+
+  deletePhoto: async (rollId, sequence, src) => {
+    const res = await fetch("/api/photos", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ rollId, sequence, src }),
+    });
+    if (!res.ok) {
+      const data = await res.json();
+      throw new Error(data.error || "Failed to delete photo");
+    }
+    await get().fetchPhotos();
   },
 }));

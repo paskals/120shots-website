@@ -98,7 +98,7 @@ const argv = yargs(hideBin(process.argv))
         demandOption: false,
       },
       format: {
-        describe: "What format was shot on this roll (e.g. 35mm, 6x6, etc)",
+        describe: "What format was shot on this roll (e.g. 35mm, 645, 6x6, etc)",
         type: "string",
         default: "35mm",
         demandOption: false,

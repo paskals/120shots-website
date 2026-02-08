@@ -1,0 +1,246 @@
+manualId: 2022/TPE-06
+film: cinestill-800t
+camera: Bronica SQ-Ai
+format: 6x6
+cover: "001"
+shots:
+  - sequence: "000"
+    date: 2022-10-02T18:39:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-06/PascalS603_001.webp
+      alt: Film photo of night, electricity, advertising, metropolitan area, electronic signage, midnight.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Night
+        - Electricity
+        - Advertising
+        - Metropolitan area
+        - Electronic signage
+        - Midnight
+        - Logo
+        - Darkness
+        - Electrical Supply
+        - Street light
+
+  - sequence: "001"
+    date: 2022-10-02T18:33:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-06/PascalS603_002.webp
+      alt: Film photo of lighting, night, electricity, midnight, light fixture, electrical supply.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Lighting
+        - Night
+        - Electricity
+        - Midnight
+        - Light fixture
+        - Electrical Supply
+        - Lantern
+        - Electronic signage
+        - Evening
+        - Neon
+
+  - sequence: "002"
+    date: 2022-10-02T18:36:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-06/PascalS603_003.webp
+      alt: Film photo of lighting, electricity, night, automotive lighting, midnight, light fixture.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Lighting
+        - Electricity
+        - Night
+        - Automotive lighting
+        - Midnight
+        - Light fixture
+        - Electrical Supply
+        - Electronic signage
+        - Lantern
+        - Neon
+
+  - sequence: "003"
+    date: 2022-10-02T18:30:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-06/PascalS603_004.webp
+      alt: Film photo of architecture, reflection, chinese architecture, gazebo, lake, japanese architecture.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Architecture
+        - Reflection
+        - Chinese architecture
+        - Gazebo
+        - Lake
+        - Japanese architecture
+        - Evening
+        - Reservoir
+        - Outdoor Structure
+        - Pond
+
+  - sequence: "004"
+    date: 2022-08-28T20:37:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-06/PascalS603_005.webp
+      alt: "Film photo of skyscraper, urban area, building, city, metropolitan area, high-rise building. Location: Fujhoushan Park."
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Skyscraper
+        - Urban area
+        - Building
+        - City
+        - Metropolitan area
+        - High-rise building
+        - Night
+        - Tower
+        - Cityscape
+        - Metropolis
+      location: Fujhoushan Park
+
+  - sequence: "005"
+    date: 2022-08-28T20:40:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-06/PascalS603_006.webp
+      alt: Film photo of skyscraper, photograph, urban area, city, building, metropolitan area.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Skyscraper
+        - Photograph
+        - Urban area
+        - City
+        - Building
+        - Metropolitan area
+        - High-rise building
+        - Night
+        - Tower
+        - Metropolis
+
+  - sequence: "006"
+    date: 2022-10-02T18:42:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-06/PascalS603_007.webp
+      alt: Film photo of automotive lighting, car, automotive exterior, automotive parking light, night, windshield.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Automotive lighting
+        - Car
+        - Automotive Exterior
+        - Automotive Parking Light
+        - Night
+        - Windshield
+        - Automotive Mirror
+        - Automotive Tail & Brake Light
+        - Luxury vehicle
+        - Personal luxury car
+
+  - sequence: "007"
+    date: 2022-10-02T18:45:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-06/PascalS603_008.webp
+      alt: Film photo of urban area, night, city, metropolitan area, electricity, advertising.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Urban area
+        - Night
+        - City
+        - Metropolitan area
+        - Electricity
+        - Advertising
+        - Electronic signage
+        - Display device
+        - Lighting
+        - Automotive lighting
+
+  - sequence: "008"
+    date: 2022-10-02T18:48:00.000Z
+    offsetTime: +08:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-06/PascalS603_009.webp
+      alt: Film photo of night, urban area, electricity, metropolitan area, advertising, city.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Night
+        - Urban area
+        - Electricity
+        - Metropolitan area
+        - Advertising
+        - City
+        - Lighting
+        - Electronic signage
+        - Automotive lighting
+        - Display device
+
+  - sequence: "009"
+    date: 2022-10-22T20:00:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-06/PascalS603_010.webp
+      alt: Film photo of neon, night, neon sign.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Neon
+        - Night
+        - Neon sign
+
+  - sequence: "010"
+    date: 2022-10-22T20:03:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-06/PascalS603_011.webp
+      alt: Film photo of red, orange, neon, neon sign, night, electronic signage.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Red
+        - Orange
+        - Neon
+        - Neon sign
+        - Night
+        - Electronic signage
+
+  - sequence: "011"
+    date: 2022-10-22T20:06:00.000Z
+    offsetTime: +02:00
+    hidden: false
+    image:
+      src: https://cdn.120shots.com/images/TPE-06/PascalS603_012.webp
+      alt: Film photo of filling station, fuel, fuel dispenser, gasoline, automotive parking light, machine.
+      positionx: 50%
+      positiony: 50%
+      labels:
+        - Filling station
+        - Fuel
+        - Fuel dispenser
+        - Gasoline
+        - Automotive Parking Light
+        - Machine
+        - Automotive Side Marker Light
+        - Advertising
+        - Automotive Tail & Brake Light

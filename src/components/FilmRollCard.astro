@@ -60,6 +60,7 @@ const formattedDates = getDatesRangeFormatted(roll);
         images={shots.map((r) => {
           return { src: r.image.src, alt: r.image.alt };
         })}
+        format={roll.data.format}
       />
     </a>
   </div>

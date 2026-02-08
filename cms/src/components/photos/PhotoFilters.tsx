@@ -55,6 +55,16 @@ export default function PhotoFilters() {
         Unused only
       </label>
 
+      <label className="flex items-center gap-1.5 text-sm text-zinc-600 cursor-pointer select-none">
+        <input
+          type="checkbox"
+          checked={filters.showHidden}
+          onChange={(e) => setFilter("showHidden", e.target.checked)}
+          className="rounded border-zinc-300 text-amber-500 focus:ring-amber-400/30"
+        />
+        Show hidden
+      </label>
+
       <input
         type="text"
         value={filters.search}
@@ -67,7 +77,8 @@ export default function PhotoFilters() {
         filters.film ||
         filters.camera ||
         filters.unused ||
-        filters.search) && (
+        filters.search ||
+        filters.showHidden) && (
         <button
           onClick={clearFilters}
           className="text-xs text-zinc-500 hover:text-zinc-700 transition-colors"

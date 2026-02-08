@@ -133,6 +133,67 @@ If no arguments provided, ask the user what they want to do:
 - Use reasonable defaults where possible
 - Show available options when asking for selection
 
+## Notion Photography Logbook Integration
+
+The user maintains a **Photography Logbook** database in Notion with detailed information about all their film rolls. You can use the Notion MCP server to pull roll information automatically.
+
+### Database Structure
+
+The Photography Logbook database (ID: `0c9f81d6736640c08cc2d3d19f0e995e`, data source: `collection://b259141a-222c-4ac1-85f0-5a2046c7bf2a`) contains:
+
+**Key Fields:**
+- **Roll Name** (title) - The roll identifier (e.g., "EHV-03", "TPE-04")
+- **Film Stock** (relation) - Links to Film Stock database with film details
+- **Format** (select) - Either "135" (35mm) or "120" (medium format)
+- **Camera** - Found in page content (e.g., "Nikon F3", "Bronica SQ-Ai")
+- **Dates** (date range) - When the roll was shot
+- **Locations** (multi-select) - Where photos were taken
+- **Status** (status) - Planning, Shooting, Pending Developing, Developing, Editing, Done
+
+### Workflow: Creating Rolls from Notion
+
+When the user wants to create rolls from folders and asks to pull info from Notion:
+
+1. **Search for the roll** in Notion:
+   ```
+   Use mcp__plugin_Notion_notion__notion-search with:
+   - query: Roll name (e.g., "EHV-03")
+   - query_type: "internal"
+   - data_source_url: "collection://b259141a-222c-4ac1-85f0-5a2046c7bf2a"
+   ```
+
+2. **Fetch roll details**:
+   ```
+   Use mcp__plugin_Notion_notion__notion-fetch with the page ID
+   ```
+
+3. **Extract information**:
+   - **Format**: Map "135" → "35mm", "120" → "6x6" (for Bronica SQ-Ai) or "6x7" (for Bronica GS1)
+   - **Camera**: Extract from content (look for "Nikon F3", "Bronica SQ-Ai", etc.)
+   - **Film Stock**: Extract film name from content and map to local film stock ID:
+     - "Kodak Gold 200" → `gold-200`
+     - "Fujifilm Superia Xtra 400" → `superia-xtra-400`
+     - "Kodak Portra 400" → `portra-400`
+     - "Lomography 800" → `lomo-800`
+     - "Kodak Ektar 100" → `ektar-100`
+     - "Kodak Ektachrome 100" → `ektachrome-100`
+     - "CineStill 800T" → `cinestill-800t`
+     - "Fujifilm Eterna 500T" → `eterna-500t`
+     - "Fujifilm C200" → `c200`
+     - "Fujifilm NPC 160" → `npc-160`
+
+4. **Create missing film stocks**: If a film mentioned in Notion doesn't exist locally, create the YAML file first in `src/content/films/`
+
+5. **Create the roll**: Use `yarn create-roll` with the extracted information
+
+### Batch Processing from Notion
+
+When processing multiple folders and the user wants to pull from Notion:
+- Search for each roll by name in the database
+- Fetch details for all found rolls
+- Create any missing film stocks
+- Create all rolls sequentially (to avoid rate limits)
+
 ## Arguments Parsing
 
 Parse `$ARGUMENTS` to:
@@ -140,6 +201,7 @@ Parse `$ARGUMENTS` to:
 - `roll` or `create-roll`: Skip to roll creation workflow
 - `essay` or `create-essay`: Skip to essay creation workflow
 - `rollessay` or `roll-essay`: Skip to essay-from-rolls workflow
+- `from-notion`: Pull roll information from Notion Photography Logbook
 - Additional arguments can pre-populate values
 
 Start the interactive workflow now using the arguments: $ARGUMENTS

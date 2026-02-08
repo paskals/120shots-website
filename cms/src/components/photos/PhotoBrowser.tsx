@@ -110,6 +110,17 @@ export default function PhotoBrowser({ selectable = false }: Props) {
           onClose={() => setDetailPhoto(null)}
           onPrev={handlePrev}
           onNext={handleNext}
+          onPhotoChanged={() => {
+            // Refresh the current photo from the store's latest state
+            const { photos: latestPhotos } = usePhotoStore.getState();
+            const updated = latestPhotos.find((p) => p.src === detailPhoto.src);
+            if (updated) {
+              setDetailPhoto(updated);
+            } else {
+              // Photo was deleted or filtered out, close modal
+              setDetailPhoto(null);
+            }
+          }}
         />
       )}
     </>
