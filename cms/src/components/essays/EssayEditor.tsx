@@ -17,6 +17,7 @@ import { useEssayStore } from "../../stores/essay-store";
 import SpreadEditor from "./SpreadEditor";
 import PhotoSidebar from "./PhotoSidebar";
 import EssayMetaEditor from "./EssayMetaEditor";
+import ConfirmDialog from "../shared/ConfirmDialog";
 import type { Modifier } from "@dnd-kit/core";
 import type { Photo } from "../../types";
 
@@ -59,11 +60,13 @@ export default function EssayEditor() {
     redo,
     history,
     future,
+    sortSpreads,
   } = useEssayStore();
 
   const [activeData, setActiveData] = useState<any>(null);
   const [showMeta, setShowMeta] = useState(false);
   const [allPhotos, setAllPhotos] = useState<Photo[]>([]);
+  const [sortConfirm, setSortConfirm] = useState<"asc" | "desc" | null>(null);
 
   useEffect(() => {
     fetch("/api/photos").then((r) => r.json()).then(setAllPhotos);
@@ -186,6 +189,23 @@ export default function EssayEditor() {
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.13-9.36L23 10"/></svg>
               </button>
+              <div className="w-px h-4 bg-zinc-200 mx-1" />
+              <button
+                onClick={() => setSortConfirm("asc")}
+                disabled={current.spreads.length < 2}
+                title="Sort spreads by date (oldest first)"
+                className="px-2 py-1.5 text-xs rounded-lg transition-colors text-zinc-500 hover:text-zinc-700 hover:bg-zinc-100 disabled:opacity-30 disabled:pointer-events-none"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8L7 4L11 8"/><path d="M7 4V20"/><path d="M13 12H21"/><path d="M13 8H18"/><path d="M13 16H21"/><path d="M13 20H18"/></svg>
+              </button>
+              <button
+                onClick={() => setSortConfirm("desc")}
+                disabled={current.spreads.length < 2}
+                title="Sort spreads by date (newest first)"
+                className="px-2 py-1.5 text-xs rounded-lg transition-colors text-zinc-500 hover:text-zinc-700 hover:bg-zinc-100 disabled:opacity-30 disabled:pointer-events-none"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 16L7 20L11 16"/><path d="M7 20V4"/><path d="M13 12H21"/><path d="M13 8H18"/><path d="M13 16H21"/><path d="M13 20H18"/></svg>
+              </button>
             </div>
             <button
               onClick={() => setShowMeta(!showMeta)}
@@ -280,6 +300,22 @@ export default function EssayEditor() {
           </div>
         ) : null}
       </DragOverlay>
+
+      {/* Sort confirmation modal */}
+      {sortConfirm && (
+        <ConfirmDialog
+          title="Sort spreads by date?"
+          message={`This will reorder all ${current.spreads.length} spreads by the date of their first photo (${sortConfirm === "asc" ? "oldest first" : "newest first"}). This may have unintended consequences on your carefully arranged layout. You can undo with Cmd+Z.`}
+          confirmLabel={`Sort ${sortConfirm === "asc" ? "Oldest First" : "Newest First"}`}
+          confirmVariant="warning"
+          requireDoubleConfirm
+          onConfirm={() => {
+            sortSpreads(sortConfirm, photoInfoMap);
+            setSortConfirm(null);
+          }}
+          onCancel={() => setSortConfirm(null)}
+        />
+      )}
     </DndContext>
   );
 }

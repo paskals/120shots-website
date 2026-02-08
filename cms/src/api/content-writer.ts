@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
-import { stringify } from "yaml";
-import type { Essay } from "../types";
+import { parse, stringify } from "yaml";
+import type { Essay, Roll, Shot } from "../types";
 
 const CONTENT_DIR = path.resolve(__dirname, "../../../src/content");
 
@@ -174,6 +174,130 @@ export class ContentWriter {
     // Create backup before rename
     fs.copyFileSync(oldPath, oldPath + ".bak");
     fs.renameSync(oldPath, newPath);
+  }
+
+  /**
+   * Finds the file path for a roll given its ID.
+   * Roll IDs are in format "year/name" (e.g., "2021/TPE-01").
+   */
+  private findRollPath(rollId: string): string | null {
+    const rollsDir = path.join(CONTENT_DIR, "rolls");
+
+    // First, search by manualId in all roll files
+    const years = fs
+      .readdirSync(rollsDir, { withFileTypes: true })
+      .filter((d) => d.isDirectory());
+
+    for (const yearDir of years) {
+      const yearPath = path.join(rollsDir, yearDir.name);
+      const files = fs.readdirSync(yearPath).filter((f) => f.endsWith(".yaml"));
+
+      for (const file of files) {
+        const filePath = path.join(yearPath, file);
+        const content = fs.readFileSync(filePath, "utf-8");
+        const data = parse(content) as any;
+
+        // Check if manualId matches
+        if (data.manualId === rollId) {
+          return filePath;
+        }
+
+        // Check if path-based ID matches
+        const pathId = `${yearDir.name}/${file.replace(".yaml", "")}`;
+        if (pathId === rollId) {
+          return filePath;
+        }
+      }
+    }
+
+    return null;
+  }
+
+  /**
+   * Builds a YAML-serializable roll object with correct key ordering.
+   */
+  private buildRollObject(data: any): Record<string, any> {
+    const obj: Record<string, any> = {};
+    if (data.manualId) obj.manualId = data.manualId;
+    obj.film = data.film;
+    if (data.camera) obj.camera = data.camera;
+    obj.format = data.format;
+    if (data.description) obj.description = data.description;
+    if (data.cover) obj.cover = data.cover;
+    obj.shots = data.shots.map((s: any) => {
+      const shot: Record<string, any> = {
+        sequence: s.sequence,
+      };
+      if (s.date) shot.date = s.date;
+      if (s.offsetTime) shot.offsetTime = s.offsetTime;
+      if (s.hidden !== undefined) shot.hidden = s.hidden;
+      if (s.portfolio) shot.portfolio = s.portfolio;
+      shot.image = {
+        src: s.image.src,
+        alt: s.image.alt,
+      };
+      if (s.image.positionx) shot.image.positionx = s.image.positionx;
+      if (s.image.positiony) shot.image.positiony = s.image.positiony;
+      if (s.image.labels && s.image.labels.length > 0) {
+        shot.image.labels = s.image.labels;
+      }
+      if (s.image.location) shot.image.location = s.image.location;
+      return shot;
+    });
+    return obj;
+  }
+
+  /**
+   * Updates a shot's hidden property in a roll.
+   * @param rollId The roll ID (e.g., "2021/TPE-01")
+   * @param sequence The shot sequence to update
+   * @param hidden Whether the shot should be hidden
+   */
+  updateShotHidden(rollId: string, sequence: string, hidden: boolean): void {
+    const filePath = this.findRollPath(rollId);
+    if (!filePath) {
+      throw new Error(`Roll not found: ${rollId}`);
+    }
+
+    const content = fs.readFileSync(filePath, "utf-8");
+    const data = parse(content) as any;
+
+    const shot = data.shots.find((s: any) => s.sequence === sequence);
+    if (!shot) {
+      throw new Error(`Shot ${sequence} not found in roll ${rollId}`);
+    }
+
+    shot.hidden = hidden;
+
+    const obj = this.buildRollObject(data);
+    const yaml = formatYamlWithSpacing(obj, ["shots"]);
+    fs.writeFileSync(filePath, yaml, "utf-8");
+  }
+
+  /**
+   * Removes a shot from a roll.
+   * @param rollId The roll ID (e.g., "2021/TPE-01")
+   * @param sequence The shot sequence to remove
+   */
+  removeShot(rollId: string, sequence: string): void {
+    const filePath = this.findRollPath(rollId);
+    if (!filePath) {
+      throw new Error(`Roll not found: ${rollId}`);
+    }
+
+    const content = fs.readFileSync(filePath, "utf-8");
+    const data = parse(content) as any;
+
+    const shotIndex = data.shots.findIndex((s: any) => s.sequence === sequence);
+    if (shotIndex === -1) {
+      throw new Error(`Shot ${sequence} not found in roll ${rollId}`);
+    }
+
+    data.shots.splice(shotIndex, 1);
+
+    const obj = this.buildRollObject(data);
+    const yaml = formatYamlWithSpacing(obj, ["shots"]);
+    fs.writeFileSync(filePath, yaml, "utf-8");
   }
 
   /**

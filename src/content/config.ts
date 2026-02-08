@@ -44,7 +44,7 @@ const rolls = defineCollection({
   schema: z.object({
     film: reference("films"),
     camera: z.string().optional(),
-    format: z.enum(["half-frame", "35mm", "6x6", "6x7", "6x8", "6x9", "4x5"]),
+    format: z.enum(["half-frame", "35mm", "645", "6x6", "6x7", "6x8", "6x9", "4x5"]),
     description: z.string().optional(),
     cover: z.string().optional(),
     shots: z.array(

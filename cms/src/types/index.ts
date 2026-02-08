@@ -31,7 +31,7 @@ export interface Roll {
   id: string; // e.g. "2021/TPE-01"
   film: string; // film ID reference
   camera?: string;
-  format: "half-frame" | "35mm" | "6x6" | "6x7" | "6x8" | "6x9" | "4x5";
+  format: "half-frame" | "35mm" | "645" | "6x6" | "6x7" | "6x8" | "6x9" | "4x5";
   description?: string;
   cover?: string;
   shots: Shot[];
