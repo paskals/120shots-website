@@ -333,6 +333,11 @@
     padding: 4rem 1rem 1.5rem;
   }
 
+  /* Add extra bottom padding for spreads without captions */
+  .spread:not([data-has-caption]) {
+    padding-bottom: 5rem;
+  }
+
   .spread-photos {
     flex-direction: column;
     gap: 0.75rem;
@@ -347,7 +352,7 @@
   .spread[data-layout="trio-r"] .photo-wrapper {
     width: 100%;
     height: auto;
-    max-height: none;
+    max-height: 72vh;
     flex: none;
   }
 
@@ -361,12 +366,19 @@
   .spread[data-has-caption][data-layout="trio-r"] .photo-wrapper {
     width: 100%;
     height: auto;
-    max-height: none;
+    max-height: 65vh;
     flex: none;
   }
 
-  .spread[data-has-caption][data-layout="duo-h"] .photo-wrapper img {
-    max-height: none;
+  /* Constrain images themselves for captioned photos to prevent overflow */
+  .spread[data-has-caption][data-layout="duo"] .photo-wrapper img,
+  .spread[data-has-caption][data-layout="duo-h"] .photo-wrapper img,
+  .spread[data-has-caption][data-layout="duo-l"] .photo-wrapper img,
+  .spread[data-has-caption][data-layout="duo-r"] .photo-wrapper img,
+  .spread[data-has-caption][data-layout="trio"] .photo-wrapper img,
+  .spread[data-has-caption][data-layout="trio-l"] .photo-wrapper img,
+  .spread[data-has-caption][data-layout="trio-r"] .photo-wrapper img {
+    max-height: calc(65vh - 3rem);
   }
 
   /* Stack vertically on mobile for trio-l and trio-r */
@@ -400,14 +412,22 @@
     flex: none;
   }
 
-  .spread[data-layout="single"] .photo-wrapper,
-  .spread[data-has-caption][data-layout="single"] .photo-wrapper {
+  .spread[data-layout="single"] .photo-wrapper {
     height: auto;
-    max-height: none;
+    max-height: 75vh;
   }
 
   .spread[data-layout="single"] .photo-wrapper img {
     max-height: calc(100dvh - 12rem);
+  }
+
+  .spread[data-has-caption][data-layout="single"] .photo-wrapper {
+    height: auto;
+    max-height: 65vh;
+  }
+
+  .spread[data-has-caption][data-layout="single"] .photo-wrapper img {
+    max-height: calc(65vh - 3rem);
   }
 
   .essay-progress {
