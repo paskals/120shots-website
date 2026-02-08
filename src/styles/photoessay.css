@@ -351,9 +351,20 @@
   .spread[data-layout="trio-l"] .photo-wrapper,
   .spread[data-layout="trio-r"] .photo-wrapper {
     width: 100%;
-    /* height: auto; */
+    height: auto;
     max-height: 72vh;
     flex: none;
+  }
+
+  /* Constrain images explicitly for Safari (can't resolve max-height:100% with auto-height parent) */
+  .spread[data-layout="duo"] .photo-wrapper img,
+  .spread[data-layout="duo-h"] .photo-wrapper img,
+  .spread[data-layout="duo-l"] .photo-wrapper img,
+  .spread[data-layout="duo-r"] .photo-wrapper img,
+  .spread[data-layout="trio"] .photo-wrapper img,
+  .spread[data-layout="trio-l"] .photo-wrapper img,
+  .spread[data-layout="trio-r"] .photo-wrapper img {
+    max-height: calc(72vh - 3rem);
   }
 
   /* Override captioned variants (higher specificity needed to beat desktop rules) */
@@ -365,7 +376,7 @@
   .spread[data-has-caption][data-layout="trio-l"] .photo-wrapper,
   .spread[data-has-caption][data-layout="trio-r"] .photo-wrapper {
     width: 100%;
-    /* height: auto; */
+    height: auto;
     max-height: 65vh;
     flex: none;
   }
