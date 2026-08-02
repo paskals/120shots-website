@@ -1,30 +1,15 @@
 // 1. Import utilities from `astro:content`
-import { z, defineCollection, reference } from "astro:content";
+import { defineCollection, reference } from "astro:content";
+import { glob } from 'astro/loaders';
+import { z } from "astro/zod";
 
-const blog = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    tags: z.array(z.string()),
-    author: reference("authors"),
-    description: z.string(),
-    filmStocks: z.array(reference("films")).optional(),
-    rolls: z.array(reference("rolls")).optional(),
-    image: z
-      .object({
-        src: z.string(),
-        alt: z.string(),
-        positionx: z.string().optional(),
-        positiony: z.string().optional(),
-      })
-      .optional(),
-    pubDate: z.coerce.date(),
-    updatedDate: z.coerce.date().optional(),
-  }),
-});
+// Preserve the original file path casing as the entry id (e.g. "2021/TN-01"),
+// since reference() strings throughout the content are written in that casing
+// and glob()'s default generateId lowercases everything.
+const generateId = ({ entry }) => entry.replace(/\.[^./]+$/, "");
 
 const films = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/films", generateId }),
   schema: z.object({
     name: z.string(),
     brand: z.string(),
@@ -40,7 +25,7 @@ const films = defineCollection({
 });
 
 const rolls = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/rolls", generateId }),
   schema: z.object({
     film: reference("films"),
     camera: z.string().optional(),
@@ -70,7 +55,7 @@ const rolls = defineCollection({
 });
 
 const authors = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/authors", generateId }),
   schema: z.object({
     title: z.string(),
     tags: z.array(z.string()),
@@ -91,7 +76,7 @@ const authors = defineCollection({
 });
 
 const photoessays = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/photoessays", generateId }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
