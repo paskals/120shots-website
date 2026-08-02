@@ -13,7 +13,7 @@ const allAuthors = await getCollection("authors");
     allAuthors
       .sort(sortByDate)
       .map((author) => (
-        <BlogPost post={author} url={`/authors/${author.slug}`} />
+        <BlogPost post={author} url={`/authors/${author.id}`} />
       ))
   }
 </BaseLayout>
