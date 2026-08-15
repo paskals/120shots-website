@@ -31,7 +31,7 @@
     "@fontsource-variable/inconsolata": "^5.0.16",
     "@fontsource-variable/overpass-mono": "^5.0.15",
     "@tailwindcss/vite": "^4.1.0",
-    "astro": "^7.1.1",
+    "astro": "^7.2.1",
     "dayjs": "^1.11.10",
     "markdown-it": "^15.0.0",
     "mdast-util-to-string": "^4.0.0",
