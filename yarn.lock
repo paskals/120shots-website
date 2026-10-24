@@ -113,6 +113,20 @@
     smol-toml "^1.6.0"
     unified "^11.0.5"
 
+"@astrojs/internal-helpers@0.10.3":
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/@astrojs/internal-helpers/-/internal-helpers-0.10.3.tgz#0f8b7401f37115365165396fc75c649dd6607f20"
+  integrity sha512-HIx/t1NywcqSTFaVwZh15n8JsC3YQdCaJZDaTS/aurYTEvNiWDXUGS3Z9uQX3bFB+B1pCgN/nljckkzYTpHZ2w==
+  dependencies:
+    "@types/hast" "^3.0.4"
+    "@types/mdast" "^4.0.4"
+    js-yaml "^4.3.0"
+    picomatch "^4.0.4"
+    retext-smartypants "^6.2.0"
+    shiki "^4.0.2"
+    smol-toml "^1.6.0"
+    unified "^11.0.5"
+
 "@astrojs/language-server@^2.16.7":
   version "2.16.13"
   resolved "https://registry.yarnpkg.com/@astrojs/language-server/-/language-server-2.16.13.tgz#a029001ab5627e3c88d4c7fe5a76f84869aec5e9"
@@ -137,12 +151,12 @@
     vscode-html-languageservice "^5.6.2"
     vscode-uri "^3.1.0"
 
-"@astrojs/markdoc@^2.0.6":
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/@astrojs/markdoc/-/markdoc-2.0.6.tgz#2656c93bfaa729a15f42810201dd877e09267e05"
-  integrity sha512-YYKfF264HatquB6ytM25PFsXXDbQ9+izNNJ4qysTNCnJUPEgiTuYWCIvKKaKaIPBlkZb3vROtoNeq/chrYU9MQ==
+"@astrojs/markdoc@^2.0.7":
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/@astrojs/markdoc/-/markdoc-2.0.7.tgz#52a45ae940befc59fa6678139221fa9b8939cffa"
+  integrity sha512-URNUaEAY+jCw7cTO6B1KlY9s9MUNRq5jnJ9nDj2M16h6AaSv+4+x+wDLdJ0vcZ/Ahv7DHCvt9OfcVOabAZGXow==
   dependencies:
-    "@astrojs/internal-helpers" "0.10.2"
+    "@astrojs/internal-helpers" "0.10.3"
     "@astrojs/prism" "4.0.2"
     "@markdoc/markdoc" "^0.5.4"
     esbuild "^0.28.0"
