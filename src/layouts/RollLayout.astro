@@ -30,7 +30,7 @@ const filmStock = await getEntry("films", roll.data.film.id);
 
 const authorObject = await getEntry({
   collection: "authors",
-  slug: "paskal", // TODO: Fix this, Hard coded for now
+  id: "paskal", // TODO: Fix this, Hard coded for now
 });
 
 const dates = getDatesRangeFormatted(roll);

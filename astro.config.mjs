@@ -11,6 +11,9 @@ import { remarkReadingTime } from "./src/scripts/remark-reading-time.mjs";
 export default defineConfig({
   output: "static",
   site: "https://120shots.com",
+  image: {
+    domains: ['cdn.120shots.com', '120shots.com'],
+  },
   redirects: {
     "/about": "/authors/paskal",
   },
