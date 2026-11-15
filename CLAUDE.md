@@ -86,8 +86,9 @@ This section overrides the global git workflow where they differ.
 - **Content changes** (photo essays, rolls and other content YAML) are made on the `content` branch, the
   draft branch. Commit and push there directly, with no PR. Merging `content` into `main` publishes the
   content; the site deploys from `main`.
-- **After each release, bring `content` up to date**: `develop` → `main` → `content` (merge `main` into
-  `content`).
+- **`content` follows `main`.** After each release the path is `develop` → `main` → `content`. The
+  `Sync content branch` workflow merges `main` into `content` on every push to `main`. If the merge
+  conflicts, the run fails and `content` needs a manual merge.
 - Never commit content directly to `main` or `develop`.
 
 ## Important Technical Details
