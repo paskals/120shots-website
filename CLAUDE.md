@@ -81,12 +81,14 @@ All collections are defined in `src/content/config.ts` with Zod schemas for type
 
 This section overrides the global git workflow where they differ.
 
-- **Content changes go straight to `main`.** Photo essays, rolls and other content YAML are committed
-  on `main` and pushed. No feature branch, no PR. The site deploys from `main`.
-- **Code changes keep the normal flow.** Branch off `develop` (`feat/`, `fix/`, `chore/`, ...), open a PR
-  into `develop`, then release with a `develop` → `main` PR.
-- After a direct commit to `main`, fast-forward `develop` to `main` so the two do not drift.
-- The `content` branch is not used.
+- **Code changes** (`feat/`, `fix/`, `chore/`, ...) branch off `develop` and merge into `develop` with a PR.
+  A release is a `develop` → `main` PR.
+- **Content changes** (photo essays, rolls and other content YAML) are made on the `content` branch, the
+  draft branch. Commit and push there directly, with no PR. Merging `content` into `main` publishes the
+  content; the site deploys from `main`.
+- **After each release, bring `content` up to date**: `develop` → `main` → `content` (merge `main` into
+  `content`).
+- Never commit content directly to `main` or `develop`.
 
 ## Important Technical Details
 
