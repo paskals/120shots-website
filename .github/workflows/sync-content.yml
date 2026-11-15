@@ -1,0 +1,36 @@
+name: Sync content branch
+
+# Merges main into content after every push to main, so the content (draft)
+# branch always contains everything that is released or published.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-content
+  cancel-in-progress: false
+
+jobs:
+  merge-main-into-content:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: content
+          fetch-depth: 0
+
+      - name: Merge main into content
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          if git merge-base --is-ancestor origin/main HEAD; then
+            echo "content already contains main"
+            exit 0
+          fi
+          git merge --no-ff -m "Merge main into content" origin/main
+          git push origin content
