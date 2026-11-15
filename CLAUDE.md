@@ -77,6 +77,17 @@ All collections are defined in `src/content/config.ts` with Zod schemas for type
 - GLightbox for image lightbox functionality
 - Dark/light theme toggle support
 
+## Git Workflow
+
+This section overrides the global git workflow where they differ.
+
+- **Content changes go straight to `main`.** Photo essays, rolls and other content YAML are committed
+  on `main` and pushed. No feature branch, no PR. The site deploys from `main`.
+- **Code changes keep the normal flow.** Branch off `develop` (`feat/`, `fix/`, `chore/`, ...), open a PR
+  into `develop`, then release with a `develop` → `main` PR.
+- After a direct commit to `main`, fast-forward `develop` to `main` so the two do not drift.
+- The `content` branch is not used.
+
 ## Important Technical Details
 
 ### Environment Setup
