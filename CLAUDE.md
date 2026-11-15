@@ -81,14 +81,30 @@ All collections are defined in `src/content/config.ts` with Zod schemas for type
 
 This section overrides the global git workflow where they differ.
 
-- **Code changes** (`feat/`, `fix/`, `chore/`, ...) branch off `develop` and merge into `develop` with a PR.
-  A release is a `develop` → `main` PR.
-- **Content changes** (photo essays, rolls and other content YAML) are made on the `content` branch, the
-  draft branch. Commit and push there directly, with no PR. Merging `content` into `main` publishes the
-  content; the site deploys from `main`.
-- **After each release, bring `content` up to date**: `develop` → `main` → `content` (merge `main` into
-  `content`).
-- Never commit content directly to `main` or `develop`.
+### Code changes
+
+Work as usual. Branch off `develop` (`feat/`, `fix/`, `chore/`, ...), open a PR into `develop`, and
+release with a `develop` → `main` PR.
+
+### Content changes
+
+Content is photo essays, rolls and other content YAML. It lives on the `content` branch, the draft
+branch. When the user asks for a content change:
+
+1. **Start from the latest `content`.** Run `git fetch`, switch to `content` and fast-forward it to
+   `origin/content`. If `origin/main` has commits that `content` lacks, merge `main` into `content`
+   first.
+2. **Commit on `content` and push it when the work is done.** No feature branch and no PR. Pushing to
+   `content` does not publish anything.
+3. **Publish only when the user asks.** Publishing means merging `content` into `main` with a merge
+   commit (`git merge --no-ff content`) and pushing `main`. No PR. The site deploys from `main`.
+4. Never commit content directly to `main` or `develop`.
+
+### Keeping `content` current
+
+After each release the path is `develop` → `main` → `content`. The `Sync content branch` workflow
+merges `main` into `content` on every push to `main`. If the merge conflicts, the run fails and
+`content` needs a manual merge.
 
 ## Important Technical Details
 
