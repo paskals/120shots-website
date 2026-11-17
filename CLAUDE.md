@@ -100,11 +100,33 @@ branch. When the user asks for a content change:
    commit (`git merge --no-ff content`) and pushing `main`. No PR. The site deploys from `main`.
 4. Never commit content directly to `main` or `develop`.
 
-### Keeping `content` current
+### Keeping `content` and `develop` current
 
-After each release the path is `develop` → `main` → `content`. The `Sync content branch` workflow
-merges `main` into `content` on every push to `main`. If the merge conflicts, the run fails and
-`content` needs a manual merge.
+Everything that lands on `main` flows back. The `Sync branches` workflow
+(`.github/workflows/sync-branches.yml`) merges `main` into both `content` and `develop` on every push
+to `main`: a release, a publication or a Release Please commit. Each branch fast-forwards when it can
+and gets a merge commit otherwise. If a merge conflicts, that branch's job fails and the branch needs
+a manual merge of `main`.
+
+### Releases
+
+Releases are automated with Release Please (`.github/workflows/release-please.yml`). On every push to
+`main` it keeps a release PR open that lists the releasable commits since the last release tag. Merging
+that PR bumps `package.json`, updates `CHANGELOG.md` and publishes the GitHub release. The release PR is
+the user's to merge.
+
+- **Only code changes release.** Commits that touch only `src/content` are ignored
+  (`exclude-paths` in `release-please-config.json`), so publishing content never creates a release.
+- **Write code commits as Conventional Commits.** PRs merge with merge commits, so every commit message on
+  the branch counts; the PR title does not.
+  - `fix: ...` makes a patch release.
+  - `feat: ...` makes a minor release.
+  - `feat!: ...` or a `BREAKING CHANGE:` footer makes a major release.
+  - `chore:`, `docs:`, `ci:`, `refactor:` and `test:` do not make a release.
+- Content commits need no prefix.
+- Dependabot commits (`.github/dependabot.yml`) use `fix(deps)` for runtime dependencies and
+  `chore(deps-dev)` for dev dependencies. Runtime bumps, security fixes included, make a patch release;
+  dev-only bumps do not.
 
 ## Important Technical Details
 
