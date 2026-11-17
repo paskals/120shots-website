@@ -122,6 +122,8 @@ the user's to merge.
   - `feat!: ...` or a `BREAKING CHANGE:` footer makes a major release.
   - `chore:`, `docs:`, `ci:`, `refactor:` and `test:` do not make a release.
 - Content commits need no prefix.
+- Dependabot commits use the `chore(deps)` prefix (`.github/dependabot.yml`), so dependency bumps do not
+  make a release by themselves.
 
 ## Important Technical Details
 
