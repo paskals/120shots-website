@@ -100,11 +100,13 @@ branch. When the user asks for a content change:
    commit (`git merge --no-ff content`) and pushing `main`. No PR. The site deploys from `main`.
 4. Never commit content directly to `main` or `develop`.
 
-### Keeping `content` current
+### Keeping `content` and `develop` current
 
-After each release the path is `develop` → `main` → `content`. The `Sync content branch` workflow
-merges `main` into `content` on every push to `main`. If the merge conflicts, the run fails and
-`content` needs a manual merge.
+Everything that lands on `main` flows back. The `Sync branches` workflow
+(`.github/workflows/sync-branches.yml`) merges `main` into both `content` and `develop` on every push
+to `main`: a release, a publication or a Release Please commit. Each branch fast-forwards when it can
+and gets a merge commit otherwise. If a merge conflicts, that branch's job fails and the branch needs
+a manual merge of `main`.
 
 ### Releases
 

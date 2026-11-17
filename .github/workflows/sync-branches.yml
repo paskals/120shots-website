@@ -1,0 +1,41 @@
+name: Sync branches
+
+# Merges main into content and develop after every push to main, so both
+# always contain everything that is released or published. Each branch fast-
+# forwards when it can and gets a merge commit otherwise. A merge conflict
+# fails that branch's job and needs a manual merge.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  merge-main:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        branch: [content, develop]
+    concurrency:
+      group: sync-${{ matrix.branch }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.branch }}
+          fetch-depth: 0
+
+      - name: Merge main into ${{ matrix.branch }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          if git merge-base --is-ancestor origin/main HEAD; then
+            echo "${{ matrix.branch }} already contains main"
+            exit 0
+          fi
+          git merge --no-edit -m "Merge main into ${{ matrix.branch }}" origin/main
+          git push origin "${{ matrix.branch }}"
