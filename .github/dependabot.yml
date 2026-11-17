@@ -10,4 +10,6 @@ updates:
     schedule:
       interval: "weekly"
     target-branch: "develop"
-    
+    commit-message:
+      prefix: "fix(deps)"
+      prefix-development: "chore(deps-dev)"
