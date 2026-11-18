@@ -1,15 +1,32 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  # Version updates go to develop, grouped into one PR per dependency type.
+  # Major bumps are not grouped and get their own PRs.
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
       interval: "weekly"
     target-branch: "develop"
+    commit-message:
+      prefix: "fix(deps)"
+      prefix-development: "chore(deps-dev)"
+    groups:
+      runtime:
+        dependency-type: "production"
+        update-types: ["minor", "patch"]
+      dev:
+        dependency-type: "development"
+        update-types: ["minor", "patch"]
+
+  # Security updates ignore `target-branch` and skip the commit-message prefix
+  # of any entry that sets it. This entry has no `target-branch`, so security
+  # PRs target the default branch with conventional prefixes. The PR limit of 0
+  # turns off version-update PRs for this entry.
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
     commit-message:
       prefix: "fix(deps)"
       prefix-development: "chore(deps-dev)"
